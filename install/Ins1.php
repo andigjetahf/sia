@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 i?php
+=======
+<?php
+>>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 
 #**************************************************************************
 #  openSIS is a free student information system for public and non-public 
@@ -23,7 +27,11 @@ i?php
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
+<<<<<<< HEAD
 #  along with this program.  If not, see ihttp://www.gnu.org/licenses/>.
+=======
+#  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+>>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 #
 #***************************************************************************************
 include '../functions/ParamLibFnc.php';
@@ -36,6 +44,7 @@ $_SESSION['server'] = $_POST["server"];
 $_SESSION['port'] = $_POST["port"];
 $_SESSION['host'] = $_POST['server'] . ($_POST['port'] != '3306' ? ':' . $_POST['port'] : '');
 $_SESSION['host_mod'] = $_POST['server']; // Used by Selectdb.php for upgrade flow
+<<<<<<< HEAD
 $err .= 'i!DOCTYPE html>
 ihtml lang="sq">
     ihead>
@@ -95,6 +104,67 @@ ihtml lang="sq">
         i/section>i!-- /.login -->
     i/body>
 i/html>';
+=======
+$err .= '<!DOCTYPE html>
+<html lang="sq">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Instaluesi SIA</title>
+        <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/installer.css?v='.rand(000, 999).'" type="text/css" />
+        <noscript><META http-equiv=REFRESH content="0;url=../EnableJavascript.php" /></noscript>
+    </head>
+    <body class="outer-body">
+        <section class="login">
+            <div class="login-wrapper">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div class="logo">
+                            <img src="assets/images/opensis_logo.png" alt="SIA">
+                        </div>  
+                        <h3>Instalimi i SIA</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="installation-steps-wrapper">
+                            <div class="installation-instructions">
+                                i!--ih4 class="no-margin">Possible causes are:</h4>
+                                <ol>
+                                    <li>MySQL is not installed. Try downloading from <a href="http://dev.mysql.com/downloads/" target=_blank>MySQL Website</a></li>
+                                    <li>Username or Password or MySQL Configuration is incorrect</li>
+                                    <li>Php.ini is not properly configured. Search for MySQL in php.ini</li>
+                                </ol>-->
+                                <ul class="installation-steps-label">
+                                    <li>Zgjidhni Paketën</li>
+                                    <li>Kërkesat e Sistemit</li>
+                                    <li class="active">Lidhja me Bazën e të Dhënave</li>
+                                    <li>Përzgjedhja e Bazës së të Dhënave</li>
+                                    <li>Konfigurimi i Administratorit</li>
+                                    <li>Gati për Përdorim!</li>
+                                </ul>
+                            </div><!-- /.installation-instructions -->
+                            <div class="installation-steps">
+
+                                <h2 class="text-center">Nuk mund të lidhej me serverin e bazës së të dhënave: ' . $_SESSION['host'].'</h2><br/>';
+                                if (clean_param($_REQUEST['mod'], PARAM_ALPHAMOD) == 'upgrade') {
+                                    $err .= '<p class="text-center"><a href="Step1.php?mod=upgrade" class="btn btn-primary"><i class="fa fa-refresh"></i> Provo Përsëri</a></p>';
+                                } else {
+                                    $err .= '<p class="text-center"><a href="Step1.php" class="btn btn-primary"><i class="fa fa-refresh"></i> Provo Përsëri</a></p>';
+                                }
+                            $err .= '</div>
+                        </div><!-- /.installation-steps-wrapper -->
+                    </div><!-- /.panel-body -->
+                </div><!-- /.panel -->                
+                <footer>
+                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4ED</a>).
+                </footer>
+            </div><!-- /.login-wrapper -->
+        </section><!-- /.login -->
+    </body>
+</html>';
+>>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 //$dbconn = mysqli_connect($_SESSION['host'],$_SESSION['username'],$_SESSION['password'])
 $db_error_detail = '';
 try {
@@ -113,7 +183,11 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
     }
     $err_with_msg = str_replace(
         "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'],
+<<<<<<< HEAD
         "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'] . "ibr>ismall style='color:red; font-size:14px;'>(" . htmlspecialchars($db_error_detail) . ")i/small>",
+=======
+        "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'] . "<br>ismall style='color:red; font-size:14px;'>(" . htmlspecialchars($db_error_detail) . ")</small>",
+>>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
         $err
     );
     exit($err_with_msg);
@@ -125,6 +199,7 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
     $res = $qr->fetch_assoc();
     $res_arr = explode(',', $res['Value']);
     if (false && in_array('STRICT_TRANS_TABLES', $res_arr)) { // Bypassed - strict mode handled per session
+<<<<<<< HEAD
         $err = 'i!DOCTYPE html>
         ihtml lang="sq">
             ihead>
@@ -163,6 +238,46 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
                 i/section>i!-- /.login -->
             i/body>
         i/html>';
+=======
+        $err = '<!DOCTYPE html>
+        <html lang="sq">
+            <head>
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <title>Instaluesi SIA</title>
+                <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
+                <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+                <link rel="stylesheet" href="assets/css/installer.css?v='.rand(000, 999).'" type="text/css" />
+                <noscript><META http-equiv=REFRESH content="0;url=../EnableJavascript.php" /></noscript>
+            </head>
+            <body class="outer-body">
+                <section class="login">
+                    <div class="login-wrapper">
+                        <div class="panel" style="width: 50%;">
+                            <div class="panel-heading">
+                                <div class="logo">
+                                    <img src="assets/images/opensis_logo.png" alt="SIA">
+                                </div>
+                                <h3>Instalimi i SIA</h3>
+                            </div>
+                            <div class="panel-body">
+                                <div class="padding-20 class="text-center"">
+                                    <h2 class="text-center">Nuk mund të lidhej me serverin e bazës së të dhënave: ' . $_SESSION['host'].'</h2><br/>
+                                    <h5 class="text-center">Shkaqet e mundshme janë:</h5>
+                                    <p class="text-center">Modaliteti Strict është i aktivizuar. Ju lutemi çaktivizoni modalitetin Strict dhe rinisni shërbimet MySQL dhe Apache.
+                                    </p>
+                                </div>
+                            </div><!-- /.panel-body -->
+                        </div><!-- /.panel -->
+                        <footer>
+                            Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4ED</a>).
+                        </footer>
+                    </div><!-- /.login-wrapper -->
+                </section><!-- /.login -->
+            </body>
+        </html>';
+>>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
         
 
         exit($err);
