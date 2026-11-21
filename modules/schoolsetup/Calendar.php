@@ -36,6 +36,7 @@ include('lang/language.php');
 //    echo '<script>window.location.href=Modules.php?modname=schoolsetup/Calendar.php</script>';
 //}
 if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'print') {
+<<<<<<< HEAD
     echo '<style type=.text/css.>.print_wrapper{font-family:arial;font-size:12px;}.print_wrapper table table{border-right:1px solid #666;border-bottom:1px solid #666;}.print_wrapper table td{font-size:12px;}</style>';
     echo .<table width=100%  style=\. font-family:Arial; font-size:12px;\. >.;
     echo .<tr><td  style=\.font-size:15px; font-weight:bold; padding-top:10px;\.>. . GetSchool(UserSchool()) . .<div style=\.font-size:12px;\.>. . _listOfEvents . .</div></td><td align=right style=\.padding-top:10px;\.>. . ProperDate(DBDate()) . .<br />. . _listOfEvents . . openSIS</td></tr><tr><td colspan=2 style=\.border-top:1px solid #333;\.>&nbsp;</td></tr></table>.;
@@ -55,6 +56,27 @@ if (User('PROFILE') != 'student')
     DrawBC(.. . _schoolSetup . . > . . ProgramTitle());
 else
     DrawBC(.School Info > . . ProgramTitle());
+=======
+    echo '<style type="text/css">.print_wrapper{font-family:arial;font-size:12px;}.print_wrapper table table{border-right:1px solid #666;border-bottom:1px solid #666;}.print_wrapper table td{font-size:12px;}</style>';
+    echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
+    echo "<tr><td  style=\"font-size:15px; font-weight:bold; padding-top:10px;\">" . GetSchool(UserSchool()) . "<div style=\"font-size:12px;\">" . _listOfEvents . "</div></td><td align=right style=\"padding-top:10px;\">" . ProperDate(DBDate()) . "<br />" . _listOfEvents . " openSIS</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
+    echo "<div class=print_wrapper>";
+    ListOutputFloat($_SESSION['events_RET'], array('SCHOOL_DATE' => _date, 'TITLE' => _date, 'DESCRIPTION' => _description), _event, _events, '', '', array('search' => _date, 'count' => _description));
+    echo "</div>";
+}
+if (!$_REQUEST['month'])
+    $_REQUEST['month'] = date("n");
+else
+    $_REQUEST['month'] = MonthNWSwitch($_REQUEST['month'], 'tonum') * 1;
+if (!$_REQUEST['year'])
+    $_REQUEST['year'] = date("Y");
+
+$time = mktime(0, 0, 0, $_REQUEST['month'], 1, $_REQUEST['year']);
+if (User('PROFILE') != 'student')
+    DrawBC("" . _schoolSetup . " > " . ProgramTitle());
+else
+    DrawBC("School Info > " . ProgramTitle());
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 $cal_found_qr = DBGet(DBQuery('SELECT count(*) as TOT from school_calendars WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\''));
 //if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || !$_REQUEST['calendar_id']) && $_REQUEST['modfunc']!='detail' && USER('PROFILE')=='admin') 
 if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || $cal_found_qr[1]['TOT'] == 0) && User('PROFILE') == 'admin') {
@@ -62,6 +84,7 @@ if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || $cal_found
     $fy_RET = $fy_RET[1];
 
     if ($_REQUEST['month__min'] == '' && $_REQUEST['modfunc'] != 'create')
+<<<<<<< HEAD
         echo '<div class=.alert alert-danger no-border.>' . _noCalendarsWereFound . '</div>';
 
     $message = '<div class=.row.>';
@@ -93,10 +116,44 @@ if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || $cal_found
     $message .= '<div class=.form-group.>';
     $message .= '<label class=.col-md-4 control-label text-right.>' . _to . '</label>';
     $message .= '<div class=.col-md-8.>' . DateInputAY($fy_RET['END_DATE'], '_max', 2) . '</div>';
+=======
+        echo '<div class="alert alert-danger no-border">' . _noCalendarsWereFound . '</div>';
+
+    $message = '<div class="row">';
+    $message .= '<div class="col-md-12">';
+    $message .= '<div class="row">';
+
+    $message .= '<div class="col-md-8">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-2 control-label text-right">' . _title . '</label>';
+    $message .= '<div class="col-md-10">';
+    $message .= '<INPUT type=text name=title class=form-control id=title>';
+    $message .= '<div class="checkbox checkbox-switch switch-success"><label><INPUT type=checkbox name=default value=Y><span></span>' . _defaultCalendarForThisSchool . '</label></div>';
+    $message .= '</div>';
+    $message .= '</div>'; //.form-group
+    $message .= '</div>'; //.col-md-4
+    $message .= '<div class="col-md-4">';
+    $message .= '</div>'; //.col-md-4
+
+    $message .= '</div>'; //.row
+    $message .= '<div class="row">';
+
+    $message .= '<div class="col-md-4">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-4 control-label text-right">' . _from . '</label>';
+    $message .= '<div class="col-md-8">' . DateInputAY($fy_RET['START_DATE'], '_min', 1) . '</div>';
+    $message .= '</div>'; //.form-group
+    $message .= '</div>'; //.col-md-4
+    $message .= '<div class="col-md-4">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-4 control-label text-right">' . _to . '</label>';
+    $message .= '<div class="col-md-8">' . DateInputAY($fy_RET['END_DATE'], '_max', 2) . '</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $message .= '</div>'; //.form-group
     $message .= '</div>'; //.col-md-4
 
     $message .= '</div>'; //.row 
+<<<<<<< HEAD
     $message .= '<div class=.row.>';
 
     $message .= '<div class=.col-md-4.>';
@@ -106,6 +163,17 @@ if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || $cal_found
     $message .= '</div>'; //.form-group
     $message .= '</div>'; //.col-md-4
     $message .= '<div class=.col-md-4.>';
+=======
+    $message .= '<div class="row">';
+
+    $message .= '<div class="col-md-4">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-4 control-label text-right">' . _weekdays . '</label>';
+    $message .= '<div class="col-md-8"><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[0]>' . _sunday . '</label></div> <div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[1] CHECKED>' . _monday . '</label></div> <div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[2] CHECKED>' . _tuesday . '</label></div> <div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[3] CHECKED>' . _wednesday . '</label></div> <div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[4] CHECKED>' . _thursday . '</label></div> <div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[5] CHECKED>' . _friday . '</label></div> <div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[6]>' . _saturday . '</label></div></div>';
+    $message .= '</div>'; //.form-group
+    $message .= '</div>'; //.col-md-4
+    $message .= '<div class="col-md-4">';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $message .= calendarEventsVisibility();
     $message .= '</div>'; //.col-md-4
 
@@ -124,7 +192,11 @@ if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || $cal_found
         $weekday = date('w', $begin);
 
         $col = 'Calender_Title';
+<<<<<<< HEAD
         $cal_title = singleQuoteReplace(.'., .''., $_REQUEST['title']);
+=======
+        $cal_title = singleQuoteReplace("'", "''", $_REQUEST['title']);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         $dup_cal_title = DBGet(DBQuery('SELECT count(*) AS NO FROM school_calendars WHERE TITLE=\'' . $cal_title . '\' AND SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\''));
 
         // $fetch_calendar_id = DBGet(DBQuery('SHOW TABLE STATUS LIKE \'school_calendars\''));
@@ -165,7 +237,11 @@ if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'create' || $cal_found
             if ($dup_cal_title[1]['NO'] == 0) {
                 DBQuery($profile_sql);
             } else {
+<<<<<<< HEAD
                 echo '<div class=.alert alert-danger.>' . _calenderTitleAlreadyExists . '</div>';
+=======
+                echo '<div class="alert alert-danger">' . _calenderTitleAlreadyExists . '</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
         }
         if ($dup_cal_title[1]['NO'] == 0)
@@ -208,7 +284,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'delete_calendar') {
             unset($_REQUEST['modfunc']);
             unset($_SESSION['_REQUEST_vars']['modfunc']);
             unset($_REQUEST['calendar_id']);
+<<<<<<< HEAD
             echo '<SCRIPT language=javascript>window.location.href = .Modules.php?modname=' . $_REQUEST['modname'] . '.; window.close();</script>';
+=======
+            echo '<SCRIPT language=javascript>window.location.href = "Modules.php?modname=' . $_REQUEST['modname'] . '"; window.close();</script>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
     }
 }
@@ -230,6 +310,7 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'edit_calendar') {
         $weekdays[$i] = $day;
         $i++;
     }
+<<<<<<< HEAD
     //$message = '<div class=.row.>';
     //$message .= '<div class=.col-md-12.>';
 
@@ -241,11 +322,25 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'edit_calendar') {
     $message .= '<div class=.col-md-10.>';
     $message .= '<INPUT type=text name=title class=form-control id=title value=.' . $acs_RET['TITLE'] . '.>';
     $message .= '<div class=.checkbox checkbox-switch switch-success switch-sm.><label><INPUT type=checkbox name=default value=Y ' . (($acs_RET['DEFAULT_CALENDAR'] == 'Y') ? 'checked' : '') . '><span></span>' . _defaultCalendarForThisSchool . '</label></div>';
+=======
+    //$message = '<div class="row">';
+    //$message .= '<div class="col-md-12">';
+
+    $message = '<div class="row">';
+
+    $message .= '<div class="col-md-8">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-2 control-label text-right">' . _title . '</label>';
+    $message .= '<div class="col-md-10">';
+    $message .= '<INPUT type=text name=title class=form-control id=title value="' . $acs_RET['TITLE'] . '">';
+    $message .= '<div class="checkbox checkbox-switch switch-success switch-sm"><label><INPUT type=checkbox name=default value=Y ' . (($acs_RET['DEFAULT_CALENDAR'] == 'Y') ? 'checked' : '') . '><span></span>' . _defaultCalendarForThisSchool . '</label></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $message .= '</div>';
     $message .= '</div>'; //.form-group
     $message .= '</div>'; //.col-md-8
     $message .= '</div>'; //.row    
 
+<<<<<<< HEAD
     $message .= '<div class=.row.>';
     $message .= '<div class=.col-md-4.>';
     $message .= '<div class=.form-group.>';
@@ -257,10 +352,24 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'edit_calendar') {
     $message .= '<div class=.form-group.>';
     $message .= '<label class=.col-md-4 control-label text-right.>' . _to . '</label>';
     $message .= '<div class=.col-md-8.>' . DateInputAY($ac_RET['END_DATE'], '_max', 2) . '</div>';
+=======
+    $message .= '<div class="row">';
+    $message .= '<div class="col-md-4">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-4 control-label text-right">' . _from . '</label>';
+    $message .= '<div class="col-md-8">' . DateInputAY($ac_RET['START_DATE'], '_min', 1) . '</div>';
+    $message .= '</div>'; //.form-group
+    $message .= '</div>'; //.col-md-4
+    $message .= '<div class="col-md-4">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-4 control-label text-right">' . _to . '</label>';
+    $message .= '<div class="col-md-8">' . DateInputAY($ac_RET['END_DATE'], '_max', 2) . '</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $message .= '</div>'; //.form-group
     $message .= '</div>'; //.col-md-4
     $message .= '</div>'; //.row 
 
+<<<<<<< HEAD
     $message .= '<div class=.row.>';
     $message .= '<div class=.col-md-4.>';
     $message .= '<div class=.form-group.>';
@@ -269,6 +378,16 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'edit_calendar') {
     $message .= '</div>'; //.form-group
     $message .= '</div>'; //.col-md-4
     $message .= '<div class=.col-md-4.>';
+=======
+    $message .= '<div class="row">';
+    $message .= '<div class="col-md-4">';
+    $message .= '<div class="form-group">';
+    $message .= '<label class="col-md-4 control-label text-right">' . _weekdays . '</label>';
+    $message .= '<div class="col-md-8"><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[0] ' . ((in_array('U', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED> ' . _sunday . '</label></div><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[1] ' . ((in_array('M', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED>' . _monday . '</label></div><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[2] ' . ((in_array('T', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED>' . _tuesday . '</label></div><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[3] ' . ((in_array('W', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED>' . _wednesday . '</label></div><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[4] ' . ((in_array('H', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED>' . _thursday . '</label></div><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[5] ' . ((in_array('F', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED>' . _friday . '</label></div><div class="checkbox"><label><INPUT class="styled" type=checkbox value=Y name=weekdays[6] ' . ((in_array('S', $weekdays) == true) ? 'CHECKED' : '') . ' DISABLED> ' . _saturday . '</label></div></div>';
+    $message .= '</div>'; //.form-group
+    $message .= '</div>'; //.col-md-4
+    $message .= '<div class="col-md-4">';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $message .= calendarEventsVisibility();
     $message .= '</div>'; //.col-md-4
     $message .= '</div>'; //.row
@@ -277,7 +396,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'edit_calendar') {
 
     if (Prompt_Calender(_editThisCalendar, '', $message)) {
         $col = _editThisCalendar;
+<<<<<<< HEAD
         $cal_title = singleQuoteReplace(.'., .''., $_REQUEST['title']);
+=======
+        $cal_title = singleQuoteReplace("'", "''", $_REQUEST['title']);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         $dup_cal_title = DBGet(DBQuery('SELECT count(*) AS NO FROM school_calendars WHERE TITLE=\'' . $cal_title . '\' AND SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' AND CALENDAR_ID NOT IN(' . $cal_id . ')'));
 
@@ -390,14 +513,24 @@ if ($_REQUEST['modfunc'] == 'detail') {
 
                 foreach ($_REQUEST['values'] as $column => $value) {
                     $value = paramlib_validation($column, $value);
+<<<<<<< HEAD
                     if ($column == .SCHOOL_DATE.) {
+=======
+                    if ($column == "SCHOOL_DATE") {
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         $value = date('Y-m-d', strtotime($value));
                     }
                     if (stripos($_SERVER['SERVER_SOFTWARE'], 'linux')) {
                         $value = mysqli_real_escape_string($value, db_start());
+<<<<<<< HEAD
                         $value = str_replace('%u201D', .\.., $value);
                     }
                     $sql .= $column . '=\'' . singleQuoteReplace(.'., .''., trim($value)) . '\',';
+=======
+                        $value = str_replace('%u201D', "\"", $value);
+                    }
+                    $sql .= $column . '=\'' . singleQuoteReplace("'", "''", trim($value)) . '\',';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     $go = true;
                 }
                 $sql = substr($sql, 0, -1);
@@ -438,13 +571,21 @@ if ($_REQUEST['modfunc'] == 'detail') {
                     if (trim($value)) {
                         $value = paramlib_validation($column, $value);
                         $fields .= $column . ',';
+<<<<<<< HEAD
                         if ($column == .SCHOOL_DATE.)
+=======
+                        if ($column == "SCHOOL_DATE")
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                             $values .= '\'' . date('Y-m-d', strtotime($value)) . '\',';
                         else {
                             if (stripos($_SERVER['SERVER_SOFTWARE'], 'linux')) {
                                 $value = mysqli_real_escape_string($value, db_start());
                             }
+<<<<<<< HEAD
                             $values .= '\'' . singleQuoteReplace(.'., .''., trim($value)) . '\',';
+=======
+                            $values .= '\'' . singleQuoteReplace("'", "''", trim($value)) . '\',';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
                         $go = true;
                     }
@@ -457,7 +598,11 @@ if ($_REQUEST['modfunc'] == 'detail') {
                 }
             }
 
+<<<<<<< HEAD
             echo '<SCRIPT language=javascript>window.location.href = .Modules.php?modname=' . $_REQUEST['modname'] . '&calendar_id=' . $_REQUEST['calendar_id'] . '&year=' . $_REQUEST['year'] . '&month=' . MonthNWSwitch($_REQUEST['month'], 'tochar') . '.; window.close();</script>';
+=======
+            echo '<SCRIPT language=javascript>window.location.href = "Modules.php?modname=' . $_REQUEST['modname'] . '&calendar_id=' . $_REQUEST['calendar_id'] . '&year=' . $_REQUEST['year'] . '&month=' . MonthNWSwitch($_REQUEST['month'], 'tochar') . '"; window.close();</script>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             unset($_REQUEST['values']);
             unset($_SESSION['_REQUEST_vars']['values']);
@@ -467,8 +612,13 @@ if ($_REQUEST['modfunc'] == 'detail') {
     } elseif (clean_param($_REQUEST['button'], PARAM_ALPHAMOD) == _delete) {
         if (DeletePromptCommon(_event, 'delete', 'y')) {
 
+<<<<<<< HEAD
             DBQuery(.DELETE FROM calendar_events WHERE ID='. . paramlib_validation($column = 'EVENT_ID', $_REQUEST['event_id']) . .'.);
             echo '<SCRIPT language=javascript>window.location.href = .Modules.php?modname=' . $_REQUEST['modname'] . '&calendar_id=' . $_REQUEST['calendar_id'] . '&year=' . $_REQUEST['year'] . '&month=' . MonthNWSwitch($_REQUEST['month'], 'tochar') . '.; window.close();</script>';
+=======
+            DBQuery("DELETE FROM calendar_events WHERE ID='" . paramlib_validation($column = 'EVENT_ID', $_REQUEST['event_id']) . "'");
+            echo '<SCRIPT language=javascript>window.location.href = "Modules.php?modname=' . $_REQUEST['modname'] . '&calendar_id=' . $_REQUEST['calendar_id'] . '&year=' . $_REQUEST['year'] . '&month=' . MonthNWSwitch($_REQUEST['month'], 'tochar') . '"; window.close();</script>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             unset($_REQUEST['values']);
             unset($_SESSION['_REQUEST_vars']['values']);
@@ -476,7 +626,11 @@ if ($_REQUEST['modfunc'] == 'detail') {
     } else {
         if ($_REQUEST['event_id']) {
             if ($_REQUEST['event_id'] != 'new') {
+<<<<<<< HEAD
                 $RET = DBGet(DBQuery(.SELECT TITLE,DESCRIPTION,SCHOOL_DATE,CALENDAR_ID FROM calendar_events WHERE ID='$_REQUEST[event_id]'.));
+=======
+                $RET = DBGet(DBQuery("SELECT TITLE,DESCRIPTION,SCHOOL_DATE,CALENDAR_ID FROM calendar_events WHERE ID='$_REQUEST[event_id]'"));
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 $title = $RET[1]['TITLE'];
                 $calendar_id = $RET[1]['CALENDAR_ID'];
             } else {
@@ -485,7 +639,11 @@ if ($_REQUEST['modfunc'] == 'detail') {
                 $RET[1]['CALENDAR_ID'] = '';
                 $calendar_id = $_REQUEST['calendar_id'];
             }
+<<<<<<< HEAD
             echo .<FORM name=popform class=\.form-horizontal\. id=popform action=ForWindow.php?modname=$_REQUEST[modname]&dd=$_REQUEST[school_date]&modfunc=detail&event_id=$_REQUEST[event_id]&calendar_id=$calendar_id&month=$_REQUEST[month]&year=$_REQUEST[year] METHOD=POST>.;
+=======
+            echo "<FORM name=popform class=\"form-horizontal\" id=popform action=ForWindow.php?modname=$_REQUEST[modname]&dd=$_REQUEST[school_date]&modfunc=detail&event_id=$_REQUEST[event_id]&calendar_id=$calendar_id&month=$_REQUEST[month]&year=$_REQUEST[year] METHOD=POST>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         } else {
             $RET = DBGet(DBQuery('SELECT TITLE,STAFF_ID,DATE_FORMAT(DUE_DATE,\'%d-%b-%y\') AS SCHOOL_DATE,ASSIGNED_DATE,DUE_DATE,DESCRIPTION FROM gradebook_assignments WHERE ASSIGNMENT_ID=\'' . $_REQUEST['assignment_id'] . '\''));
             $title = $RET[1]['TITLE'];
@@ -495,6 +653,7 @@ if ($_REQUEST['modfunc'] == 'detail') {
         PopTable('header', $title);
         echo '<div id=err_message ></div><br/>';
 
+<<<<<<< HEAD
         echo '<div class=.form-group.><label class=.control-label text-right col-md-4.>' . _date . '</label><div class=.col-md-8.>' . date(.Y/M/d., strtotime($RET[1]['SCHOOL_DATE'])) . '</div></div>';
 
         if ($RET[1]['TITLE'] == '') {
@@ -529,6 +688,42 @@ if ($_REQUEST['modfunc'] == 'detail') {
                 echo '<INPUT type=submit name=button class=.btn btn-white. value=' . _delete . ' onclick=.formload_ajax(\'popform\');.>';
         } else {
             echo '<div class=.form-group.><label class=.control-label text-right col-md-4.>' . _showEventsSystemWide . '</label><div class=.col-md-8.>' . ($RET[1]['CALENDAR_ID'] == '' ? '<i class=.icon-checkbox-checked.></i>' : '<i class=.icon-checkbox-unchecked.></i>') . '</div></div>';
+=======
+        echo '<div class="form-group"><label class="control-label text-right col-md-4">' . _date . '</label><div class="col-md-8">' . date("Y/M/d", strtotime($RET[1]['SCHOOL_DATE'])) . '</div></div>';
+
+        if ($RET[1]['TITLE'] == '') {
+            echo '<div class="form-group">' . (User('PROFILE') == 'admin' ? TextInput($RET[1]['TITLE'], 'values[TITLE]', 'Title', 'id=title') : $RET[1]['TITLE']) . '</div>';
+        } else {
+            echo '<div class="form-group">' . (User('PROFILE') == 'admin' ? TextInputCusId($RET[1]['TITLE'], 'values[TITLE]', 'Title', '', true, 'title') : $RET[1]['TITLE']) . '</div>';
+        }
+
+        if ($RET[1]['STAFF_ID']) {
+            echo '<div class="form-group"><label class="control-label text-right col-md-4">' . _teacher . '</label><div class="col-md-8">' . (User('PROFILE') == 'admin' ? TextAreaInput($RET[1]['STAFF_ID'], 'values[STAFF_ID]') : $RET[1]['STAFF_ID']) . '</div></div>';
+        }
+
+        if ($RET[1]['ASSIGNED_DATE']) {
+            echo '<div class="form-group"><label class="control-label text-right col-md-4">' . _assignedDate . '</label><div class="col-md-8">' . (User('PROFILE') == 'admin' ? TextAreaInput($RET[1]['ASSIGNED_DATE'], 'values[ASSIGNED_DATE]') : $RET[1]['ASSIGNED_DATE']) . '</div></div>';
+        }
+
+        if ($RET[1]['DUE_DATE']) {
+            echo '<div class="form-group"><label class="control-label text-right col-md-4">' . _dueDate . '</label><div class="col-md-8">' . (User('PROFILE') == 'admin' ? TextAreaInput($RET[1]['DUE_DATE'], 'values[DUE_DATE]') : $RET[1]['DUE_DATE']) . '</div></div>';
+        }
+        echo '<div class="form-group">' . (User('PROFILE') == 'admin' ? TextAreaInput(html_entity_decode($RET[1]['DESCRIPTION']), 'values[DESCRIPTION]', 'Notes', 'style=height:200px;') : html_entity_decode($RET[1]['DESCRIPTION'])) . '</div>';
+
+        if (AllowEdit()) {
+            if (User('PROFILE') == 'admin')
+                echo '<div class="form-group"><div class="col-xs-12">' . CheckboxInputSwitch($RET[1]['CALENDAR_ID'], $_REQUEST['event_id'], _showEventsSystemWide) . '</div></div>';
+            else
+                echo '<div class="form-group"><div class="col-xs-12">' . ($RET[1]['CALENDAR_ID'] == '' ? '<i class="icon-checkbox-checked"></i>' : '<i class="icon-checkbox-unchecked"></i>') . '</div></div>';
+
+            if (User('PROFILE') == 'admin')
+                echo '<INPUT type=submit class="btn btn-primary" name=button value=' . _save . ' onclick="return formcheck_calendar_event();">';
+            echo '&nbsp;';
+            if ($_REQUEST['event_id'] != 'new' && User('PROFILE') == 'admin')
+                echo '<INPUT type=submit name=button class="btn btn-white" value=' . _delete . ' onclick="formload_ajax(\'popform\');">';
+        } else {
+            echo '<div class="form-group"><label class="control-label text-right col-md-4">' . _showEventsSystemWide . '</label><div class="col-md-8">' . ($RET[1]['CALENDAR_ID'] == '' ? '<i class="icon-checkbox-checked"></i>' : '<i class="icon-checkbox-unchecked"></i>') . '</div></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
 
         PopTable('footer');
@@ -556,7 +751,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
     }
 
     if (strpos($start_date, 'JAN') !== false or strpos($start_date, 'FEB') !== false or strpos($start_date, 'MAR') !== false or strpos($start_date, 'APR') !== false or strpos($start_date, 'MAY') !== false or strpos($start_date, 'JUN') !== false or strpos($start_date, 'JUL') !== false or strpos($start_date, 'AUG') !== false or strpos($start_date, 'SEP') !== false or strpos($start_date, 'OCT') !== false or strpos($start_date, 'NOV') !== false or strpos($start_date, 'DEC') !== false) { {
+<<<<<<< HEAD
             $sdateArr = explode(.-., $start_date);
+=======
+            $sdateArr = explode("-", $start_date);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             $month = $sdateArr[1];
             if ($month == 'JAN')
                 $month = '01';
@@ -597,7 +796,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
     }
 
     if (strpos($end_date, 'JAN') !== false or strpos($end_date, 'FEB') !== false or strpos($end_date, 'MAR') !== false or strpos($end_date, 'APR') !== false or strpos($end_date, 'MAY') !== false or strpos($end_date, 'JUN') !== false or strpos($end_date, 'JUL') !== false or strpos($end_date, 'AUG') !== false or strpos($end_date, 'SEP') !== false or strpos($end_date, 'OCT') !== false or strpos($end_date, 'NOV') !== false or strpos($end_date, 'DEC') !== false) { {
+<<<<<<< HEAD
             $edateArr = explode(.-., $end_date);
+=======
+            $edateArr = explode("-", $end_date);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             $month = $edateArr[1];
             if ($month == 'JAN')
                 $month = '01';
@@ -628,9 +831,15 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
     }
 
     if (User('PROFILE') != 'student')
+<<<<<<< HEAD
         DrawBC(.. . _schoolSetup . . > . . ProgramTitle());
     else
         DrawBC(.School Info > . . ProgramTitle());
+=======
+        DrawBC("" . _schoolSetup . " > " . ProgramTitle());
+    else
+        DrawBC("School Info > " . ProgramTitle());
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     echo '<FORM action=Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=' . $_REQUEST['modfunc'] . '&month=' . $_REQUEST['month'] . '&year=' . $_REQUEST['year'] . ' METHOD=POST>';
 
     if ($end_date <= $start_date) {
@@ -647,6 +856,7 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
             $end_date = strtoupper(date('Y-m-d'));
 
 
+<<<<<<< HEAD
         echo '<div class=.alert alert-danger alert-styled-left alert-bordered.><span class=.text-bold.>' . _alert . '!!</span> - ' . _alert . '.</span></div>';
         echo '<font style=.color:red.><b></b></font>';
     }
@@ -658,6 +868,19 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
     echo '</div>'; //.col-md-6
     echo '<div class=.col-md-8 text-md-right text-lg-right.>';
     echo '<div class=.form-inline inline-block.><div class=.inline-block.>' . PrepareDateSchedule($start_date, 'start') . '</div><label>&nbsp; &nbsp; - &nbsp; &nbsp;</label><div class=.inline-block.>' . PrepareDateSchedule($end_date, 'end') . '</div> &nbsp; &nbsp;<INPUT type=submit class=.btn btn-primary. value=' . _go . '></div>';
+=======
+        echo '<div class="alert alert-danger alert-styled-left alert-bordered"><span class="text-bold">' . _alert . '!!</span> - ' . _alert . '.</span></div>';
+        echo '<font style="color:red"><b></b></font>';
+    }
+    echo '<div class="panel panel-default">';
+    echo '<div class="panel-heading">';
+    echo '<div class="row">';
+    echo '<div class="col-md-4">';
+    echo '<h6 class="panel-title"><A HREF=Modules.php?modname=' . $_REQUEST['modname'] . '&month=' . $_REQUEST['month'] . '&year=' . $_REQUEST['year'] . ' class="text-primary"><i class="icon-square-left"></i>' . _backToCalendar . '</A></h6>';
+    echo '</div>'; //.col-md-6
+    echo '<div class="col-md-8 text-md-right text-lg-right">';
+    echo '<div class="form-inline inline-block"><div class="inline-block">' . PrepareDateSchedule($start_date, 'start') . '</div><label>&nbsp; &nbsp; - &nbsp; &nbsp;</label><div class="inline-block">' . PrepareDateSchedule($end_date, 'end') . '</div> &nbsp; &nbsp;<INPUT type=submit class="btn btn-primary" value=' . _go . '></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     echo '</div>'; //.col-md-6
     echo '</div>';
 
@@ -666,12 +889,20 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
 
 
 
+<<<<<<< HEAD
     $functions = array('SCHOOL_DATE' => 'ProperDate');         // <A HREF=Modules.php?modname='.$_REQUEST[.modname.].'&month='.$_REQUEST[.month.].'&year='.$_REQUEST[.year.].'>
+=======
+    $functions = array('SCHOOL_DATE' => 'ProperDate');         // <A HREF=Modules.php?modname='.$_REQUEST["modname"].'&month='.$_REQUEST["month"].'&year='.$_REQUEST["year"].'>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $events_RET = DBGet(DBQuery('SELECT ID,SCHOOL_DATE,TITLE,DESCRIPTION FROM calendar_events WHERE SCHOOL_DATE BETWEEN \'' . $start_date . '\' AND \'' . $end_date . '\' AND SYEAR=\'' . UserSyear() . '\'  AND (calendar_id=\'' . $_REQUEST['calendar_id'] . '\' OR calendar_id=\'0\') ORDER BY SCHOOL_DATE'), $functions);
     $_SESSION['events_RET'] = $events_RET;
 
 
+<<<<<<< HEAD
     echo '<div id=.students. class=.panel panel-default.>';
+=======
+    echo '<div id="students" class="panel panel-default">';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     ListOutput($events_RET, array('SCHOOL_DATE' => '' . _date . '', 'TITLE' => '' . _event . '', 'DESCRIPTION' => '' . _description . ''), _event, _events);
     echo '</div></FORM>';
 }
@@ -679,9 +910,15 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'list_events') {
 if (!$_REQUEST['modfunc']) {
 
     if (User('PROFILE') != 'student')
+<<<<<<< HEAD
         DrawBC(.. . _schoolSetup . . > . . ProgramTitle());
     else
         DrawBC(.. . _schoolInfo . . > . . ProgramTitle());
+=======
+        DrawBC("" . _schoolSetup . " > " . ProgramTitle());
+    else
+        DrawBC("" . _schoolInfo . " > " . ProgramTitle());
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $last = 31;
     while (!checkdate($_REQUEST['month'], $last, $_REQUEST['year']))
         $last--;
@@ -751,7 +988,11 @@ if (!$_REQUEST['modfunc']) {
         unset($_SESSION['_REQUEST_vars']['blocks']);
     }
 
+<<<<<<< HEAD
     echo .<FORM action=Modules.php?modname=$_REQUEST[modname] METHOD=POST>.;
+=======
+    echo "<FORM action=Modules.php?modname=$_REQUEST[modname] METHOD=POST>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $link = '';
     $title_RET = DBGet(DBQuery('SELECT CALENDAR_ID,TITLE FROM school_calendars WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' ORDER BY DEFAULT_CALENDAR ASC'));
     foreach ($title_RET as $title) {
@@ -764,6 +1005,7 @@ if (!$_REQUEST['modfunc']) {
         unset($tmp_REQUEST['calendar_id']);
 
         if ($_REQUEST['calendar_id']) {
+<<<<<<< HEAD
             $link .= '<div class=.row.>';
             $link .= '<div class=.col-md-3.>' . SelectInput($_REQUEST['calendar_id'], 'calendar_id', '', $options, false, . onchange='document.location.href=\.. . PreparePHP_SELF($tmp_REQUEST) . '&amp;calendar_id=.+this.form.calendar_id.value;\' ', false) . '</div>';
             $link .= '<div class=.col-md-6.><h3 class=.text-center m-0.><a href=.Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=' . $_REQUEST['modfunc'] . '&month=' . date('m', strtotime('first day of -1 month', $time)) . '&year=' . date('Y', strtotime('first day of -1 month', $time)) . '&calendar_id=' . $_REQUEST['calendar_id'] . '. class=.btn btn-icon.><i class=.fa fa-chevron-left fa-lg.></i></a> <span class=.inline-block p-l-20 p-r-20.>' . date(.F Y., $time) . '</span> <a href=.Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=' . $_REQUEST['modfunc'] . '&month=' . date('m', strtotime('first day of +1 month', $time)) . '&year=' . date('Y', strtotime('first day of +1 month', $time)) . '&calendar_id=' . $_REQUEST['calendar_id'] . '. class=.btn btn-icon.><i class=.fa fa-chevron-right fa-lg.></i></a></h3></div>';
@@ -771,6 +1013,15 @@ if (!$_REQUEST['modfunc']) {
                 $link .= '<div class=.col-md-3.>';
                 $link .= .<div class=\.btn-group pull-right\.><a href='#' onclick='load_link(\.Modules.php?modname=$_REQUEST[modname]&modfunc=create\.);' class=\.btn btn-primary btn-icon btn-lg\. data-popup=\.tooltip\. data-placement=\.top\. data-original-title=\.. . _createANewCalendar . .\.><i class=\.fa fa-plus\.></i></a>.;
                 $link .= .<a href='#' onclick='load_link(\.Modules.php?modname=$_REQUEST[modname]&modfunc=delete_calendar&calendar_id=$_REQUEST[calendar_id]\.);' class=\.btn btn-primary btn-lg btn-icon\. data-popup=\.tooltip\. data-placement=\.top\. data-original-title=\.. . _deleteThisCalendar . .\.><i class=\.fa fa-times\.></i></a><a href='#' onclick='load_link(\.Modules.php?modname=$_REQUEST[modname]&modfunc=edit_calendar&calendar_id=$_REQUEST[calendar_id]\.);' class=\.btn btn-primary btn-lg btn-icon\. data-popup=\.tooltip\. data-placement=\.top\. data-original-title=\.. . _editThisCalendar . .\.><i class=\.fa fa-pencil\.></i></a></div>.;
+=======
+            $link .= '<div class="row">';
+            $link .= '<div class="col-md-3">' . SelectInput($_REQUEST['calendar_id'], 'calendar_id', '', $options, false, " onchange='document.location.href=\"" . PreparePHP_SELF($tmp_REQUEST) . '&amp;calendar_id="+this.form.calendar_id.value;\' ', false) . '</div>';
+            $link .= '<div class="col-md-6"><h3 class="text-center m-0"><a href="Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=' . $_REQUEST['modfunc'] . '&month=' . date('m', strtotime('first day of -1 month', $time)) . '&year=' . date('Y', strtotime('first day of -1 month', $time)) . '&calendar_id=' . $_REQUEST['calendar_id'] . '" class="btn btn-icon"><i class="fa fa-chevron-left fa-lg"></i></a> <span class="inline-block p-l-20 p-r-20">' . date("F Y", $time) . '</span> <a href="Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=' . $_REQUEST['modfunc'] . '&month=' . date('m', strtotime('first day of +1 month', $time)) . '&year=' . date('Y', strtotime('first day of +1 month', $time)) . '&calendar_id=' . $_REQUEST['calendar_id'] . '" class="btn btn-icon"><i class="fa fa-chevron-right fa-lg"></i></a></h3></div>';
+            if (User('PROFILE') == 'admin') {
+                $link .= '<div class="col-md-3">';
+                $link .= "<div class=\"btn-group pull-right\"><a href='#' onclick='load_link(\"Modules.php?modname=$_REQUEST[modname]&modfunc=create\");' class=\"btn btn-primary btn-icon btn-lg\" data-popup=\"tooltip\" data-placement=\"top\" data-original-title=\"" . _createANewCalendar . "\"><i class=\"fa fa-plus\"></i></a>";
+                $link .= "<a href='#' onclick='load_link(\"Modules.php?modname=$_REQUEST[modname]&modfunc=delete_calendar&calendar_id=$_REQUEST[calendar_id]\");' class=\"btn btn-primary btn-lg btn-icon\" data-popup=\"tooltip\" data-placement=\"top\" data-original-title=\"" . _deleteThisCalendar . "\"><i class=\"fa fa-times\"></i></a><a href='#' onclick='load_link(\"Modules.php?modname=$_REQUEST[modname]&modfunc=edit_calendar&calendar_id=$_REQUEST[calendar_id]\");' class=\"btn btn-primary btn-lg btn-icon\" data-popup=\"tooltip\" data-placement=\"top\" data-original-title=\"" . _editThisCalendar . "\"><i class=\"fa fa-pencil\"></i></a></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 $link .= '</div>';
             }
             $link .= '</div>'; //.row
@@ -791,17 +1042,28 @@ if (!$_REQUEST['modfunc']) {
                 $link .= '<table><tr>';
 
                 if ($_REQUEST['calendar_id'])
+<<<<<<< HEAD
                     $link .= '<td>' . SelectInputForCal($_REQUEST['calendar_id'], 'calendar_id', '', $options_mod, false, . onchange='document.location.href=\.. . PreparePHP_SELF($tmp_REQUEST) . '&amp;calendar_id=.+this.form.calendar_id.value;\' ', false) . '</td>';
+=======
+                    $link .= '<td>' . SelectInputForCal($_REQUEST['calendar_id'], 'calendar_id', '', $options_mod, false, " onchange='document.location.href=\"" . PreparePHP_SELF($tmp_REQUEST) . '&amp;calendar_id="+this.form.calendar_id.value;\' ', false) . '</td>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 $link .= '</tr></table>';
             }
         }
     }
 
     if ($_REQUEST['calendar_id']) {
+<<<<<<< HEAD
         echo '<div class=.panel panel-default.>';
         echo '<div class=.panel-body.>';
         echo '<div class=.form-inline.>';
         DrawHeaderHome('<div class=.inline-block.>' . PrepareDate(strtoupper(date(.d-M-y., $time)), '', false, array('M' => date(.m., $time), 'Y' => date(.y., $time), 'submit' => true, 'view' => 'month')) . '</div>' . ' <A HREF=Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=list_events&calendar_id=' . $_REQUEST['calendar_id'] . '&month=' . $_REQUEST['month'] . '&year=' . $_REQUEST['year'] . ' class=.btn btn-default m-l-5.>' . _listEvents . '</A>', (User('PROFILE') == 'admin' ? SubmitButton(_save, '', 'class=.btn btn-primary pull-right.  onclick=.self_disable(this);.') : ''));
+=======
+        echo '<div class="panel panel-default">';
+        echo '<div class="panel-body">';
+        echo '<div class="form-inline">';
+        DrawHeaderHome('<div class="inline-block">' . PrepareDate(strtoupper(date("d-M-y", $time)), '', false, array('M' => date("m", $time), 'Y' => date("y", $time), 'submit' => true, 'view' => 'month')) . '</div>' . ' <A HREF=Modules.php?modname=' . $_REQUEST['modname'] . '&modfunc=list_events&calendar_id=' . $_REQUEST['calendar_id'] . '&month=' . $_REQUEST['month'] . '&year=' . $_REQUEST['year'] . ' class="btn btn-default m-l-5">' . _listEvents . '</A>', (User('PROFILE') == 'admin' ? SubmitButton(_save, '', 'class="btn btn-primary pull-right"  onclick="self_disable(this);"') : ''));
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo '</div>'; //.form-inline
         echo '</div>'; //.panel-body
         echo '</div>'; //.panel
@@ -810,15 +1072,24 @@ if (!$_REQUEST['modfunc']) {
 
 
     if (is_countable($error) && count($error)) {
+<<<<<<< HEAD
         if ($isajax != .ajax.)
+=======
+        if ($isajax != "ajax")
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo ErrorMessage($error, 'fatal');
         else
             echo ErrorMessage1($error, 'fatal');
     } else {
 
 
+<<<<<<< HEAD
         echo .<div class=\.panel panel-default\.>.;
         echo '<div class=.panel-heading.>';
+=======
+        echo "<div class=\"panel panel-default\">";
+        echo '<div class="panel-heading">';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         DrawHeaderHome($link);
         echo '</div>'; //.panel-heading
         $events_RET = DBGet(DBQuery('SELECT ce.ID,DATE_FORMAT(ce.SCHOOL_DATE,\'%d-%b-%y\') AS SCHOOL_DATE,ce.TITLE FROM calendar_events ce,calendar_events_visibility cev WHERE ce.SCHOOL_DATE BETWEEN \'' . date('Y-m-d', $time) . '\' AND \'' . date('Y-m-d', mktime(0, 0, 0, $_REQUEST['month'], $last, $_REQUEST['year'])) . '\' AND SYEAR=\'' . UserSyear() . '\' AND ce.calendar_id=\'' . $_REQUEST['calendar_id'] . '\'  AND ce.CALENDAR_ID=cev.CALENDAR_ID AND cev.PROFILE_ID=' . User('PROFILE_ID') . ' UNION SELECT ID,DATE_FORMAT(SCHOOL_DATE,\'%d-%b-%y\') AS SCHOOL_DATE,TITLE FROM calendar_events WHERE SCHOOL_DATE BETWEEN \'' . date('Y-m-d', $time) . '\' AND \'' . date('Y-m-d', mktime(0, 0, 0, $_REQUEST['month'], $last, $_REQUEST['year'])) . '\' AND SYEAR=\'' . UserSyear() . '\' AND CALENDAR_ID=0'), array(), array('SCHOOL_DATE'));
@@ -828,6 +1099,7 @@ if (!$_REQUEST['modfunc']) {
         elseif (User('PROFILE') == 'teacher')
             $assignments_RET = DBGet(DBQuery('SELECT ASSIGNMENT_ID AS ID,DATE_FORMAT(a.DUE_DATE,\'%d-%b-%y\') AS SCHOOL_DATE,a.TITLE,CASE WHEN a.ASSIGNED_DATE<=CURRENT_DATE OR a.ASSIGNED_DATE IS NULL THEN \'Y\' ELSE NULL END AS ASSIGNED FROM gradebook_assignments a WHERE a.STAFF_ID=\'' . User('STAFF_ID') . '\' AND a.DUE_DATE BETWEEN \'' . date('Y-m-d', $time) . '\' AND \'' . date('Y-m-d', mktime(0, 0, 0, $_REQUEST['month'], $last, $_REQUEST['year'])) . '\''), array(), array('SCHOOL_DATE'));
 
+<<<<<<< HEAD
         $skip = date(.w., $time);
         echo '<div class=.table-responsive.>';
         echo .<TABLE class=\.table table-bordered table-calendar\. border=0 cellpadding=3 cellspacing=1><thead><TR class=calendar_header align=center>.;
@@ -836,12 +1108,23 @@ if (!$_REQUEST['modfunc']) {
 
         if ($skip) {
             echo .<td colspan=. . $skip . .></td>.;
+=======
+        $skip = date("w", $time);
+        echo '<div class="table-responsive">';
+        echo "<TABLE class=\"table table-bordered table-calendar\" border=0 cellpadding=3 cellspacing=1><thead><TR class=calendar_header align=center>";
+        echo "<th>" . _sunday . "</th><th>" . _monday . "</th><th>" . _tuesday . "</th><th>" . _wednesday . "</th><th>" . _thursday . "</th><th>" . _friday . "</th><th width=99>" . _saturday . "</th>";
+        echo "</TR></thead><TR>";
+
+        if ($skip) {
+            echo "<td colspan=" . $skip . "></td>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             $return_counter = $skip;
         }
         $blocks_RET = DBGet(DBQuery('SELECT DISTINCT BLOCK FROM school_periods WHERE SYEAR=\'' . UserSyear() . '\' AND SCHOOL_ID=\'' . UserSchool() . '\' AND BLOCK IS NOT NULL ORDER BY BLOCK'));
         for ($i = 1; $i <= $last; $i++) {
             $day_time = mktime(0, 0, 0, $_REQUEST['month'], $i, $_REQUEST['year']);
             $date = date('d-M-y', $day_time);
+<<<<<<< HEAD
             echo .<TD width=100 class=. . ($calendar_RET[$date][1]['MINUTES'] ? $calendar_RET[$date][1]['MINUTES'] == '999' ? 'calendar-active' : 'calendar-extra' : 'calendar-holiday') . . valign=top><table width='100%'><tr><td width=5 valign=top>$i</td>.;
             if (AllowEdit()) {
                 if (User('PROFILE') == 'admin') {
@@ -854,6 +1137,20 @@ if (!$_REQUEST['modfunc']) {
                         echo '<tr><td colspan=2>';
                         //echo .<div id=syswide_holi_$i style=display:none><span>System Wide </span><INPUT type=checkbox name=show_all[$date] value=Y></div>.;
                         echo TextInput($calendar_RET[$date][1]['MINUTES'], .minutes[$date]., '', 'size=3 class=cell_small onkeydown=.return numberOnly(event);.');
+=======
+            echo "<TD width=100 class=" . ($calendar_RET[$date][1]['MINUTES'] ? $calendar_RET[$date][1]['MINUTES'] == '999' ? 'calendar-active' : 'calendar-extra' : 'calendar-holiday') . " valign=top><table width='100%'><tr><td width=5 valign=top>$i</td>";
+            if (AllowEdit()) {
+                if (User('PROFILE') == 'admin') {
+                    if ($calendar_RET[$date][1]['MINUTES'] == '999') {
+                        echo '<TD class="text-right">' . CheckboxInput_Calendar($calendar_RET[$date], "all_day[$date]", '', '', false, '<i class="icon-checkbox-checked"></i> ', '', true, 'id=all_day_' . $i . ' onclick="return system_wide(' . $i . ');"') . '</TD>';
+                        echo '</TR>';
+                    } else {
+                        echo "<TD class=\"text-right\"><INPUT type=checkbox name=all_day[$date] value=Y id=all_day_$i onclick='return system_wide($i);'></TD>";
+                        echo '</TR>';
+                        echo '<tr><td colspan=2>';
+                        //echo "<div id=syswide_holi_$i style=display:none><span>System Wide </span><INPUT type=checkbox name=show_all[$date] value=Y></div>";
+                        echo TextInput($calendar_RET[$date][1]['MINUTES'], "minutes[$date]", '', 'size=3 class=cell_small onkeydown="return numberOnly(event);"');
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         echo '</TD></TR>';
                     }
                 }
@@ -863,13 +1160,20 @@ if (!$_REQUEST['modfunc']) {
                 foreach ($blocks_RET as $block)
                     $options[$block['BLOCK']] = $block['BLOCK'];
 
+<<<<<<< HEAD
                 echo SelectInput($calendar_RET[$date][1]['BLOCK'], .blocks[$date]., '', $options);
             }
             echo .</td></tr>.;
+=======
+                echo SelectInput($calendar_RET[$date][1]['BLOCK'], "blocks[$date]", '', $options);
+            }
+            echo "</td></tr>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             if (AllowEdit()) {
                 if (User('PROFILE') == 'admin') {
                     if ($calendar_RET[$date][1]['MINUTES'] == '999') {
+<<<<<<< HEAD
                         echo '<tr><td colspan=.2.><TABLE cellpadding=0 cellspacing=0 >';
                         echo '<TR><TD><div id=syswide_holi_' . $i . ' style=.display:none; padding-top: 10px;.><label class=.checkbox-inline.><INPUT type=checkbox name=show_all[' . $date . '] value=Y> ' . _systemWide . '</label></div></TD></TR>';
                         echo '</TABLE></td></tr>';
@@ -877,11 +1181,24 @@ if (!$_REQUEST['modfunc']) {
                         echo .<tr><td colspan='2'><TABLE cellpadding=0 cellspacing=0 >.;
                         echo .<div id=syswide_holi_$i style='display:none; padding-top: 10px;'><label class='checkbox-inline'><INPUT type=checkbox name=show_all[$date] value=Y>. . _systemWide . .</label></div>.;
                         echo .</TABLE></td></tr>.;
+=======
+                        echo '<tr><td colspan="2"><TABLE cellpadding=0 cellspacing=0 >';
+                        echo '<TR><TD><div id=syswide_holi_' . $i . ' style="display:none; padding-top: 10px;"><label class="checkbox-inline"><INPUT type=checkbox name=show_all[' . $date . '] value=Y> ' . _systemWide . '</label></div></TD></TR>';
+                        echo '</TABLE></td></tr>';
+                    } else {
+                        echo "<tr><td colspan='2'><TABLE cellpadding=0 cellspacing=0 >";
+                        echo "<div id=syswide_holi_$i style='display:none; padding-top: 10px;'><label class='checkbox-inline'><INPUT type=checkbox name=show_all[$date] value=Y>" . _systemWide . "</label></div>";
+                        echo "</TABLE></td></tr>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                 }
             }
 
+<<<<<<< HEAD
             echo .<tr><TD colspan=2 height=50 valign=top>.;
+=======
+            echo "<tr><TD colspan=2 height=50 valign=top>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             if (is_countable($events_RET[$date]) && count($events_RET[$date])) {
                 echo '<TABLE cellpadding=2 cellspacing=2 border=0>';
@@ -892,21 +1209,34 @@ if (!$_REQUEST['modfunc']) {
                     else
                         $e_title = substr($event['TITLE'], 0, 8) . '....';
 
+<<<<<<< HEAD
                     echo '<TR><TD>' . button(.dot., .0000FF., .., .6.) . '</TD><TD> <A class=\.event\. HREF=# onclick=.CalendarModal(\'' . $event['ID'] . '\',' . $_REQUEST['calendar_id'] . ',\'' . $date . '\',\'' . $_REQUEST['year'] . '\',\'' . MonthNWSwitch($_REQUEST['month']) . '\',\'tochar\').; return false;>' . ($event['TITLE'] ? $e_title : '***') . '</b></A></TD></TR>';
                 }
                 if (is_countable($assignments_RET[$date]) && count($assignments_RET[$date])) {
                     foreach ($assignments_RET[$date] as $event)
                         echo .<TR><TD>. . button('dot', $event['ASSIGNED'] == 'Y' ? '00FF00' : 'FF0000', '', 6) . .</TD><TD><A HREF=# data-toggle=modal  onclick='CalendarModalAssignment($event[ID])'>. . $event['TITLE'] . .</A></TD></TR>.;
+=======
+                    echo '<TR><TD>' . button("dot", "0000FF", "", "6") . '</TD><TD> <A class=\"event\" HREF=# onclick="CalendarModal(\'' . $event['ID'] . '\',' . $_REQUEST['calendar_id'] . ',\'' . $date . '\',\'' . $_REQUEST['year'] . '\',\'' . MonthNWSwitch($_REQUEST['month']) . '\',\'tochar\')"; return false;>' . ($event['TITLE'] ? $e_title : '***') . '</b></A></TD></TR>';
+                }
+                if (is_countable($assignments_RET[$date]) && count($assignments_RET[$date])) {
+                    foreach ($assignments_RET[$date] as $event)
+                        echo "<TR><TD>" . button('dot', $event['ASSIGNED'] == 'Y' ? '00FF00' : 'FF0000', '', 6) . "</TD><TD><A HREF=# data-toggle=modal  onclick='CalendarModalAssignment($event[ID])'>" . $event['TITLE'] . "</A></TD></TR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
                 echo '</TABLE>';
             } elseif (is_countable($assignments_RET[$date]) && count($assignments_RET[$date])) {
                 echo '<TABLE cellpadding=0 cellspacing=0 border=0>';
                 foreach ($assignments_RET[$date] as $event) {
+<<<<<<< HEAD
                     echo .<TR><TD>. . button('dot', $event['ASSIGNED'] == 'Y' ? '00FF00' : 'FF0000', '', 6) . .</TD><TD><A HREF=# data-toggle=modal  onclick='CalendarModalAssignment($event[ID])'>. . $event['TITLE'] . .</A></TD></TR>.;
+=======
+                    echo "<TR><TD>" . button('dot', $event['ASSIGNED'] == 'Y' ? '00FF00' : 'FF0000', '', 6) . "</TD><TD><A HREF=# data-toggle=modal  onclick='CalendarModalAssignment($event[ID])'>" . $event['TITLE'] . "</A></TD></TR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
                 echo '</TABLE>';
             }
 
+<<<<<<< HEAD
             echo .</td></tr>.;
             if (AllowEdit()) {
                 if (User('PROFILE') == 'admin') {
@@ -926,10 +1256,32 @@ if (!$_REQUEST['modfunc']) {
             echo '<div class=.panel-footer text-right p-r-20.>' . SubmitButton(_save, '', 'class=.btn btn-primary. onclick=.self_disable(this);.') . '</div>';
         }
         echo .</div>.;
+=======
+            echo "</td></tr>";
+            if (AllowEdit()) {
+                if (User('PROFILE') == 'admin') {
+                    echo '<tr><td valign=bottom align=left><button type="button" class="btn btn-primary btn-icon btn-xs" data-toggle="modal"  data-event-id=new onclick="CalendarModal(\'new\',' . $_REQUEST['calendar_id'] . ',\'' . $date . '\',\'' . $_REQUEST['year'] . '\',\'' . MonthNWSwitch($_REQUEST['month']) . '\',\'tochar\');"><i class=icon-plus3 ></i></button></td></tr>';
+                }
+            }
+            echo "</table></TD>";
+            $return_counter++;
+
+            if ($return_counter % 7 == 0)
+                echo "</TR><TR>";
+        }
+        echo "</TR></TABLE>";
+        echo "</div>"; //.table-responsive
+
+        if (User('PROFILE') == 'admin') {
+            echo '<div class="panel-footer text-right p-r-20">' . SubmitButton(_save, '', 'class="btn btn-primary" onclick="self_disable(this);"') . '</div>';
+        }
+        echo "</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     echo '</FORM>';
 }
 
+<<<<<<< HEAD
 echo '<div id=.modal_default_calendar. class=.modal fade.>';
 echo '<div class=.modal-dialog.>';
 echo '<div class=.modal-content.>';
@@ -939,6 +1291,17 @@ echo '<h5 class=.modal-title.>' . _eventDetails . '</h5>';
 echo '</div>';
 
 echo '<div id=.modal-res.></div>';
+=======
+echo '<div id="modal_default_calendar" class="modal fade">';
+echo '<div class="modal-dialog">';
+echo '<div class="modal-content">';
+echo '<div class="modal-header">';
+echo '<button type="button" class="close" data-dismiss="modal">×</button>';
+echo '<h5 class="modal-title">' . _eventDetails . '</h5>';
+echo '</div>';
+
+echo '<div id="modal-res"></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 echo '</div>'; //.modal-content
 echo '</div>'; //.modal-dialog
 echo '</div>'; //.modal
@@ -960,6 +1323,7 @@ function calendarEventsVisibility()
 //print_r($visible_profile);
 //exit;
 
+<<<<<<< HEAD
     $return .= '<div class=.form-group.><label class=.col-md-4 control-label text-right.>' . _eventsVisibleTo . '</label>';
     $return .= '<div class=.col-md-8.>';
     foreach (array('admin' => '' . _administratorWCustom . '', 'teacher' => '' . _teacherWCustom . '', 'parent' => '' . _parentWCustom . '') as $profile_id => $profile)
@@ -981,6 +1345,29 @@ function calendarEventsVisibility()
             $profile['TITLE'] = _adminAsst;
         }
         $return .= '<div class=.checkbox.><label><INPUT class=.styled. type=checkbox name=profiles[' . $profile['ID'] . '] value=Y' . (is_array($visible_profile) && in_array($profile['ID'], $visible_profile) ? ' CHECKED' : '') . .> $profile[TITLE]</label></div>.;
+=======
+    $return .= '<div class="form-group"><label class="col-md-4 control-label text-right">' . _eventsVisibleTo . '</label>';
+    $return .= '<div class="col-md-8">';
+    foreach (array('admin' => '' . _administratorWCustom . '', 'teacher' => '' . _teacherWCustom . '', 'parent' => '' . _parentWCustom . '') as $profile_id => $profile)
+        $return .= "<div class=\"checkbox\"><label><INPUT class=\"styled\" type=checkbox name=profiles[$profile_id] value=Y" . (is_array($visible_profile) && in_array($profile_id, $visible_profile) ? ' CHECKED' : '') . "> $profile</label></div>";
+    $i = 3;
+    foreach ($profiles_RET as $profile) {
+        $i++;
+        if ($profile['TITLE'] == "Super Administrator") {
+            $profile['TITLE'] = _superAdministrator;
+        } elseif ($profile['TITLE'] == "Administrator") {
+            $profile['TITLE'] = _administrator;
+        } elseif ($profile['TITLE'] == "Teacher") {
+            $profile['TITLE'] = _teacher;
+        } elseif ($profile['TITLE'] == "Student") {
+            $profile['TITLE'] = _student;
+        } elseif ($profile['TITLE'] == "Parent") {
+            $profile['TITLE'] = _parent;
+        } elseif ($profile['TITLE'] == "Admin Asst") {
+            $profile['TITLE'] = _adminAsst;
+        }
+        $return .= '<div class="checkbox"><label><INPUT class="styled" type=checkbox name=profiles[' . $profile['ID'] . '] value=Y' . (is_array($visible_profile) && in_array($profile['ID'], $visible_profile) ? ' CHECKED' : '') . "> $profile[TITLE]</label></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     $return .= '</div>';
     $return .= '</div>'; //.form-group
@@ -997,7 +1384,11 @@ function _makeCheckBoxInput($value, $eve_stat)
         else
             $val = 1;
     }
+<<<<<<< HEAD
     return CheckboxInput($val, .show_all., '', '', false, '<i class=.icon-checkbox-checked.></i>', '<i class=.icon-checkbox-unchecked.></i>');
+=======
+    return CheckboxInput($val, "show_all", '', '', false, '<i class="icon-checkbox-checked"></i>', '<i class="icon-checkbox-unchecked"></i>');
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 
 function conv_day($days_arr)

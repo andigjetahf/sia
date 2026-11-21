@@ -41,7 +41,11 @@ $tables = array('staff'=>_users,
 'school_years'=>_markingPeriods,
 'school_calendars'=>_calendars,
 'report_card_grade_scales'=>_reportCardGradeCodes,
+<<<<<<< HEAD
 'courses'=>_courses,
+=======
+'courses'=>_coursesBB,
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 'student_enrollment'=>_students,
 'report_card_comments'=>_reportCardCommentCodes,
 'eligibility_activities'=>_eligibilityActivityCodes,
@@ -52,7 +56,11 @@ $no_school_tables = array('student_enrollment_codes'=>true,'staff'=>true);
 
 $table_list = '<TABLE align=center>';
 $table_list .= '<tr><td colspan=3 class=clear></td></tr>';
+<<<<<<< HEAD
 $table_list .= '<tr><td colspan=3>* Ju <i>duhet</i> të bartni përdoruesit, orët mësimore, periudhat e vlerësimit, kalendarët dhe kodet e dëftesave<br>në të njëjtën kohë ose përpara se të bartni lëndët mësimore.<BR><BR>* Ju <i>duhet</i> të bartni lëndët mësimore në të njëjtën kohë ose përpara se të bartni komentet e dëftesës.<BR><BR>Elementët me të kuqe kanë tashmë të dhëna në vitin e ardhshëm shkollor (mund të jenë bartur tashmë).<BR><BR>Bartja e elementëve me të kuqe do të fshijë të dhënat ekzistuese në vitin e ardhshëm shkollor.</td></tr>';
+=======
+$table_list .= '<tr><td colspan=3>* You <i>must</i> roll users, school periods, marking periods, calendars, and report card<br>codes at the same time or before rolling courses<BR><BR>* You <i>must</i> roll courses at the same time or before rolling report card comments<BR><BR>Red items have already have data in the next school year (They might have been rolled).<BR><BR>Rolling red items will delete already existing data in the next school year.</td></tr>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 foreach($tables as $table=>$name)
 {
 	$exists_RET[$table] = DBGet(DBQuery('SELECT count(*) AS COUNT from '.$table.' WHERE SYEAR=\''.$next_syear.'\''.(!$no_school_tables[$table]?' AND SCHOOL_ID=\''.UserSchool().'\'':'')));
@@ -65,7 +73,11 @@ $table_list .= '</TABLE></CENTER><CENTER>';
 
 DrawBC(""._schoolSetup." > ".ProgramTitle());
 
+<<<<<<< HEAD
 if(Prompt_rollover(_confirmRollover,''._areYouSureYouWantToRollTheDataFor.' '.UserSyear().'-'.(UserSyear()+1).' '._toTheNextSchoolYear.'?',$table_list))
+=======
+if(Prompt_rollover('Confirm Rollover',''._areYouSureYouWantToRollTheDataFor.' '.UserSyear().'-'.(UserSyear()+1).' '._toTheNextSchoolYear.'?',$table_list))
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 {
 	if($_REQUEST['tables']['courses'] && ((!$_REQUEST['tables']['staff'] && $exists_RET['staff'][1]['COUNT']<1) || (!$_REQUEST['tables']['school_periods'] && $exists_RET['school_periods'][1]['COUNT']<1) || (!$_REQUEST['tables']['school_years'] && $exists_RET['school_years'][1]['COUNT']<1) || (!$_REQUEST['tables']['school_calendars'] && $exists_RET['school_calendars'][1]['COUNT']<1) || (!$_REQUEST['tables']['report_card_grade_scales'] && $exists_RET['report_card_grade_scales'][1]['COUNT']<1)))
 		BackPrompt('You must roll users, school periods, marking periods, calendars, and report card codes at the same time or before rolling courses.');

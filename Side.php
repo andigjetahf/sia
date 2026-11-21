@@ -351,7 +351,11 @@ unset($_REQUEST['modfunc']);
 echo "
 <HTML>
 	<head>
+<<<<<<< HEAD
 		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />
+=======
+		<meta http-equiv=\"Content-Type\" content=\"text/html; charset=iso-8859-1\" />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 		<meta http-equiv=\"Content-Style-Type\" content=\"text/css\" />
 		<link rel=stylesheet type=\"text/css\" href=\"styles/Stylesheet.css\">
 		<script language=\"JavaScript\" type=\"text/javascript\">
@@ -362,6 +366,7 @@ echo "
 	<BODY background=assets/themes/" . Preferences('THEME') . "/bg.jpg leftmargin=6 marginwidth=4 topmargin=0 " . (clean_param($_REQUEST['modcat'], PARAM_NOTAGS) ? "onload=openMenu('" . clean_param($_REQUEST['modcat'], PARAM_NOTAGS) . "');" : '') . ">";
 
 // User Information
+<<<<<<< HEAD
 $side_day_names = array(
     'Sunday' => (defined('_sunday') ? _sunday : 'E diel'),
     'Monday' => (defined('_monday') ? _monday : 'E hënë'),
@@ -387,6 +392,8 @@ $side_month_names = array(
 );
 $side_formatted_date = ($side_day_names[date('l')] ?? date('l')) . ', ' . date('j') . ' ' . ($side_month_names[date('F')] ?? date('F')) . ' ' . date('Y');
 
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 echo "<TABLE border=0 cellpadding=0 cellspacing=0 width=100%><TR><TD height=30>";
 echo '<A HREF=index.php target=_top>' . DrawPNG('themes/' . Preferences('THEME') . '/logo.png', 'border=0 width=160') . '</A>';
 echo "</TD></TR><TR>";
@@ -394,7 +401,11 @@ echo "<TD class=BoxContents style='border: inset #C9C9C9 2px; background-image:u
 	<FORM action=Side.php?modfunc=update method=POST>
 	<INPUT type=hidden name=modcat value='' id=modcat_input>
 	<b>" . User('NAME') . "</b>
+<<<<<<< HEAD
 	<BR>" . $side_formatted_date . "
+=======
+	<BR>" . date('l F j, Y') . "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 	<BR>";
 if (User('PROFILE') == 'admin') {
     $schools = substr(str_replace(",", "','", User('SCHOOLS')), 2, -2);

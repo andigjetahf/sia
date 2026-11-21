@@ -43,12 +43,20 @@ function createConnectionSelectDb($server, $username, $password, $database = '',
 }
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="sq">
+=======
+<html lang="en">
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <title>Instaluesi SIA</title>
+=======
+        <title>SIA Installer</title>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/installer.css?v=<?php echo rand(000, 999); ?>" type="text/css" />
@@ -60,14 +68,21 @@ function createConnectionSelectDb($server, $username, $password, $database = '',
                 <div class="panel">
                     <div class="panel-heading clearfix">
                         <div class="logo">
+<<<<<<< HEAD
                             <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)">
                         </div>   
                         <h3>Instalimi i SIA - Përzgjedhja e Bazës së të Dhënave</h3>                 
+=======
+                            <img src="assets/images/opensis_logo.png" alt="SIA">
+                        </div>   
+                        <h3>SIA Installation - Database Selection</h3>                 
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>
                     <div class="panel-body">
                         <div class="installation-steps-wrapper">
                             <div class="installation-instructions">
                                 <ul class="installation-steps-label">
+<<<<<<< HEAD
                                     <li>Zgjidhni Paketën</li>
                                     <li>Lidhja me Bazën e të Dhënave</li>
                                     <li class="active">Përzgjedhja e Bazës së të Dhënave</li>
@@ -82,6 +97,22 @@ function createConnectionSelectDb($server, $username, $password, $database = '',
                             <div class="installation-steps valign-top">
                                 <h2 class="text-center">Faleminderit që vendosët të dhënat e lidhjes me MySQL</h2><br/>
                                 <h5 class="text-center">Ju lutemi zgjidhni nga lista bazën e të dhënave<br/>që dëshironi të përditësoni.</h5><br/>
+=======
+                                    <li>Choose Package</li>
+                                    <li>Database Connection</li>
+                                    <li class="active">Database Selection</li>
+                                    <li>Site Admin Account Setup</li>
+                                    <li>Ready to Go!</li>
+                                </ul>
+                                <!--<h4 class="no-margin">Installation Prerequisite</h4>
+                                <p>Before you install SIA, you need to have Apache web server, MySQL database server and php scripting language setup in your machine.</p>
+                                <p>You can download an all-inclusive package from: <a href="https://www.apachefriends.org/download.html">https://www.apachefriends.org/download.html</a></p>
+                                <p>Select the download package for the operating system you are using on your machine. Install that first and then start the openSIS installer.</p>-->
+                            </div>
+                            <div class="installation-steps valign-top">
+                                <h2 class="text-center">Thanks for providing MySQL Connection Information</h2><br/>
+                                <h5 class="text-center">Please select the Database from the list<br/>that you want to upgrade from.</h5><br/>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                 <form name='selectdb' class="form-horizontal" id='selectdb' method='post' action="UpgradeProcessingMsg.php">
                                     <?php
@@ -101,7 +132,11 @@ function createConnectionSelectDb($server, $username, $password, $database = '',
                                     echo '</div>';
                                     ?>
                                     <div class="text-center">
+<<<<<<< HEAD
                                         <input type="submit" value="Ruaj & Vazhdo" class="btn btn-primary" name="Add_DB"  />
+=======
+                                        <input type="submit" value="Save & Next" class="btn btn-primary" name="Add_DB"  />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </div>
                                     <br/>
                                 </form>

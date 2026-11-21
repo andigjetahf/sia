@@ -48,7 +48,11 @@ if ($_REQUEST['values'] && ($_POST['values'] || $_REQUEST['ajax'])) {
 
                             $validate_title = DBGet(DBQuery('SELECT COUNT(1) as TITLE_EX FROM attendance_codes WHERE SYEAR=' . UserSyear() . ' AND SCHOOL_ID=' . UserSchool() . ' AND TITLE=\'' . str_replace("'", "''", $value) . '\''));
                             if ($validate_title[1]['TITLE_EX'] != 0) {
+<<<<<<< HEAD
                                 echo "<div class=\"alert bg-warning alert-styled-left\">Nuk mund te ruhen te dhenat, pasi titulli i kategorise ekziston tashme.</div>";
+=======
+                                echo "<div class=\"alert bg-warning alert-styled-left\">Unable to save data, because category title already exists.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 $flag = 0;
                                 break;
                             }
@@ -83,7 +87,11 @@ if ($_REQUEST['values'] && ($_POST['values'] || $_REQUEST['ajax'])) {
                 $sql .= '(' . substr($fields, 0, -1) . ') values(' . substr($values, 0, -1) . ')';
                 $validate_title = DBGet(DBQuery('SELECT COUNT(1) as TITLE_EX FROM attendance_codes WHERE SYEAR=' . UserSyear() . ' AND SCHOOL_ID=' . UserSchool() . ' AND TITLE=\'' . singleQuoteReplace("", "", $title) . '\''));
                 if ($validate_title[1]['TITLE_EX'] != 0 || $new_cat == 'Attendance') {
+<<<<<<< HEAD
                     echo "<div class=\"alert bg-warning alert-styled-left\">Nuk mund te ruhen te dhenat, pasi titulli ekziston tashme.</div>";
+=======
+                    echo "<div class=\"alert bg-warning alert-styled-left\">Unable to save data, because title already exists.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 } else {
 
                     if ($go) {
@@ -103,7 +111,11 @@ if ($_REQUEST['new_category_title'] && $_REQUEST['cat_edit_id'] == '') {
     if ($new_cat) {
         $validate_title = DBGet(DBQuery('SELECT COUNT(1) as TITLE_EX FROM attendance_code_categories WHERE SYEAR=' . UserSyear() . ' AND SCHOOL_ID=' . UserSchool() . ' AND TITLE=\'' . singleQuoteReplace("", "", $new_cat) . '\''));
         if ($validate_title[1]['TITLE_EX'] != 0 || $new_cat == 'Attendance') {
+<<<<<<< HEAD
             echo "<font color='red'><b>Nuk mund te ruhen te dhenat, pasi titulli i kategorise ekziston tashme.</b></font>";
+=======
+            echo "<font color='red'><b>Unable to save data, because category title already exists.</b></font>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         } else
             DBQuery('INSERT INTO attendance_code_categories (SYEAR,SCHOOL_ID,TITLE) values(\'' . UserSyear() . '\',\'' . UserSchool() . '\',\'' . singleQuoteReplace("", "", $new_cat) . '\')');
 
@@ -122,7 +134,11 @@ if ($_REQUEST['new_category_title'] != '' && $_REQUEST['cat_edit_id'] != '') {
     $title = str_replace("'", "''", $title);
     $validate_title = DBGet(DBQuery('SELECT COUNT(1) as TITLE_EX FROM attendance_code_categories WHERE SYEAR=' . UserSyear() . ' AND SCHOOL_ID=' . UserSchool() . ' AND TITLE=\'' . $title . '\' AND ID!=' . $_REQUEST['cat_edit_id']));
     if ($validate_title[1]['TITLE_EX'] != 0 || $_REQUEST['new_category_title'] == 'Attendance') {
+<<<<<<< HEAD
         echo "<div class=\"alert bg-warning alert-styled-left\">Nuk mund te ruhen te dhenat, pasi titulli i kategorise ekziston tashme.</div>";
+=======
+        echo "<div class=\"alert bg-warning alert-styled-left\">Unable to save data, because category title already exists.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     } else {
         DBQuery('UPDATE attendance_code_categories SET TITLE=\'' . $title . '\' WHERE ID=' . $_REQUEST['cat_edit_id']);
     }

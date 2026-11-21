@@ -3,6 +3,7 @@ function formcheck_school_setup_school(this_DET) {
 
   var frmvalidator = new Validator("school");
 
+<<<<<<< HEAD
   frmvalidator.addValidation("values[TITLE]", "req", "Ju lutemi vendosni titullin");
   frmvalidator.addValidation(
     "values[TITLE]",
@@ -42,20 +43,72 @@ function formcheck_school_setup_school(this_DET) {
     "values[PRINCIPAL]",
     "maxlen=100",
     "Gjatësia maksimale e shtetit është 100 karaktere"
+=======
+  frmvalidator.addValidation("values[TITLE]", "req", "Please enter the title");
+  frmvalidator.addValidation(
+    "values[TITLE]",
+    "maxlen=50",
+    "Max length for title is 50 characters"
+  );
+  //
+  //frmvalidator.addValidation("values[ADDRESS]", "req", "Please enter address");
+  frmvalidator.addValidation(
+    "values[ADDRESS]",
+    "maxlen=100",
+    "Max length for address is 100 characters"
+  );
+
+  //frmvalidator.addValidation("values[CITY]", "req", "Please enter city name");
+  frmvalidator.addValidation(
+    "values[CITY]",
+    "maxlen=100",
+    "Max length for city is 100 characters"
+  );
+
+  //frmvalidator.addValidation("values[STATE]", "req", "Please enter state name");
+  frmvalidator.addValidation(
+    "values[STATE]",
+    "maxlen=100",
+    "Max length for state is 100 characters"
+  );
+
+  //frmvalidator.addValidation("values[ZIPCODE]", "req", "Please enter zipcode");
+  // frmvalidator.addValidation("values[ZIPCODE]", "numeric", "Zip allows only numeric value");
+
+  //frmvalidator.addValidation("values[PHONE]", "req", "Please enter phone Number");
+  // frmvalidator.addValidation("values[PHONE]", "numeric", "Phone number allows number only");
+
+  //frmvalidator.addValidation("values[PRINCIPAL]", "req", "Please enter principal name");
+  frmvalidator.addValidation(
+    "values[PRINCIPAL]",
+    "maxlen=100",
+    "Max length for state is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[REPORTING_GP_SCALE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni vlerën e shkallës së notimit"
+=======
+    "Please enter grading scale value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[REPORTING_GP_SCALE]",
     "dec",
+<<<<<<< HEAD
     "Ju lutemi vendosni vetëm vlerë dhjetore"
   );
 
   //frmvalidator.addValidation("values[E_MAIL]", "email", "Ju lutemi vendosni email-in në formatin e duhur");
+=======
+    "Please enter decimal value only"
+  );
+
+  //frmvalidator.addValidation("values[E_MAIL]", "email", "Please enter email in proper format");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   
 
   var school_custom_req_ids = document.getElementById("custom_sch_field_ids").value;
@@ -68,7 +121,11 @@ function formcheck_school_setup_school(this_DET) {
       frmvalidator.addValidation(
         req_field_ids[rt_i],
         "req",
+<<<<<<< HEAD
         "Ju lutemi vendosni " + req_field_titles[rt_i]
+=======
+        "Please enter the " + req_field_titles[rt_i]
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -80,84 +137,147 @@ function formcheck_school_setup_school(this_DET) {
     frmvalidator.addValidation(
       "inputvalues[TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin"
+=======
+      "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "inputvalues[ADDRESS]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni adresën"
+=======
+      "Please enter address"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[ADDRESS]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e adresës është 100 karaktere"
+=======
+      "Max length for address is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "inputvalues[CITY]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni qytetin"
+=======
+      "Please enter city name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[CITY]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e qytetit është 100 karaktere"
+=======
+      "Max length for city is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "inputvalues[STATE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni shtetin/rrethin"
+=======
+      "Please enter state name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[STATE]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e shtetit është 100 karaktere"
+=======
+      "Max length for state is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "inputvalues[ZIPCODE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni kodin postar"
     );
     // frmvalidator.addValidation("inputvalues[ZIPCODE]", "numeric", "Kodi postar lejon vetëm shifra numerike");
+=======
+      "Please enter zipcode "
+    );
+    // frmvalidator.addValidation("inputvalues[ZIPCODE]", "numeric", "Zip allows only numeric value");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     frmvalidator.addValidation(
       "inputvalues[PHONE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni numrin e telefonit"
     );
     //frmvalidator.addValidation("inputvalues[PHONE]", "numeric", "Numri i telefonit lejon vetëm shifra");
+=======
+      "Please enter phone number"
+    );
+    //frmvalidator.addValidation("inputvalues[PHONE]", "numeric", "Phone number allows number only");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     frmvalidator.addValidation(
       "inputvalues[PRINCIPAL]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e drejtorit"
+=======
+      "Please enter principal name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[PRINCIPAL]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e shtetit është 100 karaktere"
+=======
+      "Max length for state is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "inputvalues[REPORTING_GP_SCALE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni vlerën e shkallës së notimit"
+=======
+      "Please enter grading scale value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[REPORTING_GP_SCALE]",
       "dec",
+<<<<<<< HEAD
       "Ju lutemi vendosni vetëm vlerë dhjetore"
     );
 
     //frmvalidator.addValidation("inputvalues[E_MAIL]", "email", "Ju lutemi vendosni email-in në formatin e duhur");
+=======
+      "Please enter decimal value only"
+    );
+
+    //frmvalidator.addValidation("inputvalues[E_MAIL]", "email", "Please enter email in proper format");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   }
 }
 
@@ -167,18 +287,30 @@ function formcheck_history_mp() {
   frmvalidator.addValidation(
     "values[new][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+    "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[new][SORT_ORDER]",
     "maxlen=5",
+<<<<<<< HEAD
     "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+    "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.setAddnlValidationFunction("ValidateDate_Portal_Notes");
@@ -197,7 +329,11 @@ function formcheck_history_mp() {
           frmvalidator.addValidation(
             "values[" + ar[i] + "][TITLE]",
             "req",
+<<<<<<< HEAD
             "Titulli nuk mund të jetë bosh"
+=======
+            "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           );
         }
       }
@@ -205,18 +341,30 @@ function formcheck_history_mp() {
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+        "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
 
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "num",
+<<<<<<< HEAD
         "Renditja lejon vetëm vlerë numerike"
+=======
+        "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "maxlen=5",
+<<<<<<< HEAD
         "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+        "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -229,18 +377,30 @@ function formcheck_school_setup_portalnotes(this_DET) {
   frmvalidator.addValidation(
     "values[new][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+    "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[new][SORT_ORDER]",
     "maxlen=5",
+<<<<<<< HEAD
     "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+    "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.setAddnlValidationFunction("ValidateDate_Portal_Notes");
@@ -259,7 +419,11 @@ function formcheck_school_setup_portalnotes(this_DET) {
           frmvalidator.addValidation(
             "values[" + ar[i] + "][TITLE]",
             "req",
+<<<<<<< HEAD
             "Titulli nuk mund të jetë bosh"
+=======
+            "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           );
         }
       }
@@ -267,18 +431,30 @@ function formcheck_school_setup_portalnotes(this_DET) {
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+        "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
 
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "num",
+<<<<<<< HEAD
         "Renditja lejon vetëm vlerë numerike"
+=======
+        "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "maxlen=5",
+<<<<<<< HEAD
         "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+        "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -312,7 +488,11 @@ function formcheck_student_advnc_srch(this_DET) {
     !month_from.value
   ) {
     strError =
+<<<<<<< HEAD
       "Ju lutemi vendosni datën e lindjes: ditën deri, muajin deri, ditën nga, muajin nga.";
+=======
+      "Please provide birthday to day, to month, from day, from month.";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("divErr").innerHTML =
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
       strError +
@@ -322,7 +502,11 @@ function formcheck_student_advnc_srch(this_DET) {
 
     return false;
   }
+<<<<<<< HEAD
   strError = "Data e mbarimit duhet të jetë e barabartë ose pas datës së fillimit.";
+=======
+  strError = "To date must be equal to or greater than from date.";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
   if (month_from.value > month_to.value) {
     document.getElementById("divErr").innerHTML =
@@ -421,7 +605,11 @@ function ValidateDate_Portal_Notes() {
 
   try {
     if (psm && psd && psy && false == isDate(psm, psd, psy)) {
+<<<<<<< HEAD
       alert("Ju lutemi vendosni datën e fillimit të hedhjes së notave");
+=======
+      alert("Please enter the grade posting start date");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       if (typeof psm.focus === "function") {
         psm.focus();
       }
@@ -451,34 +639,58 @@ function formcheck_school_setup_marking(this_DET) {
   frmvalidator.addValidation(
     "tables[new][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[new][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+    "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][SHORT_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e shkurtër"
+=======
+    "Please enter the short name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[new][SHORT_NAME]",
     "maxlen=10",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të shkurtër është 10 karaktere"
+=======
+    "Max length for short name is 10 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][SORT_ORDER]",
     "maxlen=5",
+<<<<<<< HEAD
     "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+    "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Vendosni vetëm vlerë numerike"
+=======
+    "Enter only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.setAddnlValidationFunction("ValidateDate_Marking_Periods");
@@ -610,7 +822,11 @@ function ValidateDate_Marking_Periods() {
   try {
     if (false == isDate(sm, sd, sy)) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e fillimit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter the start date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       //sm.focus();
       return false;
     }
@@ -618,7 +834,11 @@ function ValidateDate_Marking_Periods() {
   try {
     if (false == isDate(em, ed, ey)) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e mbarimit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter the end date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       //em.focus();
       return false;
     }
@@ -634,7 +854,11 @@ function ValidateDate_Marking_Periods() {
     try {
       if (false == isDate(psm, psd, psy)) {
         document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e fillimit të hedhjes së notave.</div>';
+=======
+          '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter the grade posting start date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         //psm.focus();
         return false;
       }
@@ -645,7 +869,11 @@ function ValidateDate_Marking_Periods() {
         if (false == CheckDate(psm, psd, psy, pem, ped, pey)) {
           //pem.focus();
           document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e mbarimit të hedhjes së notave.</div>';
+=======
+            '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter the grade posting end date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           return false;
         }
       }
@@ -670,12 +898,20 @@ function formcheck_school_setup_copyschool(this_DET) {
   frmvalidator.addValidation(
     "title",
     "req_copy_school",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e shkollës së re"
+=======
+    "Please enter the new school's title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "title",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+    "Max length for title is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -686,32 +922,56 @@ function formcheck_school_specific_standards() {
     frmvalidator.addValidation(
       "values[" + i + "][STANDARD_REF_NO]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni numrin e referencës"
+=======
+      "Please enter Ref Number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[" + i + "][STANDARD_REF_NO]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e numrit të referencës është 100 karaktere"
+=======
+      "Max length for Ref Number is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[" + i + "][DOMAIN]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni fushën"
+=======
+      "Please enter domain"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[" + i + "][GRADE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni nivelin e klasës"
+=======
+      "Please select the grade"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[" + i + "][DOMAIN]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e fushës është 100 karaktere"
+=======
+      "Max length for Domain is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[" + i + "][TOPIC]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e temës është 100 karaktere"
+=======
+      "Max length for Topic is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   var topic = document.getElementById("values[new][TOPIC]").value.trim();
@@ -723,32 +983,56 @@ function formcheck_school_specific_standards() {
     frmvalidator.addValidation(
       "values[new][STANDARD_REF_NO]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni numrin e referencës"
+=======
+      "Please enter Ref Number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][STANDARD_REF_NO]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e numrit të referencës është 100 karaktere"
+=======
+      "Max length for Ref Number is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][GRADE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni nivelin e klasës"
+=======
+      "Please select the grade"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][DOMAIN]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni fushën"
+=======
+      "Please enter domain"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][DOMAIN]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e fushës është 100 karaktere"
+=======
+      "Max length for Domain is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TOPIC]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e temës është 100 karaktere"
+=======
+      "Max length for Topic is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -758,11 +1042,19 @@ function formcheck_school_setup_calender(this_DET) {
 
   var frmvalidator = new Validator("prompt_form", this_button_id);
 
+<<<<<<< HEAD
   frmvalidator.addValidation("title", "req", "Ju lutemi vendosni titullin");
   frmvalidator.addValidation(
     "title",
     "maxlen=100",
     "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+  frmvalidator.addValidation("title", "req", "Please enter the title");
+  frmvalidator.addValidation(
+    "title",
+    "maxlen=100",
+    "Max length for title is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.setAddnlValidationFunction("ValidateDate_SchoolSetup_calender");
 }
@@ -842,7 +1134,11 @@ function ValidateDate_SchoolSetup_calender() {
       if (false == validatedate(s)) {
         document.getElementById("divErr").innerHTML =
           "<div class='alert alert-danger no-border'>" +
+<<<<<<< HEAD
           "Ju lutemi vendosni datën e saktë të fillimit." +
+=======
+          "Please enter correct Start Date." +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           "</div>";
         $("#date_1").focus();
         return false;
@@ -898,7 +1194,11 @@ function ValidateDate_SchoolSetup_calender() {
       if (false == validatedate(e)) {
         document.getElementById("divErr").innerHTML =
           "<div class='alert alert-danger no-border'>" +
+<<<<<<< HEAD
           "Ju lutemi vendosni datën e saktë të mbarimit." +
+=======
+          "Please enter correct End Date." +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           "</div>";
         $("#date_2").focus();
         return false;
@@ -913,7 +1213,11 @@ function ValidateDate_SchoolSetup_calender() {
     if (starDate != "" && endDate != "" && (starDate.getTime() > endDate.getTime() || starDate.getTime() === endDate.getTime())) {
       document.getElementById("divErr").innerHTML =
         "<div class='alert alert-danger no-border'>" +
+<<<<<<< HEAD
         "Data e fillimit nuk mund të jetë pas ose e barabartë me datën e mbarimit." +
+=======
+        "Start Date cannot be greater than or equal to the End Date." +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         "</div>";
       return false;
     } else {
@@ -924,18 +1228,30 @@ function ValidateDate_SchoolSetup_calender() {
     if (s == "no" && e == "no") {
       document.getElementById("divErr").innerHTML =
         "<div class='alert alert-danger no-border'>" +
+<<<<<<< HEAD
         "Data e fillimit dhe data e mbarimit nuk mund të jenë bosh." +
+=======
+        "Start Date and End Date cannot be blank." +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         "</div>";
       $("#date_1").focus();
     } else {
       if (s == "no") {
         document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
           "<div class='alert alert-danger no-border'>" + "Data e fillimit nuk mund të jetë bosh." + "</div>";
+=======
+          "<div class='alert alert-danger no-border'>" + "Start Date cannot be blank." + "</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         $("#date_1").focus();
       }
       if (e == "no") {
         document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
           "<div class='alert alert-danger no-border'>" + "Data e mbarimit nuk mund të jetë bosh." + "</div>";
+=======
+          "<div class='alert alert-danger no-border'>" + "End Date cannot be blank." + "</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         $("#date_2").focus();
       }
     }
@@ -990,76 +1306,131 @@ function formcheck_staff_staff(staff_school_chkbox_id) {
   frmvalidator.addValidation(
     "staff[TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni titullin e nderit"
+=======
+    "Please enter the Salutation"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "staff[FIRST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin"
+=======
+    "Please enter the First Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "staff[LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin"
   );
   frmvalidator.addValidation("staff[GENDER]", "req", "Ju lutemi zgjidhni gjininë");
+=======
+    "Please enter the Last Name"
+  );
+  frmvalidator.addValidation("staff[GENDER]", "req", "Please select Gender");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   frmvalidator.setAddnlValidationFunction("ValidateDate_Staff");
   frmvalidator.addValidation(
     "staff[ETHNICITY_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni etninë"
+=======
+    "Please select Ethnicity"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "staff[PRIMARY_LANGUAGE_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni gjuhën amtare"
+=======
+    "Please select Primary language"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "staff[SECOND_LANGUAGE_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni gjuhën dytësore"
+=======
+    "Please select Secondary language"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[ADDRESS][STAFF_ADDRESS1_PRIMARY]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni adresën e rrugës"
+=======
+    "Please enter Street address 1"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[ADDRESS][STAFF_CITY_PRIMARY]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni qytetin"
+=======
+    "Please enter City"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[ADDRESS][STAFF_STATE_PRIMARY]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni shtetin/rrethin"
+=======
+    "Please enter State"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[ADDRESS][STAFF_ZIP_PRIMARY]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni kodin postar"
+=======
+    "Please enter Street Zip"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[ADDRESS][STAFF_ZIP_PRIMARY]",
     "numeric",
+<<<<<<< HEAD
     "Kodi postar lejon vetëm shifra numerike"
+=======
+    "Zip allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[CONTACT][STAFF_HOME_PHONE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni numrin e telefonit të shtëpisë"
+=======
+    "Please enter Home Phone"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[CONTACT][STAFF_WORK_PHONE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni numrin e telefonit të zyrës"
+=======
+    "Please enter Office Phone"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[CONTACT][STAFF_WORK_EMAIL]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni email-in e punës"
   );
   //frmvalidator.addValidation("values[CONTACT][STAFF_WORK_EMAIL]", "email", "Ju lutemi vendosni email-in e punës in proper format");
@@ -1067,42 +1438,79 @@ function formcheck_staff_staff(staff_school_chkbox_id) {
     "values[EMERGENCY_CONTACT][STAFF_EMERGENCY_FIRST_NAME]",
     "req",
     "Ju lutemi vendosni emrin e kontaktit të emergjencës"
+=======
+    "Please enter Work email"
+  );
+  //frmvalidator.addValidation("values[CONTACT][STAFF_WORK_EMAIL]", "email", "Please enter Work email in proper format");
+  frmvalidator.addValidation(
+    "values[EMERGENCY_CONTACT][STAFF_EMERGENCY_FIRST_NAME]",
+    "req",
+    "Please enter Emergency First Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[EMERGENCY_CONTACT][STAFF_EMERGENCY_LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin e kontaktit të emergjencës"
+=======
+    "Please enter Emergency Last Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[EMERGENCY_CONTACT][STAFF_EMERGENCY_RELATIONSHIP]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni lidhjen familjare me stafin"
+=======
+    "Please select Relationship to Staff"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[EMERGENCY_CONTACT][STAFF_EMERGENCY_HOME_PHONE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni telefonin e shtëpisë për emergjencë"
+=======
+    "Please enter Emergency Home Phone"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[EMERGENCY_CONTACT][STAFF_EMERGENCY_WORK_PHONE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni telefonin e punës për emergjencë"
+=======
+    "Please enter Emergency Work Phone"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "month_values[JOINING_DATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni datën e fillimit të punës"
+=======
+    "Please select Joining Date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "day_values[JOINING_DATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni datën e fillimit të punës"
+=======
+    "Please select Joining Date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "year_values[JOINING_DATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni datën e fillimit të punës"
+=======
+    "Please select Joining Date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   return school_check(staff_school_chkbox_id);
@@ -1122,7 +1530,11 @@ function formcheck_school_setup_periods_older(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1137,7 +1549,11 @@ function formcheck_school_setup_periods_older(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1152,7 +1568,11 @@ function formcheck_school_setup_periods_older(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1163,60 +1583,104 @@ function formcheck_school_setup_periods_older(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Emri i shkurtër nuk mund të jetë bosh"
+=======
+      "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të shkurtër është 50 karaktere"
+=======
+      "Max length for short name is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "maxlen=5",
+<<<<<<< HEAD
       "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+      "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][START_HOUR]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e fillimit"
+=======
+      "Please select start time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][START_MINUTE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e fillimit"
+=======
+      "Please select start time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][START_M]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e fillimit"
+=======
+      "Please select start time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][END_HOUR]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e mbarimit"
+=======
+      "Please select end time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][END_MINUTE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e mbarimit"
+=======
+      "Please select end time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][END_M]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e mbarimit"
+=======
+      "Please select end time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1231,18 +1695,30 @@ function formcheck_school_setup_periods_older(this_DET) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "req",
+<<<<<<< HEAD
           "Titulli nuk mund të jetë bosh"
+=======
+          "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "maxlen=50",
+<<<<<<< HEAD
           "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+          "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SHORT_NAME]",
         "req",
+<<<<<<< HEAD
         "Emri i shkurtër nuk mund të jetë bosh"
+=======
+        "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -1262,7 +1738,11 @@ function formcheck_school_setup_periods(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1273,7 +1753,11 @@ function formcheck_school_setup_periods(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1284,7 +1768,11 @@ function formcheck_school_setup_periods(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1295,40 +1783,68 @@ function formcheck_school_setup_periods(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Emri i shkurtër nuk mund të jetë bosh"
+=======
+      "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të shkurtër është 50 karaktere"
+=======
+      "Max length for short name is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "maxlen=5",
+<<<<<<< HEAD
       "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+      "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][START_TIME]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e fillimit"
+=======
+      "Please select start time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][END_TIME]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën e mbarimit"
+=======
+      "Please select end time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1343,29 +1859,49 @@ function formcheck_school_setup_periods(this_DET) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "req",
+<<<<<<< HEAD
           "Titulli nuk mund të jetë bosh"
+=======
+          "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "maxlen=50",
+<<<<<<< HEAD
           "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+          "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SHORT_NAME]",
         "req",
+<<<<<<< HEAD
         "Emri i shkurtër nuk mund të jetë bosh"
+=======
+        "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][START_TIME]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi zgjidhni orën e fillimit"
+=======
+        "Please select start time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
 
       frmvalidator.addValidation(
         "values[" + ar[i] + "][END_TIME]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi zgjidhni orën e mbarimit"
+=======
+        "Please select end time"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -1385,7 +1921,11 @@ function formcheck_school_setup_grade_levels(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1396,29 +1936,49 @@ function formcheck_school_setup_grade_levels(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Emri i shkurtër nuk mund të jetë bosh"
+=======
+      "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të shkurtër është 50 karaktere"
+=======
+      "Max length for short name is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "maxlen=5",
+<<<<<<< HEAD
       "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+      "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   var grade_id = document.getElementById("h1").value;
@@ -1431,36 +1991,60 @@ function formcheck_school_setup_grade_levels(this_DET) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "req",
+<<<<<<< HEAD
           "Titulli nuk mund të jetë bosh"
+=======
+          "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "maxlen=50",
+<<<<<<< HEAD
           "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+          "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (document.getElementById("inputvalues[" + ar[i] + "][SHORT_NAME]")) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][SHORT_NAME]",
           "req",
+<<<<<<< HEAD
           "Emri i shkurtër nuk mund të jetë bosh"
+=======
+          "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][SHORT_NAME]",
           "maxlen=50",
+<<<<<<< HEAD
           "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+          "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (document.getElementById("inputvalues[" + ar[i] + "][SORT_ORDER]")) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][SORT_ORDER]",
           "num",
+<<<<<<< HEAD
           "Renditja lejon vetëm vlerë numerike"
+=======
+          "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][SORT_ORDER]",
           "maxlen=5",
+<<<<<<< HEAD
           "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+          "Max length for sort order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
     }
@@ -1487,87 +2071,151 @@ function formcheck_student_student(this_DET) {
   frmvalidator.addValidation(
     "values[student_address][HOME][STREET_ADDRESS_1]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni adresën"
+=======
+    "Please enter address"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[student_address][HOME][CITY]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni qytetin"
+=======
+    "Please enter city"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[student_address][HOME][STATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni shtetin/rrethin"
+=======
+    "Please enter state"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[student_address][HOME][ZIPCODE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni kodin postar"
+=======
+    "Please enter zipcode"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[people][PRIMARY][RELATIONSHIP]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni lidhjen kryesore me nxënësin"
+=======
+    "Please select a primary relationship to student "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[people][PRIMARY][FIRST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e kontaktit kryesor të emergjencës"
+=======
+    "Please enter primary emergency contact frist name "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[people][PRIMARY][LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin e kontaktit kryesor të emergjencës"
+=======
+    "Please enter primary emergency contact last name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   // frmvalidator.addValidation("values[people][PRIMARY][EMAIL]", "req", "Please enter a primary emergency email");
   frmvalidator.addValidation(
     "values[people][PRIMARY][EMAIL]",
     "email",
+<<<<<<< HEAD
     "Ju lutemi vendosni një email të vlefshëm për kontaktin kryesor"
+=======
+    "Please enter a valid primary emergency email"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "values[people][OTHER][RELATIONSHIP]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni lidhjen shtesë me nxënësin"
+=======
+    "Please select a additional relationship to student "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[people][OTHER][FIRST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e kontaktit shtesë të emergjencës"
+=======
+    "Please select a additional emergency contact to first name "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[people][OTHER][LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin e kontaktit shtesë të emergjencës"
+=======
+    "Please enter additional emergency contact last name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   //frmvalidator.addValidation("values[people][OTHER][EMAIL]", "req", "Please enter a additional emergency email");
   //    frmvalidator.addValidation("values[people][OTHER][EMAIL]", "email", "Please enter a valid additional emergency email");
   frmvalidator.addValidation(
     "students[FIRST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin"
+=======
+    "Please enter the first name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "students[FIRST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të shkollës është 100 karaktere"
+=======
+    "Max length for school name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "students[LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin"
+=======
+    "Please enter the last name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "students[LAST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e adresës është 100 karaktere"
+=======
+    "Max length for address is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "month_students[BIRTHDATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni një datëlindje të vlefshme"
+=======
+    "Please enter a valid birthdate"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.setAddnlValidationFunction(validateBirthdate);
   function validateBirthdate() {
@@ -1586,7 +2234,11 @@ function formcheck_student_student(this_DET) {
     errorDiv.style.display = "none";
   
     if (birthdate > today) {
+<<<<<<< HEAD
       errorDiv.innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Datëlindja nuk mund të jetë një datë në të ardhmen.</div>';
+=======
+      errorDiv.innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Birthdate cannot be a future date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       errorDiv.style.display = "block";
       document.getElementById("date_2").focus();
       return false;
@@ -1616,26 +2268,43 @@ function formcheck_student_student(this_DET) {
   frmvalidator.addValidation(
     "assign_student_id",
     "num",
+<<<<<<< HEAD
     "ID e nxënësit lejon vetëm shifra"
+=======
+    "Student ID allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[student_enrollment][new][GRADE_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni nivelin e klasës"
+=======
+    "Please select a grade"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "students[USERNAME]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të përdoruesit është 50 karaktere"
+=======
+    "Max length for Username is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "students[PASSWORD]",
     "password=8",
+<<<<<<< HEAD
     "Fjalëkalimi duhet të ketë të paktën 8 karaktere, duke përfshirë të paktën një numër dhe një karakter special"
+=======
+    "Password should be minimum 8 characters with atleast one special character and one number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "students[PASSWORD]",
     "maxlen=20",
+<<<<<<< HEAD
     "Gjatësia maksimale e fjalëkalimit është 20 karaktere"
   );
   //    frmvalidator.addValidation("students[EMAIL]", "email", "Ju lutemi vendosni një email të vlefshëm");
@@ -1643,6 +2312,15 @@ function formcheck_student_student(this_DET) {
     "students[PHONE]",
     "phone",
     "Numër telefoni i pavlefshëm"
+=======
+    "Max length for password is 20 characters"
+  );
+  //    frmvalidator.addValidation("students[EMAIL]", "email", "Please enter a valid email");
+  frmvalidator.addValidation(
+    "students[PHONE]",
+    "phone",
+    "Invalid phone number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   if (document.getElementById("values[people][SECONDARY][CUSTODY]")) {
     if (
@@ -1676,17 +2354,29 @@ function formcheck_student_student(this_DET) {
       frmvalidator.addValidation(
         "values[people][SECONDARY][RELATIONSHIP]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi zgjidhni lidhjen dytësore me nxënësin"
+=======
+        "Please select a secondary relationship to student "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[people][SECONDARY][FIRST_NAME]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi vendosni emrin e kontaktit dytësor të emergjencës"
+=======
+        "Please enter secondary emergency contact frist name "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[people][SECONDARY][LAST_NAME]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi vendosni mbiemrin e kontaktit dytësor të emergjencës"
+=======
+        "Please enter secondary emergency contact last name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       //frmvalidator.addValidation("values[people][SECONDARY][EMAIL]", "req", "Please enter a secondary email");
       //            frmvalidator.addValidation("values[people][SECONDARY][EMAIL]", "email", "Please enter a valid secondary email");
@@ -1811,7 +2501,11 @@ function formcheck_student_student(this_DET) {
     frmvalidator.addValidation(
       "values[student_enrollment][" + cal_stu_id + "][CALENDAR_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni kalendarin"
+=======
+      "Please select calendar"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1820,23 +2514,39 @@ function formcheck_student_student(this_DET) {
     frmvalidator.addValidation(
       "tables[student_goal][" + goalId + "][GOAL_TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin e synimit"
+=======
+      "Please enter goal title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "month_tables[" + goalId + "][START_DATE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni datën e fillimit"
+=======
+      "Please enter begin date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "month_tables[" + goalId + "][END_DATE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni datën e mbarimit"
+=======
+      "Please enter end date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[student_goal][" + goalId + "][GOAL_DESCRIPTION]",
       "req_withspace",
+<<<<<<< HEAD
       "Ju lutemi vendosni përshkrimin e synimit"
+=======
+      "Please enter goal description"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -1847,51 +2557,84 @@ function formcheck_student_student(this_DET) {
         req_progress_id +
         "][COURSE_PERIOD_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni orën e lëndës"
+=======
+      "Please enter course period"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "month_tables[" + req_progress_id + "][START_DATE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni datën e fillimit"
+=======
+      "Please enter begin date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[student_goal_progress][" + req_progress_id + "][PROGRESS_NAME]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e periudhës së progresit"
+=======
+      "Please enter progress period name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[student_goal_progress][" + req_progress_id + "][PROFICIENCY]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni shkallën e arritjeve"
+=======
+      "Please select proficiency scale"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[student_goal_progress][" +
         req_progress_id +
         "][PROGRESS_DESCRIPTION]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni vlerësimin e progresit"
+=======
+      "Please enter progress assessment"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
   frmvalidator.addValidation(
     "values[student_enrollment][new][NEXT_SCHOOL]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni opsionin e kalimit / mbetjes"
+=======
+    "Please select rolling / retention options"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "medical_info[PHYSICIAN]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e mjekut"
+=======
+    "Please enter the physician name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "medical_info[PHYSICIAN_PHONE]",
     "ph",
+<<<<<<< HEAD
     "Numri i telefonit nuk mund të përmbajë shkronja."
+=======
+    "Phone number can not be alphabetic."
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
 function change_pass() {
   var frmvalidator = new Validator("change_password");
+<<<<<<< HEAD
   frmvalidator.addValidation("old", "req", "Ju lutemi shkruani fjalëkalimin ekzistues");
   frmvalidator.addValidation("new", "req", "Ju lutemi shkruani fjalëkalimin e ri");
   frmvalidator.addValidation("retype", "req", "Ju lutemi rishkruani fjalëkalimin");
@@ -1899,6 +2642,15 @@ function change_pass() {
     "new",
     "password=8",
     "Fjalëkalimi duhet të ketë të paktën 8 karaktere, duke përfshirë të paktën një numër dhe një karakter special"
+=======
+  frmvalidator.addValidation("old", "req", "Please enter old password");
+  frmvalidator.addValidation("new", "req", "Please enter new password");
+  frmvalidator.addValidation("retype", "req", "Please retype password");
+  frmvalidator.addValidation(
+    "new",
+    "password=8",
+    "Password should be minimum 8 characters with atleast one special character and one number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -1943,7 +2695,11 @@ function ValidateDate_Student() {
   try {
     if (false == isDate(sm, sd, sy)) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e fillimit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter start date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       sm.focus();
       return false;
     }
@@ -1951,7 +2707,11 @@ function ValidateDate_Student() {
   try {
     if (false == isDate(em, ed, ey)) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e mbarimit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter end date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       em.focus();
       return false;
     }
@@ -2060,28 +2820,48 @@ function formcheck_student_studentField_F2(this_DET) {
   frmvalidator.addValidation(
     "tables[" + t_id + "][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+    "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni renditjen"
+=======
+    "Please enter the sort order"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "maxsort",
+<<<<<<< HEAD
     "Renditja duhet të jetë më e madhe se 6"
+=======
+    "Sort Order  must be greater than 6"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2094,24 +2874,40 @@ function formcheck_student_studentField_F1(this_DET) {
   frmvalidator.addValidation(
     "tables[" + f_id + "][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e fushës"
+=======
+    "Please enter the field name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[" + f_id + "][TYPE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni llojin e të dhënave"
+=======
+    "Please select the data type"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[" + f_id + "][SORT_ORDER]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni renditjen"
+=======
+    "Please enter the sort order"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + f_id + "][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2140,7 +2936,11 @@ function formcheck_student_studentField_F1_defalut() {
     }
 
     if(type.value == "codeds") {
+<<<<<<< HEAD
         document.getElementById("helpBlock").innerHTML = 'Duhet të vendosni vlerën e kodeve, jo tekstin e plotë. P.sh. nëse opsioni i koduar është \'0|Mirë\', vlera e parazgjedhur do të jetë \'0\' jo \'Mirë\'';
+=======
+        document.getElementById("helpBlock").innerHTML = 'You need to enter the value of the codes here not the entire text e.g. if the coded option is \'0|Good\' the default value will be \'0\' not \'Good\'';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         document.getElementById("exmp").innerHTML = `Example:<br/>0|Good<br/>1|Bad<br/>etc.`;
 
         if (document.getElementById('tables[new][DEFAULT_SELECTION]')) {
@@ -2182,7 +2982,11 @@ function formcheck_student_studentField_F1_defalut() {
         }
     }
     else if(type.value == "radio") {
+<<<<<<< HEAD
         document.getElementById("helpBlock").innerHTML = 'Vlera e parazgjedhur duhet të jetë çdo shkronjë (p.sh. \'P\') nëse dëshironi ta mbani kutinë e zgjedhur si parazgjedhje, përndryshe lëre bosh';
+=======
+        document.getElementById("helpBlock").innerHTML = 'Default value should be any letter (e.g. \'Y\') if you want to keep the checkbox checked by default otherwise keep it blank';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         if (document.getElementById('tables[new][DEFAULT_SELECTION]')) {
             document.getElementById('tables[new][DEFAULT_SELECTION]').removeAttribute('onkeyup');
@@ -2210,18 +3014,30 @@ function formcheck_student_addressField_F2() {
   frmvalidator.addValidation(
     "tables[new][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[TITLE]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të shkollës është 100 karaktere"
+=======
+    "Max length for school name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Kodi i renditjes lejon vetëm vlerë numerike"
+=======
+    "sort order code allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2230,19 +3046,31 @@ function formcheck_student_addressField_F1() {
   frmvalidator.addValidation(
     "tables[new][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e fushës"
+=======
+    "Please enter the field name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][TYPE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni llojin e të dhënave"
+=======
+    "Please select the Data type"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2255,18 +3083,30 @@ function formcheck_student_contactField_F2() {
   frmvalidator.addValidation(
     "tables[new][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[TITLE]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të shkollës është 100 karaktere"
+=======
+    "Max length for school name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Kodi i renditjes lejon vetëm vlerë numerike"
+=======
+    "sort order code allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2275,19 +3115,31 @@ function formcheck_student_contactField_F1() {
   frmvalidator.addValidation(
     "tables[new][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e fushës"
+=======
+    "Please enter the field name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][TYPE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni llojin e të dhënave"
+=======
+    "Please select the data type"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2297,33 +3149,56 @@ function formcheck_user_user(staff_school_chkbox_id) {
   frmvalidator.addValidation(
     "people[FIRST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin"
+=======
+    "Please enter the first name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "people[FIRST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit është 100 karaktere"
+=======
+    "Max length for first name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "people[LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin"
+=======
+    "Please enter the Last Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "people[LAST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e adresës është 100 karaktere"
+=======
+    "Max length for Address is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "people[PASSWORD]",
     "password=8",
+<<<<<<< HEAD
     "Fjalëkalimi duhet të ketë të paktën 8 karaktere, duke përfshirë të paktën një numër dhe një karakter special"
   );
 
   //    frmvalidator.addValidation("people[EMAIL]", "email", "Ju lutemi vendosni një email të vlefshëm");
+=======
+    "Password should be minimum 8 characters with one special character and one number"
+  );
+
+  //    frmvalidator.addValidation("people[EMAIL]", "email", "Please enter a valid email");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 function school_check(staff_school_chkbox_id) {
   var chk = "n";
@@ -2351,7 +3226,11 @@ function school_check(staff_school_chkbox_id) {
   }
   if (chk != "y") {
     var d = $("divErr");
+<<<<<<< HEAD
     err = "Ju lutemi caktoni të paktën një shkollë për këtë staf.";
+=======
+    err = "Please assign at least one school to this staff.";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     d.innerHTML =
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i>' +
       err +
@@ -2360,7 +3239,11 @@ function school_check(staff_school_chkbox_id) {
   } else if (chk == "y") {
     if (err == "S") {
       var d = $("divErr");
+<<<<<<< HEAD
       var err_stardate = "Data e fillimit nuk mund të jetë pas datës së mbarimit.";
+=======
+      var err_stardate = "Start date cannot be greater than end date.";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       d.innerHTML =
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i>' +
         err_stardate +
@@ -2386,28 +3269,48 @@ function formcheck_user_userfields_F2(this_DET) {
   frmvalidator.addValidation(
     "tables[" + t_id + "][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[" + t_id + "][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+    "Max length for title is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni renditjen"
+=======
+    "Please enter the sort order"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "ma",
+<<<<<<< HEAD
     "Renditja duhet të jetë më e madhe se 2"
+=======
+    "Sort Order  must be greater than 2"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 function formcheck_user_stafffields_F2(this_DET) {
@@ -2419,28 +3322,48 @@ function formcheck_user_stafffields_F2(this_DET) {
   frmvalidator.addValidation(
     "tables[" + t_id + "][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[" + t_id + "][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+    "Max length for title is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni renditjen"
+=======
+    "Please enter the sort order"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[" + t_id + "][SORT_ORDER]",
     "ma1",
+<<<<<<< HEAD
     "Renditja duhet të jetë më e madhe se 5"
+=======
+    "Sort Order  must be greater than 5"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 function formcheck_user_userfields_F1(this_DET) {
@@ -2453,23 +3376,39 @@ function formcheck_user_userfields_F1(this_DET) {
   frmvalidator1.addValidation(
     "tables[" + f_id + "][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e fushës"
+=======
+    "Please enter the field Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator1.addValidation(
     "tables[" + f_id + "][TITLE]",
     "req",
+<<<<<<< HEAD
     "Emri i fushës lejon vetëm karaktere alfanumerike"
+=======
+    "Field name allows only alphanumeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator1.addValidation(
     "tables[" + f_id + "][TITLE]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të fushës është 100 karaktere"
+=======
+    "Max length for Field Name is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator1.addValidation(
     "tables[" + f_id + "][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2483,43 +3422,75 @@ function formcheck_schoolfields(this_DET) {
     frmvalidator1.addValidation(
       "tables[" + custom_id + "][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e fushës"
+=======
+      "Please enter the field name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator1.addValidation(
       "tables[" + custom_id + "][TITLE]",
       "alnum",
+<<<<<<< HEAD
       "Emri i fushës lejon vetëm karaktere alfanumerike"
+=======
+      "Field name allows only alphanumeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator1.addValidation(
       "tables[" + custom_id + "][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të fushës është 100 karaktere"
+=======
+      "Max length for Field Name is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator1.addValidation(
       "tables[" + custom_id + "][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator1.addValidation(
       "tables[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e fushës"
+=======
+      "Please enter the field name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator1.addValidation(
       "tables[new][TITLE]",
       "alnum",
+<<<<<<< HEAD
       "Emri i fushës lejon vetëm karaktere alfanumerike"
+=======
+      "Field name allows only alphanumeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator1.addValidation(
       "tables[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të fushës është 100 karaktere"
+=======
+      "Max length for Field Name is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator1.addValidation(
       "tables[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -2537,12 +3508,20 @@ function formcheck_scheduling_course_F4() {
   frmvalidator.addValidation(
     "tables[course_subjects][new][TITLE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni titullin"
+=======
+    "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[course_subjects][new][TITLE]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+    "Max length for title is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -2554,33 +3533,57 @@ function formcheck_scheduling_course_F3() {
     frmvalidator.addValidation(
       "tables[courses][new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e lëndës"
+=======
+      "Please enter the course name "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[courses][new][TITLE]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 100 karaktere"
+=======
+      "Max length for course is 100 characters "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[courses][new][SHORT_NAME]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 50 karaktere"
+=======
+      "Max length for course is 50 characters "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.addValidation(
       "inputtables[courses][" + course_id + "][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e lëndës"
+=======
+      "Please enter the course name "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputtables[courses][" + course_id + "][TITLE]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 100 karaktere"
+=======
+      "Max length for course is 100 characters "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputtables[courses][" + course_id + "][SHORT_NAME]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 100 karaktere"
+=======
+      "Max length for course is 100 characters "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -2594,7 +3597,11 @@ function formcheck_scheduling_course_F2() {
     document.getElementById("cp_period")
   ) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Nuk mund të merret prezenca në këtë orë</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Cannot take attendance in this period</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     return false;
   }
@@ -2603,7 +3610,11 @@ function formcheck_scheduling_course_F2() {
   }
   if (check == 0) {
     document.getElementById("display_meeting_days_chk").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni të paktën një ditë</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select atleast one day</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("DAYS1").focus();
     return false;
   } else if (
@@ -2611,7 +3622,11 @@ function formcheck_scheduling_course_F2() {
     document.getElementById("cp_standard_scale").value == ""
   ) {
     document.getElementById("display_meeting_days_chk").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni shkallën standarde të notimit</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select standard grade scale</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("cp_standard_scale").focus();
     return false;
   } else {
@@ -2619,50 +3634,86 @@ function formcheck_scheduling_course_F2() {
     frmvalidator.addValidation(
       "tables[course_periods][new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e shkurtër"
+=======
+      "Please enter the short name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[course_periods][new][SHORT_NAME]",
       "maxlen=20",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të shkurtër është 20 karaktere"
+=======
+      "Max length for short name is 20"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "tables[course_periods][new][TEACHER_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni mësuesin"
+=======
+      "Please select the teacher"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "tables[course_periods][new][ROOM]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni klasën/sallën"
+=======
+      "Please enter the Room"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[course_periods][new][ROOM]",
       "maxlen=10",
+<<<<<<< HEAD
       "Gjatësia maksimale për sallën është 10 karaktere"
+=======
+      "Max length for room is 10"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "tables[course_periods][new][PERIOD_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën/periudhën"
+=======
+      "Please select the period"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[course_periods][new][MARKING_PERIOD_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni periudhën e vlerësimit"
+=======
+      "Please select marking period"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[course_periods][new][TOTAL_SEATS]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni numrin total të vendeve"
+=======
+      "Please input total seats"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[course_periods][new][TOTAL_SEATS]",
       "maxlen=10",
+<<<<<<< HEAD
       "Gjatësia maksimale për vendet është 10 shifra"
+=======
+      "Max length for seats is 10"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -2678,19 +3729,31 @@ function validate_course_period(this_DET = false) {
     frmvalidator.addValidation(
       "tables[course_periods][" + hidden_cp_id + "][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e shkurtër"
+=======
+      "Please enter the short name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   else
     frmvalidator.addValidation(
       "tables[course_periods][new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e shkurtër"
+=======
+      "Please enter the short name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   if (hidden_cp_id != "new") {
     frmvalidator.addValidation(
       "tables[course_periods][" + hidden_cp_id + "][TOTAL_SEATS]",
       "num",
+<<<<<<< HEAD
       "Numri total i vendeve lejon vetëm vlerë numerike"
+=======
+      "Total Seats allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     if (
       document.getElementById(
@@ -2701,7 +3764,11 @@ function validate_course_period(this_DET = false) {
       ).value == 0
     ) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Numri total i vendeve nuk mund të jetë 0.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Total Seat cannot be 0.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     }
     if (
@@ -2712,94 +3779,158 @@ function validate_course_period(this_DET = false) {
       frmvalidator.addValidation(
         "tables[course_periods][" + hidden_cp_id + "][TOTAL_SEATS]",
         "req",
+<<<<<<< HEAD
         "Numri total i vendeve nuk mund të jetë bosh ose '0'."
+=======
+        "Total Seat cannot be blank or '0'."
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
   } else {
     frmvalidator.addValidation(
       "tables[course_periods][new][TOTAL_SEATS]",
       "num",
+<<<<<<< HEAD
       "Numri total i vendeve lejon vetëm vlerë numerike"
+=======
+      "Total Seats allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
   frmvalidator.addValidation(
     "tables[course_periods][new][SHORT_NAME]",
     "maxlen=20",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të shkurtër është 20 karaktere"
+=======
+    "Max length for short name is 20"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "tables[course_periods][new][TEACHER_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni mësuesin"
+=======
+    "Please select the teacher"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.setAddnlValidationFunction("validate_cp_other_fields");
   frmvalidator.addValidation(
     "tables[course_periods][new][ROOM_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni klasën/sallën"
+=======
+    "Please enter the Room"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[course_periods][new][ROOM_ID]",
     "maxlen=10",
+<<<<<<< HEAD
     "Gjatësia maksimale për sallën është 10 karaktere"
+=======
+    "Max length for room is 10"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   if (hidden_cp_id != "new")
     frmvalidator.addValidation(
       "tables[course_period_var][" + hidden_cp_id + "][ROOM_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni klasën/sallën"
+=======
+      "Please enter the Room"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   else
     frmvalidator.addValidation(
       "tables[course_period_var][new][ROOM_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni klasën/sallën"
+=======
+      "Please enter the Room"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   frmvalidator.addValidation(
     "tables[course_periods][new][CALENDAR_ID]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni kalendarin"
+=======
+    "Please select the calendar"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   if (hidden_cp_id != "new") {
     frmvalidator.addValidation(
       "tables[course_period_var][" + hidden_cp_id + "][PERIOD_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni orën/periudhën"
+=======
+      "Please enter the Period"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.addValidation(
       "tables[course_period_var][new][PERIOD_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni orën/periudhën"
+=======
+      "Please enter the Period"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
   frmvalidator.addValidation(
     "tables[course_periods][new][TOTAL_SEATS]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni numrin total të vendeve"
+=======
+    "Please input total seats"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[course_periods][new][TOTAL_SEATS]",
     "count_check",
+<<<<<<< HEAD
     "Numri total i vendeve nuk mund të jetë 0"
+=======
+    "Total seats cannot be 0"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "tables[course_periods][new][TOTAL_SEATS]",
     "maxlen=10",
+<<<<<<< HEAD
     "Gjatësia maksimale për vendet është 10 shifra"
+=======
+    "Max length for seats is 10"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   if (document.getElementById("variable").value == "VARIABLE") {
     frmvalidator.addValidation(
       "course_period_variable[new][DAYS]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni një ditë"
+=======
+      "Please select a day"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "course_period_variable[new][PERIOD_ID]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi zgjidhni orën/periudhën"
+=======
+      "Please select a period"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     if (hidden_cp_id != "new") {
       var id_for_room = document.getElementById("for_editing_room").value;
@@ -2810,13 +3941,21 @@ function validate_course_period(this_DET = false) {
           id_for_room +
           "][ROOM_ID]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi zgjidhni klasën/sallën"
+=======
+        "Please select a room"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     } else
       frmvalidator.addValidation(
         "course_period_variable[new][ROOM_ID]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi zgjidhni klasën/sallën"
+=======
+        "Please select a room"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
   }
 
@@ -2849,7 +3988,11 @@ function validate_cp_teacher_fields()
     //alert(primary_teacher + "=====" + secondary_teacher);
     if(primary_teacher == secondary_teacher)
     {
+<<<<<<< HEAD
         document.getElementById("divErr").innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Mësuesi kryesor dhe ai ndihmës nuk mund të jenë i njëjti person</div>';
+=======
+        document.getElementById("divErr").innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Primary and Secondary teacher cannot be same</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         window.$("#save_cp").attr("disabled", true);
         window.$("#save_cps").attr("disabled", true);
     }
@@ -2866,7 +4009,11 @@ function validate_cp_teacher_fields()
     var secondary_teacher = document.getElementsByName("tables[course_periods][new][SECONDARY_TEACHER_ID]")[0].value;
     if(primary_teacher == secondary_teacher)
     {
+<<<<<<< HEAD
         document.getElementById("divErr").innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Mësuesi kryesor dhe ai ndihmës nuk mund të jenë i njëjti person</div>';
+=======
+        document.getElementById("divErr").innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Primary and Secondary teacher cannot be same</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         window.$("#save_cp").attr("disabled", true);
         window.$("#save_cps").attr("disabled", true);
     }
@@ -2883,13 +4030,21 @@ function validate_cp_teacher_fields()
 function validate_block_schedule(option) {
   if (document.getElementById("hidden_period_block").value == "") {
     document.getElementById("block_error").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni orën/periudhën.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select a period.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("_period").focus();
     return false;
   }
   if (document.getElementById("_room").value == "") {
     document.getElementById("block_error").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni klasën/sallën</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select a room</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("_room").focus();
     return false;
   }
@@ -2901,7 +4056,11 @@ function validate_cp_other_fields() {
     document.getElementById("blocked_schedule").checked == false
   ) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni llojin e orarit.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select schedule type.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("fixed_schedule").focus();
     return false;
   }
@@ -2910,7 +4069,11 @@ function validate_cp_other_fields() {
     document.getElementById("custom").checked == false
   ) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni periudhën e vlerësimit or custom date range.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select marking period or custom date range.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("preset").focus();
     return false;
   }
@@ -2921,7 +4084,11 @@ function validate_cp_other_fields() {
       document.getElementById("yearSelect_date_1").value == ""
     ) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni një datë të vlefshme fillimi.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please input a valid starting date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("custom").focus();
       return false;
     }
@@ -2931,7 +4098,11 @@ function validate_cp_other_fields() {
       document.getElementById("yearSelect_date_2").value == ""
     ) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni një datë të vlefshme mbarimi.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please input a valid ending date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("custom").focus();
       return false;
     }
@@ -2941,7 +4112,11 @@ function validate_cp_other_fields() {
     document.getElementById("marking_period").value == ""
   ) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni periudhën e vlerësimit.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select marking period.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     document.getElementById("marking_period").focus();
     return false;
   }
@@ -2979,7 +4154,11 @@ function validate_cp_other_fields() {
     if (no_checkbox == 0) a.value = "1";
     if (a.value.trim() == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju duhet të zgjidhni të paktën 1 ditë.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> You must select at least 1 day.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     }
   } else return true;
@@ -3010,7 +4189,11 @@ function formcheck_grade_grade(this_DET) {
       frmvalidator.addValidation(
         "values[new][TITLE]",
         "req",
+<<<<<<< HEAD
         "Shkalla e notimit nuk mund të jetë bosh"
+=======
+        "Gradescale cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -3031,7 +4214,11 @@ function formcheck_grade_grade(this_DET) {
       frmvalidator.addValidation(
         "values[new][TITLE]",
         "req",
+<<<<<<< HEAD
         "Titulli nuk mund të jetë bosh"
+=======
+        "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -3039,17 +4226,29 @@ function formcheck_grade_grade(this_DET) {
   frmvalidator.addValidation(
     "values[new][SHORT_NAME]",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të shkurtër është 50 karaktere"
+=======
+    "Max length for short name is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[new][SORT_ORDER]",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "values[new][SORT_ORDER]",
     "maxlen=5",
+<<<<<<< HEAD
     "Gjatësia maksimale e renditjes është 5 shifra"
+=======
+    "Max length for sort order is 5"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   if (
@@ -3059,13 +4258,21 @@ function formcheck_grade_grade(this_DET) {
     frmvalidator.addValidation(
       "values[new][GP_SCALE]",
       "req",
+<<<<<<< HEAD
       "Vlera e shkallës nuk mund të jetë bosh"
+=======
+      "Scale value cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][GP_SCALE]",
       "num",
+<<<<<<< HEAD
       "Ju lutemi vendosni vetëm vlerë numerike"
+=======
+      "Please enter numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -3076,29 +4283,46 @@ function formcheck_grade_grade(this_DET) {
     frmvalidator.addValidation(
       "values[new][BREAK_OFF]",
       "req",
+<<<<<<< HEAD
       "Pragu minimal nuk mund të jetë bosh"
+=======
+      "Break off cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][BREAK_OFF]",
       "num",
+<<<<<<< HEAD
       "Pragu minimal lejon vetëm vlerë numerike"
+=======
+      "Break off allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][GPA_VALUE]",
       "dec",
+<<<<<<< HEAD
       "Ju lutemi vendosni vlerë dhjetore"
+=======
+      "Please enter decimal value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][UNWEIGHTED_GP]",
       "dec",
+<<<<<<< HEAD
       "Ju lutemi vendosni vlerë dhjetore"
+=======
+      "Please enter decimal value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     if (document.getElementById("values[new][GP_SCALE]")) {
       frmvalidator.addValidation(
         "values[new][GP_SCALE]",
         "req",
+<<<<<<< HEAD
         "Vlera e shkallës nuk mund të jetë bosh"
       );
 
@@ -3107,6 +4331,16 @@ function formcheck_grade_grade(this_DET) {
         "values[new][GP_SCALE]",
         "dec",
         "Ju lutemi vendosni vlerë dhjetore"
+=======
+        "Scale value cannot be blank"
+      );
+
+      // frmvalidator.addValidation("values[new][GP_SCALE]", "num", "Please enter numeric value");
+      frmvalidator.addValidation(
+        "values[new][GP_SCALE]",
+        "dec",
+        "Please enter decimal value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -3120,26 +4354,42 @@ function formcheck_grade_grade(this_DET) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][TITLE]",
           "req",
+<<<<<<< HEAD
           "Titulli nuk mund të jetë bosh"
+=======
+          "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (document.getElementById("inputvalues[" + ar[i] + "][BREAK_OFF]")) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][BREAK_OFF]",
           "num",
+<<<<<<< HEAD
           "Pragu minimal lejon vetëm vlerë numerike"
+=======
+          "Break off allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][BREAK_OFF]",
           "req",
+<<<<<<< HEAD
           "Pragu minimal nuk mund të jetë bosh"
+=======
+          "Break off cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (document.getElementById("inputvalues[" + ar[i] + "][GPA_VALUE]")) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][GPA_VALUE]",
           "dec",
+<<<<<<< HEAD
           "Ju lutemi vendosni vlerë dhjetore"
+=======
+          "Please enter decimal value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (
@@ -3148,7 +4398,11 @@ function formcheck_grade_grade(this_DET) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][UNWEIGHTED_GP]",
           "dec",
+<<<<<<< HEAD
           "Ju lutemi vendosni vlerë dhjetore"
+=======
+          "Please enter decimal value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
 
@@ -3156,12 +4410,20 @@ function formcheck_grade_grade(this_DET) {
         frmvalidator.addValidation(
           "values[" + ar[i] + "][GP_SCALE]",
           "req",
+<<<<<<< HEAD
           "Vlera e shkallës nuk mund të jetë bosh"
+=======
+          "Scale Value Cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         frmvalidator.addValidation(
           "values[" + ar[i] + "][GP_SCALE]",
           "dec",
+<<<<<<< HEAD
           "Ju lutemi vendosni vlerë dhjetore"
+=======
+          "Please enter decimal value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
     }
@@ -3182,27 +4444,47 @@ function formcheck_honor_roll(this_DET) {
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi vendosni titullin"
+=======
+        "Please enter Title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+        "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][VALUE]",
         "req",
+<<<<<<< HEAD
         "Pragu minimal nuk mund të jetë bosh"
+=======
+        "Breakoff cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][VALUE]",
         "num",
+<<<<<<< HEAD
         "Pragu minimal lejon vetëm vlerë numerike"
+=======
+        "Breakoff allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][VALUE]",
         "maxlen=10",
+<<<<<<< HEAD
         "Gjatësia maksimale për pragun është 10 karaktere"
+=======
+        "Max length for breakoff is 10"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -3213,27 +4495,47 @@ function formcheck_honor_roll(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin"
+=======
+      "Please enter Title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][VALUE]",
       "req",
+<<<<<<< HEAD
       "Pragu minimal nuk mund të jetë bosh"
+=======
+      "Breakoff cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][VALUE]",
       "num",
+<<<<<<< HEAD
       "Pragu minimal lejon vetëm vlerë numerike"
+=======
+      "Breakoff allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][VALUE]",
       "maxlen=10",
+<<<<<<< HEAD
       "Gjatësia maksimale për pragun është 10 karaktere"
+=======
+      "Max length for breakoff is 10"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -3255,18 +4557,30 @@ function formcheck_grade_comment(this_DET) {
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi vendosni titullin"
+=======
+        "Please enter Title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
 
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "req",
+<<<<<<< HEAD
         "Renditja nuk mund të jetë bosh"
+=======
+        "Sort order cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e komentit është 50 karaktere"
+=======
+        "Max length for Comment is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -3277,13 +4591,21 @@ function formcheck_grade_comment(this_DET) {
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "ID lejon vetëm shifra"
+=======
+      "ID allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e komentit është 50 karaktere"
+=======
+      "Max length for Comment is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
@@ -3317,12 +4639,20 @@ function formcheck_eligibility_activies() {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=20",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 20 karaktere"
+=======
+      "Max length for Title is 20"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   frmvalidator.setAddnlValidationFunction("ValidateDate_eligibility_activies");
@@ -3441,7 +4771,11 @@ function formcheck_mass_drop(this_DET) {
   var this_button_id = this_DET.id;
 
   if (document.getElementById("course_div").innerHTML == "") {
+<<<<<<< HEAD
     alert("Ju lutemi zgjidhni një orë lënde për ta hequr");
+=======
+    alert("Please choose a course period to drop");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     document.getElementById(this_button_id).disabled = false;
 
@@ -3463,17 +4797,29 @@ function formcheck_attendance_category(this_DET) {
   frmvalidator.addValidation(
     "new_category_title",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e kategorisë së vijueshmërisë"
+=======
+    "Please enter attendance category Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "new_category_title",
     "maxlen=50",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të kategorisë është 50 karaktere"
+=======
+    "Max length for category name is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "new_category_title",
     "alphanumeric",
+<<<<<<< HEAD
     "Emri i kategorisë së vijueshmërisë lejon vetëm karaktere alfanumerike"
+=======
+    "Attendance category Name allows only alphanumeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -3491,23 +4837,39 @@ function formcheck_attendance_codes(this_DET) {
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "req",
+<<<<<<< HEAD
         "Titulli nuk mund të jetë bosh"
+=======
+        "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+        "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SHORT_NAME]",
         "req",
+<<<<<<< HEAD
         "Emri i shkurtër nuk mund të jetë bosh"
+=======
+        "Short Name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
 
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "num",
+<<<<<<< HEAD
         "Renditja lejon vetëm vlerë numerike"
+=======
+        "Short Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.setAddnlValidationFunction(formcheck_attendance_codes_extra);
     }
@@ -3522,7 +4884,11 @@ function formcheck_attendance_codes(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   if (
@@ -3537,7 +4903,11 @@ function formcheck_attendance_codes(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -3545,23 +4915,39 @@ function formcheck_attendance_codes(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Emri i shkurtër nuk mund të jetë bosh"
+=======
+      "Short Name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "Short Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.setAddnlValidationFunction(formcheck_attendance_codes_extra);
   }
@@ -3576,7 +4962,11 @@ function formcheck_attendance_codes_extra() {
         if (inp_value == "") {
           document.getElementById("divErr").innerHTML =
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
+<<<<<<< HEAD
             unescape("Ju lutemi vendosni llojin") +
+=======
+            unescape("Please enter type") +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             "</div>";
           return false;
         }
@@ -3584,7 +4974,11 @@ function formcheck_attendance_codes_extra() {
         if (inp_value == "") {
           document.getElementById("divErr").innerHTML =
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
+<<<<<<< HEAD
             unescape("Ju lutemi vendosni shtetin/rrethin code") +
+=======
+            unescape("Please enter state code") +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             "</div>";
           return false;
         }
@@ -3601,7 +4995,11 @@ function formcheck_attendance_codes_extra() {
         if (inp_value == "") {
           document.getElementById("divErr").innerHTML =
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
+<<<<<<< HEAD
             unescape("Ju lutemi vendosni llojin") +
+=======
+            unescape("Please enter type") +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             "</div>";
           return false;
         }
@@ -3609,7 +5007,11 @@ function formcheck_attendance_codes_extra() {
         if (inp_value == "") {
           document.getElementById("divErr").innerHTML =
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i>' +
+<<<<<<< HEAD
             unescape("Ju lutemi vendosni shtetin/rrethin code") +
+=======
+            unescape("Please enter state code") +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             "</div>";
           return false;
         }
@@ -3627,17 +5029,29 @@ function formcheck_failure_count(this_DET) {
   frmvalidator.addValidation(
     "failure[FAIL_COUNT]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni numërimin"
+=======
+    "Please enter count"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "failure[FAIL_COUNT]",
     "num",
+<<<<<<< HEAD
     "Numërimi lejon vetëm vlerë numerike"
+=======
+    "Count allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "failure[FAIL_COUNT]",
     "maxlen=5",
+<<<<<<< HEAD
     "Gjatësia maksimale e numërimit është 5 shifra"
+=======
+    "Max length for count order is 5 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 //-------------------------------------------------assignments Title Validation Starts---------------------------------------------
@@ -3656,13 +5070,21 @@ function formcheck_assignments(this_DET) {
     data = data[0];
     if (data.value == "") {
       $("#divErr").html(
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Përqindja e peshës nuk mund të jetë bosh</div>'
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Weight Percent cannot be blank</div>'
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       return false;
     }
     if (data.value <= 0) {
       $("#divErr").html(
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Përqindja e peshës duhet të jetë më e madhe se zero</div>'
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Weight Percent should be greater than zero</div>'
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       data.value = "";
       data.focus();
@@ -3677,53 +5099,93 @@ function formcheck_assignments(this_DET) {
     frmvalidator.addValidation(
       "tables[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[new][TITLE]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+      "Max length for title is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[new][POINTS]",
       "req",
+<<<<<<< HEAD
       "Pikët totale nuk mund të jenë bosh"
+=======
+      "Total points cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "month_tables[new][ASSIGNED_DATE]",
       "req",
+<<<<<<< HEAD
       "Data e caktimit nuk mund të jetë bosh"
+=======
+      "Assigned date cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "month_tables[new][DUE_DATE]",
       "req",
+<<<<<<< HEAD
       "Data e afatit nuk mund të jetë bosh"
+=======
+      "Due date cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.addValidation(
       "tables[" + type_id + "][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[" + type_id + "][TITLE]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 100 karaktere"
+=======
+      "Max length for title is 100"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[" + type_id + "][POINTS]",
       "req",
+<<<<<<< HEAD
       "Pikët totale nuk mund të jenë bosh"
+=======
+      "Total points cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "month_tables[" + type_id + "][ASSIGNED_DATE]",
       "req",
+<<<<<<< HEAD
       "Data e caktimit nuk mund të jetë bosh"
+=======
+      "Assigned date cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "month_tables[" + type_id + "][DUE_DATE]",
       "req",
+<<<<<<< HEAD
       "Data e afatit nuk mund të jetë bosh"
+=======
+      "Due date cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   return true;
@@ -4042,7 +5504,11 @@ function pass_check(this_DET) {
           !new_pass.match(/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))
       ) {
         document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Fjalëkalimi duhet të ketë të paktën 8 karaktere, duke përfshirë të paktën një shkronjë të madhe, një numër dhe një karakter special</div>';
+=======
+          '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Password must be minimum 8 characters long with at least one capital, one numeric and one special character</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         document.getElementById(this_button_id).disabled = false;
 
@@ -4078,19 +5544,31 @@ function reenroll() {
     document.getElementById("yearSelect_date_1").value == ""
   ) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni një datë të saktë</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please Enter a Proper Date</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     window.scrollTo({ top: 0, behavior: "smooth" });
     return false;
   }
   if (document.getElementById("grade_id").value == "") {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni nivelin e klasës</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please Select a Grade Level</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     window.scrollTo({ top: 0, behavior: "smooth" });
     return false;
   }
   if (document.getElementById("en_code").value == "") {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni kodin e regjistrimit</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please Select an Enrollment Code</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     window.scrollTo({ top: 0, behavior: "smooth" });
     return false;
   } else {
@@ -4135,7 +5613,11 @@ function reenroll() {
 
     if (counter == 0) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni një nxënës</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select a student</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       window.scrollTo({ top: 0, behavior: "smooth" });
       return false;
     } else {
@@ -4157,7 +5639,11 @@ function sel_staff_val() {
   }
   if (!ischecked_method) {
     document.getElementById("sel_err").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni të paktën një opsion.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select any one.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     return false;
   } else {
     return true;
@@ -4168,26 +5654,43 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
 
   var frmvalidator = new Validator("staff", this_button_id);
 
+<<<<<<< HEAD
   //frmvalidator.addValidation("staff[TITLE]", "req", "Ju lutemi zgjidhni titullin e nderit");
   frmvalidator.addValidation(
     "staff[FIRST_NAME]",
     "req",
     "Ju lutemi vendosni emrin"
+=======
+  //frmvalidator.addValidation("staff[TITLE]", "req", "Please select the salutation");
+  frmvalidator.addValidation(
+    "staff[FIRST_NAME]",
+    "req",
+    "Please enter the first name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "staff[FIRST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit është 100 karaktere"
+=======
+    "Max length for first name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "staff[LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin"
+=======
+    "Please enter the Last Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "staff[LAST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e adresës është 100 karaktere"
   );
   frmvalidator.addValidation("staff[EMAIL]", "req", "Ju lutemi vendosni adresën e emailit");
@@ -4196,21 +5699,43 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
     "values[SCHOOL][CATEGORY]",
     "req",
     "Ju lutemi zgjidhni kategorinë"
+=======
+    "Max length for Address is 100"
+  );
+  frmvalidator.addValidation("staff[EMAIL]", "req", "Please select email");
+  //    frmvalidator.addValidation("staff[EMAIL]", "email", "Invalid email");
+  frmvalidator.addValidation(
+    "values[SCHOOL][CATEGORY]",
+    "req",
+    "Please select the category"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "month_values[JOINING_DATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni muajin e datës së punësimit"
+=======
+    "Please select the joining date's month"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "day_values[JOINING_DATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni ditën e datës së punësimit"
+=======
+    "Please select the joining date's date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "year_values[JOINING_DATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi zgjidhni vitin e datës së punësimit"
+=======
+    "Please select the joining date's year"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.setAddnlValidationFunction(validateBirthdateForStaff);
@@ -4229,7 +5754,11 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
     errorDiv.style.display = "none";
   
     if (birthdate > today) {
+<<<<<<< HEAD
       errorDiv.innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Datëlindja nuk mund të jetë një datë në të ardhmen.</div>';
+=======
+      errorDiv.innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Birthdate cannot be a future date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       errorDiv.style.display = "block";
       document.getElementById("date_1").focus();
       return false;
@@ -4249,23 +5778,40 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
 
   if (current >= end) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Data e fillimit të punës nuk mund të jetë pas datës së përfundimit të shkollës</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Joining date can not be after school\'s end date</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     return false;
   }
 
   if (document.getElementById("r4")) {
     if (document.getElementById("r4").checked == true) {
+<<<<<<< HEAD
       frmvalidator.addValidation("USERNAME", "req", "Ju lutemi vendosni emrin e përdoruesit");
       frmvalidator.addValidation("PASSWORD", "req", "Ju lutemi vendosni fjalëkalimin");
       frmvalidator.addValidation(
         "PASSWORD",
         "password=8",
         "Fjalëkalimi duhet të ketë të paktën 8 karaktere, duke përfshirë të paktën një numër dhe një karakter special"
+=======
+      frmvalidator.addValidation("USERNAME", "req", "Please provide username");
+      frmvalidator.addValidation("PASSWORD", "req", "Please provide password");
+      frmvalidator.addValidation(
+        "PASSWORD",
+        "password=8",
+        "Password should be minimum 8 characters with atleast one special character and one number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "PASSWORD",
         "maxlen=20",
+<<<<<<< HEAD
         "Gjatësia maksimale e fjalëkalimit është 20 karaktere"
+=======
+        "Max length for password is 20 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
     else {
@@ -4288,7 +5834,11 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
         frmvalidator.addValidation(
           "error_handler",
           "req",
+<<<<<<< HEAD
           "Ju lutemi vendosni datën e skadimit të çertifikatës"
+=======
+          "Please provide certification expiry date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (in_date == "" && en_date != "") {
@@ -4297,7 +5847,11 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
         frmvalidator.addValidation(
           "error_handler",
           "req",
+<<<<<<< HEAD
           "Ju lutemi vendosni datën e çertifikatës"
+=======
+          "Please provide certification date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
       }
       if (in_date != "" && en_date != "") {
@@ -4309,7 +5863,11 @@ function formcheck_add_staff(staff_school_chkbox_id, this_DET) {
           frmvalidator.addValidation(
             "error_handler",
             "req",
+<<<<<<< HEAD
             "Data e çertifikatës nuk mund të jetë pas datës së skadimit"
+=======
+            "Certification date cannot be after certification expiry date"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           );
         } else {
           error_handler = error_handler + 0;
@@ -4329,48 +5887,84 @@ function formcheck_user_user_mod(staff_school_chkbox_id = false, this_DET) {
   frmvalidator.addValidation(
     "people[FIRST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin"
+=======
+    "Please enter the first name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "people[FIRST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit është 100 karaktere"
+=======
+    "Max length for first name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "people[LAST_NAME]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni mbiemrin"
+=======
+    "Please enter the Last Name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "people[LAST_NAME]",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e adresës është 100 karaktere"
   );
 
   // frmvalidator.addValidation("people[EMAIL]", "email", "Ju lutemi vendosni një email të vlefshëm");
   // frmvalidator.addValidation("people[EMAIL]", "req", "Ju lutemi vendosni adresën e emailit");
+=======
+    "Max length for Address is 100"
+  );
+
+  // frmvalidator.addValidation("people[EMAIL]", "email", "Please enter a valid email");
+  // frmvalidator.addValidation("people[EMAIL]", "req", "Please enter the email");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
   frmvalidator.addValidation(
     "student_addres[STREET_ADDRESS_1]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni adresën"
+=======
+    "Please enter the address"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "student_addres[CITY]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni qytetin"
+=======
+    "Please enter the city"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "student_addres[STATE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni shtetin/rrethin"
+=======
+    "Please enter the state"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "student_addres[ZIPCODE]",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni kodin postar"
+=======
+    "Please enter the zipcode"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 function validate_email(this_DET) {
@@ -4380,7 +5974,11 @@ function validate_email(this_DET) {
 
   frmvalidator.setAddnlValidationFunction("mail_body_chk");
   if (!document.getElementById("cp_id")) {
+<<<<<<< HEAD
     frmvalidator.addValidation("txtToUser", "req", "Vendosni marrësin e mesazhit");
+=======
+    frmvalidator.addValidation("txtToUser", "req", "Enter message recipient");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   }
 }
 function mail_body_chk() {
@@ -4389,7 +5987,11 @@ function mail_body_chk() {
   if (body1 == "") {
     document.getElementById("divErr").innerHTML =
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
+<<<<<<< HEAD
       unescape("Ju lutemi shkruani përmbajtjen e mesazhit") +
+=======
+      unescape("Please write body of message") +
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       "</div>";
     this.txtBody.focus();
     return false;
@@ -4416,7 +6018,11 @@ function validate_group_schedule() {
   }
   if (counter == 0) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni një nxënës</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select a student</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     return false;
   } else {
     //        formload_ajax("sav");
@@ -4447,7 +6053,11 @@ function validate_group_request(this_DET) {
   }
   if (counter == 0) {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi zgjidhni një nxënës</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please select a student</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     window.scrollTo({ top: 0, behavior: "smooth" });
 
     document.getElementById(this_button_id).disabled = false;
@@ -4479,27 +6089,47 @@ function formcheck_rooms(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "reqmod",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin"
+=======
+      "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][CAPACITY]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni kapacitetin"
+=======
+      "Please enter the capacity"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][DESCRIPTION]",
       "maxlen=100",
+<<<<<<< HEAD
       "Gjatësia maksimale e përshkrimit është 100 karaktere"
+=======
+      "Max length for DESCRIPTION is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][CAPACITY]",
       "num",
+<<<<<<< HEAD
       "Kapaciteti lejon vetëm vlerë numerike"
+=======
+      "Capacity allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.clearAllValidations();
@@ -4514,38 +6144,66 @@ function formcheck_rooms(this_DET) {
       frmvalidator.addValidation(
         "inputvalues[" + ar[i] + "][TITLE]",
         "reqmod",
+<<<<<<< HEAD
         "Ju lutemi vendosni titullin"
+=======
+        "Please enter the title"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "inputvalues[" + ar[i] + "][CAPACITY]",
         "req",
+<<<<<<< HEAD
         "Ju lutemi vendosni kapacitetin"
+=======
+        "Please enter the capacity"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "inputvalues[" + ar[i] + "][DESCRIPTION]",
         "maxlen=100",
+<<<<<<< HEAD
         "Gjatësia maksimale e përshkrimit është 100 karaktere"
+=======
+        "Max length for DESCRIPTION is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "inputvalues[" + ar[i] + "][CAPACITY]",
         "num",
+<<<<<<< HEAD
         "Kapaciteti lejon vetëm vlerë numerike"
+=======
+        "Capacity allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "inputvalues[" + ar[i] + "][SORT_ORDER]",
         "num",
+<<<<<<< HEAD
         "Renditja lejon vetëm vlerë numerike"
+=======
+        "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar[i] + "][DESCRIPTION]",
         "maxlen=100",
+<<<<<<< HEAD
         "Gjatësia maksimale e përshkrimit është 100 karaktere"
+=======
+        "Max length for DESCRIPTION is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
 
       frmvalidator.addValidation(
         "values[" + ar[i] + "][SORT_ORDER]",
         "num",
+<<<<<<< HEAD
         "Renditja lejon vetëm vlerë numerike"
+=======
+        "Sort Order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -4577,23 +6235,39 @@ function formcheck_Timetable_course_F4(this_DET) {
     frmvalidator.addValidation(
       "tables[course_subjects][new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni emrin e lëndës"
+=======
+      "Please enter the subject name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[course_subjects][new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 50 karaktere"
+=======
+      "Max length for subject is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.addValidation(
       "inputtables[course_subjects][" + subject_id + "][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin e lëndës"
+=======
+      "Please enter the course title "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputtables[course_subjects][" + subject_id + "][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit të lëndës është 50 karaktere"
+=======
+      "Max length for course title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -4605,22 +6279,38 @@ function formcheck_halfday_fullday(this_DET) {
   frmvalidator.addValidation(
     "inputvalues[FULL_DAY_MINUTE]",
     "maxlen=10",
+<<<<<<< HEAD
     "Gjatësia maksimale e minutave të ditës së plotë është 10 shifra"
+=======
+    "Max length for full day minute is 10 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "inputvalues[HALF_DAY_MINUTE]",
     "maxlen=10",
+<<<<<<< HEAD
     "Gjatësia maksimale e minutave të gjysmë ditës është 10 shifra"
+=======
+    "Max length for half day minute is 10 digits"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "inputvalues[FULL_DAY_MINUTE]",
     "num",
+<<<<<<< HEAD
     "Minutat e ditës së plotë lejojnë vetëm vlerë numerike"
+=======
+    "Full day minute allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "inputvalues[HALF_DAY_MINUTE]",
     "num",
+<<<<<<< HEAD
     "Minutat e gjysmë ditës lejojnë vetëm vlerë numerike"
+=======
+    "Half day minute allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 function formcheck_Timetable_course_F3(this_DET) {
@@ -4633,35 +6323,59 @@ function formcheck_Timetable_course_F3(this_DET) {
     frmvalidator.addValidation(
       "tables[courses][new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin e lëndës"
+=======
+      "Please enter the course title "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "tables[courses][new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit të lëndës është 50 karaktere"
+=======
+      "Max length for course title is 50 characters "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "tables[courses][new][SHORT_NAME]",
       "maxlen=25",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të shkurtër është 25 karaktere"
+=======
+      "Max length for short name is 25 characters "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.addValidation(
       "inputtables[courses][" + course_id + "][TITLE]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni titullin e lëndës"
+=======
+      "Please enter the course title "
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputtables[courses][" + course_id + "][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit të lëndës është 50 karaktere"
+=======
+      "Max length for course title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
 
     frmvalidator.addValidation(
       "inputtables[courses][" + course_id + "][SHORT_NAME]",
       "maxlen=25",
+<<<<<<< HEAD
       "Gjatësia maksimale e emrit të shkurtër është 25 karaktere"
+=======
+      "Max length for short name is 25 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -4674,13 +6388,21 @@ function mail_group_chk(this_DET) {
   frmvalidator.addValidation(
     "txtGrpName",
     "req",
+<<<<<<< HEAD
     "Ju lutemi vendosni emrin e grupit"
+=======
+    "Please enter the group name"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 
   frmvalidator.addValidation(
     "txtGrpName",
     "maxlen=100",
+<<<<<<< HEAD
     "Gjatësia maksimale e emrit të grupit është 100 karaktere"
+=======
+    "Max length for group name is 100 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 
@@ -4696,17 +6418,29 @@ function formcheck_enrollment_code(this_DET) {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "req",
+<<<<<<< HEAD
       "Titulli nuk mund të jetë bosh"
+=======
+      "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "alphanumeric",
+<<<<<<< HEAD
       "Titulli lejon vetëm karaktere alfanumerike"
+=======
+      "Title allows only alphanumeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   } else {
     frmvalidator.clearAllValidations();
@@ -4717,14 +6451,22 @@ function formcheck_enrollment_code(this_DET) {
     frmvalidator.addValidation(
       "values[new][SHORT_NAME]",
       "req",
+<<<<<<< HEAD
       "Emri i shkurtër nuk mund të jetë bosh"
+=======
+      "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   if (title != "" && t == "") {
     frmvalidator.addValidation(
       "values[new][TYPE]",
       "req",
+<<<<<<< HEAD
       "Lloji nuk mund të jetë bosh"
+=======
+      "Type cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 
@@ -4736,27 +6478,47 @@ function formcheck_enrollment_code(this_DET) {
       frmvalidator.addValidation(
         "values[" + ar_id[i] + "][TITLE]",
         "req",
+<<<<<<< HEAD
         "Titulli nuk mund të jetë bosh"
+=======
+        "Title cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar_id[i] + "][TITLE]",
         "alphanumeric",
+<<<<<<< HEAD
         "Titulli lejon vetëm karaktere alfanumerike"
+=======
+        "Title allows only alphanumeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar_id[i] + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+        "Max length for title is 50 characters"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar_id[i] + "][SHORT_NAME]",
         "req",
+<<<<<<< HEAD
         "Emri i shkurtër nuk mund të jetë bosh"
+=======
+        "Short name cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "values[" + ar_id[i] + "][TYPE]",
         "req",
+<<<<<<< HEAD
         "Lloji nuk mund të jetë bosh"
+=======
+        "Type cannot be blank"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -4766,22 +6528,38 @@ function formcheck_calendar_event() {
   if (title != null) {
     if (title.value.trim() == "") {
       document.getElementById("err_message").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Titulli nuk mund të jetë bosh.</div>';
       return false;
     } else if (title.value.length > 50) {
       document.getElementById("err_message").innerHTML =
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Gjatësia maksimale e titullit është 50 karaktere.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Title cannot be blank.</div>';
+      return false;
+    } else if (title.value.length > 50) {
+      document.getElementById("err_message").innerHTML =
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Max length for title is 50 characters.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     } else formload_ajax("popform");
   } else {
     var title = document.getElementById("values[TITLE]");
     if (title.value.trim() == "") {
       document.getElementById("err_message").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Titulli nuk mund të jetë bosh.</div>';
       return false;
     } else if (title.value.length > 50) {
       document.getElementById("err_message").innerHTML =
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Gjatësia maksimale e titullit është 50 karaktere.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Title cannot be blank.</div>';
+      return false;
+    } else if (title.value.length > 50) {
+      document.getElementById("err_message").innerHTML =
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Max length for title is 50 characters.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     } else formload_ajax("popform");
   }
@@ -4792,42 +6570,74 @@ function formcheck_common_standards() {
     frmvalidator.addValidation(
       "values[new][STANDARD_REF_NO]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni numrin standard të referencës"
+=======
+      "Please enter standard ref number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SUBJECT]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 50 karaktere"
+=======
+      "Max length for subject is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][GRADE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e klasës është 50 karaktere"
+=======
+      "Max length for grade is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][COURSE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 50 karaktere"
+=======
+      "Max length for course is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][DOMAIN]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e fushës është 50 karaktere"
+=======
+      "Max length for domain is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][TOPIC]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e temës është 50 karaktere"
+=======
+      "Max length for topic is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][STANDARD_REF_NO]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e numrit të referencës është 50 karaktere"
+=======
+      "Max length for ref number is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][STANDARD_DETAILS]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e të dhënave të referencës është 50 karaktere"
+=======
+      "Max length for ref details is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
   var count = document.getElementById("count").value.trim();
@@ -4836,58 +6646,102 @@ function formcheck_common_standards() {
     frmvalidator.addValidation(
       "inputvalues[" + i + "][STANDARD_REF_NO]",
       "req",
+<<<<<<< HEAD
       "Ju lutemi vendosni numrin standard të referencës"
+=======
+      "Please enter standard ref number"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][SUBJECT]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 50 karaktere"
+=======
+      "Max length for subject is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][GRADE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e klasës është 50 karaktere"
+=======
+      "Max length for grade is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][COURSE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e lëndës është 50 karaktere"
+=======
+      "Max length for course is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][DOMAIN]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e fushës është 50 karaktere"
+=======
+      "Max length for domain is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][TOPIC]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e temës është 50 karaktere"
+=======
+      "Max length for topic is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][STANDARD_REF_NO]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e numrit të referencës është 50 karaktere"
+=======
+      "Max length for ref number is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "inputvalues[" + i + "][STANDARD_DETAILS]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e të dhënave të referencës është 50 karaktere"
+=======
+      "Max length for ref details is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
 
 function check_effort_cat() {
   var frmvalidator = new Validator("cat");
+<<<<<<< HEAD
   frmvalidator.addValidation("TITLE", "req", "Ju lutemi vendosni titullin");
   frmvalidator.addValidation(
     "TITLE",
     "maxlen=50",
     "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+  frmvalidator.addValidation("TITLE", "req", "Please enter title");
+  frmvalidator.addValidation(
+    "TITLE",
+    "maxlen=50",
+    "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
   frmvalidator.addValidation(
     "SORT_ORDER",
     "num",
+<<<<<<< HEAD
     "Renditja lejon vetëm vlerë numerike"
+=======
+    "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   );
 }
 function check_effort_item() {
@@ -4898,12 +6752,20 @@ function check_effort_item() {
       frmvalidator.addValidation(
         "inputvalues[" + i + "][TITLE]",
         "maxlen=50",
+<<<<<<< HEAD
         "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+        "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       frmvalidator.addValidation(
         "inputvalues[" + i + "][SORT_ORDER]",
         "num",
+<<<<<<< HEAD
         "Renditja lejon vetëm vlerë numerike"
+=======
+        "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
     }
   }
@@ -4911,12 +6773,20 @@ function check_effort_item() {
     frmvalidator.addValidation(
       "values[new][TITLE]",
       "maxlen=50",
+<<<<<<< HEAD
       "Gjatësia maksimale e titullit është 50 karaktere"
+=======
+      "Max length for title is 50"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     frmvalidator.addValidation(
       "values[new][SORT_ORDER]",
       "num",
+<<<<<<< HEAD
       "Renditja lejon vetëm vlerë numerike"
+=======
+      "Sort order allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
   }
 }
@@ -4926,29 +6796,49 @@ function forgotpass() {
   if (document.getElementById("pass_student").checked == true) {
     if (document.getElementById("password_stn_id").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni ID e nxënësit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter student id.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("password_stn_id").focus();
       return false;
     } else if (document.getElementById("uname").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni emrin tuaj të përdoruesit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your username.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("uname").focus();
       return false;
     } else if (document.getElementById("monthSelect1").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën e lindjes.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter date of birth.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     } else return true;
   } else {
     if (document.getElementById("uname").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni emrin tuaj të përdoruesit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your username.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("pass_err_msg_email").innerHTML = "";
       document.getElementById("uname").focus();
       return false;
     } else if (document.getElementById("pass_email").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni email-in tuaj.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your email.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("pass_err_msg_email").innerHTML = "";
       document.getElementById("pass_stf_email").focus();
       return false;
@@ -4967,29 +6857,49 @@ function forgotusername() {
   if (document.getElementById("uname_student").checked == true) {
     if (document.getElementById("username_stn_id").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni ID e nxënësit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter student id.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("username_stn_id").focus();
       return false;
     } else if (document.getElementById("pass").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni fjalëkalimin tuaj.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your password.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("pass").focus();
       return false;
     } else if (document.getElementById("monthSelect2").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni datën tuaj të lindjes.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your date of birth.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     } else return true;
   } else {
     if (document.getElementById("pass").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni fjalëkalimin tuaj.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your password.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("uname_err_msg_email").innerHTML = "";
       document.getElementById("pass").focus();
       return false;
     } else if (document.getElementById("un_email").value == "") {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni email-in tuaj.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter your email.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       document.getElementById("uname_err_msg_email").innerHTML = "";
       document.getElementById("username_stf_email").focus();
       return false;
@@ -5010,6 +6920,7 @@ function check_update_seat(cp_seats,course_period_id,student_count)
     {
         if (updated_seats.value.trim() == '' || updated_seats.value.trim() == '0')
         {
+<<<<<<< HEAD
             document.getElementById('err_message').innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Numri i ri i vendeve nuk mund të jetë bosh ose zero.</div>';
             return false;
         } else if (updated_seats.value < cp_seats)
@@ -5019,6 +6930,17 @@ function check_update_seat(cp_seats,course_period_id,student_count)
         } else if (updated_seats.value < (cp_seats+student_count))
         {
             document.getElementById('err_message').innerHTML = `<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Numri i ri i vendeve nuk mund të jetë më i vogël se ${cp_seats + student_count} because we have ${student_count} students left to schedule.</div>`;
+=======
+            document.getElementById('err_message').innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> New number of seats cannot be blank/zero.</div>';
+            return false;
+        } else if (updated_seats.value < cp_seats)
+        {
+            document.getElementById('err_message').innerHTML = '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> New number of seats cannot be lesser than '+cp_seats+'.</div>';
+            return false;
+        } else if (updated_seats.value < (cp_seats+student_count))
+        {
+            document.getElementById('err_message').innerHTML = `<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> New number of seats cannot be lesser than ${cp_seats + student_count} because we have ${student_count} students left to schedule.</div>`;
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             return false;
         } else
             return true;
@@ -5035,18 +6957,30 @@ function formcheck_ada_dates() {
 
     if (date_1_obj > date_2_obj) {
       document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Data e fillimit nuk mund të jetë pas datës së mbarimit.</div>';
+=======
+        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Start date cannot be after end date.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       return false;
     } else var frmvalidator = new Validator("ada_from");
   }
   if (date_1 == "") {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Data e fillimit nuk mund të jetë bosh.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Start cannot be blank.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     return false;
   }
   if (date_2 == "") {
     document.getElementById("divErr").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Data e mbarimit nuk mund të jetë bosh.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> End cannot be blank.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     return false;
   }
 }
@@ -5067,7 +7001,11 @@ function formcheck_school_grad_config() {
       frmvalidator.addValidation(
         mp_per[i].name,
         "num",
+<<<<<<< HEAD
         "Përqindja përfundimtare e notimit lejon vetëm vlerë numerike"
+=======
+        "Final grading percentage allows only numeric value"
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
   }
 }
@@ -5170,7 +7108,11 @@ function validate_filter(filter_name) {
 
   if (document.getElementById("filter_name").value == "") {
     document.getElementById("error_modal_filter").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> &nbsp; Ju lutemi vendosni një emër të vlefshëm për filtrin.</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> &nbsp; Please enter a valid filter name.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     return false;
   } else if (filter_name.includes(filterName) == true) {
     document.getElementById("error_modal_filter").innerHTML =
@@ -5189,7 +7131,11 @@ function save_student_filters() {
 
   if (document.getElementById("filter_name").value == "") {
     document.getElementById("error_modal_filter").innerHTML =
+<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> &nbsp; Ju lutemi vendosni një emër të vlefshëm për filtrin</div>';
+=======
+      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> &nbsp; Please enter a valid filter name</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     document.getElementById("filter_name").focus();
 

@@ -493,7 +493,11 @@ if (isset($_REQUEST['modfunc']) && $_REQUEST['modfunc'] == 'body') {
         echo '<h6 class="media-heading text-bold">' . GetNameFromUserName($v['FROM_USER']) . '</h6>';
         if ($v['TO_CC_MULTIPLE'] != '' || $v['TO_BCC_MULTIPLE'] != '') {
             echo '<div class="media-annotation dropdown">';
+<<<<<<< HEAD
             echo _toMe . ' <a href="javascript:void(0)" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-down"></i></a>';
+=======
+            echo 'To: Me <a href="javascript:void(0)" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown"><i class="fa fa-caret-down"></i></a>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo '<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">';
             if ($v['TO_CC_MULTIPLE'] != '') {
                 echo "<li><b>CC:</b> " . $v['TO_CC_MULTIPLE'] . "</li>";

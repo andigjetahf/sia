@@ -26,6 +26,7 @@
 #
 #***************************************************************************************
 function ProgramTitle()
+<<<<<<< HEAD
 {
 	global $_openSIS;
 	if (!$_openSIS['Menu'])
@@ -37,10 +38,26 @@ function ProgramTitle()
 			foreach ($programs as $program => $title)
 			{
 				if ($_REQUEST['modname'] == $program)
+=======
+{	global $_openSIS;
+	if(!$_openSIS['Menu'])
+		include 'Menu.php';
+	foreach($_openSIS['Menu'] as $modcat=>$programs)
+	{
+		if(count($programs))
+		{
+			foreach($programs as $program=>$title)
+			{
+				if($_REQUEST['modname']==$program)
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 					return $title;
 			}
 		}
 	}
+<<<<<<< HEAD
 	return 'SIA (Sistemi Inteligjences Arsimore)';
+=======
+	return 'openSIS';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 ?>

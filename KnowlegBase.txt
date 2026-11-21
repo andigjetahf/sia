@@ -1,9 +1,17 @@
 ================================================================================
+<<<<<<< HEAD
                     SIA (SIA (Sistemi Inteligjences Arsimore) 9.3) KNOWLEDGE BASE & SYSTEM GUIDE
 ================================================================================
 Version: 1.0
 Target Stack: Apache 2.4 | PHP 8.3 (php:8.3-apache) | MySQL 8.0.46 (mysql:8.0) | Docker Compose
 Project: SIA - Student Information System (fork/deployment of SIA (Sistemi Inteligjences Arsimore) Community 9.3)
+=======
+                    SIA (openSIS 9.3) KNOWLEDGE BASE & SYSTEM GUIDE
+================================================================================
+Version: 1.0
+Target Stack: Apache 2.4 | PHP 8.3 (php:8.3-apache) | MySQL 8.0.46 (mysql:8.0) | Docker Compose
+Project: SIA - Student Information System (fork/deployment of openSIS Community 9.3)
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 Date: 2026-11-19
 ================================================================================
 
@@ -11,7 +19,11 @@ Date: 2026-11-19
 1. PËRMBLEDHJA DHE ARKITEKTURA E SISTEMIT (ARCHITECTURE OVERVIEW)
 --------------------------------------------------------------------------------
 Projekti SIA është një platformë e menaxhimit të shkollave (Student Information System)
+<<<<<<< HEAD
 e bazuar në SIA (Sistemi Inteligjences Arsimore) Community Edition versioni 9.3. Sistemi funksionon brenda kontejnerëve
+=======
+e bazuar në openSIS Community Edition versioni 9.3. Sistemi funksionon brenda kontejnerëve
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 Docker përmes Docker Compose:
 
 1. Shërbimi i Aplikacionit ("app"):
@@ -73,7 +85,11 @@ kryesore që pengonin funksionimin e sistemit:
 
 [GABIMI 4] Bllokimi i Instaluesit Grafik (/install/) kur ekziston Data.php
 - Simptoma: Hapja e `http://IP:8080/install/` kthente ridrejtim ose ekran të bardhë.
+<<<<<<< HEAD
 - Shkaku: Kodi i SIA (Sistemi Inteligjences Arsimore) te index.php bllokon ose ridrejton instaluesin nëse skedari
+=======
+- Shkaku: Kodi i openSIS te index.php bllokon ose ridrejton instaluesin nëse skedari
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
   Data.php ekziston tashmë në disk.
 - Mësimi: Nëse duhet përdorur instaluesi web, Data.php duhet fshirë dhe baza duhet të jetë bosh.
 
@@ -90,7 +106,11 @@ kryesore që pengonin funksionimin e sistemit:
 - Simptoma: Login me `os4ed / os4ed` pranohej, por faqja e brendshme (index.php) dilte bosh
   me përgjigje HTTP 200 dhe Content-Length: 3.
 - Shkaku Rrënjësor:
+<<<<<<< HEAD
   1) Tabelat `staff_school_relationship`, `staff_school_info` (ku kërkohet SIA (Sistemi Inteligjences Arsimore)_ACCESS='Y')
+=======
+  1) Tabelat `staff_school_relationship`, `staff_school_info` (ku kërkohet OPENSIS_ACCESS='Y')
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
      dhe `system_preference_misc` ishin bosh.
   2) Tabela `app` kishte rreshta të katërfishtë sepse nuk ka Primary Key.
   3) Rreshti `error_reporting(0)` fshihte paralajmërimet.
@@ -132,8 +152,13 @@ kryesore që pengonin funksionimin e sistemit:
      * `log_errors = On`
      * `error_log = /var/log/apache2/php_errors.log`
 
+<<<<<<< HEAD
 3. SKEDARI I PLOTË I TË DHËNAVE: docker/seed-SIA (Sistemi Inteligjences Arsimore).sql (54.8 KB)
    - Krijuar nga nxjerrja e plotë e të dhënave zyrtare të SIA (Sistemi Inteligjences Arsimore) 9.3:
+=======
+3. SKEDARI I PLOTË I TË DHËNAVE: docker/seed-opensis.sql (54.8 KB)
+   - Krijuar nga nxjerrja e plotë e të dhënave zyrtare të openSIS 9.3:
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
      * `app`: Version 9.3, title 'SIA', syear 2024
      * `schools`: id=1, syear=2024, title='Shkolla'
      * `school_years`: marking_period_id=1, syear='2024', school_id=1, title='Full Year', short_name='FY'
@@ -141,7 +166,11 @@ kryesore që pengonin funksionimin e sistemit:
      * `user_profiles`: Administrator (0, 1), Teacher (2), Student (3), Parent (4), Admin Asst (5)
      * `staff`: Super Administrator (staff_id=1, profile_id=0, profile='admin')
      * `staff_school_relationship`: staff_id=1, school_id=1, syear=2024
+<<<<<<< HEAD
      * `staff_school_info`: staff_id=1, SIA (Sistemi Inteligjences Arsimore)_access='Y', SIA (Sistemi Inteligjences Arsimore)_profile='0', school_access='1'
+=======
+     * `staff_school_info`: staff_id=1, opensis_access='Y', opensis_profile='0', school_access='1'
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
      * `login_authentication`: id=1, user_id=1, profile_id=0, username='os4ed',
        password='$2y$10$yR8cf7lao0ed9HAyzsD1wuxerYtxXAuhPGrp5nHXI8lFoWh.ZaxJC' (os4ed)
      * `profile_exceptions`: Qindra rregulla lejedhënieje për modulet e sistemit.
@@ -151,7 +180,11 @@ kryesore që pengonin funksionimin e sistemit:
    - Formati: Pastruar në standard UNIX LF pa BOM.
    - Logjika:
      * Kur `SIA_AUTO_INSTALL=true` (ose e papërcaktuar): gjeneron Data.php, pret MySQL,
+<<<<<<< HEAD
        dhe nëse databaza ka <50 tabela importon skemën, procedurat, triggers dhe `seed-SIA (Sistemi Inteligjences Arsimore).sql`.
+=======
+       dhe nëse databaza ka <50 tabela importon skemën, procedurat, triggers dhe `seed-opensis.sql`.
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
      * Kur `SIA_AUTO_INSTALL=false`: NUK e gjeneron Data.php, duke lënë rrugën të hapur
        që përdoruesi të hapë direkt magjistarin `/install/`.
      * Zbaton lejet e duhura: `chown -R www-data:www-data`, `chmod 640 Data.php`,
@@ -222,7 +255,11 @@ Nëse dëshironi të kryeni instalimin grafik manualisht nga shfletuesi:
    - Database Password: root_secret (nga .env)
    - Database Name: sia
    - Plotësoni emrin e shkollës, datat dhe krijoni administratorin tuaj.
+<<<<<<< HEAD
    - Në Step 5 klikoni "Proceed to SIA (Sistemi Inteligjences Arsimore) Login".
+=======
+   - Në Step 5 klikoni "Proceed to openSIS Login".
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --------------------------------------------------------------------------------
@@ -236,6 +273,7 @@ Nëse dëshironi të kryeni instalimin grafik manualisht nga shfletuesi:
    `log_bin_trust_function_creators=1`.
 4. Nëse modifikoni Dockerfile ose entrypoint.sh në Windows, sigurohuni që skedarët
    bash (.sh) të ruhen me fund rreshti standard UNIX LF (`\n`) dhe jo Windows CRLF (`\r\n`).
+<<<<<<< HEAD
 
 
 --------------------------------------------------------------------------------
@@ -304,3 +342,6 @@ Statusi: Përfunduar me sukses në të gjitha modulet dhe komponentët.
      që kishte shkaktuar shndërrimin e pavend të germave (PeogeamTitle / foeeach / eetuen).
    - Të gjithë skedarët e modifikuar u verifikuan dhe u ruajtën me kodim UTF-8 pa BOM.
 ================================================================================
+=======
+================================================================================
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f

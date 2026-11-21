@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿var loadingImage = new Image();
+=======
+var loadingImage = new Image();
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 loadingImage.src = "assets/ajax-loader.gif";
 
 function showLoading()
@@ -6,7 +10,11 @@ function showLoading()
     var str;
     str = '<table><tr><td width=200px></td></tr>';
     str = str + '<tr><td align=center><img border=0 src=\'images/loading.gif\'></td></tr>';
+<<<<<<< HEAD
     str = str + '<tr><td align=center>Duke ngarkuar...</td></tr></table>';
+=======
+    str = str + '<tr><td align=center>Loading...</td></tr></table>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     return str;
 }
@@ -32,7 +40,11 @@ function check_content(the_content) {
 }
 function parseCheck_content() {
     if (request.readyState == 1) {
+<<<<<<< HEAD
         document.getElementById('content').innerHTML = '<center><img border=0 src=assets/ajax_loader.gif><br>Duke ngarkuar...</center>';
+=======
+        document.getElementById('content').innerHTML = '<center><img border=0 src=assets/ajax_loader.gif><br>Loading...</center>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     if (request.readyState == 4) {
         var answer = request.responseText;
@@ -62,7 +74,11 @@ function load_link_group(the_content, stat) {
 
 
         if (request.readyState == 1) {
+<<<<<<< HEAD
             document.getElementById('content').innerHTML = '<center><img border=0 src=assets/ajax_loader.gif><br>Duke ngarkuar...</center>';
+=======
+            document.getElementById('content').innerHTML = '<center><img border=0 src=assets/ajax_loader.gif><br>Loading...</center>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         if (request.readyState == 4) {
             var answer = request.responseText;
@@ -73,13 +89,21 @@ function load_link_group(the_content, stat) {
         if (stat == '1')
         {
 
+<<<<<<< HEAD
 document.getElementById('divErr').innerHTML ="<div class='alert alert-success alert-styled-left'><button type='button' class='close' data-dismiss='alert'><span>�</span><span class='sr-only'>Close</span></button>Anëtari u shtua me sukses.</div>";
+=======
+document.getElementById('divErr').innerHTML ="<div class='alert alert-success alert-styled-left'><button type='button' class='close' data-dismiss='alert'><span>�</span><span class='sr-only'>Close</span></button>Member added successfully.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         }
         else if (stat == '2')
         {
 
+<<<<<<< HEAD
             document.getElementById('divErr').innerHTML = "<div class='alert alert-danger alert-styled-left'><button type='button' class='close' data-dismiss='alert'><span>�</span><span class='sr-only'>Close</span></button>Anëtari u fshi me sukses.</div>";
+=======
+            document.getElementById('divErr').innerHTML = "<div class='alert alert-danger alert-styled-left'><button type='button' class='close' data-dismiss='alert'><span>�</span><span class='sr-only'>Close</span></button>Member deleted successfully.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         }
 
@@ -93,7 +117,11 @@ function ajaxform(thisform, formhandler)
     try {
         xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     } catch (e) {
+<<<<<<< HEAD
         alert("Gabim: Faqja nuk mund të ngarkohet.");
+=======
+        alert("Error: Could not load page.");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     for (i = 0; i < thisform.length; i++)
     {
@@ -142,7 +170,11 @@ function loadformani(thisform, formhandler)
     try {
         xmlhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
     } catch (e) {
+<<<<<<< HEAD
         alert("Gabim: Faqja nuk mund të ngarkohet.");
+=======
+        alert("Error: Could not load page.");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     for (i = 0; i < thisform.length; i++)
     {

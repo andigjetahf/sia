@@ -28,12 +28,20 @@
 error_reporting(0);
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="sq">
+=======
+<html lang="en">
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <title>Instaluesi SIA</title>
+=======
+        <title>SIA Installer</title>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/installer.css?v=<?php echo rand(000, 999); ?>" type="text/css" />
@@ -57,14 +65,21 @@ error_reporting(0);
                 <div class="panel">
                     <div class="panel-heading">
                         <div class="logo">
+<<<<<<< HEAD
                             <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)">
                         </div>
                         <h3>Instalimi i SIA - Konfigurimi i Llogarisë së Administratorit</h3>
+=======
+                            <img src="assets/images/opensis_logo.png" alt="SIA">
+                        </div>
+                        <h3>SIA Installation - Site Admin Account Setup</h3>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>
                     <div class="panel-body">
                         <div class="installation-steps-wrapper">
                             <div class="installation-instructions">
                                 <ul class="installation-steps-label">
+<<<<<<< HEAD
                                     <li>Zgjidhni Paketën</li>
                                     <li>Kërkesat e Sistemit</li>
                                     <li>Lidhja me Bazën e të Dhënave</li>
@@ -80,6 +95,23 @@ error_reporting(0);
                             </div>
                             <div class="installation-steps">
                                 <h4 class="m-t-0 m-b-5">Konfiguroni Llogarinë e Administratorit të Sistemit</h4>
+=======
+                                    <li>Choose Package</li>
+                                    <li>System Requirements</li>
+                                    <li>Database Connection</li>
+                                    <li>Database Selection</li>
+                                    <li>School Information</li>
+                                    <li class="active">Site Admin Account Setup</li>
+                                    <li>Ready to Go!</li>
+                                </ul>
+                                <!--<h4 class="no-margin">Installation Instructions</h4>
+                                <p>Installer has successfully created your school.</p>
+                                <p>The username and password you enter here will become the login credentials for the super administrator of the system.</p>
+                                <p>Please make sure you give a strong alphanumeric password to prevent unauthorized access to the system.</p>-->
+                            </div>
+                            <div class="installation-steps">
+                                <h4 class="m-t-0 m-b-5">Setup a Site Administrator Account</h4>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                 <div id="error" class="text-center">&nbsp;</div>
                                 <form name='step4' id='step4' method="post" action="Ins4.php">
@@ -87,13 +119,21 @@ error_reporting(0);
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Emri</label>
+=======
+                                                <label class="control-label">First Name</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="fname" id="fname" size="20" tabindex="1" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Mbiemri</label>
+=======
+                                                <label class="control-label">Last Name</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="lname" id="lname" size="20" tabindex="2" class="form-control" />
                                             </div>
                                         </div>
@@ -101,13 +141,21 @@ error_reporting(0);
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Emri i Mesëm</label>
+=======
+                                                <label class="control-label">Middle Name</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" id="mname" name="mname" size="20" tabindex="3" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Adresa e Email-it</label>
+=======
+                                                <label class="control-label">Email ID</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="emailid" id="emailid" size="20" tabindex="2" class="form-control" />
                                             </div>
                                         </div>
@@ -115,21 +163,35 @@ error_reporting(0);
                                     <div class="row">
                                         <div class="col-md-4">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Emri i Përdoruesit</label>
+=======
+                                                <label class="control-label">Username</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="auname" id="auname" size="20" tabindex="4" onblur="check_username_install(this.value);" class="form-control"/>
                                                 <div id="ucheck" style="font-weight:bold;"></div>
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Fjalëkalimi</label>
                                                 <input type="password" id="apassword" name="apassword" size="20" tabindex="5" autocomplete="off" onkeyup="passwordStrength(this.value);" class="form-control" />
                                                 <div class="help-block" style="font-size: 12px; height: 5px;"><span id="passwordStrengthWrap" style="display: none">Fuqia e Fjalëkalimit:</span> <span id="passwordStrength" style="font-weight:bold;"></span></div>
+=======
+                                                <label class="control-label">Password</label>
+                                                <input type="password" id="apassword" name="apassword" size="20" tabindex="5" autocomplete="off" onkeyup="passwordStrength(this.value);" class="form-control" />
+                                                <div class="help-block" style="font-size: 12px; height: 5px;"><span id="passwordStrengthWrap" style="display: none">Password Strength:</span> <span id="passwordStrength" style="font-weight:bold;"></span></div>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                             </div>
                                         </div>
                                         <div class="col-md-4">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Konfirmoni Fjalëkalimin</label>
+=======
+                                                <label class="control-label">Confirm Password</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="password" id="capassword" name="capassword" size="20" tabindex="6" class="form-control" />
                                             </div>
                                         </div>
@@ -137,7 +199,11 @@ error_reporting(0);
 
                                     <hr/>
                                     <div class="text-right">
+<<<<<<< HEAD
                                         <input type="submit" value="Ruaj & Vazhdo"  class="btn btn-success" name="btninsert" onclick="return pass_check();" />
+=======
+                                        <input type="submit" value="Save & Next"  class="btn btn-success" name="btninsert" onclick="return pass_check();" />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </div>
                                 </form>
                             </div>
@@ -157,7 +223,11 @@ error_reporting(0);
                 var frm = document.forms["step4"];
                 if (frm.apassword.value != frm.capassword.value)
                 {
+<<<<<<< HEAD
                     alert('Fjalëkalimi dhe konfirmimi i fjalëkalimit nuk përputhen!');
+=======
+                    alert('The Password and Confirm Password does not match!');
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     frm.capassword.focus();
                     return false;
                 }
@@ -173,11 +243,19 @@ error_reporting(0);
                 document.getElementById("passwordStrengthWrap").style.display = "none";
 
                 var desc = new Array();
+<<<<<<< HEAD
                 desc[0] = "Shumë i dobët";
                 desc[1] = "I dobët";
                 desc[2] = "I mirë";
                 desc[3] = "I fortë";
                 desc[4] = "Shumë i fortë";
+=======
+                desc[0] = "Very Weak";
+                desc[1] = "Weak";
+                desc[2] = "Good";
+                desc[3] = "Strong";
+                desc[4] = "Strongest";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 //if password bigger than 7 give 1 point
                 if (password.length > 0)
@@ -238,7 +316,11 @@ error_reporting(0);
 
                 if (fname.value == '')
                 {
+<<<<<<< HEAD
                     document.getElementById("error").innerHTML = '<span class="text-danger">Emri nuk mund të jetë bosh.</span>';
+=======
+                    document.getElementById("error").innerHTML = '<span class="text-danger">First name cannot be blank.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                     fname.focus();
                     return false;
@@ -248,14 +330,22 @@ error_reporting(0);
                     if (fname.value.length > 50)
                     {
 
+<<<<<<< HEAD
                         document.getElementById('error').innerHTML = '<span class="text-danger">Gjatësia maksimale për emrin është 50 karaktere.</span>';
+=======
+                        document.getElementById('error').innerHTML = '<span class="text-danger">Max length for First name is 50 characters.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         fname.focus();
                         return false;
                     }
                 }
                 if (lname.value == '')
                 {
+<<<<<<< HEAD
                     document.getElementById("error").innerHTML = '<span class="text-danger">Mbiemri nuk mund të jetë bosh.</span>';
+=======
+                    document.getElementById("error").innerHTML = '<span class="text-danger">Last name cannot be blank.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                     lname.focus();
                     return false;
@@ -264,7 +354,11 @@ error_reporting(0);
                 {
                     if (lname.value.length > 50)
                     {
+<<<<<<< HEAD
                         document.getElementById('error').innerHTML = '<span class="text-danger">Gjatësia maksimale për mbiemrin është 50 karaktere.</span>';
+=======
+                        document.getElementById('error').innerHTML = '<span class="text-danger">Max length for Last name is 50 characters.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         lname.focus();
                         return false;
                     }
@@ -272,7 +366,11 @@ error_reporting(0);
 
                 if (emailid.value == '')
                 {
+<<<<<<< HEAD
                     document.getElementById("error").innerHTML = '<span class="text-danger">Adresa e email-it nuk mund të jetë bosh.</span>';
+=======
+                    document.getElementById("error").innerHTML = '<span class="text-danger">Email ID cannot be blank.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                     emailid.focus();
                     return false;
@@ -281,7 +379,11 @@ error_reporting(0);
                 {
                     if (emailid.value.length > 100)
                     {
+<<<<<<< HEAD
                         document.getElementById('error').innerHTML = '<span class="text-danger">Gjatësia maksimale për email-in është 100 karaktere.</span>';
+=======
+                        document.getElementById('error').innerHTML = '<span class="text-danger">Max length for Email ID is 100 characters.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         emailid.focus();
                         return false;
                     }
@@ -290,19 +392,31 @@ error_reporting(0);
                     var dot = emailid.value.indexOf(".");
 
                     if (atSymbol < 1) {
+<<<<<<< HEAD
                         document.getElementById('error').innerHTML = '<span class="text-danger">Ju lutemi vendosni një adresë email-i të vlefshme.</span>';
+=======
+                        document.getElementById('error').innerHTML = '<span class="text-danger">Please enter a valid email ID.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         emailid.focus();
                         return false;
                     }
 
                     if (dot <= atSymbol + 2) {
+<<<<<<< HEAD
                         document.getElementById('error').innerHTML = '<span class="text-danger">Ju lutemi vendosni një adresë email-i të vlefshme.</span>';
+=======
+                        document.getElementById('error').innerHTML = '<span class="text-danger">Please enter a valid email ID.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         emailid.focus();
                         return false;
                     }
 
                     if (dot === emailid.value.length - 1) {
+<<<<<<< HEAD
                         document.getElementById('error').innerHTML = '<span class="text-danger">Ju lutemi vendosni një adresë email-i të vlefshme.</span>';
+=======
+                        document.getElementById('error').innerHTML = '<span class="text-danger">Please enter a valid email ID.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         emailid.focus();
                         return false;
                     }
@@ -310,13 +424,21 @@ error_reporting(0);
 
                 if (mname.value.length > 50)
                 {
+<<<<<<< HEAD
                     document.getElementById('error').innerHTML = '<span class="text-danger">Gjatësia maksimale për emrin e mesëm është 50 karaktere.</span>';
+=======
+                    document.getElementById('error').innerHTML = '<span class="text-danger">Max length for Middle name is 50 characters.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     mname.focus();
                     return false;
                 }
                 if (auname.value.trim() == '')
                 {
+<<<<<<< HEAD
                     document.getElementById("error").innerHTML = '<span class="text-danger">Emri i përdoruesit të administratorit nuk mund të jetë bosh.</span>';
+=======
+                    document.getElementById("error").innerHTML = '<span class="text-danger">Administrative username cannot be blank.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                     auname.focus();
                     return false;
@@ -332,7 +454,11 @@ error_reporting(0);
                     {
                         if (auname.value.length > 50)
                         {
+<<<<<<< HEAD
                             document.getElementById('error').innerHTML = '<span class="text-danger">Gjatësia maksimale për emrin e përdoruesit është 50 karaktere.</span>';
+=======
+                            document.getElementById('error').innerHTML = '<span class="text-danger">Max length for Administrative username is 50 characters.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                             auname.focus();
                             return false;
                         }
@@ -340,7 +466,11 @@ error_reporting(0);
                 }
                 if (apassword.value.trim() == '')
                 {
+<<<<<<< HEAD
                     document.getElementById("error").innerHTML = '<span class="text-danger">Fjalëkalimi i administratorit nuk mund të jetë bosh.</span>';
+=======
+                    document.getElementById("error").innerHTML = '<span class="text-danger">Administrative password cannot be blank.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     auname.focus();
                     return false;
                 }
@@ -349,7 +479,11 @@ error_reporting(0);
                 {
                     if (apassword.value.length < 7 || (apassword.value.length > 7 && !apassword.value.match((/\d+/))) || (apassword.value.length > 7 && !apassword.value.match((/.[!,@,#,$,%,^,&,*,?,_,~,-,(,)]/))))
                     {
+<<<<<<< HEAD
                         document.getElementById("error").innerHTML = '<span class="text-danger">Fjalëkalimi duhet të jetë të paktën 8 karaktere, me të paktën një numër dhe një karakter special.</span>';
+=======
+                        document.getElementById("error").innerHTML = '<span class="text-danger">Password should be minimum 8 characters with atleast one number and one special character.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         return false;
                     }
 
@@ -357,7 +491,11 @@ error_reporting(0);
                 }
                 else
                 {
+<<<<<<< HEAD
                     document.getElementById("error").innerHTML = '<span class="text-danger">Konfirmimi i fjalëkalimit nuk përputhet.</span>';
+=======
+                    document.getElementById("error").innerHTML = '<span class="text-danger">Confirm password mismatch.</span>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     capassword.focus();
                     return false;
                 }
@@ -373,7 +511,11 @@ error_reporting(0);
                 {
                     document.getElementById("auname_flag").value = 2;
                     document.getElementById('error').style.color = '#008800';
+<<<<<<< HEAD
                     document.getElementById('error').innerHTML = 'Emri i përdoruesit është i lirë';
+=======
+                    document.getElementById('error').innerHTML = 'Username available';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
             }
             function check_username_install_callback(data) {
@@ -383,14 +525,22 @@ error_reporting(0);
                 if (data == '1')
                 {
                     obj.style.color = '#ff0000';
+<<<<<<< HEAD
                     obj.innerHTML = 'Ky emër përdoruesi është i zënë';
+=======
+                    obj.innerHTML = 'Username already taken';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     document.getElementById('auname_flag').value = '1';
                 }
 
                 if (data == '0')
                 {
                     obj.style.color = '#008800';
+<<<<<<< HEAD
                     obj.innerHTML = 'Emri i përdoruesit është i lirë';
+=======
+                    obj.innerHTML = 'Username available';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     document.getElementById('auname_flag').value = '2';
                 }
             }

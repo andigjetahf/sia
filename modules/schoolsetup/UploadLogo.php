@@ -106,20 +106,36 @@ if (UserSchool()) {
             $_FILES["file"]["error"] = 1;
         }
         if ($_FILES["file"]["error"] > 0 && $upload->wrongFormat == 1) {
+<<<<<<< HEAD
             $msg = "<font color=red><b>" . (defined('_cannotUploadFileOnlyJpgJpegPngGifFilesAreAllowed') ? _cannotUploadFileOnlyJpgJpegPngGifFilesAreAllowed : 'Skedari nuk mund të ngarkohet. Lejohen vetëm skedarë jpg, jpeg, png, gif') . "</b></font>";
             echo '
 	' . $msg . '
 	<form enctype="multipart/form-data" action="Modules.php?modname=schoolsetup/UploadLogo.php&action=upload" method="POST">';
             echo '<div align=center>' . (defined('_selectLogo') ? _selectLogo : 'Zgjidhni Logon') . ': <input name="file" type="file" /><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
+=======
+            $msg = "<font color=red><b>Cannot upload file. Only jpeg, jpg, png, gif files are allowed.</b></font>";
+            echo '
+	' . $msg . '
+	<form enctype="multipart/form-data" action="Modules.php?modname=schoolsetup/UploadLogo.php&action=upload" method="POST">';
+            echo '<div align=center>Select Logo: <input name="file" type="file" /><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 <input type="submit" value="'._upload.'" name="Submit" class=btn_medium />&nbsp;<input type=button class=btn_medium value="'._cancel.'" onclick=\'load_link("Modules.php?modname=schoolsetup/Schools.php");\'></div>
 </form>';
             PopTable('footer');
         } else if ($_FILES["file"]["error"] > 0 && $upload->wrongSize == 1) {
+<<<<<<< HEAD
             $msg = "<font color=red><b>" . (defined('_FileExceedsTheAllowableSizeTryAgainWithAFileLessThen10Mb') ? _FileExceedsTheAllowableSizeTryAgainWithAFileLessThen10Mb : 'Skedari tejkalon madhësinë e lejuar. Provoni përsëri me një skedar më të vogël se 10 MB.') . "</b></font>";
             echo '
 	' . $msg . '
 	<form enctype="multipart/form-data" action="Modules.php?modname=schoolsetup/UploadLogo.php&action=upload" method="POST">';
             echo '<div align=center>' . (defined('_selectLogo') ? _selectLogo : 'Zgjidhni Logon') . ': <input name="file" type="file" /> <b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
+=======
+            $msg = "<font color=red><b>File too large. Maximum upload file size limit 10 MB.</b></font>";
+            echo '
+	' . $msg . '
+	<form enctype="multipart/form-data" action="Modules.php?modname=schoolsetup/UploadLogo.php&action=upload" method="POST">';
+            echo '<div align=center>Select Logo: <input name="file" type="file" /> <b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 <input type="submit" value="'._upload.'" name="Submit" class=btn_medium />&nbsp;<input type=button class=btn_medium value="'._cancel.'" onclick=\'load_link("Modules.php?modname=schoolsetup/Schools.php");\'></div>
 </form>';
             PopTable('footer');
@@ -161,20 +177,32 @@ if (UserSchool()) {
 //fclose($upload->target_path);
 //      $filename =  $upload->target_path;
             echo '<div class="m-t-10"></div>';
+<<<<<<< HEAD
             echo '<div align=center><input type=button class=btn_medium value="' . (defined('_done') ? _done : 'Përfundo') . '" onclick=\'load_link("Modules.php?modname=schoolsetup/Schools.php");\'></div>';
+=======
+            echo '<div align=center><input type=button class=btn_medium value=Done onclick=\'load_link("Modules.php?modname=schoolsetup/Schools.php");\'></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             PopTable('footer');
         }
     } else {
         echo '
 ' . $msg . '
 <form enctype="multipart/form-data" action="Modules.php?modname=schoolsetup/UploadLogo.php&action=upload" method="POST">';
+<<<<<<< HEAD
         echo '<div align=center>' . (defined('_selectLogo') ? _selectLogo : 'Zgjidhni Logon') . ': <input name="file" type="file" /><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
+=======
+        echo '<div align=center>Select Logo: <input name="file" type="file" /><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 <input type="submit" name="Submit"  value="'._upload.'" class="btn btn-primary" />&nbsp;<input type=button class="btn btn-default" value="'._cancel.'" onclick=\'load_link("Modules.php?modname=schoolsetup/Schools.php");\'></div>
 </form>';
         PopTable('footer');
     }
 } else {
+<<<<<<< HEAD
     echo _pleaseSelectASchoolFirst;
+=======
+    echo 'Please select a school first!';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     PopTable('footer');
 }
 ?>

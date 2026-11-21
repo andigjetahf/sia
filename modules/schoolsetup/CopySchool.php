@@ -34,6 +34,7 @@ echo '<div class="row">';
 
 echo '<div class="col-md-6 col-md-offset-3">';
 
+<<<<<<< HEAD
 $tables = array(
     'school_periods' => (defined('_schoolPeriods') ? _schoolPeriods : 'Orët Mësimore të Shkollës'),
     'school_years' => (defined('_markingPeriods') ? _markingPeriods : 'Periudhat e Vlerësimit'),
@@ -50,6 +51,11 @@ $tables = array(
 );
 #$tables = array('school_periods' =>_schoolPeriods, 'school_years' =>_markingPeriods, 'report_card_grades' =>_reportCardGradeCodes, 'report_card_comments' =>_schoolPeriods, 'eligibility_activities' =>_schoolPeriods, 'attendance_codes' =>_schoolPeriods, 'school_gradelevels' =>_reportCardGradeCodes, 'rooms' =>_schoolPeriods, 'school_gradelevel_sections' =>_schoolPeriods, 'course_subjects' =>_schoolPeriods, 'school_calendars' =>_schoolPeriods,'courses' =>_schoolPeriods,);
 $table_list = '<br/><div class="form-group"><label class="control-label text-uppercase" for="schoolTitle"><b>'._newSchool.'\'s '._title.'</b></label><INPUT type=text name=title placeholder="' . _title . '" value="'._newSchool.'" id="schoolTitle" onKeyUp="checkDuplicateName(1,this,0);" onBlur="checkDuplicateName(1,this,0);" class="form-control"></div>';
+=======
+$tables = array('school_periods' => 'School Periods', 'school_years' => 'Marking Periods', 'report_card_grades' => 'Report Card Grade Codes', 'report_card_comments' => 'Report Card Comment Codes', 'eligibility_activities' => 'Eligibility Activity Codes', 'attendance_codes' => 'Attendance Codes', 'school_gradelevels' => 'Grade Levels', 'rooms' => 'Rooms', 'school_gradelevel_sections' => 'Sections', 'course_subjects' => 'Subjects', 'school_calendars' => 'Calendar','courses' => 'Course',);
+#$tables = array('school_periods' =>_schoolPeriods, 'school_years' =>_markingPeriods, 'report_card_grades' =>_reportCardGradeCodes, 'report_card_comments' =>_schoolPeriods, 'eligibility_activities' =>_schoolPeriods, 'attendance_codes' =>_schoolPeriods, 'school_gradelevels' =>_reportCardGradeCodes, 'rooms' =>_schoolPeriods, 'school_gradelevel_sections' =>_schoolPeriods, 'course_subjects' =>_schoolPeriods, 'school_calendars' =>_schoolPeriods,'courses' =>_schoolPeriods,);
+$table_list = '<br/><div class="form-group"><label class="control-label text-uppercase" for="schoolTitle"><b>'._newSchool.'\'s '._title.'</b></label><INPUT type=text name=title placeholder="Title" value="'._newSchool.'" id="schoolTitle" onKeyUp="checkDuplicateName(1,this,0);" onBlur="checkDuplicateName(1,this,0);" class="form-control"></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 $table_list .= '<div class="row">';
 foreach ($tables as $table => $name) {
@@ -67,7 +73,11 @@ $table_list .= '</div>';
 
 $table_list .= "<input type=hidden id=checkDuplicateNameTable1 value='schools'/>";
 $table_list .= "<input type=hidden id=checkDuplicateNameField1 value='title'/>";
+<<<<<<< HEAD
 $table_list .= "<input type=hidden id=checkDuplicateNameMsg1 value='emër shkolle'/>";
+=======
+$table_list .= "<input type=hidden id=checkDuplicateNameMsg1 value='school name'/>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 if (clean_param($_REQUEST['copy'], PARAM_ALPHAMOD) == 'done') {
     echo '<strong>'._schoolInformationHasBeenCopiedSuccessfully.'</strong>';
 } else {

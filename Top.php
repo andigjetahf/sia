@@ -86,6 +86,7 @@ foreach($_openSIS['Menu'] as $modcat=>$value)
 		echo '<TD width=5></TD><TD align=center>';
 		echo "<A HREF=Side.php?modcat=$modcat target=side onclick='javascript:parent.body.location=\"Modules.php?modname=$modcat/Search.php\";'>";
 		echo "<DIV style='border:1px solid #E8E8E9;' onmouseover='this.style.border=\"1px outset #969696\";' onmouseout='this.style.border=\"1px solid #E8E8E9\";' onmousedown='this.style.border=\"1px inset #999999\";' onmouseup='this.style.border=\"1px outset #999999\";'>";
+<<<<<<< HEAD
 		$cat_title = '';
 		if ($modcat == 'eligibility') {
 			$cat_title = defined('_extracurricular') ? _extracurricular : 'Jashtëshkollore';
@@ -97,6 +98,9 @@ foreach($_openSIS['Menu'] as $modcat=>$value)
 			$cat_title = ucwords(str_replace('_', ' ', $modcat));
 		}
 		echo "<IMG SRC=assets/icons/$modcat.png border=0><BR><small><b>" . $cat_title . "</b></small>";
+=======
+		echo "<IMG SRC=assets/icons/$modcat.png border=0><BR><small><b>".str_replace('_',' ',$modcat)."</b></small>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 		echo '</DIV>';
 		echo '</A>';
 		echo '</TD>';

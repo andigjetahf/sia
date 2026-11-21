@@ -27,6 +27,7 @@
 #
 #***************************************************************************************
 
+<<<<<<< HEAD
 function setPaginationRequisites(_modname, _searchModfunc, _nextModname, _columns, _singular, _plural, _link, _LOGroup, _options, _ListOutputFunction, _ProgramTitle = false) {
 
 	if(_ListOutputFunction != '') {
@@ -73,10 +74,59 @@ function setPaginationRequisites(_modname, _searchModfunc, _nextModname, _column
         	__SESSION['PROGRAM_TITLE'] = _ProgramTitle;
         } else {
         	__SESSION['PROGRAM_TITLE'] = 'openSIS';
+=======
+function setPaginationRequisites($modname, $searchModfunc, $nextModname, $columns, $singular, $plural, $link, $LOGroup, $options, $ListOutputFunction, $ProgramTitle = false) {
+
+	if($ListOutputFunction != '') {
+		$pagi_mods = array();
+
+		if($modname != '') {
+			$pagi_mods['modname'] = $modname;
+		}
+
+		if($searchModfunc != '') {
+			$pagi_mods['search_modfunc'] = $searchModfunc;
+		}
+
+		if($nextModname != '') {
+			$pagi_mods['next_modname'] = $nextModname;
+		}
+
+		unset($_SESSION['PEGI_MODS']);
+		$_SESSION['PEGI_MODS'] = $pagi_mods;
+
+		unset($_SESSION['PEGI_COLS']);
+		$_SESSION['PEGI_COLS'] = $columns;
+
+		unset($_SESSION['PEGI_SINGULAR']);
+		$_SESSION['PEGI_SINGULAR'] = $singular;
+
+		unset($_SESSION['PEGI_PLURAL']);
+		$_SESSION['PEGI_PLURAL'] = $plural;
+
+		unset($_SESSION['PEGI_LINK']);
+		$_SESSION['PEGI_LINK'] = $link;
+
+		unset($_SESSION['PEGI_LOGRP']);
+        $_SESSION['PEGI_LOGRP'] = $LOGroup;
+
+        unset($_SESSION['PEGI_OPTION']);
+        $_SESSION['PEGI_OPTION'] = $options;
+
+        unset($_SESSION['LISTOUTPUT_FUNC']);
+        $_SESSION['LISTOUTPUT_FUNC'] = $ListOutputFunction;
+
+        unset($_SESSION['PROGRAM_TITLE']);
+        if($ProgramTitle != '') {
+        	$_SESSION['PROGRAM_TITLE'] = $ProgramTitle;
+        } else {
+        	$_SESSION['PROGRAM_TITLE'] = 'openSIS';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
 	}
 }
 
+<<<<<<< HEAD
 function keepRequestParams(_requests) {
 	unset(__SESSION['PEGI_REQUESTS']);
 
@@ -94,6 +144,25 @@ function keepExtraParams(_extra) {
 function checkPagesForPrint(_modname) {
 	if(_modname != '') {
 		_pagesForPrint = array(
+=======
+function keepRequestParams($requests) {
+	unset($_SESSION['PEGI_REQUESTS']);
+
+	$_SESSION['PEGI_REQUESTS'] = array();
+	
+	$_SESSION['PEGI_REQUESTS'] = $requests;
+}
+
+function keepExtraParams($extra) {
+	unset($_SESSION['PEGI_EXTRA']);
+	
+	$_SESSION['PEGI_EXTRA'] = $extra;
+}
+
+function checkPagesForPrint($modname) {
+	if($modname != '') {
+		$pagesForPrint = array(
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 	        // Students
 	        'students/MailingLabels.php', 
 	        'students/StudentLabels.php', 
@@ -109,7 +178,11 @@ function checkPagesForPrint(_modname) {
 	        'grades/Transcripts.php'
 	    );
 
+<<<<<<< HEAD
 		if(in_array(_modname, _pagesForPrint)) {
+=======
+		if(in_array($modname, $pagesForPrint)) {
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 			return true;
 		} else {
 			return false;
@@ -120,9 +193,15 @@ function checkPagesForPrint(_modname) {
 	}
 }
 
+<<<<<<< HEAD
 function checkNoNeedPaging(_modname) {
 	if(_modname != '') {
 		_noNeedPaging = array(
+=======
+function checkNoNeedPaging($modname) {
+	if($modname != '') {
+		$noNeedPaging = array(
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 	        // Teacher Programs
 	        'users/TeacherPrograms.php?include=grades/InputFinalGrades.php', 
 	        'users/TeacherPrograms.php?include=grades/Grades.php', 
@@ -138,7 +217,11 @@ function checkNoNeedPaging(_modname) {
 	        'attendance/DailySummary.php'
 	    );
 
+<<<<<<< HEAD
 		if(in_array(_modname, _noNeedPaging)) {
+=======
+		if(in_array($modname, $noNeedPaging)) {
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 			return true;
 		} else {
 			return false;

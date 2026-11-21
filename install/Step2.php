@@ -48,12 +48,20 @@ if(page && page!="index.php"){
 </script>';
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="sq">
+=======
+<html lang="en">
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <title>Instaluesi SIA</title>
+=======
+        <title>SIA Installer</title>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/sweetalert2/css/sweetalert2.css">
@@ -69,14 +77,21 @@ if(page && page!="index.php"){
                 <div class="panel">
                     <div class="panel-heading">
                         <div class="logo">
+<<<<<<< HEAD
                             <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)">
                         </div>
                         <h3>Instalimi i SIA - Përzgjedhja e Bazës së të Dhënave</h3>
+=======
+                            <img src="assets/images/opensis_logo.png" alt="SIA">
+                        </div>
+                        <h3>SIA Installation - Database Selection</h3>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>
                     <div class="panel-body">
                         <div class="installation-steps-wrapper">
                             <div class="installation-instructions">
                                 <ul class="installation-steps-label">
+<<<<<<< HEAD
                                     <li>Zgjidhni Paketën</li>
                                     <li>Kërkesat e Sistemit</li>
                                     <li>Lidhja me Bazën e të Dhënave</li>
@@ -102,6 +117,33 @@ if(page && page!="index.php"){
                                             text: '<?php echo $_REQUEST['err']; ?>',
                                             type: 'error',
                                             confirmButtonText: 'Mbyll'
+=======
+                                    <li>Choose Package</li>
+                                    <li>System Requirements</li>
+                                    <li>Database Connection</li>
+                                    <li class="active">Database Selection</li>
+                                    <li>School Information</li>
+                                    <li>Site Admin Account Setup</li>
+                                    <li>Ready to Go!</li>
+                                </ul>
+                                <!--<h4 class="no-margin">Installation Instructions</h4>
+                                <p>Installer has successfully connected to MySQL.</p>
+                                <p>It is a good practice to name the database &quot;opensis&quot; so that it can be identified easily if you have many databases running in the same server.</p>
+                                <p>Remember the Database Selection takes some time, so please be patient and do not close the browser.</p>-->
+                            </div>
+                            <div class="installation-steps">
+                                <h4 class="m-t-0 m-b-5">System needs a new database</h4>
+                                <p class=" m-b-20 text-muted">(This could take up to a minute or two to complete)</p>
+                                <div id="error" class="m-b-5"></div>
+                                <div id="calculating" class="loading clearfix"><div><i class="fa fa-cog fa-spin fa-lg fa-fw"></i> Preparing Database. Please wait...</div></div>
+                                <?php if (isset($_REQUEST['err'])) { ?>
+                                    <script type='text/javascript'>
+                                        swal({
+                                            title: 'Oops!',
+                                            text: '<?php echo $_REQUEST['err']; ?>',
+                                            type: 'error',
+                                            confirmButtonText: 'Close'
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                         }).then(function (){
                                                 history.back();
                                             });
@@ -117,26 +159,43 @@ if(page && page!="index.php"){
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
+<<<<<<< HEAD
                                                 <label class="control-label">Emri i Bazës së të Dhënave</label>
                                                 <input type="text" name="db" id="db" size="20" value="sia" class="form-control"  />
+=======
+                                                <label class="control-label">Database Name</label>
+                                                <input type="text" name="db" id="db" size="20" value="opensis" class="form-control"  />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">&nbsp;</label>
                                                 <div class="m-t-0">
+<<<<<<< HEAD
                                                     <label class="radio-inline"><input type="radio" name="data_choice" value="purgedb" /> Fshij të dhënat nga baza ekzistuese e të dhënave</label>
                                                     <br>
                                                     <label class="control-label m-0">OSE</label>
                                                     <br>
                                                     <label class="radio-inline"><input type="radio" name="data_choice" value="newdb" /> Krijo bazë të dhënash të re</label>
+=======
+                                                    <label class="radio-inline"><input type="radio" name="data_choice" value="purgedb" /> Remove data from existing database</label>
+                                                    <br>
+                                                    <label class="control-label m-0">OR</label>
+                                                    <br>
+                                                    <label class="radio-inline"><input type="radio" name="data_choice" value="newdb" /> Create new database</label>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <hr/>
                                     <div class="text-right">
+<<<<<<< HEAD
                                         <input type="submit" value="Ruaj & Vazhdo" class="btn btn-success" name="Add_DB" />
+=======
+                                        <input type="submit" value="Save & Next" class="btn btn-success" name="Add_DB" />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </div>
                                 </form>
                             </div>

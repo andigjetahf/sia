@@ -61,14 +61,22 @@ if ($_REQUEST['student_id'] == 'new') {
     unset($_SESSION['students_order']);
     echo '<div class="well m-b-20 clearfix"><h6 class="m-t-0 text-success">' . _studentName . '</h6><div class="row"><div class="col-lg-6"><div class="form-group">' . TextInput($student['FIRST_NAME'], 'students[FIRST_NAME]', '' . _firstName . ' *', 'size=12 class=form-control maxlength=50') . '</div></div><div class="col-lg-6"><div class="form-group">' . TextInput($student['MIDDLE_NAME'], 'students[MIDDLE_NAME]', '' . _middleName . '', 'class=form-control maxlength=50') . '</div></div></div><div class="row"><div class="col-lg-6"><div class="form-group m-b-0">' . TextInput($student['LAST_NAME'], 'students[LAST_NAME]', '' . _lastName . ' *', 'size=12 class=form-control maxlength=50') . '</div></div><div class="col-lg-6"><div class="form-group m-b-0">' . SelectInput($student['NAME_SUFFIX'], 'students[NAME_SUFFIX]', ''._suffix.'', array('Jr.' => 'Jr.', 'Sr.' => 'Sr.', 'II' => 'II', 'III' => 'III', 'IV' => 'IV', 'V' => 'V'), '', '') . '</div></div></div></div>';
 } else
+<<<<<<< HEAD
     echo '<DIV id=student_name><div class=form-group onclick=\'addHTML("<div class=\"well m-b-20 clearfix\"><h6 class=\"m-t-0 text-success\">' . _studentName . '</h6><div class=\"row\"><div class=\"col-lg-6\"><div class=\"form-group\">' . str_replace('"', '\"', TextInput($student['FIRST_NAME'], 'students[FIRST_NAME]', '' . _firstName . ' *', 'maxlength=50 style="font-size:14px;"', false)) . '</div></div><div class=col-lg-6><div class=form-group>' . str_replace('"', '\"', TextInput($student['LAST_NAME'], 'students[LAST_NAME]', '' . _lastName . ' *', 'maxlength=50 ', false)) . '</div></div></div><div class=row><div class=col-lg-6><div class=\"form-group m-b-0\">' . str_replace('"', '\"', TextInput($student['MIDDLE_NAME'], 'students[MIDDLE_NAME]', '' . _middleName . '', 'size=3 maxlength=50', false)) . '</div></div><div class=col-lg-6><div class=\"form-group m-b-0\">' . str_replace('"', '\"', SelectInput($student['NAME_SUFFIX'], 'students[NAME_SUFFIX]', '' . _suffix . '', array('Jr.' => 'Jr.', 'Sr.' => 'Sr.', 'II' => 'II', 'III' => 'III', 'IV' => 'IV', 'V' => 'V'), '', '', false)) . '</div></div></div></div>","student_name",true);\'><label class="control-label col-lg-2 text-right">' . _studentName . '</label><div class="col-lg-10"><h3 class="m-0 text-success">' . $student['FIRST_NAME'] . ' ' . $student['MIDDLE_NAME'] . ' ' . $student['LAST_NAME'] . ' ' . $student['NAME_SUFFIX'] . '</h3></div></div></DIV>';
+=======
+    echo '<DIV id=student_name><div class=form-group onclick=\'addHTML("<div class=\"well m-b-20 clearfix\"><h6 class=\"m-t-0 text-success\">Student Name</h6><div class=\"row\"><div class=\"col-lg-6\"><div class=\"form-group\">' . str_replace('"', '\"', TextInput($student['FIRST_NAME'], 'students[FIRST_NAME]', '' . _firstName . ' *', 'maxlength=50 style="font-size:14px;"', false)) . '</div></div><div class=col-lg-6><div class=form-group>' . str_replace('"', '\"', TextInput($student['LAST_NAME'], 'students[LAST_NAME]', '' . _lastName . ' *', 'maxlength=50 ', false)) . '</div></div></div><div class=row><div class=col-lg-6><div class=\"form-group m-b-0\">' . str_replace('"', '\"', TextInput($student['MIDDLE_NAME'], 'students[MIDDLE_NAME]', '' . _middleName . '', 'size=3 maxlength=50', false)) . '</div></div><div class=col-lg-6><div class=\"form-group m-b-0\">' . str_replace('"', '\"', SelectInput($student['NAME_SUFFIX'], 'students[NAME_SUFFIX]', '' . _suffix . '', array('Jr.' => 'Jr.', 'Sr.' => 'Sr.', 'II' => 'II', 'III' => 'III', 'IV' => 'IV', 'V' => 'V'), '', '', false)) . '</div></div></div></div>","student_name",true);\'><label class="control-label col-lg-2 text-right">' . _studentName . '</label><div class="col-lg-10"><h3 class="m-0 text-success">' . $student['FIRST_NAME'] . ' ' . $student['MIDDLE_NAME'] . ' ' . $student['LAST_NAME'] . ' ' . $student['NAME_SUFFIX'] . '</h3></div></div></DIV>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //echo '</div>'; //.form-group
 
 echo '<div class="row">';
 echo '<div class="col-lg-6">';
 echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _estimatedGradDate . '</label><div class="col-lg-8">' . DateInputAY($student['ESTIMATED_GRAD_DATE'], 'students[ESTIMATED_GRAD_DATE]', '1', false, 'MM/DD/YYYY') . '</div></div>';
 echo '</div><div class="col-lg-6">';
+<<<<<<< HEAD
 echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _gender . '</label><div class="col-lg-8">' . SelectInput($student['GENDER'], 'students[GENDER]', '', array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër')), 'N/A', '') . '</div></div>';
+=======
+echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _gender . '</label><div class="col-lg-8">' . SelectInput($student['GENDER'], 'students[GENDER]', '', array('Male' => 'Male', 'Female' => 'Female'), 'N/A', '') . '</div></div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 echo '</div>'; //.col-lg-6
 echo '</div>'; //.row
 
@@ -86,7 +94,11 @@ if ($student['BIRTHDATE'] != '') {
     $now = new DateTime(date('Y-m-d'));
     $stu_age = $now->diff($dob);
     // $show_stu_age = '<div class="col-lg-4"><div class="p-t-10 text-right">'._bAge.'</b> '.(($stu_age->y)."yrs").', '.(($stu_age->m)."mo").'</div></div>';
+<<<<<<< HEAD
     $show_stu_age = '<div class="p-t-10 text-right stu_age"><b>' . (defined('_age') ? _age : 'Mosha') . ':</b> ' . (($stu_age->y) . " " . (defined('_years') ? _years : 'vjeç')) . ', ' . (($stu_age->m) . " " . (defined('_months') ? _months : 'muaj')) . '</div>';
+=======
+    $show_stu_age = '<div class="p-t-10 text-right stu_age"><b>Age:</b> ' . (($stu_age->y) . "yrs") . ', ' . (($stu_age->m) . "mo") . '</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     // $birthay_holder_class = 'col-md-4';
     $birthay_holder_class = 'col-lg-8';
 } else {

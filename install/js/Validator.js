@@ -184,7 +184,11 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + " : Fushë e detyrueshme";
+=======
+                    strError = objValue.name + " : Required Field";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }//if 
                 alert(strError);
                 return false;
@@ -198,9 +202,15 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + " : maksimumi " + cmdvalue + " karaktere";
                 }//if 
                 alert(strError + "\n[Gjatësia aktuale = " + objValue.value.length + " ]");
+=======
+                    strError = objValue.name + " : " + cmdvalue + " characters maximum ";
+                }//if 
+                alert(strError + "\n[Current length = " + objValue.value.length + " ]");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             break;
@@ -212,9 +222,15 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + " : minimumi " + cmdvalue + " karaktere";
                 }//if               
                 alert(strError + "\n[Gjatësia aktuale = " + objValue.value.length + " ]");
+=======
+                    strError = objValue.name + " : " + cmdvalue + " characters minimum  ";
+                }//if               
+                alert(strError + "\n[Current length = " + objValue.value.length + " ]");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             break;
@@ -227,9 +243,15 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + ": Lejohen vetëm karaktere alfanumerike";
                 }//if 
                 alert(strError + "\n [Pozicioni i karakterit të gabuar " + eval(charpos + 1) + "]");
+=======
+                    strError = objValue.name + ": Only alpha-numeric characters allowed ";
+                }//if 
+                alert(strError + "\n [Error character position " + eval(charpos + 1) + "]");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             break;
@@ -242,9 +264,15 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + ": Lejohen vetëm shifra";
                 }//if               
                 alert(strError + "\n [Pozicioni i karakterit të gabuar " + eval(charpos + 1) + "]");
+=======
+                    strError = objValue.name + ": Only digits allowed ";
+                }//if               
+                alert(strError + "\n [Error character position " + eval(charpos + 1) + "]");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             break;
@@ -257,9 +285,15 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + ": Lejohen vetëm shkronja alfabetike";
                 }//if                             
                 alert(strError + "\n [Pozicioni i karakterit të gabuar " + eval(charpos + 1) + "]");
+=======
+                    strError = objValue.name + ": Only alphabetic characters allowed ";
+                }//if                             
+                alert(strError + "\n [Error character position " + eval(charpos + 1) + "]");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             break;
@@ -271,9 +305,15 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + ": karakteret e lejuara janë A-Z, a-z, 0-9, - dhe _";
                 }//if                             
                 alert(strError + "\n [Pozicioni i karakterit të gabuar " + eval(charpos + 1) + "]");
+=======
+                    strError = objValue.name + ": characters allowed are A-Z,a-z,0-9,- and _";
+                }//if                             
+                alert(strError + "\n [Error character position " + eval(charpos + 1) + "]");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 			
             break;
@@ -284,7 +324,11 @@ function V2validateData(strValidateStr, objValue, strError)
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + ": Vendosni një adresë të vlefshme emaili";
+=======
+                    strError = objValue.name + ": Enter a valid Email address ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }//if                                               
                 alert(strError);
                 return false;
@@ -296,18 +340,30 @@ function V2validateData(strValidateStr, objValue, strError)
         {
             if (isNaN(objValue.value))
             {
+<<<<<<< HEAD
                 alert(objValue.name + ": Duhet të jetë numër");
+=======
+                alert(objValue.name + ": Should be a number ");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             if (eval(objValue.value) >= eval(cmdvalue))
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + " : vlera duhet të jetë më e vogël se " + cmdvalue;
                 }//if               
                 alert(strError);
                 return false;
             }//if 
+=======
+                    strError = objValue.name + " : value should be less than " + cmdvalue;
+                }//if               
+                alert(strError);
+                return false;
+            }//if             
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             break;
         }//case lessthan 
         case "gt":
@@ -315,18 +371,30 @@ function V2validateData(strValidateStr, objValue, strError)
         {
             if (isNaN(objValue.value))
             {
+<<<<<<< HEAD
                 alert(objValue.name + ": Duhet të jetë numër");
+=======
+                alert(objValue.name + ": Should be a number ");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }//if 
             if (eval(objValue.value) <= eval(cmdvalue))
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + " : vlera duhet të jetë më e madhe se " + cmdvalue;
                 }//if               
                 alert(strError);
                 return false;
             }//if 
+=======
+                    strError = objValue.name + " : value should be greater than " + cmdvalue;
+                }//if               
+                alert(strError);
+                return false;
+            }//if             
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             break;
         }//case greaterthan 
         case "regexp":
@@ -337,7 +405,11 @@ function V2validateData(strValidateStr, objValue, strError)
                 {
                     if (!strError || strError.length == 0)
                     {
+<<<<<<< HEAD
                         strError = objValue.name + ": Janë gjetur karaktere të pavlefshme";
+=======
+                        strError = objValue.name + ": Invalid characters found ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }//if                                                               
                     alert(strError);
                     return false;
@@ -349,14 +421,22 @@ function V2validateData(strValidateStr, objValue, strError)
         {
             if (objValue.selectedIndex == null)
             {
+<<<<<<< HEAD
                 alert("GABIM: dontselect komandë për element jo-përzgjedhës");
+=======
+                alert("BUG: dontselect command for non-select Item");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 return false;
             }
             if (objValue.selectedIndex == eval(cmdvalue))
             {
                 if (!strError || strError.length == 0)
                 {
+<<<<<<< HEAD
                     strError = objValue.name + ": Ju lutemi zgjidhni një opsion";
+=======
+                    strError = objValue.name + ": Please Select one option ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }//if                                                               
                 alert(strError);
                 return false;

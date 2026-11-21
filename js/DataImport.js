@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿function drawmapping(selected_value, val_id, div_id)
+=======
+function drawmapping(selected_value, val_id, div_id)
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 {
     if (selected_value != '')
     {
@@ -376,7 +380,11 @@ function valid_mapping_student(option, this_DET)
     if (error != '')
     {
 
+<<<<<<< HEAD
         var msg = '<h5 class="m-0"><b>Ju lutemi hartezoni fushat e mëposhtme siç duhet</b></h5>';
+=======
+        var msg = '<h5 class="m-0"><b>Please map the following fields properly</b></h5>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         noty({
             dismissQueue: true,
             timeout: 4000,
@@ -393,7 +401,11 @@ function valid_mapping_student(option, this_DET)
     if (mapping_error != '')
     {
 
+<<<<<<< HEAD
         var msg = '<h5 class="m-0"><b>Ju lutemi hartezoni fushat e mëposhtme siç duhet</b></h5>';
+=======
+        var msg = '<h5 class="m-0"><b>Please map the following fields properly</b></h5>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         //document.getElementById('mapping').innerHTML = "<span style='color:red;font-weight:bold;font-size:12px'>" + msg + "<br>" + mapping_error + "</span>";
         noty({
             dismissQueue: true,
@@ -561,7 +573,11 @@ function valid_mapping_staff(option, this_DET)
     }
     if (error != '')
     {
+<<<<<<< HEAD
         var msg = '<h5 class="m-0"><b>Ju lutemi hartezoni fushat e mëposhtme siç duhet</b></h5>';
+=======
+        var msg = '<h5 class="m-0"><b>Please map the following fields properly</b></h5>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         noty({
             dismissQueue: true,
             timeout: 4000,
@@ -577,7 +593,11 @@ function valid_mapping_staff(option, this_DET)
     }
     if (mapping_error != '')
     {
+<<<<<<< HEAD
         var msg = '<h5 class="m-0"><b>Ju lutemi hartezoni fushat e mëposhtme siç duhet</b></h5>';
+=======
+        var msg = '<h5 class="m-0"><b>Please map the following fields properly</b></h5>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         noty({
             dismissQueue: true,
             timeout: 4000,
@@ -609,5 +629,9 @@ function data_imp_callback(data)
 
 function data_imp_error(err)
 {
+<<<<<<< HEAD
     alert('Gabim ' + err);
+=======
+    alert('Error ' + err);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }

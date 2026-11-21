@@ -575,7 +575,11 @@ if ($select == '') {
                 DBQuery($sql_staff_username);
             } else {
                 if($usernameExists[1]['USER_ID'] != $_REQUEST['staff_id'] || $usernameExists[1]['PROFILE_ID'] != $staff_prof_id){
+<<<<<<< HEAD
                     echo '<font color=red><b>Emri i perdoruesit ekziston tashme.</b></font>';
+=======
+                    echo '<font color=red><b>Username already exists.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
             }
         }

@@ -61,7 +61,11 @@ if ($_REQUEST['month_values']['JOINING_DATE'] != '' && $_REQUEST['day_values']['
         unset($_REQUEST['year_values']['ENDING_DATE']);
         unset($_REQUEST['month_values']['ENDING_DATE']);
         unset($_REQUEST['day_values']['ENDING_DATE']);
+<<<<<<< HEAD
         echo "<div class='alert bg-danger alert-styled-left'>Data e mbarimit te bashkimit nuk mund te jete para dates se fillimit.</div>";
+=======
+        echo "<div class='alert bg-danger alert-styled-left'>End date of joining cannot be before start date.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
 }
 
@@ -433,7 +437,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'update') {
                             echo "<font style='color:red'><b>" . _FileExceedsTheAllowableSizeTryAgainWithAFileLessThen10Mb . "</b></font><br>";
                         }
                         if ($_FILES["file"]["error"] > 0) {
+<<<<<<< HEAD
                             echo _cannotUploadFile;
+=======
+                            echo "cannot upload file";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         } else {
                             if ($fp) {
                                 $content = fread($fp, filesize($tmpName));
@@ -569,7 +577,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'update') {
                     }
 
                     if ($_FILES["file"]["error"] > 0) {
+<<<<<<< HEAD
                         echo _cannotUploadFile;
+=======
+                        echo "cannot upload file";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     } else {
                         //                        $fp = fopen($tmpName, 'r');
                         //                        $content = fread($fp, filesize($tmpName));
@@ -634,7 +646,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'update') {
         }
     }
     if ($day_valid == false) {
+<<<<<<< HEAD
         echo "<div class='alert bg-danger alert-styled-left'>Data e pavlefshme nuk mund te ruhet.</div>";
+=======
+        echo "<div class='alert bg-danger alert-styled-left'>Invalid date could not be saved.</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     if ($error == 'end_date') {
         echo "<div class='alert bg-danger alert-styled-left'>Start date can not be greater than End date</div>";
@@ -753,6 +769,7 @@ if ((UserStaffID() || $_REQUEST['staff_id'] == 'new') && ((basename($_SERVER['PH
                     $include = 'OtherInfoInc';
                 switch ($category['TITLE']) {
                     case 'Demographic Info':
+<<<<<<< HEAD
                     case 'Të Dhëna Demografike':
                         $categoryTitle = _demographicInfo;
                         break;
@@ -777,6 +794,22 @@ if ((UserStaffID() || $_REQUEST['staff_id'] == 'new') && ((basename($_SERVER['PH
                     case 'Dokumentet':
                         $categoryTitle = _files;
                         break;
+=======
+                        $categoryTitle = _demographicInfo;
+                        break;
+                    case 'Addresses &amp; Contacts':
+                        $categoryTitle = _addressesContacts;
+                        break;
+                    case 'School Information':
+                        $categoryTitle = _schoolInformation;
+                        break;
+                    case 'Certification Information':
+                        $categoryTitle = _certificationInformation;
+                        break;
+                    case 'Schedule':
+                        $categoryTitle = _schedule;
+                        break;
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     default:
                         $categoryTitle = $category['TITLE'];
                 }

@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 define("_studentInformationSystem", "SIA (Sistemi Inteligjences Arsimore)");
+=======
+define("_studentInformationSystem", "Sistemi i Informacionit të Nxënësve");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_systemPreferences", "Preferencat e Sistemit");
 define("_setHalfDayAndFullDayMinutes", "Cakto minutat për gjysmë-dite dhe ditë të plotë");
 define("_setLoginFailureAllowanceCount", "Cakto numrin e lejuar të dështimeve të hyrjes");
@@ -23,8 +27,13 @@ define("_selectedStaff", "Stafi i Përzgjedhur");
 define("_backToUserList", "Kthehu te Lista e Përdoruesve");
 define("_deselect", "HIQ PËRZGJEDHJEN");
 define("_missingAttendanceDataListCreated", "U krijua lista e të dhënave të munguara të vijueshmërisë");
+<<<<<<< HEAD
 define("_openSisIsAProductOfOpenSolutionsForEducationInc", "SIA (Sistemi Inteligjences Arsimore) është një produkt i Open Solutions for Education, Inc");
 define("_footerText", "SIA (Sistemi Inteligjences Arsimore) është një produkt i Open Solutions for Education, Inc. (<a href=\"http://www.os4ed.com\">OS4ED</a>) dhe licencohet sipas <a href=\"http://www.gnu.org/licenses/gpl.html\" target=\"_blank\">licencës GPL</a>.");
+=======
+define("_openSisIsAProductOfOpenSolutionsForEducationInc", "SIA është një produkt i Open Solutions for Education, Inc");
+define("_footerText", "SIA është një produkt i Open Solutions for Education, Inc. (<a href=\"http://www.os4ed.com\">OS4ED</a>) dhe licencohet sipas <a href=\"http://www.gnu.org/licenses/gpl.html\" target=\"_blank\">licencës GPL</a>.");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //SCHOOL SETUP
 define("_cannotDeleteBecauseStudentsAreEnrolledInThisCalendar", "Nuk mund të fshihet sepse nxënësit janë të regjistruar në këtë kalendar");
 define("_cannotUploadFileOnlyJpgJpegPngGifFilesAreAllowed", "Skedari nuk mund të ngarkohet. Lejohen vetëm skedarë jpg, jpeg, png, gif");
@@ -200,9 +209,12 @@ define("_ok", "OK");
 define("_cancel", "ANULO");
 define("_systemPreference", "Preferenca e Sistemit");
 define("_halfDayAndFullDayMinutes", "MINUTAT E GJYSMË-DITËS DHE DITËS SË PLOTË");
+<<<<<<< HEAD
 define('_none', 'Asnjë');
 define('_halfDay', 'Gjysmë Dite');
 define('_fullDay', 'Ditë e Plotë');
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_fullDayMinutes", "MINUTAT E DITËS SË PLOTË");
 define("_halfDayMinutes", "MINUTAT E GJYSMË-DITËS");
 define("_loginFailureAllowance", "TOLERANCA E DËSHTIMEVE TË HYRJES");
@@ -271,9 +283,15 @@ define("_genderRestriction", "Kufizimi Gjinor");
 define("_parentPeriod", "Ora Prind");
 define("_allowTeacherGradescale", "Lejo Shkallën e Notimit të Mësuesit");
 define("_courseIsWeighted", "Lënda është me Peshë");
+<<<<<<< HEAD
 define("_affectsHonorRoll", "Ndikon në Listën e Nderit");
 define("_halfDay", "Gjysmë Dite");
 define("_affectsClassRank", "Ndikon në Renditjen e Klasës");
+=======
+define("_affectsHonorRoll", "Ndikjon në Listën e Nderit");
+define("_halfDay", "Gjysmë Dite");
+define("_affectsClassRank", "Ndikjon në Renditjen e Klasës");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_chooseTheDuration", "Zgjidhni Kohëzgjatjen");
 define("_markingPeriod", "Periudha e Vlerësimit");
 define("_customDateRange", "Interval i Personalizuar Datash");
@@ -504,8 +522,13 @@ define("_undo", "Zhbëj");
 define("_reAssignmentRecord", "Regjistrimi i Riatribuimit");
 define("_reAssignmentRecords", "Regjistrimet e Riatribuimit");
 //STUDENTS
+<<<<<<< HEAD
 define("_active", "Aktiv");
 define("_inactive", "Joaktiv");
+=======
+define("_active", "aktiv");
+define("_inactive", "joaktiv");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_allFilesAreSuccessfullyUploaded", "Të gjithë skedarët u ngarkuan me sukses");
 define("_1File", "1 Skedar");
 define("_cannotBeUploadedBecauseOfInvalidFileType", "nuk mund të ngarkohet për shkak të llojit të pavlefshëm të skedarit");
@@ -521,6 +544,7 @@ define("_selectedStudentsAreSuccessfullyReEnrolled", "Nxënësit e përzgjedhur 
 define("_additionalInfo", "Informacion Shtesë");
 define("_requestArray", "Vargu i Kërkesave");
 define("_sessionArray", "Vargu i Seancave");
+<<<<<<< HEAD
 define("_openSisDatabaseError", "Gabim në Bazën e të Dhënave të SIA (Sistemi Inteligjences Arsimore)");
 define("_enterDate", "Vendosni Datën");
 define("_selectMultipleChoices", "Përzgjidhni Disa Opsione");
@@ -528,6 +552,15 @@ define("_filter", "Filtri");
 define("_filters", "Filtrat");
 define("_edit", "Ndrysho");
 define("_goal", "Objektivi");
+=======
+define("_openSisDatabaseError", "Gabim në Bazën e të Dhënave të SIA");
+define("_enterDate", "Vendosni Datën");
+define("_selectMultipleChoices", "Përzgjidhni Disa Opsione");
+define("_filter", "filtri");
+define("_filters", "filtrat");
+define("_edit", "Ndrysho");
+define("_goal", "synimi");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_progress", "Përparimi");
 define("_progresses", "Përparimet");
 define("_fieldsToAssign", "Fushat për caktim");
@@ -560,7 +593,11 @@ define("_relevance", "Përkatësia");
 define("_selectedStudent", "Nxënësi i Përzgjedhur");
 define("_backToStudentList", "Kthehu te Lista e Nxënësve");
 define("_addAStudent", "Shto një Nxënës");
+<<<<<<< HEAD
 define("_generalInfo", "Të Dhëna të Përgjithshme");
+=======
+define("_generalInfo", "INFORMACIONI I PËRGJITHSHËM");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_generalInformation", "Informacioni i Përgjithshëm");
 define("_middleName", "Emri i Mesit");
 define("_suffix", "Prapashtesa");
@@ -582,7 +619,11 @@ define("_showing", "Po shfaqen");
 define("_of", "nga");
 define("_last", "I fundit");
 define("_previous", "I mëparshmi");
+<<<<<<< HEAD
 define("_enrollmentInfo", "Të Dhëna Regjistrimi");
+=======
+define("_enrollmentInfo", "INFORMACIONI I REGJISTRIMIT");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_enrollmentInformation", "Informacioni i Regjistrimit");
 define("_enrollmentRecordWasFound", "U gjet regjistrimi i regjistrimit");
 define("_enrollmentRecordsWereFound", "U gjetën regjistrimet e regjistrimit");
@@ -637,7 +678,11 @@ define("_noCommentsWereFound", "Nuk u gjet asnjë koment");
 define("_enteredBy", "Vendosur Nga");
 define("_commentWasFound", "U gjet komenti");
 define("_commentsWereFound", "U gjetën komentet");
+<<<<<<< HEAD
 define("_goals", "Synime");
+=======
+define("_goals", "SYNIMET");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_goalTitle", "Titulli i Synimit");
 define("_beginDate", "Data e Fillimit");
 define("_goalDescription", "Përshkrimi i Synimit");
@@ -714,7 +759,11 @@ define("_printLabelsForSelectedStudents", "PRINTO ETIKETAT PËR NXËNËSIT E PË
 define("_roomNo", "Nr. i Sallës / Klasës");
 define("_printStudentInfo", "Printo Informacionin e Nxënësit");
 define("_addressesContacts", "Adresat dhe Kontaktet");
+<<<<<<< HEAD
 define("_files", "Dokumentet");
+=======
+define("_files", "Skedarët");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_printInfoForSelectedStudents", "PRINTO INFORMACIONIN PËR NXËNËSIT E PËRZGJEDHUR");
 define("_printContactInfoForSelectedStudents", "PRINTO INFORMACIONIN E KONTAKTIT PËR NXËNËSIT E PËRZGJEDHUR");
 define("_printGoalsProgresses", "Printo Synimet dhe Përparimet");
@@ -935,7 +984,11 @@ define("_includeShouldBeLeftBlankForMostCategories", "Përfshi (duhet të lihet 
 define("_unableToSaveDataBecauseTitleCanNotBeBlank", "Të dhënat nuk mund të ruhen, sepse titulli nuk mund të jetë bosh");
 define("_forDatesYyyyMmDdForCheckboxesYAmpForLongTextItWillBeIgnored", "për Datat: VVVV-MM-DD, për kutitë e zgjedhjes: P dhe për tekst të gjatë do të shpërfillet");
 define("_newUserField", "Fushë e re e përdoruesit");
+<<<<<<< HEAD
 define("_staffs", "Stafi");
+=======
+define("_staffs", "stafi");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_newStaffFieldCategory", "Kategori e Re e Fushave të Stafit");
 define("_schoolRecord", "Regjistrimi i Shkollës");
 define("_schoolRecords", "Regjistrimet e Shkollës");
@@ -1005,7 +1058,11 @@ define("_staff", "Stafi");
 define("_staffInfo", "Të dhënat e stafit");
 define("_findAStaff", "GJEJ NJË ANËTAR TË STAFIT");
 define("_addAUser", "Shto një përdorues");
+<<<<<<< HEAD
 define("_demographicInfo", "Të Dhëna Demografike");
+=======
+define("_demographicInfo", "TË DHËNA DEMOGRAFIKE");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_upload", "NGARKO");
 define("_uploadStaffSPhoto", "Ngarko foton e anëtarit të stafit");
 define("_includeDisabledStaff", "Përfshi stafin e çaktivizuar");
@@ -1048,7 +1105,11 @@ define("_connectedWithMySqlDatabase", "U lidh me bazën e të dhënave MySQL");
 define("_canTOpen", "Nuk mund të hapet");
 define("_schoolYearRollingOverPleaseWait", "Viti shkollor po transferohet, ju lutemi prisni");
 define("_importingDataInToTheDatabase", "Po importohen të dhënat në bazën e të dhënave");
+<<<<<<< HEAD
 define("_openSisSchoolSoftware", "SIA (Sistemi Inteligjences Arsimore)");
+=======
+define("_openSisSchoolSoftware", "Softueri Shkollor SIA");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_theGradesFor", "Notat për");
 define("_hasBeenCalculated", "është llogaritur");
 define("_enterAssignedDate", "Vendosni datën e caktimit");
@@ -1056,7 +1117,11 @@ define("_enterDueDate", "Vendosni datën e dorëzimit");
 define("_validUrl", "URL e vlefshme");
 define("_invalidUrl", "URL e pavlefshme");
 define("_courseWas", "Lënda ishte");
+<<<<<<< HEAD
 define("_openSisStudentInformationSystem", "SIA (Sistemi Inteligjences Arsimore)");
+=======
+define("_openSisStudentInformationSystem", "SIA Sistemi i Informacionit të Nxënësve");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_onSelectedDate", "në datën e përzgjedhur");
 define("_addClass", "Shto klasë");
 define("_clearExit", "Pastro & Dil");
@@ -1365,7 +1430,11 @@ define("_selectedCoursePeriod", "Periudha e përzgjedhur e lëndës");
 define("_notWith", "Jo me");
 define("_notOn", "Jo në");
 define("_priority", "Prioriteti");
+<<<<<<< HEAD
 define("_eligibility", "Kualifikimi");
+=======
+define("_eligibility", "kualifikimi");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_extracurricular", "Jashtëshkollore");
 define("_cannotDeleteBecauseEligibilityActivitiesAreAssociated", "Nuk mund të fshihet sepse ka aktivitete kualifikimi të lidhura");
 define("_without", "Pa");
@@ -1398,8 +1467,13 @@ define("_attachments", "Bashkëngjitje");
 define("_dateTime", "DATA/ORA");
 define("_yourMessageHasBeenSent", "Mesazhi juaj është dërguar");
 define("_fileNotFoundOrInaccessible", "Skedari nuk u gjet ose është i paarritshëm");
+<<<<<<< HEAD
 define("_openSisHasEncounteredAnErrorThatCouldHaveResultedFromAnyOfTheFollowing", "SIA (Sistemi Inteligjences Arsimore) ka hasur një gabim që mund të ketë ardhur nga ndonjë nga shkaqet e mëposhtme");
 define("_pleaseTakeThisScreenShotAndSendItToYourOpenSisRepresentativeForDebuggingAndResolution", "Ju lutemi bëni një fotografi të ekranit dhe dërgojani përfaqësuesit tuaj të SIA (Sistemi Inteligjences Arsimore) për korrigjim dhe zgjidhje");
+=======
+define("_openSisHasEncounteredAnErrorThatCouldHaveResultedFromAnyOfTheFollowing", "SIA ka hasur një gabim që mund të ketë ardhur nga ndonjë nga shkaqet e mëposhtme");
+define("_pleaseTakeThisScreenShotAndSendItToYourOpenSisRepresentativeForDebuggingAndResolution", "Ju lutemi bëni një fotografi të ekranit dhe dërgojani përfaqësuesit tuaj të SIA për korrigjim dhe zgjidhje");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_sqlStatement", "DEKLARATA SQL");
 define("_onlyStudents", "Vetëm nxënësit");
 define("_groupWith", "grup me");
@@ -1428,7 +1502,11 @@ define("_userFieldCategories", "Kategoritë e fushave të përdoruesit");
 define("_tokens", "shenjat (tokens)");
 define("_youHaveToSelectAtleastOneDateFromTheDateRange", "Duhet të zgjidhni të paktën një datë nga diapazoni i datave");
 define("_afterYouAreDoneClickMapIt", "Pasi të keni përfunduar, klikoni Lidh fushat (Map it)");
+<<<<<<< HEAD
 define("_pleaseCreateAOneToOneRelationshipBetweenTheFieldsInYourSpreadsheetAndTheFieldsInTheOpenSisDatabaseBySelectingTheAppropriateFieldsFromTheRightColumn", "Ju lutemi krijoni një lidhje një-për-një midis fushave në tabelën tuaj dhe fushave në bazën e të dhënave të SIA (Sistemi Inteligjences Arsimore) duke përzgjedhur fushat përkatëse nga kolona në të djathtë");
+=======
+define("_pleaseCreateAOneToOneRelationshipBetweenTheFieldsInYourSpreadsheetAndTheFieldsInTheOpenSisDatabaseBySelectingTheAppropriateFieldsFromTheRightColumn", "Ju lutemi krijoni një lidhje një-për-një midis fushave në tabelën tuaj dhe fushave në bazën e të dhënave të SIA duke përzgjedhur fushat përkatëse nga kolona në të djathtë");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_afterYouAreDoneClickConfirm", "Pasi të keni përfunduar, klikoni Konfirmo");
 define("_rolloverIsAnIrreversibleProcessIfYouAreSureYouWantToProceedTypeInThe", "Kalimi i vitit shkollor është një proces i pakthyeshëm. Nëse jeni të sigurt që dëshironi të vazhdoni, shkruani");
 define("_effectiveRollOverDateBelowYouCanUseTheNextSchoolYearSAttendanceStartDate", "datën efektive të kalimit më poshtë. Mund të përdorni datën e fillimit të vijueshmërisë për vitin e ardhshëm shkollor");
@@ -1436,7 +1514,11 @@ define("_otherAttendanceThisMarkingPeriod", "Vijueshmëri tjetër për këtë pe
 define("_cannotDeleteBecauseStudentGradesAreAssociated", "Nuk mund të fshihet sepse janë të lidhura notat e nxënësve");
 define("_doctor", "Mjeku");
 define("_logDetails", "Detajet e regjistrit të hyrjeve");
+<<<<<<< HEAD
 define("_backup", "Kopje Rezervë");
+=======
+define("_backup", "kopje rezervë");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_thisBackupUtilityWillCreateABackupOfTheDatabaseAlongWithTheDatabaseStructureYouWillBeAbleToUseThisBackupFileToRestoreTheDatabaseHoweverInOrderToRestoreYouWillNeedToHaveAccessToMySqlAdministrationApplicationLikePhpMyAdminAndTheRootUserIdAndPasswordToMySql", "Ky mjet për kopje rezervë do të krijojë një kopje të bazës së të dhënave bashkë me strukturën e saj. Do të mund ta përdorni këtë skedar rezervë për të rikthyer bazën e të dhënave. Megjithatë, për rikthim, do t'ju nevojitet qasje në një aplikacion administrimi MySQL si phpMyAdmin dhe emri e fjalëkalimi i përdoruesit kryesor (root) të MySQL.");
 define("_dataImportUtility", "Mjeti i importimit të të dhënave");
 define("_pleaseSelectAProfileToImportTheirRelevantData", "Ju lutemi zgjidhni një profil për të importuar të dhënat përkatëse");
@@ -1478,7 +1560,11 @@ define("_emailSecondaryContactS", "Email-i (i kontaktit dytësor)");
 define("_relationshipSecondaryContactS", "Lidhja familjare (e kontaktit dytësor)");
 define("_pleaseDoNotInterruptThisProcess", "Ju lutemi mos e ndërprisni këtë proces");
 define("_theseFieldsAreInYourExcelSpreadSheet", "Këto fusha ndodhen në fletën tuaj Excel");
+<<<<<<< HEAD
 define("_theseAreAvailableFieldsInOpenSis", "Këto janë fusha të disponueshme në SIA (Sistemi Inteligjences Arsimore)");
+=======
+define("_theseAreAvailableFieldsInOpenSis", "Këto janë fusha të disponueshme në SIA");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_atAGlance", "Përmbledhje e shpejtë");
 define("_youHaveToSelectDateFromTheDateRange", "Duhet të zgjidhni një datë nga diapazoni i datave");
 define("_acessLog", "Regjistri i hyrjeve");
@@ -1672,7 +1758,11 @@ define("_parents", "Prindërit");
 define("_availableSchoolFields", "Fushat e Disponueshme të Shkollës");
 define("_creatReportForInstitutes", "KRIJO RAPORT PËR INSTITUCIONET");
 define("_noCustomFieldsWereFound", "Nuk u gjet asnjë fushë e personalizuar");
+<<<<<<< HEAD
 define("_customFields", "Fusha të Personalizuara");
+=======
+define("_customFields", "fusha të personalizuara");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_homeroom", "Kujdestari Klasë");
 define("_secondaryLanguage", "Gjuhë e Dytë");
 //----------------------------------------------------------------------------------------------------------
@@ -1687,7 +1777,11 @@ define("_emergencyContactInformation", "Informacioni i Kontaktit të Emergjencë
 define("_homeAddress", "Adresa e Shtëpisë");
 define("_access", "Qasja");
 define("_officialInformation", "Informacion Zyrtar");
+<<<<<<< HEAD
 define("_openSisAccessInformation", "Informacioni i Qasjes në SIA (Sistemi Inteligjences Arsimore)");
+=======
+define("_openSisAccessInformation", "Informacioni i Qasjes në SIA");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_updateStaffSPhoto", "Përditëso Foton e Stafit");
 define("_physicalDisability", "Aftësi e Kufizuar Fizike");
 define("_totals", "Shumat Totale");
@@ -1731,7 +1825,11 @@ define("_anomalousGrade", "Notë Anomale");
 define("_anomalousGrades", "Nota anomale");
 define("_missing", "Mungon");
 define("_excused", "I arsyetuar");
+<<<<<<< HEAD
 define("_negative", "Negativ");
+=======
+define("_negative", "Negative");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_extraCredit", "Pikë Shtesë (Extra Credit)");
 define("_dueDateMustBeWithinTheCurrentMarkingPeriodsStartDateAndEndDate", "Data e dorëzimit duhet të jetë brenda datës së fillimit dhe asaj të mbarimit të periudhës aktuale të vlerësimit");
 define("_assignedDateMustBeWithinTheCurrentMarkingPeriodsStartDateAndEndDate", "Data e caktimit duhet të jetë brenda datës së fillimit dhe asaj të mbarimit të periudhës aktuale të vlerësimit");
@@ -1800,7 +1898,11 @@ define("_addAnotherMarkingPeriod", "Shto një periudhë tjetër vlerësimi");
 define("_creditCategory", "Kategoria e Krediteve");
 define("_removeMarkingPeriod", "Hiq Periudhën e Vlerësimit");
 define("_youMustChooseAtLeastOneMarkingPeriod", "Duhet të zgjidhni të paktën një periudhë vlerësimi");
+<<<<<<< HEAD
 define("_finalGrade", "Nota Përfundimtare");
+=======
+define("_finalGrade", "nota përfundimtare");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_noGradeFound", "Nuk u gjet asnjë notë");
 define("_youMustChooseAtLeastOneStudentAndMarkingPeriod", "Duhet të zgjidhni të paktën një nxënës dhe një periudhë vlerësimi");
 define("_includeOnGradeList", "Përfshi në Listën e Notave");
@@ -1845,7 +1947,11 @@ define("_borderline", "Kufitar");
 define("_failing", "Mbetës");
 define("_incomplete", "I paplotë");
 define("_userField", "Fusha e Përdoruesit");
+<<<<<<< HEAD
 define("_poweredByOpenSis", "Mundësuar nga SIA (Sistemi Inteligjences Arsimore)");
+=======
+define("_poweredByOpenSis", "Mundësuar nga SIA");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_languageSpoken", "Gjuha e Folur");
 define("_maximumFailureAllow", "Dështimet Maksimale të Lejuara");
 define("_maximumInactiveDaysAllowed", "Ditët Maksimale të Lejuara të Pasivitetit");
@@ -1878,8 +1984,13 @@ define("_pleaseCompleteTheSetupBeforeUsingTheSystemTheFollowingComponentsNeedToB
 define("_events", "Ngjarje");
 define("_enrollmentRecord", "Regjistrimi i Regjistrimit");
 define("_enrollmentRecords", "Regjistrimet e Regjistrimit");
+<<<<<<< HEAD
 define("_assignInfoToSelectedStudents", "Cakto Informacionin për Nxënësit e Përzgjedhur");
 define("_reEnrollSelectedStudents", "Riregjistro Nxënësit e Përzgjedhur");
+=======
+define("_assignInfoToSelectedStudents", "cakto Informacionin për Nxënësit e Përzgjedhur");
+define("_reEnrollSelectedStudents", "riregjistro Nxënësit e Përzgjedhur");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define("_pleaseEnterAProperDate", "Ju lutemi vendosni një datë të saktë");
 define("_pleaseSelectAGradeLevel", "Ju lutemi zgjidhni një nivel klase");
 define("_pleaseSelectAnEnrollmentCode", "Ju lutemi zgjidhni një kod regjistrimi");
@@ -1979,7 +2090,11 @@ define("_pleaseContactTheSchoolAdministrationForMoreInformation", "Ju lutemi kon
 
 // some constant are not define so it give a fatal error
 define('ID', 'ID');
+<<<<<<< HEAD
 define('TITLE', 'TITLE');
+=======
+define('TITLE', 'TITULLI');
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 define('modname', 'modname');
 define('MARKING_PERIOD_ID', 'MARKING_PERIOD_ID');
 define('marking_period_id', 'marking_period_id');
@@ -1997,6 +2112,7 @@ define('marking_period_id', 'marking_period_id');
 // define('EMAIL','EMAIL');
 // define('email','email');
 // define('PHONE','TELEFONI');
+<<<<<<< HEAD
 define('_admin', 'Administrator');
 define('_gpscall', 'Shkalla GP');
 define('link','link');
@@ -2091,3 +2207,11 @@ define('_nextPage', 'Faqja Tjetër');
 define('_displaying', 'Po shfaqen');
 define('_through', 'deri në');
 define('_daily', 'Ditore');
+=======
+define('_admin', 'Administratori');
+define('_gpscall', 'Shkalla GP');
+define('link','link');
+define("ROOM_ID","ROOM_ID");
+define("generalInfo","informacionPergjithshem");
+define('students','Nxënësit');
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f

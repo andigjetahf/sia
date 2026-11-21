@@ -70,7 +70,11 @@ if (!$_REQUEST['start_date']) {
 }
 $QI = DBQuery('SELECT PERIOD_ID,TITLE FROM school_periods WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' ORDER BY SORT_ORDER ');
 $periods_RET = DBGet($QI);
+<<<<<<< HEAD
 $period_select = "<SELECT class=\"form-control\" name=period><OPTION value=''>" . (defined('_all') ? _all : 'Të Gjitha') . "</OPTION>";
+=======
+$period_select = "<SELECT class=\"form-control\" name=period><OPTION value=''>All</OPTION>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 foreach ($periods_RET as $period)
     $period_select .= "<OPTION value=$period[PERIOD_ID]" . (($_REQUEST['period'] == $period['PERIOD_ID']) ? ' SELECTED' : '') . ">" . $period['TITLE'] . "</OPTION>";
 $period_select .= "</SELECT>";

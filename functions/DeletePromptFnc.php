@@ -27,6 +27,7 @@
 #
 #***************************************************************************************
 
+<<<<<<< HEAD
 function _normalize_delete_action(&$action) {
     if ($action === 'delete' || $action === 'FSHIJ' || (defined('_delete') && $action === _delete)) {
         if (!isset($_SESSION['language']) || $_SESSION['language'] == 'sq') {
@@ -36,6 +37,9 @@ function _normalize_delete_action(&$action) {
 }
 function DeletePromptCommon($title, $action = 'delete') {
     _normalize_delete_action($action);
+=======
+function DeletePromptCommon($title, $action = 'delete') {
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
 
     unset($tmp_REQUEST['delete_ok']);
@@ -54,7 +58,10 @@ function DeletePromptCommon($title, $action = 'delete') {
 }
 
 function DeletePromptStaffCert($title, $certificate_id, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
 
     unset($tmp_REQUEST['delete_ok']);
@@ -72,7 +79,10 @@ function DeletePromptStaffCert($title, $certificate_id, $action = 'delete') {
 }
 
 function DeletePrompt($title, $action = _delete, $close = 'n') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -92,7 +102,10 @@ function DeletePrompt($title, $action = _delete, $close = 'n') {
 }
 
 function DeletePrompt_activity($title, $action = 'delete', $close = 'n') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -102,9 +115,15 @@ function DeletePrompt_activity($title, $action = 'delete', $close = 'n') {
         // echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
         if ($close == 'n')
+<<<<<<< HEAD
             echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=eligibility/Activities.php\"'></FORM></CENTER>";
         if ($close == 'y')
             echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.close();'></FORM></CENTER>";
+=======
+            echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=eligibility/Activities.php\"'></FORM></CENTER>";
+        if ($close == 'y')
+            echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.close();'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -112,7 +131,10 @@ function DeletePrompt_activity($title, $action = 'delete', $close = 'n') {
 }
 
 function DeletePrompt_sys_maintain($title, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -122,7 +144,11 @@ function DeletePrompt_sys_maintain($title, $action = 'delete') {
         echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
 
+<<<<<<< HEAD
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/SystemPreference.php&page_display=MAINTENANCE\"'></FORM></CENTER>";
+=======
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/SystemPreference.php&page_display=MAINTENANCE\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -130,7 +156,10 @@ function DeletePrompt_sys_maintain($title, $action = 'delete') {
 }
 
 function DeletePromptModRequest($title, $action = 'delete', $close = 'n') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -141,9 +170,15 @@ function DeletePromptModRequest($title, $action = 'delete', $close = 'n') {
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
         if ($close == 'n') {
             $req_mod_name = strip_tags(trim($_REQUEST[modname]));
+<<<<<<< HEAD
             echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=$req_mod_name\"'></FORM></CENTER>";
         }if ($close == 'y')
             echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.close();'></FORM></CENTER>";
+=======
+            echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=$req_mod_name\"'></FORM></CENTER>";
+        }if ($close == 'y')
+            echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.close();'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -151,7 +186,10 @@ function DeletePromptModRequest($title, $action = 'delete', $close = 'n') {
 }
 
 function DeletePromptModContacts($title, $action = 'delete', $close = 'n') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -164,9 +202,15 @@ function DeletePromptModContacts($title, $action = 'delete', $close = 'n') {
             $req_mod_name = strip_tags(trim($_REQUEST['modname']));
             $req_addr_id = strip_tags(trim($_REQUEST['address_id']));
             $req_per_id = strip_tags(trim($_REQUEST['person_id']));
+<<<<<<< HEAD
             echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=$req_mod_name&include=AddressInc&address_id=$req_addr_id&person_id=$req_per_id&con_info=old\"'></FORM></CENTER>";
         }if ($close == 'y')
             echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.close();'></FORM></CENTER>";
+=======
+            echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=$req_mod_name&include=AddressInc&address_id=$req_addr_id&person_id=$req_per_id&con_info=old\"'></FORM></CENTER>";
+        }if ($close == 'y')
+            echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.close();'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -174,7 +218,10 @@ function DeletePromptModContacts($title, $action = 'delete', $close = 'n') {
 }
 
 function DeleteMail($title, $action, $location, $isTrash = 0) {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     if(empty($action)) $action = 'delete';
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
@@ -185,9 +232,15 @@ function DeleteMail($title, $action, $location, $isTrash = 0) {
         if (!$isTrash) {
             PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
         } else {
+<<<<<<< HEAD
             PopTable('header', '' . (strpos($action, ' ') === false ? ' ' . ucwords($action) : '') . ' ' . (defined('_forever') ? _forever : 'Përgjithmonë'));
         }
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=$location\"'></FORM></CENTER>";
+=======
+            PopTable('header', '' . (strpos($action, ' ') === false ? ' ' . ucwords($action) : '') . ' Forever');
+        }
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=$location\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         PopTable('footer');
         return false;
@@ -197,7 +250,10 @@ function DeleteMail($title, $action, $location, $isTrash = 0) {
 
 //TODO:Use this instead of previous
 function DeletePromptMod($title, $queryString = '', $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
 
     unset($tmp_REQUEST['delete_ok']);
@@ -223,7 +279,10 @@ function DeletePromptMod($title, $queryString = '', $action = 'delete') {
 }
 
 function DeletePromptLog($title, $queryString = '', $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
 
     unset($tmp_REQUEST['delete_ok']);
@@ -273,7 +332,10 @@ function DuplicateFile($title, $target_path) {
 }
 
 function DeletePromptAssignment($title, $pid = 0, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
@@ -334,7 +396,10 @@ function UnableDeletePromptMod($title, $action = 'delete', $queryString = '') {
 }
 
 function Prompt($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
@@ -354,7 +419,10 @@ function Prompt($title = 'Confirm', $question = '', $message = '', $pdf = '') {
 }
 
 function Prompt_Home($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
@@ -373,7 +441,10 @@ function Prompt_Home($title = 'Confirm', $question = '', $message = '', $pdf = '
 }
 
 function DeletePrompt_Portal($title, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -382,7 +453,11 @@ function DeletePrompt_Portal($title, $action = 'delete') {
     if (!$_REQUEST['delete_ok'] && !$_REQUEST['delete_cancel']) {
         echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
+<<<<<<< HEAD
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/PortalNotes.php\"'></FORM></CENTER>";
+=======
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/PortalNotes.php\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -390,7 +465,10 @@ function DeletePrompt_Portal($title, $action = 'delete') {
 }
 
 function DeletePrompt_Period($title, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -399,7 +477,11 @@ function DeletePrompt_Period($title, $action = 'delete') {
     if (!$_REQUEST['delete_ok'] && !$_REQUEST['delete_cancel']) {
         echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
+<<<<<<< HEAD
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/Periods.php\"'></FORM></CENTER>";
+=======
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/Periods.php\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -407,7 +489,10 @@ function DeletePrompt_Period($title, $action = 'delete') {
 }
 
 function DeletePrompt_Filter($title, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -416,7 +501,11 @@ function DeletePrompt_Filter($title, $action = 'delete') {
     if (!$_REQUEST['delete_ok'] && !$_REQUEST['delete_cancel']) {
         echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
+<<<<<<< HEAD
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=students/Student.php\"'></FORM></CENTER>";
+=======
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=students/Student.php\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -424,7 +513,10 @@ function DeletePrompt_Filter($title, $action = 'delete') {
 }
 
 function DeletePrompt_GradeLevel($title, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -433,7 +525,11 @@ function DeletePrompt_GradeLevel($title, $action = 'delete') {
     if (!$_REQUEST['delete_ok'] && !$_REQUEST['delete_cancel']) {
         echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
+<<<<<<< HEAD
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/GradeLevels.php\"'></FORM></CENTER>";
+=======
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/GradeLevels.php\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -441,7 +537,10 @@ function DeletePrompt_GradeLevel($title, $action = 'delete') {
 }
 
 function DeletePrompt_Sections($title, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
 
@@ -450,7 +549,11 @@ function DeletePrompt_Sections($title, $action = 'delete') {
     if (!$_REQUEST['delete_ok'] && !$_REQUEST['delete_cancel']) {
         echo '<BR>';
         PopTable('header', _confirm ." ". (strpos($action, ' ') === false ? ' ' . ucwords($action) : ''));
+<<<<<<< HEAD
         echo "<CENTER><h4>"._areYouSureYouWantTo." $action "._that." $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/Sections.php\"'></FORM></CENTER>";
+=======
+        echo "<CENTER><h4>"._areYouSureYouWantTo." $action that $title?</h4><br><FORM action=$PHP_tmp_SELF&delete_ok=1 METHOD=POST><INPUT type=submit class=\"btn btn-danger\" value="._ok.">&nbsp;<INPUT type=button class=\"btn btn-primary\" name=delete_cancel value="._cancel." onclick='window.location=\"Modules.php?modname=schoolsetup/Sections.php\"'></FORM></CENTER>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     } else
@@ -458,7 +561,10 @@ function DeletePrompt_Sections($title, $action = 'delete') {
 }
 
 function DeletePromptBigString($title = '', $queryString = '', $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     $tmp_REQUEST = $_REQUEST;
 
@@ -476,7 +582,10 @@ function DeletePromptBigString($title = '', $queryString = '', $action = 'delete
 }
 
 function DeletePromptFilesEncoded($title, $queryString, $action = 'delete') {
+<<<<<<< HEAD
     _normalize_delete_action($action);
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
 
     unset($tmp_REQUEST['delete_ok']);

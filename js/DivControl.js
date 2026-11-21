@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿// HTML escape helper to prevent XSS
+=======
+// HTML escape helper to prevent XSS
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 function escapeHtmlDC(str) {
     if (str == null) return '';
     return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -92,7 +96,11 @@ function selectFile(input) {
         }
     }
     else
+<<<<<<< HEAD
         document.getElementById('divErr').innerHTML = '<div class="alert alert-danger alert-styled-left alert-bordered">Formati i skedarit nuk mbështetet. Përdorni formate të zakonshme si - jpeg, png, tiff, bmp etj.</div>';
+=======
+        document.getElementById('divErr').innerHTML = '<div class="alert alert-danger alert-styled-left alert-bordered">Unsupported file format, use common image file like - jpeg, png, tiff, bmp etc.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     //    if (selectedFile.match(/fakepath/)) {
     //        // update the file-path text using case-insensitive regex
     //        selectedFile = selectedFile.replace(/C:\\fakepath\\/i, '');
@@ -178,6 +186,7 @@ function confirmAction() {
             chk = 'y';
         }
         else
+<<<<<<< HEAD
             var option = "fshini oraret aktuale? ";
     }
     else
@@ -185,11 +194,24 @@ function confirmAction() {
     if (chk == 'y') {
         var d = $('divErr');
         var err = "Ju lutemi zgjidhni një opsion.";
+=======
+            var option = "delete current schedules ? ";
+    }
+    else
+        var option = "run the scheduler to schedule unscheduled requests? ";
+    if (chk == 'y') {
+        var d = $('divErr');
+        var err = "Please select one options.";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         d.innerHTML = "<b><font color=red>" + err + "</font></b>";
         return false;
     }
     else {
+<<<<<<< HEAD
         if (confirm("A dëshironi vërtet të " + option) == true)
+=======
+        if (confirm("Do you really want to " + option) == true)
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             return true;
         else
             return false;
@@ -223,10 +245,17 @@ function show_this_msg(tag_id, msg_id, option) {
         option = "the calendar";
     if (option == "grade")
         option = "the grade scale";
+<<<<<<< HEAD
     document.getElementById(msg_id).innerHTML = '<font style="color:red"><b>Nuk mund të ndryshoni ' + option + ' pasi kjo periudhë kursi ka asociim</b></font>';
 }
 function show_home_error() {
     document.getElementById('divErr').innerHTML = "<b><font color=red>Ju lutemi vendosni fillimisht adresën e shtëpisë.</font></b>";
+=======
+    document.getElementById(msg_id).innerHTML = '<font style="color:red"><b>Cannot change ' + option + ' as this course period has association</b></font>';
+}
+function show_home_error() {
+    document.getElementById('divErr').innerHTML = "<b><font color=red>Please provide home address first.</font></b>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 function set_check_value(val, name) {
     if(document.getElementById('IS_EMERGENCY_HIDDEN')){
@@ -436,7 +465,11 @@ function show_this_msg(tag_id, msg_id, option) {
         option = "the calendar";
     if (option == "grade")
         option = "the grade scale";
+<<<<<<< HEAD
     document.getElementById(msg_id).innerHTML = '<font style="color:red"><b>Nuk mund të ndryshoni ' + option + ' pasi kjo periudhë kursi ka asociim</b></font>';
+=======
+    document.getElementById(msg_id).innerHTML = '<font style="color:red"><b>Cannot change ' + option + ' as this course period has association</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 
 function showDiv() {
@@ -910,10 +943,17 @@ function autoset_gradelevel(thisElement) {
         document.getElementById("SMS_GRADE_LEVEL").readOnly = true;
 
         if (document.getElementById("gradeLevelHelp")) {
+<<<<<<< HEAD
             window.$("#gradeLevelHelp").html(`<div id="gradeLevelHelp" class="help-block">You Nuk mund të ndryshoni the Grade Level as the student is already in this Grade Level in ${escapeHtmlDC(gradelevelDataParsed[selectedMP].school_name)} për ${escapeHtmlDC(selectedMPText)}.</div>`);
         }
         else {
             window.$("#gradeLevelArea").append(`<div id="gradeLevelHelp" class="help-block">You Nuk mund të ndryshoni the Grade Level as the student is already in this Grade Level in ${escapeHtmlDC(gradelevelDataParsed[selectedMP].school_name)} për ${escapeHtmlDC(selectedMPText)}.</div>`);
+=======
+            window.$("#gradeLevelHelp").html(`<div id="gradeLevelHelp" class="help-block">You cannot change the Grade Level as the student is already in this Grade Level in ${escapeHtmlDC(gradelevelDataParsed[selectedMP].school_name)} for ${escapeHtmlDC(selectedMPText)}.</div>`);
+        }
+        else {
+            window.$("#gradeLevelArea").append(`<div id="gradeLevelHelp" class="help-block">You cannot change the Grade Level as the student is already in this Grade Level in ${escapeHtmlDC(gradelevelDataParsed[selectedMP].school_name)} for ${escapeHtmlDC(selectedMPText)}.</div>`);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
     }
     else {

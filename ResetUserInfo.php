@@ -36,7 +36,10 @@ include "AuthCryp.php";
 include 'functions/SqlSecurityFnc.php';
 include_once("functions/PasswordHashFnc.php");
 include "functions/CSRFSecurityFnc.php";
+<<<<<<< HEAD
 include_once "lang/language.php";
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 function db_start() {
     global $DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $DatabasePort, $DatabaseType;
@@ -234,7 +237,11 @@ function db_show_error($sql, $failnote, $additional = '') {
 			<TD>SIA has encountered an error that could have resulted from any of the following:
 			<br/>
 			<ul>
+<<<<<<< HEAD
 			<li><?= _invalidDataInput ?></li>
+=======
+			<li>Invalid data input</li>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 			<li>Database SQL error</li>
 			<li>Program error</li>
 			</ul>
@@ -277,6 +284,7 @@ if ($_REQUEST['pass_type_form'] == 'password') {
     if ($_REQUEST['pass_user_type'] == 'pass_student') {
         if (CSRFSecure::ValidateToken($_REQUEST['TOKEN'])) {
             if ($password_stn_id == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _pleaseEnterStudentId;
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
@@ -286,11 +294,26 @@ if ($_REQUEST['pass_type_form'] == 'password') {
             }
             if ($_REQUEST['month_password_dob'] == '' || $_REQUEST['day_password_dob'] == '' || $_REQUEST['year_password_dob'] == '') {
                 $_SESSION['err_msg'] = _pleaseEnterBirthdayProperly;
+=======
+                $_SESSION['err_msg'] = 'Please Enter Student Id.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($uname == '') {
+                $_SESSION['err_msg'] = 'Please Enter Username.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($_REQUEST['month_password_dob'] == '' || $_REQUEST['day_password_dob'] == '' || $_REQUEST['year_password_dob'] == '') {
+                $_SESSION['err_msg'] = 'Please Enter Birthday Properly.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
         }
         else {
+<<<<<<< HEAD
             $_SESSION['err_msg'] = _invalidAttemptPleaseTryAgain;
+=======
+            $_SESSION['err_msg'] = 'Invalid attempt! Please try again.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo'<script>window.location.href="ForgotPass.php"</script>';
         }
 
@@ -310,7 +333,11 @@ if ($_REQUEST['pass_type_form'] == 'password') {
                 AND la.PROFILE_ID=3'));
 
             if ($stu_info[1]['STUDENT_ID'] == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _incorrectLoginCredential;
+=======
+                $_SESSION['err_msg'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             } else {
@@ -325,16 +352,28 @@ if ($_REQUEST['pass_type_form'] == 'password') {
     if ($_REQUEST['pass_user_type'] == 'pass_staff') {
         if (CSRFSecure::ValidateToken($_REQUEST['TOKEN'])) {
             if ($uname == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _pleaseEnterUsername;
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
             if ($password_stf_email == '') {
                 $_SESSION['err_msg'] = _pleaseEnterEmailAddress;
+=======
+                $_SESSION['err_msg'] = 'Please Enter Username.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($password_stf_email == '') {
+                $_SESSION['err_msg'] = 'Please Enter Email Address.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
         }
         else {
+<<<<<<< HEAD
             $_SESSION['err_msg'] = _invalidAttemptPleaseTryAgain;
+=======
+            $_SESSION['err_msg'] = 'Invalid attempt! Please try again.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo'<script>window.location.href="ForgotPass.php"</script>';
         }
 
@@ -344,7 +383,11 @@ if ($_REQUEST['pass_type_form'] == 'password') {
             $stf_info = DBGet(DBQuery('SELECT s.* FROM staff s,login_authentication la  WHERE la.USER_ID=s.STAFF_ID AND la.USERNAME=\'' . $uname . '\' AND s.EMAIL=\'' . $password_stf_email . '\' AND la.PROFILE_ID IN (SELECT ID FROM user_profiles WHERE ID NOT IN (0,3,4))'));
 
             if ($stf_info[1]['STAFF_ID'] == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _incorrectLoginCredential;
+=======
+                $_SESSION['err_msg'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             } else {
                 $flag = 'stf_pass';
@@ -357,16 +400,28 @@ if ($_REQUEST['pass_type_form'] == 'password') {
     if ($_REQUEST['pass_user_type'] == 'pass_parent') {
         if (CSRFSecure::ValidateToken($_REQUEST['TOKEN'])) {
             if ($uname == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _pleaseEnterUsername;
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
             if ($password_stf_email == '') {
                 $_SESSION['err_msg'] = _pleaseEnterEmailAddress;
+=======
+                $_SESSION['err_msg'] = 'Please Enter Username.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($password_stf_email == '') {
+                $_SESSION['err_msg'] = 'Please Enter Email Address.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
         }
         else {
+<<<<<<< HEAD
             $_SESSION['err_msg'] = _invalidAttemptPleaseTryAgain;
+=======
+            $_SESSION['err_msg'] = 'Invalid attempt! Please try again.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo'<script>window.location.href="ForgotPass.php"</script>';
         }
 
@@ -375,7 +430,11 @@ if ($_REQUEST['pass_type_form'] == 'password') {
             $par_info = DBGet(DBQuery('SELECT p.* FROM people p,login_authentication la  WHERE la.USER_ID=p.STAFF_ID AND la.USERNAME=\'' . $uname . '\' AND p.EMAIL=\'' . $password_stf_email . '\' AND la.PROFILE_ID = 4'));
 
             if ($par_info[1]['STAFF_ID'] == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _incorrectLoginCredential;
+=======
+                $_SESSION['err_msg'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             } else {
                 $flag = 'par_pass';
@@ -391,6 +450,7 @@ if ($_REQUEST['user_type_form'] == 'username') {
     if ($_REQUEST['uname_user_type'] == 'uname_student') {
         if (CSRFSecure::ValidateToken($_REQUEST['TOKEN'])) {
             if ($username_stn_id == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _pleaseEnterStudentId;
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
@@ -400,11 +460,26 @@ if ($_REQUEST['user_type_form'] == 'username') {
             }
             if ($_REQUEST['month_username_dob'] == '' || $_REQUEST['day_username_dob'] == '' || $_REQUEST['year_username_dob'] == '') {
                 $_SESSION['err_msg'] = _pleaseEnterBirthdayProperly;
+=======
+                $_SESSION['err_msg'] = 'Please Enter Student Id.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($pass == '') {
+                $_SESSION['err_msg'] = 'Please Enter Password.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($_REQUEST['month_username_dob'] == '' || $_REQUEST['day_username_dob'] == '' || $_REQUEST['year_username_dob'] == '') {
+                $_SESSION['err_msg'] = 'Please Enter Birthday Properly.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
         }
         else {
+<<<<<<< HEAD
             $_SESSION['err_msg'] = _invalidAttemptPleaseTryAgain;
+=======
+            $_SESSION['err_msg'] = 'Invalid attempt! Please try again.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo'<script>window.location.href="ForgotPass.php"</script>';
         }
 
@@ -433,7 +508,11 @@ if ($_REQUEST['user_type_form'] == 'username') {
             //end 
 
             if ($stu_info[1]['STUDENT_ID'] == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _incorrectLoginCredential;
+=======
+                $_SESSION['err_msg'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             } else {
                 $get_uname = DBGet(DBQuery('SELECT USERNAME FROM login_authentication WHERE USER_ID=' . $username_stn_id . ' AND PROFILE_ID=3'));
@@ -445,16 +524,28 @@ if ($_REQUEST['user_type_form'] == 'username') {
     if ($_REQUEST['uname_user_type'] == 'uname_staff') {
         if (CSRFSecure::ValidateToken($_REQUEST['TOKEN'])) {
             if ($pass == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _pleaseEnterPassword;
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
             if ($username_stf_email == '') {
                 $_SESSION['err_msg'] = _pleaseEnterEmailAddress;
+=======
+                $_SESSION['err_msg'] = 'Please Enter Password.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($username_stf_email == '') {
+                $_SESSION['err_msg'] = 'Please Enter Email Address.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
         }
         else {
+<<<<<<< HEAD
             $_SESSION['err_msg'] = _invalidAttemptPleaseTryAgain;
+=======
+            $_SESSION['err_msg'] = 'Invalid attempt! Please try again.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo'<script>window.location.href="ForgotPass.php"</script>';
         }
 
@@ -479,7 +570,11 @@ if ($_REQUEST['user_type_form'] == 'username') {
             //end
 
             if ($stf_info[1]['STAFF_ID'] == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _incorrectLoginCredential;
+=======
+                $_SESSION['err_msg'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             } else {
                 $get_uname = DBGet(DBQuery('SELECT USERNAME FROM login_authentication WHERE USER_ID=' . $stf_info[1]['STAFF_ID'] . ' AND PROFILE_ID=' . $stf_info[1]['PROFILE_ID']));
@@ -491,16 +586,28 @@ if ($_REQUEST['user_type_form'] == 'username') {
     if ($_REQUEST['uname_user_type'] == 'uname_parent') {
         if (CSRFSecure::ValidateToken($_REQUEST['TOKEN'])) {
             if ($pass == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _pleaseEnterPassword;
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
             if ($username_stf_email == '') {
                 $_SESSION['err_msg'] = _pleaseEnterEmailAddress;
+=======
+                $_SESSION['err_msg'] = 'Please Enter Password.';
+                echo'<script>window.location.href="ForgotPass.php"</script>';
+            }
+            if ($username_stf_email == '') {
+                $_SESSION['err_msg'] = 'Please Enter Email Address.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             }
         }
         else {
+<<<<<<< HEAD
             $_SESSION['err_msg'] = _invalidAttemptPleaseTryAgain;
+=======
+            $_SESSION['err_msg'] = 'Invalid attempt! Please try again.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo'<script>window.location.href="ForgotPass.php"</script>';
         }
 
@@ -524,7 +631,11 @@ if ($_REQUEST['user_type_form'] == 'username') {
             //end
 
             if ($par_info[1]['STAFF_ID'] == '') {
+<<<<<<< HEAD
                 $_SESSION['err_msg'] = _incorrectLoginCredential;
+=======
+                $_SESSION['err_msg'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo'<script>window.location.href="ForgotPass.php"</script>';
             } else {
                 $get_uname = DBGet(DBQuery('SELECT USERNAME FROM login_authentication WHERE USER_ID=' . $par_info[1]['STAFF_ID'] . ' AND PROFILE_ID=4'));
@@ -542,7 +653,11 @@ if ($_REQUEST['new_pass'] != '' && $_REQUEST['ver_pass'] != '') {
         $_SESSION['PageAccess'] !== 'stf_pass' &&
         $_SESSION['PageAccess'] !== 'par_pass'
     ) {
+<<<<<<< HEAD
         $_SESSION['err_msg_mod'] = _invalidAttemptPleaseTryAgain;
+=======
+        $_SESSION['err_msg_mod'] = '<font color="red" ><b>Invalid attempt! Please try again.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo'<script>window.location.href="ForgotPass.php"</script>';
         exit;
     }
@@ -563,7 +678,11 @@ if ($_REQUEST['new_pass'] != '' && $_REQUEST['ver_pass'] != '') {
         (int)$_SESSION['verified_user_id'] !== $user_id ||
         (int)$_SESSION['verified_profile_id'] !== $profile_id
     ) {
+<<<<<<< HEAD
         $_SESSION['err_msg_mod'] = _invalidAttemptPleaseTryAgain;
+=======
+        $_SESSION['err_msg_mod'] = '<font color="red" ><b>Invalid attempt! Please try again.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo'<script>window.location.href="ForgotPass.php"</script>';
         exit;
     }
@@ -587,11 +706,19 @@ if ($_REQUEST['new_pass'] != '' && $_REQUEST['ver_pass'] != '') {
     
     /*if ($get_info[1]['EX_REC'] > 0)*/ 
     if($total_password!=0) {
+<<<<<<< HEAD
         $_SESSION['err_msg_mod'] = _incorrectLoginCredential;
     } else { 
         // DBQuery('UPDATE login_authentication SET password=\'' . GenerateNewHash($_REQUEST['ver_pass']) . '\' WHERE user_id=\'' . $get_vals[0] . '\' AND profile_id=\'' . $get_vals[1] . '\' ');
         DBQuery('UPDATE login_authentication SET password=\'' . GenerateNewHash($_REQUEST['ver_pass']) . '\' WHERE user_id = ' . $user_id . ' AND profile_id = ' . $profile_id);
         $_SESSION['conf_msg'] = '<font color="green" ><b>' . _update . ' ' . _password . '</b></font>';
+=======
+        $_SESSION['err_msg_mod'] = '<font color="red" ><b>Incorrect login credential.</b></font>';
+    } else { 
+        // DBQuery('UPDATE login_authentication SET password=\'' . GenerateNewHash($_REQUEST['ver_pass']) . '\' WHERE user_id=\'' . $get_vals[0] . '\' AND profile_id=\'' . $get_vals[1] . '\' ');
+        DBQuery('UPDATE login_authentication SET password=\'' . GenerateNewHash($_REQUEST['ver_pass']) . '\' WHERE user_id = ' . $user_id . ' AND profile_id = ' . $profile_id);
+        $_SESSION['conf_msg'] = '<font color="red" ><b>Password updated successfully.</b></font>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
          unset($_SESSION['PageAccess']);
         echo'<script>window.location.href="index.php"</script>';
     }
@@ -605,12 +732,20 @@ if ($_SESSION['PageAccess']!= 'stu_pass' && $_SESSION['PageAccess']!= 'stf_pass'
 //end
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="sq">
+=======
+<html lang="en">
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <title>SIA - <?= _studentInformationSystem ?></title>
+=======
+        <title>SIA Student Information System</title>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link rel="shortcut icon" href="favicon.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="styles/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -632,8 +767,13 @@ if ($_SESSION['PageAccess']!= 'stu_pass' && $_SESSION['PageAccess']!= 'stf_pass'
         <script type="text/javascript">
             $(document).ready(function () {
 
+<<<<<<< HEAD
                 var monthNames = ["<?= _january ?>", "<?= _february ?>", "<?= _march ?>", "<?= _april ?>", "<?= _may ?>", "<?= _june ?>", "<?= _july ?>", "<?= _august ?>", "<?= _september ?>", "<?= _october ?>", "<?= _november ?>", "<?= _december ?>"];
                 var dayNames = ["<?= _sunday ?>", "<?= _monday ?>", "<?= _tuesday ?>", "<?= _wednesday ?>", "<?= _thursday ?>", "<?= _friday ?>", "<?= _saturday ?>"];
+=======
+                var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
                 var newDate = new Date();
@@ -681,7 +821,11 @@ if ($_SESSION['PageAccess']!= 'stu_pass' && $_SESSION['PageAccess']!= 'stf_pass'
                         <div class="logo">
                             <img src="assets/images/opensis_logo.png" alt="SIA" />
                         </div>                    
+<<<<<<< HEAD
                         <h3><?= _forgotPassword ?></h3>
+=======
+                        <h3>Forgot Password</h3>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>
                     <div class="panel-body">
                         <form name="f1" method="post" class="text-left" action="">
@@ -714,10 +858,17 @@ if ($_SESSION['PageAccess']!= 'stu_pass' && $_SESSION['PageAccess']!= 'stf_pass'
                                 unset($_SESSION['err_msg_mod']);
                                 ?>
                             </div>
+<<<<<<< HEAD
                             <p><?= _passwordMustBe8Chars ?></p>
                             <div class="form-group">
                                 <!--                                <label class="control-label">Enter new password</label>-->
                                 <input type="password" name="new_pass" id="new_pass" class="form-control" placeholder="<?= _enterNewPassword ?>" AUTOCOMPLETE="off" onkeyup="forgotpasswordStrength(this.value);
+=======
+                            <p>Password must be minimum 8 characters long with at least one capital, one numeric and one special character. Example: S@mple123</p>
+                            <div class="form-group">
+                                <!--                                <label class="control-label">Enter new password</label>-->
+                                <input type="password" name="new_pass" id="new_pass" class="form-control" placeholder="Enter new password" AUTOCOMPLETE="off" onkeyup="forgotpasswordStrength(this.value);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 passwordMatch();
                 forgotpassvalidate_password(this.value, <?php echo json_encode(htmlspecialchars($uname ?? '', ENT_QUOTES, 'UTF-8')); ?>,<?php
                                 if ($flag == 'stu_pass')
@@ -732,13 +883,22 @@ if ($_SESSION['PageAccess']!= 'stu_pass' && $_SESSION['PageAccess']!= 'stf_pass'
 
                             <div class="form-group">
                                 <!--                                <label class="control-label">Re-enter new password</label>-->
+<<<<<<< HEAD
                                 <input type="password" name="ver_pass" id="ver_pass" class="form-control" placeholder="<?= _reEnterNewPassword ?>" AUTOCOMPLETE = "off" onkeyup="passwordMatch();"/>
+=======
+                                <input type="password" name="ver_pass" id="ver_pass" class="form-control" placeholder="Re-enter new password" AUTOCOMPLETE = "off" onkeyup="passwordMatch();"/>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 <p id=passwordMatch></p>
                             </div>
 
                             <div class="text-center">
+<<<<<<< HEAD
                                 <input type="submit" name="save" class="btn btn-primary" value="<?= _update ?>" onClick="return pass_check();"/>
                                 <a class="btn btn-default" href="ForgotPass.php" style="text-decoration:none;color:black;font-weight:bold"><?= _cancel ?></a>
+=======
+                                <input type="submit" name="save" class="btn btn-primary" value="Update" onClick="return pass_check();"/>
+                                <a class="btn btn-default" href="ForgotPass.php" style="text-decoration:none;color:black;font-weight:bold">Cancel</a>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                             </div>
 
                         </form>

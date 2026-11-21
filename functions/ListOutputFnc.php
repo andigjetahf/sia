@@ -332,8 +332,13 @@
 //                     $stop = $result_count;
 
 //                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
 //                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
 //                     echo _goToPage;
+=======
+//                     $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+//                     echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //                     //$pages = '';
 //                     if (ceil($result_count / $num_displayed) <= 10) {
 //                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
@@ -357,7 +362,11 @@
 //                             else
 //                                 $pages .= "$i, ";
 //                         }
+<<<<<<< HEAD
 //                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+//                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //                     }
 //                     echo $pages;
 //                     echo '</TD></TR></TABLE>';
@@ -1083,8 +1092,13 @@ function ListOutputPrint_sch($result, $column_names, $singular = '', $plural = '
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -1108,7 +1122,11 @@ function ListOutputPrint_sch($result, $column_names, $singular = '', $plural = '
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -1880,8 +1898,13 @@ function ListOutput($result, $column_names, $singular = '', $plural = '', $link 
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     $pages = '';
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
@@ -1910,7 +1933,11 @@ function ListOutput($result, $column_names, $singular = '', $plural = '', $link 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -1958,7 +1985,11 @@ function ListOutput($result, $column_names, $singular = '', $plural = '', $link 
                         }
                         if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0) {
                             $lo_save_id = isset($options['LO_save_id']) ? "&LO_save_id=" . $options['LO_save_id'] : "";
+<<<<<<< HEAD
                             echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true" . $lo_save_id . " class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                            echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true" . $lo_save_id . " class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
 
                         echo '</h6>';
@@ -2208,6 +2239,7 @@ function ListOutput($result, $column_names, $singular = '', $plural = '', $link 
                         echo "var table = $('#results').DataTable({"
                             . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                             . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -2216,6 +2248,11 @@ function ListOutput($result, $column_names, $singular = '', $plural = '', $link 
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             if(document.getElementById('hidden_checkboxes')){
@@ -2731,8 +2768,13 @@ function ListOutputWithStudentInfo($result, $column_names, $singular = '', $plur
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     $pages = '';
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
@@ -2761,7 +2803,11 @@ function ListOutputWithStudentInfo($result, $column_names, $singular = '', $plur
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -2810,7 +2856,11 @@ function ListOutputWithStudentInfo($result, $column_names, $singular = '', $plur
                         }
                         if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0){
                             $lo_save_id = isset($options['LO_save_id']) ? "&LO_save_id=".$options['LO_save_id'] : "";
+<<<<<<< HEAD
                             echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true". $lo_save_id ." class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                            echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true". $lo_save_id ." class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
 
                         echo '</h6>';
@@ -3062,6 +3112,7 @@ function ListOutputWithStudentInfo($result, $column_names, $singular = '', $plur
                         echo "var table = $('#results').DataTable({"
                         . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                         . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -3070,6 +3121,11 @@ function ListOutputWithStudentInfo($result, $column_names, $singular = '', $plur
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
@@ -3490,8 +3546,13 @@ function ListOutputCustomDT($result, $column_names, $singular = '', $plural = ''
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
                                         $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+                                        $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -3519,7 +3580,11 @@ function ListOutputCustomDT($result, $column_names, $singular = '', $plural = ''
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -3568,9 +3633,14 @@ function ListOutputCustomDT($result, $column_names, $singular = '', $plural = ''
                             echo '&nbsp;';
                         }
                         if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0) {
+<<<<<<< HEAD
                             // echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
                             $download_sp_title = defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)';
                             echo " &nbsp; <a HREF=\"javascript:void(0);\" onclick=\"generateDataTableSpreadsheet();\" class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"" . $download_sp_title . "\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                            // echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+                            echo " &nbsp; <a HREF=\"javascript:void(0);\" onclick=\"generateDataTableSpreadsheet();\" class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
 
                         echo '</h6>';
@@ -3908,6 +3978,7 @@ function ListOutputCustomDT($result, $column_names, $singular = '', $plural = ''
                         echo "var table = $('#results').DataTable({
                             dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',
                             language: {
+<<<<<<< HEAD
                                 search: '<span>Kërko:</span> _INPUT_',
                                 lengthMenu: '<span>Shfaq:</span> _MENU_',
                                 paginate: { 
@@ -3921,6 +3992,16 @@ function ListOutputCustomDT($result, $column_names, $singular = '', $plural = ''
                                 infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                                 zeroRecords: 'Nuk u gjet asnjë rezultat',
                                 emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                                search: '<span>Filter:</span> _INPUT_',
+                                lengthMenu: '<span>Show:</span> _MENU_',
+                                paginate: { 
+                                    'first': 'First', 
+                                    'last': 'Last', 
+                                    'next': '&rarr;', 
+                                    'previous': '&larr;'
+                                }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                             },
                             paging: false,
                             bInfo: false,
@@ -4384,7 +4465,11 @@ function ListOutputPeriod($result, $column_names, $singular = '', $plural = '', 
 
             if (($result_count == 0 || $display_count == 0) && $plural) {
                 echo '<div class="panel-body">';
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border m-b-0\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border m-b-0\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '</div>';
             } elseif ($result_count == 0 || $display_count == 0) {
                 echo '<div class="panel-body">';
@@ -4406,8 +4491,13 @@ function ListOutputPeriod($result, $column_names, $singular = '', $plural = '', 
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -4435,7 +4525,11 @@ function ListOutputPeriod($result, $column_names, $singular = '', $plural = '', 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -4479,7 +4573,11 @@ function ListOutputPeriod($result, $column_names, $singular = '', $plural = '', 
                             echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                     }
                     if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                         echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                        echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                     echo '</h6>';
                     $colspan = 1;
@@ -5171,7 +5269,11 @@ function ListOutputSchedule($result, $column_names, $singular = '', $plural = ''
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -5189,8 +5291,13 @@ function ListOutputSchedule($result, $column_names, $singular = '', $plural = ''
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -5218,7 +5325,11 @@ function ListOutputSchedule($result, $column_names, $singular = '', $plural = ''
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -5259,7 +5370,11 @@ function ListOutputSchedule($result, $column_names, $singular = '', $plural = ''
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                     echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                    echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</h6>';
                 $colspan = 1;
@@ -5932,7 +6047,11 @@ function ListOutputStaffCert($result, $column_names, $singular = '', $plural = '
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -5950,8 +6069,13 @@ function ListOutputStaffCert($result, $column_names, $singular = '', $plural = '
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -5974,7 +6098,11 @@ function ListOutputStaffCert($result, $column_names, $singular = '', $plural = '
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -6731,7 +6859,11 @@ function ListOutputMod($result, $column_names, $singular = '', $plural = '', $li
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -6747,8 +6879,13 @@ function ListOutputMod($result, $column_names, $singular = '', $plural = '', $li
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -6771,7 +6908,11 @@ function ListOutputMod($result, $column_names, $singular = '', $plural = '', $li
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -7411,7 +7552,11 @@ function ListOutputPrint_Report($result, $column_names, $singular = '', $plural 
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>" . _no . " $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+=======
+                echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>No $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>' . _noneWereFound . '.</b></td></tr><tr><td colspan=2></td></tr></table></div>';
         }
@@ -7427,8 +7572,13 @@ function ListOutputPrint_Report($result, $column_names, $singular = '', $plural 
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -7451,7 +7601,11 @@ function ListOutputPrint_Report($result, $column_names, $singular = '', $plural 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -8105,7 +8259,11 @@ function ListOutputPrint($result, $column_names, $singular = '', $plural = '', $
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>" . _no . " $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+=======
+                echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>No $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>' . _noneWereFound . '.</b></td></tr><tr><td colspan=2></td></tr></table></div>';
         }
@@ -8121,8 +8279,13 @@ function ListOutputPrint($result, $column_names, $singular = '', $plural = '', $
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -8145,7 +8308,11 @@ function ListOutputPrint($result, $column_names, $singular = '', $plural = '', $
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -8803,7 +8970,11 @@ function ListOutputCustom($result, $column_names, $singular = '', $plural = '', 
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>" . _no . " $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+=======
+                echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>No $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>' . _noneWereFound . '.</b></td></tr><tr><td colspan=2></td></tr></table></div>';
         }
@@ -8819,8 +8990,13 @@ function ListOutputCustom($result, $column_names, $singular = '', $plural = '', 
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -8843,7 +9019,11 @@ function ListOutputCustom($result, $column_names, $singular = '', $plural = '', 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -9498,7 +9678,11 @@ function PrintCatalog($result, $column_names, $singular = '', $plural = '', $lin
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>" . _no . " $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+=======
+                echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>No $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>' . _noneWereFound . '.</b></td></tr><tr><td colspan=2></td></tr></table></div>';
         }
@@ -9514,8 +9698,13 @@ function PrintCatalog($result, $column_names, $singular = '', $plural = '', $lin
                     $stop = $result_count;
 
                 if ($result_count > $num_displayed) {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $_REQUEST['page'])
@@ -9538,7 +9727,11 @@ function PrintCatalog($result, $column_names, $singular = '', $plural = '', $lin
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -10202,7 +10395,11 @@ function ListOutput_missing_attn($result, $column_names, $singular = '', $plural
 
             if (($result_count == 0 || $display_count == 0) && $plural) {
                 echo '<div class="panel-body">';
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border m-b-0\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border m-b-0\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '</div>';
             } elseif ($result_count == 0 || $display_count == 0) {
                 echo '<div class="panel-body">';
@@ -10224,8 +10421,13 @@ function ListOutput_missing_attn($result, $column_names, $singular = '', $plural
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -10253,7 +10455,11 @@ function ListOutput_missing_attn($result, $column_names, $singular = '', $plural
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -10296,7 +10502,11 @@ function ListOutput_missing_attn($result, $column_names, $singular = '', $plural
             //                            echo "<span class=\"heading-text\">1 $singular "._wasFound.".</span>";
             //                }
             //                if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
             //                        echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+            //                        echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             //
             //                echo '</h6>';
             //                $colspan = 1;
@@ -10551,6 +10761,7 @@ function ListOutput_missing_attn($result, $column_names, $singular = '', $plural
                         echo "var table = $('#results').DataTable({"
                             . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                             . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -10559,6 +10770,11 @@ function ListOutput_missing_attn($result, $column_names, $singular = '', $plural
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
@@ -11001,8 +11217,13 @@ function ListOutput_missing_attn_teach_port($result, $column_names, $singular = 
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -11030,7 +11251,11 @@ function ListOutput_missing_attn_teach_port($result, $column_names, $singular = 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -11292,6 +11517,7 @@ function ListOutput_missing_attn_teach_port($result, $column_names, $singular = 
                     echo "var table = $('#results').DataTable({"
                         . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                         . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -11300,6 +11526,11 @@ function ListOutput_missing_attn_teach_port($result, $column_names, $singular = 
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
@@ -11856,7 +12087,11 @@ function ListOutputGrade_old($result, $column_names, $singular = '', $plural = '
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -11874,8 +12109,13 @@ function ListOutputGrade_old($result, $column_names, $singular = '', $plural = '
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -11903,7 +12143,11 @@ function ListOutputGrade_old($result, $column_names, $singular = '', $plural = '
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -12615,7 +12859,11 @@ function ListOutputGrade($result, $column_names, $singular = '', $plural = '', $
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -12633,8 +12881,13 @@ function ListOutputGrade($result, $column_names, $singular = '', $plural = '', $
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -12662,7 +12915,11 @@ function ListOutputGrade($result, $column_names, $singular = '', $plural = '', $
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -12952,6 +13209,7 @@ function ListOutputGrade($result, $column_names, $singular = '', $plural = '', $
                         echo "var table = $('#results').DataTable({"
                             . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                             . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -12960,6 +13218,11 @@ function ListOutputGrade($result, $column_names, $singular = '', $plural = '', $
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
@@ -13430,7 +13693,11 @@ function ListOutputPrint_Institute_Report($result, $column_names, $singular = ''
         if ($options['count'] || $display_zero) 
         {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>" . _no . " $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+=======
+                echo "<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>No $plural " . _wereFound . ".</b></td></tr><tr><td colspan=2 ></td></tr></table></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div style=text-align:left><table cellpadding=1 cellspacing=0 ><tr><td ></td><td ><b>' . _noneWereFound . '.</b></td></tr><tr><td colspan=2></td></tr></table></div>';
         }
@@ -13449,8 +13716,13 @@ function ListOutputPrint_Institute_Report($result, $column_names, $singular = ''
 
                 if ($result_count > $num_displayed) 
                 {
+<<<<<<< HEAD
                     $where_message = "<SMALL>" . _displaying . " $start " . _through . " $stop</SMALL>";
                     echo _goToPage;
+=======
+                    $where_message = "<SMALL>Displaying $start through $stop</SMALL>";
+                    echo "Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) 
                     {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) 
@@ -13478,7 +13750,11 @@ function ListOutputPrint_Institute_Report($result, $column_names, $singular = ''
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($_REQUEST['page'] + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
                     echo '</TD></TR></TABLE>';
@@ -14171,7 +14447,11 @@ function ListOutputStaffPrint($result, $column_names, $singular = '', $plural = 
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -14189,8 +14469,13 @@ function ListOutputStaffPrint($result, $column_names, $singular = '', $plural = 
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -14218,7 +14503,11 @@ function ListOutputStaffPrint($result, $column_names, $singular = '', $plural = 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -14946,7 +15235,11 @@ function ListOutputExcel($result, $column_names, $singular = '', $plural = '', $
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -14964,8 +15257,13 @@ function ListOutputExcel($result, $column_names, $singular = '', $plural = '', $
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -14993,7 +15291,11 @@ function ListOutputExcel($result, $column_names, $singular = '', $plural = '', $
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -15034,7 +15336,11 @@ function ListOutputExcel($result, $column_names, $singular = '', $plural = '', $
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                     echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                    echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</h6>';
                 $colspan = 1;
@@ -15285,6 +15591,7 @@ function ListOutputExcel($result, $column_names, $singular = '', $plural = '', $
                         echo "var table = $('#results').DataTable({"
                             . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                             . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -15293,6 +15600,11 @@ function ListOutputExcel($result, $column_names, $singular = '', $plural = '', $
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
@@ -15689,7 +16001,11 @@ function ListOutputExcelCustomDT($result, $column_names, $singular = '', $plural
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -15707,8 +16023,13 @@ function ListOutputExcelCustomDT($result, $column_names, $singular = '', $plural
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
                                         $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+                                        $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -15736,7 +16057,11 @@ function ListOutputExcelCustomDT($result, $column_names, $singular = '', $plural
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -15779,9 +16104,14 @@ function ListOutputExcelCustomDT($result, $column_names, $singular = '', $plural
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0) {
+<<<<<<< HEAD
                     // echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
                     $download_sp_title = defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)';
                     echo " &nbsp; <A HREF=\"javascript:void(0);\" onclick=\"generateDataTableSpreadsheet();\" class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"" . $download_sp_title . "\" title=\"" . $download_sp_title . "\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                    // echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+                    echo " &nbsp; <A HREF=\"javascript:void(0);\" onclick=\"generateDataTableSpreadsheet();\" class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
 
                 echo '</h6>';
@@ -16122,6 +16452,7 @@ function ListOutputExcelCustomDT($result, $column_names, $singular = '', $plural
                         echo "var table = $('#results').DataTable({"
                             . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                             . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -16130,6 +16461,11 @@ function ListOutputExcelCustomDT($result, $column_names, $singular = '', $plural
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         paging: false,
                         bInfo: false,
@@ -16589,11 +16925,19 @@ function ListOutputNew_mod($result, $column_names, $singular = '', $plural = '',
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural) {
                 echo '<div class="panel-body">';
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
                 echo '</div>';
             } elseif ($result_count == 0 || $display_count == 0) {
                 echo '<div class="panel-body">';
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural were found.</div>";
+                echo '</div>';
+            } elseif ($result_count == 0 || $display_count == 0) {
+                echo '<div class="panel-body">';
+                echo '<div class="alert alert-danger no-border">None were found.</div>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '</div>';
             }
         }
@@ -16611,8 +16955,13 @@ function ListOutputNew_mod($result, $column_names, $singular = '', $plural = '',
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -16640,7 +16989,11 @@ function ListOutputNew_mod($result, $column_names, $singular = '', $plural = '',
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_searchNew=" . urlencode($_REQUEST['LO_searchNew']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_searchNew=" . urlencode($_REQUEST['LO_searchNew']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -16675,12 +17028,21 @@ function ListOutputNew_mod($result, $column_names, $singular = '', $plural = '',
                 echo "<h6 class=\"panel-title\">";
                 if ($singular && $plural && $options['count']) {
                     if ($display_count > 1)
+<<<<<<< HEAD
                         echo "<span class=\"heading-text\">$display_count $plural " . _wereFound . ".</span>";
                     elseif ($display_count == 1)
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
                     echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                        echo "<span class=\"heading-text\">$display_count $plural were found.</span>";
+                    elseif ($display_count == 1)
+                        echo "<span class=\"heading-text\">1 $singular was found.</span>";
+                }
+                if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+                    echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</h6>';
                 $colspan = 1;
@@ -17359,7 +17721,11 @@ function ListOutputNew($result, $column_names, $singular = '', $plural = '', $li
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural) {
                 echo '<div class="panel-body">';
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '</div>';
             } elseif ($result_count == 0 || $display_count == 0) {
                 echo '<div class="panel-body">';
@@ -17381,8 +17747,13 @@ function ListOutputNew($result, $column_names, $singular = '', $plural = '', $li
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -17410,7 +17781,11 @@ function ListOutputNew($result, $column_names, $singular = '', $plural = '', $li
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_searchNew=" . urlencode($_REQUEST['LO_searchNew']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_searchNew=" . urlencode($_REQUEST['LO_searchNew']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -17450,7 +17825,11 @@ function ListOutputNew($result, $column_names, $singular = '', $plural = '', $li
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                     echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                    echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</h6>';
                 $colspan = 1;
@@ -18113,7 +18492,11 @@ function ListOutput_Medical($result, $column_names, $singular = '', $plural = ''
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"panel-body\"><div class=\"alert alert-danger no-border m-b-0\">" . _no . " $plural " . _wereFound . ".</div></div>";
+=======
+                echo "<div class=\"panel-body\"><div class=\"alert alert-danger no-border m-b-0\">No $plural " . _wereFound . ".</div></div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="panel-body"><div class="alert alert-danger no-border m-b-0">' . _noneWereFound . '.</div></div>';
         }
@@ -18131,8 +18514,13 @@ function ListOutput_Medical($result, $column_names, $singular = '', $plural = ''
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -18160,7 +18548,11 @@ function ListOutput_Medical($result, $column_names, $singular = '', $plural = ''
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -18200,7 +18592,11 @@ function ListOutput_Medical($result, $column_names, $singular = '', $plural = ''
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                     echo "&nbsp; <A class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\" HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true ><i class=\"icon-file-excel\"></i></a>";
+=======
+                    echo "&nbsp; <A class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"\" data-original-title=\"Download Spreadsheet\" HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true ><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</TD>';
                 $colspan = 1;
@@ -18903,7 +19299,11 @@ function ListOutputMessagingGroups($result, $column_names, $singular = '', $plur
                 echo '</div>';
 
                 echo '<div class="panel-body">';
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '</div>';
             } elseif ($result_count == 0 || $display_count == 0) {
 
@@ -18931,8 +19331,13 @@ function ListOutputMessagingGroups($result, $column_names, $singular = '', $plur
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -18960,7 +19365,11 @@ function ListOutputMessagingGroups($result, $column_names, $singular = '', $plur
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -19004,7 +19413,11 @@ function ListOutputMessagingGroups($result, $column_names, $singular = '', $plur
                             echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                     }
                     if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                         echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                        echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true class=\" btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                     echo '</h6>';
                     $colspan = 1;
@@ -19684,7 +20097,11 @@ function ListOutputStaffPrintSchoolInfo($result, $column_names, $singular = '', 
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -19702,8 +20119,13 @@ function ListOutputStaffPrintSchoolInfo($result, $column_names, $singular = '', 
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
 									    $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+									    $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -19731,7 +20153,11 @@ function ListOutputStaffPrintSchoolInfo($result, $column_names, $singular = '', 
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -19772,7 +20198,11 @@ function ListOutputStaffPrintSchoolInfo($result, $column_names, $singular = '', 
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                     echo "&nbsp; <A class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\" HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true ><i class=\"icon-file-excel\"></i></a>";
+=======
+                    echo "&nbsp; <A class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" title=\"\" data-original-title=\"Download Spreadsheet\" HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&$extra&LO_save=1&_openSIS_PDF=true ><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</h6>';
                 $colspan = 1;
@@ -20017,6 +20447,7 @@ function ListOutputStaffPrintSchoolInfo($result, $column_names, $singular = '', 
                         echo "var table = $('#results').DataTable({"
                             . "dom: '<\"datatable-header\"ip><\"datatable-scroll\"t><\"datatable-footer\"ip>',"
                             . "language: {
+<<<<<<< HEAD
                             search: '<span>Kërko:</span> _INPUT_',
                             lengthMenu: '<span>Shfaq:</span> _MENU_',
                             paginate: { 'first': 'I pari', 'last': 'I fundit', 'next': '&rarr;', 'previous': '&larr;' },
@@ -20025,6 +20456,11 @@ function ListOutputStaffPrintSchoolInfo($result, $column_names, $singular = '', 
                             infoFiltered: '(filtruar nga _MAX_ rezultate gjithsej)',
                             zeroRecords: 'Nuk u gjet asnjë rezultat',
                             emptyTable: 'Nuk ka të dhëna në tabelë'
+=======
+                            search: '<span>Filter:</span> _INPUT_',
+                            lengthMenu: '<span>Show:</span> _MENU_',
+                            paginate: { 'first': 'First', 'last': 'Last', 'next': '&rarr;', 'previous': '&larr;' }
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         },
                         drawCallback: function () {
                             $(this).find('tbody tr').slice(-3).find('.dropdown, .btn-group').addClass('dropup');
@@ -20474,7 +20910,11 @@ function ListOutputUnscheduleRequests($result, $column_names, $singular = '', $p
 
         if ($options['count'] || $display_zero) {
             if (($result_count == 0 || $display_count == 0) && $plural)
+<<<<<<< HEAD
                 echo "<div class=\"alert alert-danger no-border\">" . _no . " $plural " . _wereFound . ".</div>";
+=======
+                echo "<div class=\"alert alert-danger no-border\">No $plural " . _wereFound . ".</div>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             elseif ($result_count == 0 || $display_count == 0)
                 echo '<div class="alert alert-danger no-border">' . _noneWereFound . '.</div>';
         }
@@ -20492,8 +20932,13 @@ function ListOutputUnscheduleRequests($result, $column_names, $singular = '', $p
                 if ($result_count > $num_displayed) {
 
                     echo $where_message = "<strong><br>
+<<<<<<< HEAD
                                         $start " . _through . " $stop</strong>";
                     echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>" . _goToPage;
+=======
+                                        $start through $stop</strong>";
+                    echo "<div style=text-align:right;margin-top:-14px;padding-right:15px><strong>Go to Page ";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     if (ceil($result_count / $num_displayed) <= 10) {
                         for ($i = 1; $i <= ceil($result_count / $num_displayed); $i++) {
                             if ($i != $Request_page) {
@@ -20521,7 +20966,11 @@ function ListOutputUnscheduleRequests($result, $column_names, $singular = '', $p
                             else
                                 $pages .= "$i, ";
                         }
+<<<<<<< HEAD
                         $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">" . _nextPage . "</A><BR>";
+=======
+                        $pages = substr($pages, 0, -2) . " &nbsp;<A HREF=$PHP_tmp_SELF&LO_sort=$_REQUEST[LO_sort]&LO_direction=$_REQUEST[LO_direction]&LO_search=" . urlencode($_REQUEST['LO_search']) . "&page=" . ($Request_page + 1) . ">Next Page</A><BR>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                     echo $pages;
 
@@ -20562,7 +21011,11 @@ function ListOutputUnscheduleRequests($result, $column_names, $singular = '', $p
                         echo "<span class=\"heading-text\">1 $singular " . _wasFound . ".</span>";
                 }
                 if ($options['save'] && !isset($_REQUEST['_openSIS_PDF']) && $result_count > 0)
+<<<<<<< HEAD
                     echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', 'Modules.php?modname=scheduling/UnfilledRequests.php&search_modfunc=list&next_modname=scheduling/UnfilledRequests.php') . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\" title=\"' . (defined('_downloadSpreadsheet') ? _downloadSpreadsheet : 'Shkarko Tabelën (Excel)') . '\"><i class=\"icon-file-excel\"></i></a>";
+=======
+                    echo " &nbsp; <A HREF=" . str_replace('Modules.php', 'ForExport.php', 'Modules.php?modname=scheduling/UnfilledRequests.php&search_modfunc=list&next_modname=scheduling/UnfilledRequests.php') . "&$extra&LO_save=1&_openSIS_PDF=true  class=\"btn btn-success btn-xs btn-icon text-white\" data-popup=\"tooltip\" data-placement=\"top\" data-container=\"body\" data-original-title=\"Download Spreadsheet\" title=\"Download Spreadsheet\"><i class=\"icon-file-excel\"></i></a>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 echo '</h6>';
                 $colspan = 1;
@@ -21062,4 +21515,8 @@ function paginationTabMarker($totalPages, $currentPage, $modname, $page_requests
     }
 
     return $opDT;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f

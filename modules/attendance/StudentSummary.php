@@ -60,7 +60,11 @@ if ($_REQUEST['search_modfunc'] || $_REQUEST['student_id'] || UserStudentID() ||
             $periods_RET = DBGet(DBQuery('SELECT sp.PERIOD_ID,sp.TITLE FROM school_periods sp,course_periods cp,course_period_var cpv WHERE cpv.PERIOD_ID=sp.PERIOD_ID AND cp.COURSE_PERIOD_ID=cpv.COURSE_PERIOD_ID AND (cp.TEACHER_ID=' . User('STAFF_ID') . ' OR cp.SECONDARY_TEACHER_ID=' . User('STAFF_ID') . ') AND cpv.DOES_ATTENDANCE=\'Y\' AND sp.SYEAR=\'' . UserSyear() . '\' AND sp.SCHOOL_ID=\'' . UserSchool() . '\' GROUP BY cpv.PERIOD_ID ORDER BY sp.SORT_ORDER'));
         else
             $periods_RET = DBGet(DBQuery('SELECT sp.PERIOD_ID,sp.TITLE FROM school_periods sp,course_periods cp,course_period_var cpv WHERE cpv.PERIOD_ID=sp.PERIOD_ID AND cp.COURSE_PERIOD_ID=cpv.COURSE_PERIOD_ID AND cpv.DOES_ATTENDANCE=\'Y\' AND cp.COURSE_PERIOD_ID=' . UserCoursePeriod() . ' AND sp.SYEAR=\'' . UserSyear() . '\' AND sp.SCHOOL_ID=\'' . UserSchool() . '\'  GROUP BY cpv.PERIOD_ID ORDER BY sp.SORT_ORDER'));
+<<<<<<< HEAD
         $period_select = "<SELECT class=\"form-control\" name=period_id onchange='this.form.submit();'><OPTION value=\"\">" . (defined('_daily') ? _daily : 'Ditore') . "</OPTION>";
+=======
+        $period_select = "<SELECT class=\"form-control\" name=period_id onchange='this.form.submit();'><OPTION value=\"\">Daily</OPTION>";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         if (count($periods_RET)) {
             foreach ($periods_RET as $period)
                 $period_select .= "<OPTION value=$period[PERIOD_ID]" . (($_REQUEST['period_id'] == $period['PERIOD_ID']) ? ' SELECTED' : '') . ">$period[TITLE]</OPTION>";

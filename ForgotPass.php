@@ -87,7 +87,11 @@ $connection = mysqli_connect($DatabaseServer, $DatabaseUsername, $DatabasePasswo
 
 if (!$connection)
 {
+<<<<<<< HEAD
 	die('Nuk mund te lidhemi me bazen e te dhenave: ' . mysqli_error($connection) . mysqli_errno($connection));
+=======
+	die('Could Not Connect: ' . mysqli_error($connection) . mysqli_errno($connection));
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 
 
@@ -276,7 +280,11 @@ function db_show_error($sql, $failnote, $additional = '') {
         $message .= "\n $sql \n";
         $message .= "Request Array: \n" . ShowVar($_REQUEST, 'Y', 'N');
         $message .= "\n\nSession Array: \n" . ShowVar($_SESSION, 'Y', 'N');
+<<<<<<< HEAD
         mail($openSISNotifyAddress, 'SIA (Sistemi Inteligjences Arsimore) - Gabim në Bazën e të Dhënave', $message);
+=======
+        mail($openSISNotifyAddress, 'SIA Database Error', $message);
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
 
     die();
@@ -290,12 +298,20 @@ $dir = '';
 if(langDirection()=='rtl') { $dir="rtl"; }else{ $dir="ltr"; }
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="<?php echo $_SESSION['language'] ?? 'sq'; ?>" dir="<?php echo $dir; ?>">
+=======
+<html lang="en" dir="<?php echo $dir; ?>">
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <title><?= _studentInformationSystem ?></title>
+=======
+        <title>SIA Student Information System</title>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link rel="shortcut icon" href="favicon.ico">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link href="assets/css/icons/icomoon/styles.css" rel="stylesheet" type="text/css">
@@ -337,8 +353,13 @@ if(langDirection()=='rtl') { $dir="rtl"; }else{ $dir="ltr"; }
                     $('.daterange-single').attr('placeholder', placeholderText).val('');
                 });
 
+<<<<<<< HEAD
                 var monthNames = ["<?= _january ?>", "<?= _february ?>", "<?= _march ?>", "<?= _april ?>", "<?= _may ?>", "<?= _june ?>", "<?= _july ?>", "<?= _august ?>", "<?= _september ?>", "<?= _october ?>", "<?= _november ?>", "<?= _december ?>"];
                 var dayNames = ["<?= _sunday ?>", "<?= _monday ?>", "<?= _tuesday ?>", "<?= _wednesday ?>", "<?= _thursday ?>", "<?= _friday ?>", "<?= _saturday ?>"];
+=======
+                var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
                 var newDate = new Date();
@@ -384,7 +405,11 @@ if(langDirection()=='rtl') { $dir="rtl"; }else{ $dir="ltr"; }
 
                     <div class="panel-heading">
                         <div class="logo">
+<<<<<<< HEAD
                             <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)" />
+=======
+                            <img src="assets/images/opensis_logo.png" alt="SIA" />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         </div>
                     </div>
 

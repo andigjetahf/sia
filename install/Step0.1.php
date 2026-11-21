@@ -37,12 +37,20 @@ if(page && page!="index.php"){
 </script>';
 ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="sq">
+=======
+<html lang="en">
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
         <title>Instaluesi SIA</title>
+=======
+        <title>SIA Installer</title>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/installer.css?v=<?php echo rand(000, 999); ?>" type="text/css" />
@@ -54,9 +62,15 @@ if(page && page!="index.php"){
                 <div class="panel">
                     <div class="panel-heading">
                         <div class="logo">
+<<<<<<< HEAD
                             <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)">
                         </div>   
                         <h3>Instaluesi SIA</h3> 
+=======
+                            <img src="assets/images/opensis_logo.png" alt="SIA">
+                        </div>   
+                        <h3>SIA Installation</h3> 
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>
                     <div class="panel-body">
                         <div class="installation-steps-wrapper">
@@ -69,6 +83,7 @@ if(page && page!="index.php"){
                                                     <div class="text-center">
                                                         <img src="assets/images/warning.svg" width="50" />
                                                     </div><br/>
+<<<<<<< HEAD
                                                     <p>Ju lutemi mbani parasysh se vetëm versioni 7.1 i SIA (Sistemi Inteligjences Arsimore) ose më i lartë mund të përditësohet në versionin e ri duke përdorur këtë instalues. Nëse keni versionin 7.1 ose më të lartë, klikoni Vazhdo për të përditësuar, përndryshe klikoni Kthehu Mbrapa dhe provoni Instalimin e Ri.</p>
                                                     
                                                     <p class="text-danger"><b>Vëmendje:</b> Mbani një kopje rezervë të bazës suaj aktuale të të dhënave në një vend të sigurt
@@ -78,6 +93,17 @@ if(page && page!="index.php"){
                                                     <div class="text-center">
                                                         <?php
                                                         echo '<a href="Step0.php" class="btn btn-default">Kthehu</a> &nbsp; <a href="Step1.php?mod=upgrade" class="btn btn-success">Vazhdo</a>';
+=======
+                                                    <p>Please be advised that only openSIS-CE version 7.1 and above can be upgraded to the latest version using this installer. If you are running version 7.1 or above, click Continue to upgrade, otherwise click Go Back and try the New Installation.</p>
+                                                    
+                                                    <p class="text-danger"><b>Please Note:</b> Remember to backup your current database and keep it in a safe place
+                                                        before attempting an upgrade. OS4ED will not be responsible for data
+                                                        corruption or data loss if the upgrade is unsuccessful for any reason.</p>
+                                                    <br/>
+                                                    <div class="text-center">
+                                                        <?php
+                                                        echo '<a href="Step0.php" class="btn btn-default">Go Back</a> &nbsp; <a href="Step1.php?mod=upgrade" class="btn btn-success">Continue</a>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                         ?>
                                                     </div>
                                                 </td>
@@ -90,7 +116,11 @@ if(page && page!="index.php"){
                     </div>
                 </div>
                 <footer>
+<<<<<<< HEAD
                     Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4Ed</a>). Të drejtat e autorit të rezervuara.
+=======
+                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4Ed</a>).
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 </footer>
             </div>
         </section>

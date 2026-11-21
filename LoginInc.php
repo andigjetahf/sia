@@ -94,7 +94,11 @@ require_once('functions/langFnc.php');
 
                 <div class="panel-heading">
                     <div class="logo">
+<<<<<<< HEAD
                         <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)" />
+=======
+                        <img src="assets/images/opensis_logo.png" alt="SIA" />
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>                    
                     <h3><?= _studentInformationSystem ?></h3>
                 </div>
@@ -107,7 +111,11 @@ require_once('functions/langFnc.php');
                         <div class="col-md-12">
                             <?php
                             if ($_REQUEST['reason'])
+<<<<<<< HEAD
                                 $note[] = _youMustHaveJavascriptEnabled;
+=======
+                                $note[] = 'You must have javascript enabled to use SIA.';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                             if ($error[0] != '') {
                                 ?>
@@ -125,7 +133,11 @@ require_once('functions/langFnc.php');
                                 if ($maintain_qr[1]['SYSTEM_MAINTENANCE_SWITCH'] == 'Y') {
                                     ?>
                                     <div class="form-group">
+<<<<<<< HEAD
                                         <h4 class="text-center text-danger"><i class="icon-warning22" style="font-size: 50px;"></i><br/><br/><?= defined('_systemUnderMaintenanceNotice') ? _systemUnderMaintenanceNotice : 'SIA është në modalitet mirëmbajtjeje dhe hyrja në sistem është pezulluar përkohësisht. Ju lutemi provoni përsëri më vonë.' ?></h4>
+=======
+                                        <h4 class="text-center text-danger"><i class="icon-warning22" style="font-size: 50px;"></i><br/><br/>SIA is under maintenance and login privileges have been turned off. Please log in when it is available again.</h4>
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </div> 
                                     <?php
                                 }

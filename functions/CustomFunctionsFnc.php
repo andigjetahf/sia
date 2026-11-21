@@ -125,7 +125,10 @@ function getCSS() {
 }
 
 function Prompt_Calender($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     
     unset($tmp_REQUEST['delete_ok']);
@@ -145,7 +148,10 @@ function Prompt_Calender($title = 'Confirm', $question = '', $message = '', $pdf
 }
 
 function Prompt_Copy_School($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
     if ($pdf == true)
@@ -164,7 +170,10 @@ function Prompt_Copy_School($title = 'Confirm', $question = '', $message = '', $
 }
 
 function Prompt_rollover($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
     if ($pdf == true)
@@ -178,7 +187,11 @@ function Prompt_rollover($title = 'Confirm', $question = '', $message = '', $pdf
         PopTable('header', $title);
 
         echo '<h4 class="text-center">' . $question . '</h4>';
+<<<<<<< HEAD
         echo '<p class="text-center"><span class="text-danger"><i class="icon-alert"></i> ' . (defined('_caution') ? _caution : 'Kujdes') . ' : </span> '._rolloverIsAnIrreversibleProcessIfYouAreSureYouWantToProceedTypeInThe.' <BR>'._effectiveRollOverDateBelowYouCanUseTheNextSchoolYearSAttendanceStartDate.'.</p>';
+=======
+        echo '<p class="text-center"><span class="text-danger"><i class="icon-alert"></i> Caution : </span> '._rolloverIsAnIrreversibleProcessIfYouAreSureYouWantToProceedTypeInThe.' <BR>'._effectiveRollOverDateBelowYouCanUseTheNextSchoolYearSAttendanceStartDate.'.</p>';
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo '<hr/>';
         echo '<div class="row">';
         echo '<div class="col-md-6">';
@@ -379,7 +392,10 @@ function Prompt_rollover_back($title = _rollover, $question = '', $pdf = '') {
 }
 
 function Prompt_Runschedule($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
     if ($pdf == true)
@@ -436,7 +452,10 @@ function PrepareDateSchedule($date = '', $title = '', $allow_na = true, $options
 #############################################################################################
 
 function PromptCourseWarning($title = 'Confirm', $question = '', $message = '', $pdf = '') {
+<<<<<<< HEAD
     if ($title === 'Confirm' || empty($title)) { $title = defined('_confirm') ? _confirm : 'Konfirmo'; }
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);
     if ($pdf == true)

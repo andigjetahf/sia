@@ -408,7 +408,11 @@ if ((clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'filter_edit' || clean
 
     echo '<div class="row">';
     echo '<div class="col-md-6">';
+<<<<<<< HEAD
     $G = array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër'));
+=======
+    $G = array('Male' => 'Male', 'Female' => 'Female');
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     if ($_REQUEST['GENDER'] != '') {
         echo '<div class="form-group"><label class="control-label col-lg-4 text-right">'._gender.' </label><div class="col-lg-8"><select id="GENDER" name="GENDER" class="form-control"><option value="">-- Select --</option>';
         foreach ($G as $value)

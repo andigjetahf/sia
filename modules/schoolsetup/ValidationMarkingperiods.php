@@ -32,6 +32,7 @@ include('../../RedirectModulesInc.php');
 	function formcheck_school_setup_marking_onedit(){
 
   	var frmvalidator  = new Validator("marking_period");
+<<<<<<< HEAD
   	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][TITLE]","req","Ju lutemi vendosni titullin");
   	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][TITLE]","maxlen=50", "Gjatësia maksimale për titullin është 50 karaktere");
 	
@@ -40,6 +41,16 @@ include('../../RedirectModulesInc.php');
 	
 	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][SORT_ORDER]","maxlen=5", "Gjatësia maksimale për radhitjen është 5 karaktere");
   	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][SORT_ORDER]","num", "Vendosni vetëm vlera numerike");
+=======
+  	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][TITLE]","req",pleaseEnterTheTitle);
+  	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][TITLE]","maxlen=50", "Max length for title is 50");
+	
+	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][SHORT_NAME]","req","Please enter the Short Name");
+  	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][SHORT_NAME]","maxlen=10", "Max length for Short Name is 10");
+	
+	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][SORT_ORDER]","maxlen=5", "Max length for Short Order is 5");
+  	frmvalidator.addValidation("tables['.$_REQUEST['marking_period_id'].'][SORT_ORDER]","num", "Enter Only Numeric Value");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 	
 	frmvalidator.setAddnlValidationFunction("ValidateDate");
 	
@@ -146,7 +157,11 @@ try
 {
 if (false==isDate(sm, sd, sy))
    {
+<<<<<<< HEAD
    alert("Ju lutemi vendosni datën e fillimit");
+=======
+   alert("Please enter the Start Date");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
    sm.focus();
    return false;
    }
@@ -159,7 +174,11 @@ try
 {  
    if (false==isDate(em, ed, ey))
    {
+<<<<<<< HEAD
    alert("Ju lutemi vendosni datën e mbarimit");
+=======
+   alert("Please Enter the End Date");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
    em.focus();
    return false;
    }
@@ -188,7 +207,11 @@ try
 {  
    if (false==isDate(psm, psd, psy))
    {
+<<<<<<< HEAD
    alert("Ju lutemi vendosni datën e fillimit të hedhjes së notave");
+=======
+   alert("Please enter the Grade Posting Start Date");
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
    psm.focus();
    return false;
    }

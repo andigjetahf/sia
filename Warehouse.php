@@ -32,7 +32,10 @@ if (!defined('WAREHOUSE_PHP')) {
 
     require_once($staticpath . "ConfigInc.php");
     require_once("DatabaseInc.php");
+<<<<<<< HEAD
     require_once($staticpath . "lang/language.php");
+=======
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
     //Create Default Year Picture Folder
     // if (!file_exists($StudentPicturesPath)) {
@@ -71,8 +74,12 @@ if (!defined('WAREHOUSE_PHP')) {
 
         switch ($mode) {
             case 'header':
+<<<<<<< HEAD
                 $currLang = isset($_SESSION['language']) ? $_SESSION['language'] : 'sq';
                 echo "<!DOCTYPE html><html lang=\"" . $currLang . "\" ".((langDirection()=='rtl')?'dir="rtl"':'dir="ltr"')."><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">";
+=======
+                echo "<!DOCTYPE html><html lang=\"en\" ".((langDirection()=='rtl')?'dir="rtl"':'dir="ltr"')."><head><meta charset=\"utf-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">";
+>>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo "<title>" . Config('TITLE') . "</title><link rel=\"shortcut icon\" href=\"favicon.ico\">";
                 //echo '<link href="assets/css/export_print.css" rel="stylesheet" type="text/css">';
 
