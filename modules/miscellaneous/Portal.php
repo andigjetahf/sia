@@ -225,11 +225,7 @@ switch (User('PROFILE')) {
                             <div class="heading-elements">
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-success" style="width: ' . $percent . '%;">
-<<<<<<< HEAD
                                         <span>' . $percent . '% ' . (defined('_complete') ? _complete : 'E përfunduar') . '</span>
-=======
-                                        <span>' . $percent . '% Complete</span>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </div>
                                 </div>
                             </div>
@@ -395,11 +391,7 @@ switch (User('PROFILE')) {
         // }
 
 
-<<<<<<< HEAD
         $notes_RET = DBGet(DBQuery('SELECT IF(pn.published_profiles like\'%all%\',' . (defined('_allSchool') ? "'" . addslashes(_allSchool) . "'" : "'Të Gjitha Shkollat'") . ',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,CONCAT(\'<b>\',pn.TITLE,\'</b>\') AS TITLE,pn.CONTENT 
-=======
-        $notes_RET = DBGet(DBQuery('SELECT IF(pn.published_profiles like\'%all%\',\'All School\',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,CONCAT(\'<b>\',pn.TITLE,\'</b>\') AS TITLE,pn.CONTENT 
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     FROM portal_notes pn
                                     WHERE pn.SYEAR=\'' . UserSyear() . '\' AND pn.START_DATE<=CURRENT_DATE AND 
                                         (pn.END_DATE>=CURRENT_DATE OR pn.END_DATE IS NULL)
@@ -506,11 +498,7 @@ switch (User('PROFILE')) {
                 echo '</div>';
             }
         }
-<<<<<<< HEAD
         echo '<div id="attn_alert" style="display: none" class="alert alert-danger alert-styled-left alert-bordered"><span class="text-bold">'._warning.'!!</span> - '._teachersHaveMissingAttendance.'. '._go_To.' : <b>' . _users . ' <i class="icon-arrow-right13"></i> '._teacherPrograms.'<i class="icon-arrow-right13"></i>'._missingAttendance.'</b></div>';
-=======
-        echo '<div id="attn_alert" style="display: none" class="alert alert-danger alert-styled-left alert-bordered"><span class="text-bold">'._warning.'!!</span> - '._teachersHaveMissingAttendance.'. '._go_To.' : <b>Users <i class="icon-arrow-right13"></i> '._teacherPrograms.'<i class="icon-arrow-right13"></i>'._missingAttendance.'</b></div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         //-------------------------------------------------------------------------------ROLLOVER NOTIFICATION STARTS----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         $notice_date = DBGet(DBQuery('SELECT END_DATE FROM school_years WHERE SYEAR=\'' . UserSyear() . '\' AND SCHOOL_ID=\'' . UserSchool() . '\''));
@@ -554,11 +542,7 @@ switch (User('PROFILE')) {
         //         }
         //     }
         // }
-<<<<<<< HEAD
         $notes_RET = DBGet(DBQuery('SELECT IF(pn.school_id IS NULL,' . (defined('_allSchool') ? "'" . addslashes(_allSchool) . "'" : "'Të Gjitha Shkollat'") . ',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,CONCAT(\'<b>\',pn.TITLE,\'</b>\') AS TITLE,pn.CONTENT 
-=======
-        $notes_RET = DBGet(DBQuery('SELECT IF(pn.school_id IS NULL,\'All School\',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,CONCAT(\'<b>\',pn.TITLE,\'</b>\') AS TITLE,pn.CONTENT 
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                             FROM portal_notes pn
                             WHERE pn.SYEAR=\'' . UserSyear() . '\' AND pn.START_DATE<=CURRENT_DATE AND 
                                 (pn.END_DATE>=CURRENT_DATE OR pn.END_DATE IS NULL)
@@ -652,11 +636,7 @@ switch (User('PROFILE')) {
 
     case 'parent':
         DrawBC($welcome . ' | '._role.' : '._parent.'');
-<<<<<<< HEAD
         $notes_RET = DBGet(DBQuery('SELECT IF(pn.school_id IS NULL,' . (defined('_allSchool') ? "'" . addslashes(_allSchool) . "'" : "'Të Gjitha Shkollat'") . ',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,pn.TITLE,pn.CONTENT 
-=======
-        $notes_RET = DBGet(DBQuery('SELECT IF(pn.school_id IS NULL,\'All School\',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,pn.TITLE,pn.CONTENT 
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             FROM portal_notes pn
             WHERE pn.SYEAR=\'' . UserSyear() . '\' 
                 AND pn.START_DATE<=CURRENT_DATE AND (pn.END_DATE>=CURRENT_DATE OR pn.END_DATE IS NULL) 
@@ -769,11 +749,7 @@ switch (User('PROFILE')) {
                 }
 
                 echo '<div class="panel">';
-<<<<<<< HEAD
                 DrawHeader('<span class="text-pink">' . _subject . ' - ' . substr($course['TITLE'] . '</span>', strrpos(str_replace(' - ', ' ^ ', $course['TITLE']), '^')));
-=======
-                DrawHeader('<span class="text-pink">Subject - ' . substr($course['TITLE'] . '</span>', strrpos(str_replace(' - ', ' ^ ', $course['TITLE']), '^')));
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '<hr class="no-margin" />';
                 unset($LO_ret[0]);
                 ListOutput($LO_ret, $LO_columns,  _assignment, _assignments, array(), array(), array('center' =>false, 'save' => $_REQUEST['id'] != 'all', 'search' =>false));
@@ -786,11 +762,7 @@ switch (User('PROFILE')) {
     case 'student':
         DrawBC($welcome . ' | '._role.' : '._student.'');
 
-<<<<<<< HEAD
         $notes_RET = DBGet(DBQuery('SELECT IF(pn.school_id IS NULL,' . (defined('_allSchool') ? "'" . addslashes(_allSchool) . "'" : "'Të Gjitha Shkollat'") . ',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,pn.TITLE,pn.CONTENT 
-=======
-        $notes_RET = DBGet(DBQuery('SELECT IF(pn.school_id IS NULL,\'All School\',(SELECT TITLE FROM schools WHERE id=pn.school_id)) AS SCHOOL,pn.LAST_UPDATED,pn.TITLE,pn.CONTENT 
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             FROM portal_notes pn
             WHERE pn.SYEAR=\'' . UserSyear() . '\' 
                 AND pn.START_DATE<=CURRENT_DATE AND (pn.END_DATE>=CURRENT_DATE OR pn.END_DATE IS NULL) 

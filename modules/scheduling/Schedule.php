@@ -1047,29 +1047,17 @@ if ($_REQUEST['del'] == 'true') {
             unset($sch_lock_msg);
         }
         if ($end_date_msg == "ending") {
-<<<<<<< HEAD
             echo '<div class="alert alert-danger no-border">Data e mbarimit te orarit te kursit nuk mund te jete pas periudhes se kursit ose regjistrimit te studentitnd date.</div>';
-=======
-            echo '<div class="alert alert-danger no-border">Course schedule end date cannot be after the course period or student enrollment end date.</div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             unset($end_date_msg);
         }
         if ($end_date_msg == "drop") {
-<<<<<<< HEAD
            echo '<div class="alert alert-danger no-border">Data e mbarimit te orarit te kursit duhet te jete me ose pas dates se fillimit te orarit.</div>';
-=======
-           echo '<div class="alert alert-danger no-border">Course schedule end date must be on or after the schedule start date.</div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             unset($end_date_msg);
         }
         if ($end_date_msg == "invalid") {
-<<<<<<< HEAD
            echo '<div class="alert alert-danger no-border">Hyrje e pavlefshme e dates. Ju lutemi kontrolloni daten e zgjedhur dhe provoni perseri.</div>';
-=======
-           echo '<div class="alert alert-danger no-border">Invalid date input. Please check the selected date and try again.</div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
             unset($end_date_msg);
         }

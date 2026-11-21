@@ -2272,11 +2272,7 @@ function checkDuplicateNameCallback(data)
     if (data_return[0] != 0)
     {
         obj.style.color = '#ff0000';
-<<<<<<< HEAD
         obj.innerHTML = 'Ekziston tashmë: ' + data_return[2];
-=======
-        obj.innerHTML = 'Duplicate ' + data_return[2];
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         document.getElementById(data_return[1]).value = '';
     }
 }

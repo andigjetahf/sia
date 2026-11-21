@@ -70,19 +70,11 @@ if (UserStaffID()) {
 
             if ($_FILES["file"]["error"] > 0 && $upload->wrongFormat == 1) {
 
-<<<<<<< HEAD
                 $msg = "<font color=red><b>" . (defined('_cannotUploadFileOnlyJpgJpegPngGifFilesAreAllowed') ? _cannotUploadFileOnlyJpgJpegPngGifFilesAreAllowed : 'Skedari nuk mund të ngarkohet. Lejohen vetëm skedarë jpg, jpeg, png, gif') . "</b></font>";
                 echo '
             ' . $msg . '
             <form enctype="multipart/form-data" action="Modules.php?modname=users/UploadUserPhoto.php&action=upload" method="POST">';
                 echo '<div align=center>' . (defined('_selectImageFile') ? _selectImageFile : 'Zgjidhni skedarin e fotos') . ': <input name="file" type="file" /><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
-=======
-                $msg = "<font color=red><b>Cannot upload file. Only jpeg, jpg, png, gif files are allowed.</b></font>";
-                echo '
-            ' . $msg . '
-            <form enctype="multipart/form-data" action="Modules.php?modname=users/UploadUserPhoto.php&action=upload" method="POST">';
-                echo '<div align=center>Select image file: <input name="file" type="file" /><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <input type="submit" value="'._upload.'" class="btn btn-primary" />&nbsp;<input type=button class="btn btn-default" value="'._cancel.'" onclick=\'load_link("Modules.php?modname=users/User.php");\'></div>
     </form>';
                 PopTable('footer');
@@ -92,11 +84,7 @@ if (UserStaffID()) {
                 echo '
             ' . $msg . '
             <form enctype="multipart/form-data" action="Modules.php?modname=users/UploadUserPhoto.php&action=upload" method="POST">';
-<<<<<<< HEAD
                 echo '<div align=center>' . (defined('_selectImageFile') ? _selectImageFile : 'Zgjidhni skedarin e fotos') . ': <input name="file" type="file" /><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
-=======
-                echo '<div align=center>Select image file: <input name="file" type="file" /><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <input type="submit" value="'._upload.'" class="btn btn-primary" />&nbsp;<input type=button class="btn btn-default" value="'._cancel.'" onclick=\'load_link("Modules.php?modname=users/User.php");\'></div>
     </form>';
                 PopTable('footer');
@@ -110,11 +98,7 @@ if (UserStaffID()) {
                 $fileName = addslashes($fileName);
                 DBQuery('UPDATE staff SET IMG_NAME=\'' . $fileName . '\',IMG_CONTENT=\'' . $content . '\' WHERE STAFF_ID=' . UserStaffID());
                 $stf_photo = DBGet(DBQuery('SELECT * FROM staff WHERE STAFF_ID=\'' . UserStaffID() . '\' '));
-<<<<<<< HEAD
                 echo '<div class="alert alert-success alert-bordered">' . (defined('_staffPhotoUploadedSuccessfully') ? _staffPhotoUploadedSuccessfully : 'Fotoja e stafit u ngarkua me sukses.') . '</div>';
-=======
-                echo '<div class="alert alert-success alert-bordered">Staff Photo Uploaded Successfully.</div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 echo '<div align=center><IMG SRC="data:image/jpeg;base64,' . base64_encode($stf_photo[1]['IMG_CONTENT']) . '" class=pic></div><div class=break></div>';
 
 
@@ -131,22 +115,14 @@ if (UserStaffID()) {
             echo '
 ' . $msg . '
 <form enctype="multipart/form-data" action="Modules.php?modname=users/UploadUserPhoto.php&action=upload" method="POST">';
-<<<<<<< HEAD
             echo '<div align=center>' . (defined('_selectImageFile') ? _selectImageFile : 'Zgjidhni skedarin e fotos') . ': <input name="file" type="file" onchange="selectFile(this)"/><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>';
-=======
-            echo '<div align=center>Select image file: <input name="file" type="file" onchange="selectFile(this)"/><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //////////////Modal For Filter Save////////////////////
             echo '<div id="modal_crop_image" class="modal fade">';
             echo '<div class="modal-dialog">';
             echo '<div class="modal-content">';
             echo '<div class="modal-header">';
             echo '<button type="button" class="close" data-dismiss="modal">×</button>';
-<<<<<<< HEAD
             echo '<h5 class="modal-title">' . (defined('_uploadPhoto') ? _uploadPhoto : 'Ngarko Foto') . '</h5>';
-=======
-            echo '<h5 class="modal-title">Upload Photo</h5>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo '</div>';
 
             echo '<div class="modal-body">';
@@ -167,19 +143,11 @@ if (UserStaffID()) {
             PopTable('footer');
         }
     } else {
-<<<<<<< HEAD
         echo _cannotUploadParentPicture;
         PopTable('footer');
     }
 } else {
     echo _pleaseSelectStaffFirstFromTab;
-=======
-        echo 'Cannot upload parent\'s picture.';
-        PopTable('footer');
-    }
-} else {
-    echo 'Please select a staff first! from the <b>"Staff"</b> Tab';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     PopTable('footer');
 }
 

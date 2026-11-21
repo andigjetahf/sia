@@ -148,19 +148,11 @@ function _makeStateValue($value) {
     global $THIS_RET, $date;
 
     if ($value == '0.0')
-<<<<<<< HEAD
         return defined('_none') ? _none : 'Asnjë';
     elseif ($value == '.5')
         return defined('_halfDay') ? _halfDay : 'Gjysmë Dite';
     else
         return defined('_fullDay') ? _fullDay : 'Ditë e Plotë';
-=======
-        return 'None';
-    elseif ($value == '.5')
-        return 'Half-Day';
-    else
-        return 'Full-Day';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 
 // function _make_sections($value) {

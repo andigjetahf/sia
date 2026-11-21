@@ -126,11 +126,7 @@ if ($_REQUEST['search_modfunc'] == 'search_fnc' || !$_REQUEST['search_modfunc'])
 
             echo '<div class="row">';
             echo '<div class="col-md-6">';
-<<<<<<< HEAD
             echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _gender . ' </label><div class="col-lg-8">' . SelectInput('', 'GENDER', '', array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër')), 'N/A', '') . '</div></div>';
-=======
-            echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _gender . ' </label><div class="col-lg-8">' . SelectInput('', 'GENDER', '', array('Male' => 'Male', 'Female' => 'Female'), 'N/A', '') . '</div></div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             echo '</div>'; //.col-md-6
             echo '<div class="col-md-6">';
             echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _ethnicity . ' </label><div class="col-lg-8">' . SelectInput('', 'ETHNICITY_ID', '', $ethnic_option, 'N/A', '') . '</div></div>';
@@ -837,13 +833,8 @@ if ($_REQUEST['search_modfunc'] == 'search_fnc' || !$_REQUEST['search_modfunc'])
 
         echo '<div class="row">';
         echo '<div class="col-md-6">';
-<<<<<<< HEAD
         // echo '<div class="form-group"><label class="control-label col-lg-4 text-right">'._gender.' </label><div class="col-lg-8">'.SelectInput($_REQUEST['GENDER'], 'GENDER', '', array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër')), 'N/A', '') .'</div></div>';
         $gender_array = array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër'));
-=======
-        // echo '<div class="form-group"><label class="control-label col-lg-4 text-right">'._gender.' </label><div class="col-lg-8">'.SelectInput($_REQUEST['GENDER'], 'GENDER', '', array('Male' => 'Male', 'Female' => 'Female'), 'N/A', '') .'</div></div>';
-        $gender_array = array('Male' => 'Male', 'Female' => 'Female');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo '<div class="form-group"><label class="control-label col-lg-4 text-right">' . _gender . ' </label><div class="col-lg-8"><select class="form-control" id="GENDER" name="GENDER"><option value="">N/A</option>';
         foreach ($gender_array as $one_gender) {
             $gend_selected = '';

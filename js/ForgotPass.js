@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿function tab_select(t)
-=======
-function tab_select(t)
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 {
     if(t=='password_retrieval')
     {
@@ -27,11 +23,7 @@ function tab_select(t)
         document.getElementById('username_retrieval').style.display='none';  
         document.getElementById('username_retrieval_link').className='tab2';
         document.getElementById('password_retrieval_link').className='tab1 active'; 
-<<<<<<< HEAD
         document.getElementById('header_text').innerHTML='Keni harruar fjalëkalimin';  
-=======
-        document.getElementById('header_text').innerHTML='Forgot Password';  
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         document.getElementById('uname_student').checked=true;
         document.getElementById('uname_staff').checked=false;
         document.getElementById('uname_parent').checked=false;
@@ -84,11 +76,7 @@ function tab_select(t)
         document.getElementById('password_retrieval').style.display='none';  
         document.getElementById('username_retrieval_link').className='tab2 active';
         document.getElementById('password_retrieval_link').className='tab1';  
-<<<<<<< HEAD
         document.getElementById('header_text').innerHTML='Keni harruar emrin e përdoruesit';
-=======
-        document.getElementById('header_text').innerHTML='Forgot Username';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         document.getElementById('pass_student').checked=true;
         document.getElementById('pass_staff').checked=false;
         document.getElementById('pass_parent').checked=false;

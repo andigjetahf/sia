@@ -100,11 +100,7 @@ if (optional_param('delete', '', PARAM_ALPHA) == 'true') {
         echo "<TABLE width=100% border=0 cellpadding=0 cellspacing=0><TR>";
         echo "<TD bgcolor=#FFFFFF style=border:1;border-style: none none solid none; align=left> &nbsp;";
         echo "<FONT size=-1><IMG SRC=assets/check.gif>";
-<<<<<<< HEAD
         echo _duplicateRecordHasBeenDeleted;
-=======
-        echo "The duplicate record(s) has been deleted.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo "</font></TD></TR></TABLE><BR>";
     }
 }

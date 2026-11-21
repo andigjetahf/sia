@@ -84,39 +84,22 @@ if ($_REQUEST['modfunc'] == 'detail' && $_REQUEST['student_id'] && $_REQUEST['st
                 } else {
                     unset($_REQUEST['modfunc']);
                     unset($_SESSION['_REQUEST_vars']['student_id']);
-<<<<<<< HEAD
                     echo '<SCRIPT language=javascript>alert("' . addslashes(_pleaseEnterProperDate) . '");window.close();</script>';
-=======
-                    echo '<SCRIPT language=javascript>alert("Please provide valid date");window.close();</script>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
             } else {
                 unset($_REQUEST['modfunc']);
                 unset($_SESSION['_REQUEST_vars']['student_id']);
-<<<<<<< HEAD
                 echo '<SCRIPT language=javascript>alert("' . addslashes(_pleaseEnterProperDate) . '");window.close();</script>';
-=======
-                echo '<SCRIPT language=javascript>alert("Please provide valid date");window.close();</script>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
         } else {
 
             if ($_REQUEST['TRANSFER']['SCHOOL'] == '' && $_REQUEST['TRANSFER']['Grade_Level'] != '')
-<<<<<<< HEAD
                 echo '<SCRIPT language=javascript>alert("' . addslashes(_pleaseSelectSchool) . '");window.close();</script>';
             if ($_REQUEST['TRANSFER']['SCHOOL'] != '' && $_REQUEST['TRANSFER']['Grade_Level'] == '')
                 echo '<SCRIPT language=javascript>alert("' . addslashes(_pleaseSelectGradeLevel) . '");window.close();</script>';
             if ($_REQUEST['TRANSFER']['SCHOOL'] == '' && $_REQUEST['TRANSFER']['Grade_Level'] == '')
                 unset($_REQUEST['modfunc']);
             echo '<SCRIPT language=javascript>alert("' . addslashes(defined('_pleaseProvideAllDetailsToTransferInNewSchool') ? _pleaseProvideAllDetailsToTransferInNewSchool : 'Ju lutemi zgjidhni Shkollën dhe Nivelin e Klasës.') . '");window.close();</script>';
-=======
-                echo '<SCRIPT language=javascript>alert("Please select School");window.close();</script>';
-            if ($_REQUEST['TRANSFER']['SCHOOL'] != '' && $_REQUEST['TRANSFER']['Grade_Level'] == '')
-                echo '<SCRIPT language=javascript>alert("Please select Grade Level");window.close();</script>';
-            if ($_REQUEST['TRANSFER']['SCHOOL'] == '' && $_REQUEST['TRANSFER']['Grade_Level'] == '')
-                unset($_REQUEST['modfunc']);
-            echo '<SCRIPT language=javascript>alert("Please select School and Grade Level");window.close();</script>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
     }
     else {
@@ -180,13 +163,8 @@ if ($_REQUEST['modfunc'] == 'detail' && $_REQUEST['student_id'] && $_REQUEST['st
             unset($_REQUEST['button']);
             unset($_SESSION['_REQUEST_vars']['button']);
         } else {
-<<<<<<< HEAD
             echo '<div align=center class="m-15">' . (defined('_onlyOneSchoolInSystem') ? _onlyOneSchoolInSystem : 'Ka vetëm një shkollë në sistem, prandaj nxënësi nuk mund të transferohet në një shkollë tjetër.') . '<br /><br>
                    <input type=button class="btn btn-default" value="' . _close . '" onclick=\'closeThisModal("modal_default_transferred_out");\'></div>
-=======
-            echo '<div align=center class="m-15">There is only one school in the system so the student cannot be transferred to any other school<br /><br>
-                   <input type=button class="btn btn-default" value=Close onclick=\'closeThisModal("modal_default_transferred_out");\'></div>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </form>';
 //            PopTableWindow('footer');
 
@@ -202,11 +180,7 @@ if ($_REQUEST['modfunc'] == 'detail' && $_REQUEST['student_id'] && $_REQUEST['st
 function custom_datepicker($id, $name) {
     $dt.= '<div class="input-group datepicker-group" id="original_date_' . $id . '" value="" style="">';
     $dt.= '<span class="input-group-addon"><i class="icon-calendar22"></i></span>';
-<<<<<<< HEAD
     $dt.= '<input id="date_' . $id . '" placeholder="' . (defined('_selectDate') ? _selectDate : 'Zgjidhni datën') . '" value="" class="form-control daterange-single" type="text">';
-=======
-    $dt.= '<input id="date_' . $id . '" placeholder="Select Date" value="" class="form-control daterange-single" type="text">';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $dt.= '</div>';
     $dt.= '<input value="" id="monthSelect_date_' . $id . '" name="month_' . $name . '" type="hidden">';
     $dt.= '<input value="" id="daySelect_date_' . $id . '" name="day_' . $name . '" type="hidden">';

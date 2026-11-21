@@ -87,11 +87,7 @@ function ErrorMessage($errors, $code = 'error', $options = '') {
                 $return .= '</div>';
                 $return .= '<div class="col-md-3">';
                 $return .= '<div class="version-info">';
-<<<<<<< HEAD
                 $return .= (defined('_version') ? _version : 'Versioni') . ' <b>' . $get_app_details[1][VALUE] . '</b>';
-=======
-                $return .= 'Version <b>' . $get_app_details[1][VALUE] . '</b>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 $return .= '</div>';
                 $return .= '</div>';
                 $return .= '</div>';
@@ -153,11 +149,7 @@ function ErrorMessage1($errors, $code = 'error') {
             $return .= '</div>';
             $return .= '<div class="col-md-3">';
             $return .= '<div class="version-info">';
-<<<<<<< HEAD
             $return .= (defined('_version') ? _version : 'Versioni') . ' <b>' . $get_app_details[1]['VALUE'] . '</b>';
-=======
-            $return .= 'Version <b>' . $get_app_details[1]['VALUE'] . '</b>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             $return .= '</div>';
             $return .= '</div>';
             $return .= '</div>';

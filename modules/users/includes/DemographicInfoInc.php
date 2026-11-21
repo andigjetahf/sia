@@ -54,11 +54,7 @@ echo '</div>'; //.row
 
 echo '<div class="row">';
 echo '<div class="col-md-6">';
-<<<<<<< HEAD
 echo '<div class="form-group"><label class="control-label col-lg-4 text-right">'._gender.'</label><div class="col-lg-8">' . SelectInput($staff['GENDER'], 'staff[GENDER]', '', array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër')), 'N/A', '') . '</div></div>';
-=======
-echo '<div class="form-group"><label class="control-label col-lg-4 text-right">'._gender.'</label><div class="col-lg-8">' . SelectInput($staff['GENDER'], 'staff[GENDER]', '', array('Male' => 'Male', 'Female' => 'Female'), 'N/A', '') . '</div></div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 echo '</div><div class="col-md-6">';
 echo '<div class="form-group"><label class="control-label col-lg-4 text-right">'._dateOfBirth.'</label><div class="col-lg-8">';
 echo DateInputAY($staff['BIRTHDATE'] != "" && $staff['BIRTHDATE'] != "0000-00-00" ? $staff['BIRTHDATE'] : "", 'staff[BIRTHDATE]', 1) . '</div></div>';
@@ -172,11 +168,7 @@ echo '<div class="modal-dialog">';
 echo '<div class="modal-content">';
 echo '<div class="modal-header">';
 echo '<button type="button" class="close" data-dismiss="modal">×</button>';
-<<<<<<< HEAD
 echo '<h5 class="modal-title">' . (defined('_uploadPhoto') ? _uploadPhoto : 'Ngarko Foto') . '</h5>';
-=======
-echo '<h5 class="modal-title">Upload Photo</h5>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 echo '</div>';
 
 echo '<div class="modal-body">';

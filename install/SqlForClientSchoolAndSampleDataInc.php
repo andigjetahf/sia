@@ -286,17 +286,10 @@ INSERT INTO `attendance_calendar` (`syear`, `school_id`, `school_date`, `minutes
 --
 
 INSERT INTO `attendance_codes` (`id`, `syear`, `school_id`, `title`, `short_name`, `type`, `state_code`, `default_code`, `table_name`, `sort_order`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 2025, 1, 'I pranishëm', 'P', 'teacher', 'P', 'Y', 0, 1, '2025-12-22 00:41:21', NULL),
 (2, 2025, 1, 'Mungesë', 'M', 'teacher', 'A', NULL, 0, 2, '2025-12-22 00:41:21', NULL),
 (3, 2025, 1, 'I vonuar', 'V', 'teacher', 'H', NULL, 0, 3, '2025-12-22 00:41:21', NULL),
 (4, 2025, 1, 'Me vonesë', 'V', 'teacher', 'P', NULL, 0, 4, '2025-12-22 00:41:21', NULL);
-=======
-(1, 2025, 1, 'Present', 'P', 'teacher', 'P', 'Y', 0, 1, '2025-12-22 00:41:21', NULL),
-(2, 2025, 1, 'Absent', 'A', 'teacher', 'A', NULL, 0, 2, '2025-12-22 00:41:21', NULL),
-(3, 2025, 1, 'Tardy', 'T', 'teacher', 'H', NULL, 0, 3, '2025-12-22 00:41:21', NULL),
-(4, 2025, 1, 'Late', 'L', 'teacher', 'P', NULL, 0, 4, '2025-12-22 00:41:21', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `attendance_completed`
@@ -360,7 +353,6 @@ INSERT INTO `calendar_events_visibility` (`calendar_id`, `profile_id`, `profile`
 --
 
 INSERT INTO `courses` (`syear`, `course_id`, `subject_id`, `school_id`, `grade_level`, `title`, `short_name`, `rollover_id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (2025, 1, 1, 1, NULL, 'Vijueshmëria e Përgjithshme', 'ATTN001', NULL, '2025-10-24 18:00:00', NULL),
 (2025, 2, 2, 1, NULL, 'Lexim', 'READ001', NULL, '2025-10-24 18:00:00', NULL),
 (2025, 3, 2, 1, NULL, 'Shkrim', 'WRT002', NULL, '2025-10-24 18:00:00', NULL),
@@ -371,18 +363,6 @@ INSERT INTO `courses` (`syear`, `course_id`, `subject_id`, `school_id`, `grade_l
 (2025, 8, 4, 1, NULL, 'Fizikë', 'PHY 101', NULL, '2025-10-24 18:00:00', NULL),
 (2025, 9, 5, 1, NULL, 'Gjeografi', 'GEOG001', NULL, '2025-10-24 18:00:00', NULL),
 (2025, 10, 5, 1, NULL, 'Histori', 'HIST001', NULL, '2025-10-24 18:00:00', NULL);
-=======
-(2025, 1, 1, 1, NULL, 'Attendance All', 'ATTN001', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 2, 2, 1, NULL, 'Reading', 'READ001', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 3, 2, 1, NULL, 'Writing', 'WRT002', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 4, 3, 1, NULL, 'Algebra ll', 'ALG02', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 5, 3, 1, NULL, 'Geometry', 'GEOM1', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 6, 4, 1, NULL, 'Biology', 'BIO 101', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 7, 4, 1, NULL, 'Chemistry', 'CHEM 101', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 8, 4, 1, NULL, 'Physics', 'PHY 101', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 9, 5, 1, NULL, 'Geography', 'GEOG001', NULL, '2025-10-24 18:00:00', NULL),
-(2025, 10, 5, 1, NULL, 'History', 'HIST001', NULL, '2025-10-24 18:00:00', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --
@@ -390,17 +370,10 @@ INSERT INTO `courses` (`syear`, `course_id`, `subject_id`, `school_id`, `grade_l
 --
 
 INSERT INTO `course_periods` (`syear`, `school_id`, `course_period_id`, `course_id`, `course_weight`, `title`, `short_name`, `mp`, `marking_period_id`, `begin_date`, `end_date`, `teacher_id`, `secondary_teacher_id`, `total_seats`, `filled_seats`, `does_honor_roll`, `does_class_rank`, `gender_restriction`, `house_restriction`, `availability`, `parent_id`, `calendar_id`, `half_day`, `does_breakoff`, `rollover_id`, `grade_scale_id`, `credits`, `schedule_type`, `last_updated`, `modified_by`, `updated_by`) VALUES
-<<<<<<< HEAD
 (2025, 1, 1, 1, NULL, 'Vijueshmëri - 001 - Rudyard  Kipling', 'Vijueshmëri - 001', 'FY', 1, '2025-08-04', '2026-05-29', 5, NULL, 15, 3, NULL, NULL, 'N', NULL, NULL, 1, 1, NULL, NULL, NULL, 1, 3.000, 'FIXED', '2025-10-27 08:53:42', 1, '1'),
 (2025, 1, 2, 2, NULL, 'SEM1 - Gjuhë-001 - Rudyard  Kipling', 'Gjuhë-001', 'SEM', 12, '2025-08-04', '2025-12-19', 5, NULL, 15, 1, NULL, NULL, 'N', NULL, NULL, 2, 1, NULL, NULL, NULL, 1, NULL, 'FIXED', '2025-10-27 06:57:15', 1, '1'),
 (2025, 1, 3, 3, NULL, 'Ese - Charles  Dickens', 'Ese', 'FY', 1, '2025-08-04', '2026-05-29', 6, NULL, 15, 0, NULL, NULL, 'N', NULL, NULL, 3, 1, NULL, NULL, NULL, 1, NULL, 'FIXED', '2025-10-27 06:44:31', 1, '1'),
 (2025, 1, 4, 4, NULL, 'Ekuacione Lineare - Charles  Dickens', 'Ekuacione Lineare', 'FY', 1, '2025-08-04', '2026-05-29', 6, NULL, 15, 2, NULL, NULL, 'N', NULL, NULL, 4, 1, NULL, NULL, NULL, 1, NULL, 'VARIABLE', '2025-10-27 08:52:54', 1, '1');
-=======
-(2025, 1, 1, 1, NULL, 'Attendance - 001 - Rudyard  Kipling', 'Attendance - 001', 'FY', 1, '2025-08-04', '2026-05-29', 5, NULL, 15, 3, NULL, NULL, 'N', NULL, NULL, 1, 1, NULL, NULL, NULL, 1, 3.000, 'FIXED', '2025-10-27 08:53:42', 1, '1'),
-(2025, 1, 2, 2, NULL, 'SEM1 - English-001 - Rudyard  Kipling', 'English-001', 'SEM', 12, '2025-08-04', '2025-12-19', 5, NULL, 15, 1, NULL, NULL, 'N', NULL, NULL, 2, 1, NULL, NULL, NULL, 1, NULL, 'FIXED', '2025-10-27 06:57:15', 1, '1'),
-(2025, 1, 3, 3, NULL, 'Essay - Charles  Dickens', 'Essay', 'FY', 1, '2025-08-04', '2026-05-29', 6, NULL, 15, 0, NULL, NULL, 'N', NULL, NULL, 3, 1, NULL, NULL, NULL, 1, NULL, 'FIXED', '2025-10-27 06:44:31', 1, '1'),
-(2025, 1, 4, 4, NULL, 'Linear Equations - Charles  Dickens', 'Linear Equations', 'FY', 1, '2025-08-04', '2026-05-29', 6, NULL, 15, 2, NULL, NULL, 'N', NULL, NULL, 4, 1, NULL, NULL, NULL, 1, NULL, 'VARIABLE', '2025-10-27 08:52:54', 1, '1');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `course_period_var`
@@ -419,19 +392,11 @@ INSERT INTO `course_period_var` (`id`, `course_period_id`, `days`, `course_perio
 --
 
 INSERT INTO `course_subjects` (`syear`, `school_id`, `subject_id`, `title`, `short_name`, `rollover_id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (2025, 1, 1, 'Gjurmimi i Vijueshmërisë', NULL, NULL, '2025-10-24 18:00:00', NULL),
 (2025, 1, 2, 'Gjuhë dhe Letërsi', NULL, NULL, '2025-10-24 18:00:00', NULL),
 (2025, 1, 3, 'Matematikë', NULL, NULL, '2025-10-24 18:00:00', NULL),
 (2025, 1, 4, 'Shkenca Natyrore', NULL, NULL, '2025-10-24 18:00:00', NULL),
 (2025, 1, 5, 'Shkenca Shoqërore', NULL, NULL, '2025-10-24 18:00:00', NULL);
-=======
-(2025, 1, 1, 'Attendance Tracking', NULL, NULL, '2025-10-24 18:00:00', NULL),
-(2025, 1, 2, 'Language Arts', NULL, NULL, '2025-10-24 18:00:00', NULL),
-(2025, 1, 3, 'Mathematics', NULL, NULL, '2025-10-24 18:00:00', NULL),
-(2025, 1, 4, 'Science', NULL, NULL, '2025-10-24 18:00:00', NULL),
-(2025, 1, 5, 'Social Studies', NULL, NULL, '2025-10-24 18:00:00', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `eligibility`
@@ -453,7 +418,6 @@ INSERT INTO `course_subjects` (`syear`, `school_id`, `subject_id`, `title`, `sho
 --
 
 INSERT INTO `ethnicity` (`ethnicity_id`, `ethnicity_name`, `sort_order`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 'I bardhë (jo-hispanik)', 1, '0000-00-00 00:00:00', NULL),
 (2, 'Afrikano-amerikan / Me ngjyrë', 2, '0000-00-00 00:00:00', NULL),
 (3, 'Hispanik / Latino', 3, '0000-00-00 00:00:00', NULL),
@@ -465,19 +429,6 @@ INSERT INTO `ethnicity` (`ethnicity_id`, `ethnicity_name`, `sort_order`, `last_u
 (9, 'Afrikan', 9, '0000-00-00 00:00:00', NULL),
 (10, 'Racë e përzier', 10, '0000-00-00 00:00:00', NULL),
 (11, 'Tjetër', 11, '0000-00-00 00:00:00', NULL);
-=======
-(1, 'White, Non-Hispanic', 1, '0000-00-00 00:00:00', NULL),
-(2, 'Black, Non-Hispanic', 2, '0000-00-00 00:00:00', NULL),
-(3, 'Hispanic', 3, '0000-00-00 00:00:00', NULL),
-(4, 'American Indian or Native Alaskan', 4, '0000-00-00 00:00:00', NULL),
-(5, 'Pacific Islander', 5, '0000-00-00 00:00:00', NULL),
-(6, 'Asian', 6, '0000-00-00 00:00:00', NULL),
-(7, 'Indian', 7, '0000-00-00 00:00:00', NULL),
-(8, 'Middle Eastern', 8, '0000-00-00 00:00:00', NULL),
-(9, 'African', 9, '0000-00-00 00:00:00', NULL),
-(10, 'Mixed Race', 10, '0000-00-00 00:00:00', NULL),
-(11, 'Other', 11, '0000-00-00 00:00:00', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 
@@ -485,13 +436,8 @@ INSERT INTO `ethnicity` (`ethnicity_id`, `ethnicity_name`, `sort_order`, `last_u
 -- Dumping data for table `gradebook_assignment_types`
 --
 INSERT INTO `gradebook_assignment_types` (`assignment_type_id`, `staff_id`, `course_id`, `title`, `final_grade_percent`, `course_period_id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 5, 1, 'Detyra Shtëpie', NULL, 1, '2025-10-27 07:20:48', '5'),
 (2, 5, 1, 'Punë në Klasë', NULL, 1, '2025-10-27 08:07:49', '5');
-=======
-(1, 5, 1, 'Homework', NULL, 1, '2025-10-27 07:20:48', '5'),
-(2, 5, 1, 'Classwork', NULL, 1, '2025-10-27 08:07:49', '5');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `gradebook_grades`
@@ -538,11 +484,7 @@ INSERT INTO `language` (`language_id`, `language_name`, `sort_order`, `last_upda
 --
 
 INSERT INTO `login_message` (`id`, `message`, `display`) VALUES
-<<<<<<< HEAD
 (1, 'Ky është një rrjet i kufizuar. Përdorimi i këtij rrjeti, pajisjeve dhe burimeve të tij monitorohet gjatë gjithë kohës dhe kërkon leje të shprehur nga administratori i rrjetit. Nëse nuk e keni këtë leje me shkrim, jeni duke shkelur rregulloret e këtij rrjeti dhe do t\'i nënshtroheni masave ligjore në shkallën maksimale. Duke vazhduar hyrjen në këtë sistem, ju pranoni dhe jeni dakord me këto kushte.', 'Y');
-=======
-(1, 'This is a restricted network. Use of this network, its equipment, and resources is monitored at all times and requires explicit permission from the network administrator. If you do not have this permission in writing, you are violating the regulations of this network and can and will be prosecuted to the fullest extent of law. By continuing into this system, you are acknowledging that you are aware of and agree to these terms.', 'Y');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --
@@ -1345,17 +1287,12 @@ INSERT INTO `report_card_grades` (`id`, `syear`, `school_id`, `title`, `sort_ord
 --
 
 INSERT INTO `report_card_grade_scales` (`id`, `syear`, `school_id`, `title`, `comment`, `sort_order`, `rollover_id`, `gp_scale`, `gpa_cal`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 2025, 1, 'Kryesore', NULL, 1, NULL, 4.000, 'Y', '2025-12-22 00:41:21', NULL);
-=======
-(1, 2025, 1, 'Main', NULL, 1, NULL, 4.000, 'Y', '2025-12-22 00:41:21', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 --
 -- Dumping data for table `rooms`
 --
 
 INSERT INTO `rooms` (`room_id`, `school_id`, `title`, `capacity`, `description`, `sort_order`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 1, 'Gjuhë 1', 30, ' ', 1, '2025-10-24 21:12:29', NULL),
 (2, 1, 'Gjuhë 2', 30, ' ', 2, '2025-10-24 21:12:36', NULL),
 (3, 1, 'Shkenca Shoqërore 1', 30, ' ', 3, '2025-10-24 21:12:43', NULL),
@@ -1364,16 +1301,6 @@ INSERT INTO `rooms` (`room_id`, `school_id`, `title`, `capacity`, `description`,
 (6, 1, 'Matematikë 2', 30, ' ', 6, '2025-10-24 21:13:06', NULL),
 (7, 1, 'Salla Kryesore', 60, ' ', 7, '2025-10-24 21:13:27', NULL),
 (8, 1, 'Shkencë 1', 30, ' ', 8, '2025-10-24 21:13:34', NULL);
-=======
-(1, 1, 'Lang 1', 30, ' ', 1, '2025-10-24 21:12:29', NULL),
-(2, 1, 'Lang 2', 30, ' ', 2, '2025-10-24 21:12:36', NULL),
-(3, 1, 'Social Studies 1', 30, ' ', 3, '2025-10-24 21:12:43', NULL),
-(4, 1, 'Social Studies 2', 30, ' ', 4, '2025-10-24 21:12:51', NULL),
-(5, 1, 'Math 1', 30, ' ', 5, '2025-10-24 21:12:58', NULL),
-(6, 1, 'Math 2', 30, ' ', 6, '2025-10-24 21:13:06', NULL),
-(7, 1, 'Ground Hall', 60, ' ', 7, '2025-10-24 21:13:27', NULL),
-(8, 1, 'Science 1', 30, ' ', 8, '2025-10-24 21:13:34', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --
@@ -1408,32 +1335,19 @@ INSERT INTO `school_calendars` (`school_id`, `title`, `syear`, `calendar_id`, `d
 --
 
 INSERT INTO `school_gradelevels` (`id`, `school_id`, `short_name`, `title`, `next_grade_id`, `sort_order`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 1, '9', 'Klasa 9', 2, 1, '2025-10-24 18:00:00', NULL),
 (2, 1, '10', 'Klasa 10', 3, 2, '2025-10-24 18:00:00', NULL),
 (3, 1, '11', 'Klasa 11', 4, 3, '2025-10-24 18:00:00', NULL),
 (4, 1, '12', 'Klasa 12', NULL, 4, '2025-10-24 18:00:00', NULL);
-=======
-(1, 1, '9', '9th Grade', 2, 1, '2025-10-24 18:00:00', NULL),
-(2, 1, '10', '10th Grade', 3, 2, '2025-10-24 18:00:00', NULL),
-(3, 1, '11', '11th Grade', 4, 3, '2025-10-24 18:00:00', NULL),
-(4, 1, '12', '12th Grade', NULL, 4, '2025-10-24 18:00:00', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `school_gradelevel_sections`
 --
 
 INSERT INTO `school_gradelevel_sections` (`id`, `school_id`, `name`, `sort_order`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 1, 'Paralelja A', 1, '2025-10-24 15:35:18', NULL),
 (2, 1, 'Paralelja B', 2, '2025-10-24 15:35:28', NULL),
 (3, 1, 'Paralelja C', 3, '2025-10-24 15:35:39', NULL);
-=======
-(1, 1, 'Section A', 1, '2025-10-24 15:35:18', NULL),
-(2, 1, 'Section B', 2, '2025-10-24 15:35:28', NULL),
-(3, 1, 'Section C', 3, '2025-10-24 15:35:39', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --
@@ -1441,7 +1355,6 @@ INSERT INTO `school_gradelevel_sections` (`id`, `school_id`, `name`, `sort_order
 --
 
 INSERT INTO `school_periods` (`period_id`, `syear`, `school_id`, `sort_order`, `title`, `short_name`, `length`, `block`, `ignore_scheduling`, `attendance`, `rollover_id`, `start_time`, `end_time`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 2025, 1, 1, 'Vijueshmëria Ditore', 'Vijueshmëria', 15, NULL, NULL, 'Y', NULL, '08:00:00', '08:15:00', '2025-10-24 18:00:00', NULL),
 (2, 2025, 1, 2, 'Ora 1', 'P1', 50, NULL, NULL, NULL, NULL, '08:30:00', '09:20:00', '2025-10-24 18:00:00', NULL),
 (3, 2025, 1, 3, 'Ora 2', 'P2', 50, NULL, NULL, NULL, NULL, '09:30:00', '10:20:00', '2025-10-24 18:00:00', NULL),
@@ -1450,33 +1363,16 @@ INSERT INTO `school_periods` (`period_id`, `syear`, `school_id`, `sort_order`, `
 (6, 2025, 1, 6, 'Ora 4', 'P4', 50, NULL, NULL, NULL, NULL, '12:00:00', '12:50:00', '2025-10-24 18:00:00', NULL),
 (7, 2025, 1, 7, 'Ora 5', 'P5', 50, NULL, NULL, NULL, NULL, '13:00:00', '13:50:00', '2025-10-24 18:00:00', NULL),
 (8, 2025, 1, 8, 'Ora 6', 'P6', 50, NULL, NULL, NULL, NULL, '14:00:00', '14:50:00', '2025-10-24 18:00:00', NULL);
-=======
-(1, 2025, 1, 1, 'Daily Attendance', 'Attendance', 15, NULL, NULL, 'Y', NULL, '08:00:00', '08:15:00', '2025-10-24 18:00:00', NULL),
-(2, 2025, 1, 2, 'Period 1', 'P1', 50, NULL, NULL, NULL, NULL, '08:30:00', '09:20:00', '2025-10-24 18:00:00', NULL),
-(3, 2025, 1, 3, 'Period 2', 'P2', 50, NULL, NULL, NULL, NULL, '09:30:00', '10:20:00', '2025-10-24 18:00:00', NULL),
-(4, 2025, 1, 4, 'Period 3', 'P3', 50, NULL, NULL, NULL, NULL, '10:30:00', '11:20:00', '2025-10-24 18:00:00', NULL),
-(5, 2025, 1, 5, 'Lunch', 'Lunch', 38, NULL, NULL, NULL, NULL, '11:21:00', '11:59:00', '2025-10-24 18:00:00', NULL),
-(6, 2025, 1, 6, 'Period 4', 'P4', 50, NULL, NULL, NULL, NULL, '12:00:00', '12:50:00', '2025-10-24 18:00:00', NULL),
-(7, 2025, 1, 7, 'Period 5', 'P5', 50, NULL, NULL, NULL, NULL, '13:00:00', '13:50:00', '2025-10-24 18:00:00', NULL),
-(8, 2025, 1, 8, 'Period 6', 'P6', 50, NULL, NULL, NULL, NULL, '14:00:00', '14:50:00', '2025-10-24 18:00:00', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `school_quarters`
 --
 
 INSERT INTO `school_quarters` (`marking_period_id`, `syear`, `school_id`, `semester_id`, `title`, `short_name`, `sort_order`, `start_date`, `end_date`, `post_start_date`, `post_end_date`, `does_grades`, `does_exam`, `does_comments`, `rollover_id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (14, 2025, 1, 12, 'Tremujori 1', 'T1', 3, '2025-08-04', '2025-10-10', '2025-08-04', '2025-10-10', 'Y', NULL, NULL, NULL, '2025-10-27 11:44:49', '1'),
 (15, 2025, 1, 12, 'Tremujori 2', 'T2', 4, '2025-10-13', '2025-12-19', '2025-10-13', '2025-12-19', 'Y', NULL, NULL, NULL, '2025-10-27 11:45:52', '1'),
 (16, 2025, 1, 13, 'Tremujori 3', 'T3', 6, '2026-01-05', '2026-03-06', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-27 11:46:40', '1'),
 (17, 2025, 1, 13, 'Tremujori 4', 'T4', 7, '2026-03-16', '2026-05-29', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-27 11:47:10', '1');
-=======
-(14, 2025, 1, 12, 'Quarter 1', 'Q1', 3, '2025-08-04', '2025-10-10', '2025-08-04', '2025-10-10', 'Y', NULL, NULL, NULL, '2025-10-27 11:44:49', '1'),
-(15, 2025, 1, 12, 'Quarter 2', 'Q2', 4, '2025-10-13', '2025-12-19', '2025-10-13', '2025-12-19', 'Y', NULL, NULL, NULL, '2025-10-27 11:45:52', '1'),
-(16, 2025, 1, 13, 'Quarter 3', 'Q3', 6, '2026-01-05', '2026-03-06', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-27 11:46:40', '1'),
-(17, 2025, 1, 13, 'Quarter 4', 'Q4', 7, '2026-03-16', '2026-05-29', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-27 11:47:10', '1');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --
@@ -1484,13 +1380,8 @@ INSERT INTO `school_quarters` (`marking_period_id`, `syear`, `school_id`, `semes
 --
 
 INSERT INTO `school_semesters` (`marking_period_id`, `syear`, `school_id`, `year_id`, `title`, `short_name`, `sort_order`, `start_date`, `end_date`, `post_start_date`, `post_end_date`, `does_grades`, `does_exam`, `does_comments`, `rollover_id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (12, 2025, 1, 1, 'Semestri 1', 'SEM1', 2, '2025-08-04', '2025-12-19', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-25 08:07:11', '1'),
 (13, 2025, 1, 1, 'Semestri 2', 'SEM2', 3, '2026-01-05', '2026-05-29', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-25 08:07:43', '1');
-=======
-(12, 2025, 1, 1, 'Semester 1', 'SEM1', 2, '2025-08-04', '2025-12-19', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-25 08:07:11', '1'),
-(13, 2025, 1, 1, 'Semester 2', 'SEM2', 3, '2026-01-05', '2026-05-29', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-25 08:07:43', '1');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 --
@@ -1498,13 +1389,8 @@ INSERT INTO `school_semesters` (`marking_period_id`, `syear`, `school_id`, `year
 --
 
 INSERT INTO `school_years` (`marking_period_id`, `syear`, `school_id`, `title`, `short_name`, `sort_order`, `start_date`, `end_date`, `post_start_date`, `post_end_date`, `does_grades`, `does_exam`, `does_comments`, `rollover_id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 2025, 1, 'Viti i Plotë', 'VP', 1, '2025-08-04', '2026-05-29', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-25 07:54:26', NULL),
 (25, '".$_SESSION['syear']."', '2', 'Viti i Plotë', 'VP', '1', '".$_SESSION['user_school_beg_date']."', '".$_SESSION['user_school_end_date']."', NULL, NULL, NULL, NULL, NULL, NULL, '2019-07-28 00:26:33', NULL);
-=======
-(1, 2025, 1, 'Full Year', 'FY', 1, '2025-08-04', '2026-05-29', NULL, NULL, NULL, NULL, NULL, NULL, '2025-10-25 07:54:26', NULL),
-(25, '".$_SESSION['syear']."', '2', 'Full Year', 'FY', '1', '".$_SESSION['user_school_beg_date']."', '".$_SESSION['user_school_end_date']."', NULL, NULL, NULL, NULL, NULL, NULL, '2019-07-28 00:26:33', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 --
 -- Dumping data for table `staff`
 --
@@ -1550,21 +1436,12 @@ INSERT INTO `staff_emergency_contact` (`staff_emergency_contact_id`, `staff_id`,
 --
 
 INSERT INTO `staff_field_categories` (`id`, `title`, `sort_order`, `include`, `admin`, `teacher`, `parent`, `none`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 'Të Dhënat Demografike', 1, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
 (2, 'Adresat dhe Kontaktet', 2, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
 (3, 'Të Dhënat e Shkollës', 3, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
 (4, 'Të Dhënat e Certifikimit', 4, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
 (5, 'Orari', 5, NULL, 'Y', 'Y', NULL, NULL, '2019-07-28 19:26:33', NULL),
 (6, 'Dokumentet', 6, NULL, 'Y', 'Y', NULL, NULL, '2019-07-28 23:26:33', NULL);
-=======
-(1, 'Demographic Info', 1, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
-(2, 'Addresses & Contacts', 2, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
-(3, 'School Information', 3, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
-(4, 'Certification Information', 4, NULL, 'Y', 'Y', 'Y', 'Y', '2019-07-28 19:26:33', NULL),
-(5, 'Schedule', 5, NULL, 'Y', 'Y', NULL, NULL, '2019-07-28 19:26:33', NULL),
-(6, 'Files', 6, NULL, 'Y', 'Y', NULL, NULL, '2019-07-28 23:26:33', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `staff_school_info`
@@ -1648,37 +1525,21 @@ INSERT INTO `student_enrollment` (`id`, `syear`, `school_id`, `student_id`, `gra
 --
 
 INSERT INTO `student_enrollment_codes` (`id`, `syear`, `title`, `short_name`, `type`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 2025, 'Transferuar Jashtë', 'TRAN', 'TrnD', '2019-07-28 12:56:33', NULL),
 (2, 2025, 'Transferuar Brenda', 'TRAN', 'TrnE', '2019-07-28 12:56:33', NULL),
 (3, 2025, 'Bartur në Vitin e Ri', 'ROLL', 'Roll', '2019-07-28 12:56:33', NULL),
 (4, 2025, 'Çregjistruar', 'DROP', 'Drop', '2019-07-28 12:56:33', NULL),
 (5, 2025, 'Regjistrim i Ri', 'NEW', 'Add', '2019-07-28 12:56:33', NULL);
-=======
-(1, 2025, 'Transferred Out', 'TRAN', 'TrnD', '2019-07-28 12:56:33', NULL),
-(2, 2025, 'Transferred In', 'TRAN', 'TrnE', '2019-07-28 12:56:33', NULL),
-(3, 2025, 'Rolled Over', 'ROLL', 'Roll', '2019-07-28 12:56:33', NULL),
-(4, 2025, 'Dropped Out', 'DROP', 'Drop', '2019-07-28 12:56:33', NULL),
-(5, 2025, 'New', 'NEW', 'Add', '2019-07-28 12:56:33', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 ".
  ($_SESSION['syear']>'2026'||$_SESSION['syear']<'2025'?
      "INSERT INTO `student_enrollment_codes` (`syear`, `title`, `short_name`, `type`) VALUES
-<<<<<<< HEAD
 ($_SESSION[syear], 'Transferuar Jashtë', 'TRAN', 'TrnD'),
 ($_SESSION[syear], 'Transferuar Brenda', 'TRAN', 'TrnE'),
 ($_SESSION[syear], 'Bartur në Vitin e Ri', 'ROLL', 'Roll'),
 (".$_SESSION['syear'].",'Çregjistruar','Drop','Drop'),
 (".$_SESSION['syear'].",'Regjistrim i Ri','NEW','Add');":'')
-=======
-($_SESSION[syear], 'Transferred Out', 'TRAN', 'TrnD'),
-($_SESSION[syear], 'Transferred In', 'TRAN', 'TrnE'),
-($_SESSION[syear], 'Rolled Over', 'ROLL', 'Roll'),
-(".$_SESSION['syear'].",'Dropped Out','Drop','Drop'),
-(".$_SESSION['syear'].",'New','NEW','Add');":'')
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
  ."
 
 
@@ -1688,7 +1549,6 @@ INSERT INTO `student_enrollment_codes` (`id`, `syear`, `title`, `short_name`, `t
 --
 
 INSERT INTO `student_field_categories` (`id`, `title`, `sort_order`, `include`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, 'Të Dhënat e Përgjithshme', 1, NULL, '2019-07-28 19:26:33', NULL),
 (2, 'Mjekësore', 3, NULL, '2019-07-28 19:26:33', NULL),
 (3, 'Adresat dhe Kontaktet', 2, NULL, '2019-07-28 19:26:33', NULL),
@@ -1696,15 +1556,6 @@ INSERT INTO `student_field_categories` (`id`, `title`, `sort_order`, `include`, 
 (5, 'Synime', 5, NULL, '2019-07-28 19:26:33', NULL),
 (6, 'Të Dhënat e Regjistrimit', 6, NULL, '2019-07-28 19:26:33', NULL),
 (7, 'Dokumentet', 7, NULL, '2019-07-28 19:26:33', NULL);
-=======
-(1, 'General Info', 1, NULL, '2019-07-28 19:26:33', NULL),
-(2, 'Medical', 3, NULL, '2019-07-28 19:26:33', NULL),
-(3, 'Addresses & Contacts', 2, NULL, '2019-07-28 19:26:33', NULL),
-(4, 'Comments', 4, NULL, '2019-07-28 19:26:33', NULL),
-(5, 'Goals', 5, NULL, '2019-07-28 19:26:33', NULL),
-(6, 'Enrollment Info', 6, NULL, '2019-07-28 19:26:33', NULL),
-(7, 'Files', 7, NULL, '2019-07-28 19:26:33', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `student_goal`
@@ -1762,21 +1613,12 @@ INSERT INTO `student_mp_comments` (`id`, `student_id`, `syear`, `marking_period_
 --
 
 INSERT INTO `student_report_card_grades` (`syear`, `school_id`, `student_id`, `course_period_id`, `report_card_grade_id`, `report_card_comment_id`, `comment`, `grade_percent`, `marking_period_id`, `grade_letter`, `weighted_gp`, `unweighted_gp`, `gp_scale`, `gpa_cal`, `credit_attempted`, `credit_earned`, `credit_category`, `course_code`, `course_title`, `id`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (2025, 1, 1, 1, 2, NULL, NULL, 85.00, '12', 'B', NULL, 3.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Vijueshmëria e Përgjithshme', 1, '2025-10-27 08:31:42', '1'),
 (2025, 1, 2, 1, 4, NULL, NULL, 65.00, '12', 'D', NULL, 1.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Vijueshmëria e Përgjithshme', 2, '2025-10-27 08:32:29', '1'),
 (2025, 1, 3, 4, 3, NULL, NULL, 75.00, '12', 'C', NULL, 2.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Algjebër II', 3, '2025-10-27 08:53:24', '1'),
 (2025, 1, 7, 4, 1, NULL, NULL, 95.00, '12', 'A', NULL, 4.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Algjebër II', 4, '2025-10-27 08:53:24', '1'),
 (2025, 1, 1, 2, 2, NULL, NULL, 85.00, '12', 'B', NULL, 3.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Reading', 5, '2025-10-27 08:53:57', '1'),
 (2025, 1, 3, 1, 2, NULL, NULL, 85.00, '12', 'B', NULL, 3.000, 4.000, NULL, 1.500, 1.500, NULL, NULL, 'Vijueshmëria e Përgjithshme', 6, '2025-10-27 08:54:04', '1');
-=======
-(2025, 1, 1, 1, 2, NULL, NULL, 85.00, '12', 'B', NULL, 3.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Attendance All', 1, '2025-10-27 08:31:42', '1'),
-(2025, 1, 2, 1, 4, NULL, NULL, 65.00, '12', 'D', NULL, 1.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Attendance All', 2, '2025-10-27 08:32:29', '1'),
-(2025, 1, 3, 4, 3, NULL, NULL, 75.00, '12', 'C', NULL, 2.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Algebra ll', 3, '2025-10-27 08:53:24', '1'),
-(2025, 1, 7, 4, 1, NULL, NULL, 95.00, '12', 'A', NULL, 4.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Algebra ll', 4, '2025-10-27 08:53:24', '1'),
-(2025, 1, 1, 2, 2, NULL, NULL, 85.00, '12', 'B', NULL, 3.000, 4.000, NULL, NULL, NULL, NULL, NULL, 'Reading', 5, '2025-10-27 08:53:57', '1'),
-(2025, 1, 3, 1, 2, NULL, NULL, 85.00, '12', 'B', NULL, 3.000, 4.000, NULL, 1.500, 1.500, NULL, NULL, 'Attendance All', 6, '2025-10-27 08:54:04', '1');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `system_preference`
@@ -1792,17 +1634,10 @@ INSERT INTO `system_preference` (`id`, `school_id`, `full_day_minute`, `half_day
 INSERT INTO `user_profiles` (`id`, `profile`, `title`, `last_updated`, `updated_by`) VALUES
 (0, 'admin', 'Super Administrator', '2022-09-27 13:54:07', NULL),
 (1, 'admin', 'Administrator', '2019-07-28 08:26:33', NULL),
-<<<<<<< HEAD
 (2, 'teacher', 'Mësues', '2019-07-28 08:26:33', NULL),
 (3, 'student', 'Nxënës', '2019-07-28 08:26:33', NULL),
 (4, 'parent', 'Prind', '2019-07-28 08:26:33', NULL),
 (5, 'admin', 'Asistent Admin', '2019-07-28 08:26:33', NULL),
-=======
-(2, 'teacher', 'Teacher', '2019-07-28 08:26:33', NULL),
-(3, 'student', 'Student', '2019-07-28 08:26:33', NULL),
-(4, 'parent', 'Parent', '2019-07-28 08:26:33', NULL),
-(5, 'admin', 'Admin Asst', '2019-07-28 08:26:33', NULL),
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 (6, 'admin', 'Test', '2022-10-13 22:08:47', NULL);";
 
 $dbconn = new mysqli($_SESSION['server'],$_SESSION['username'],$_SESSION['password'],$_SESSION['db'],$_SESSION['port']);

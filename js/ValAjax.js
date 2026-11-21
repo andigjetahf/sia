@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 ﻿
-=======
-
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 function ValAjax() {
   this.req = null;
   this.url = null;
@@ -121,15 +117,9 @@ function ValAjax() {
       errorWin.document.body.innerHTML = this.responseText;
     }
     catch(e) {
-<<<<<<< HEAD
       alert('Ndodhi një gabim, por mesazhi i gabimit nuk mund të' +
       ' displayed because of your browser\'s pop-up blocker.\n' +
       'Ju lutemi lejoni dritaret kërcyese (pop-ups) nga ky sit.');
-=======
-      alert('An error occurred, but the error message cannot be' +
-      ' displayed because of your browser\'s pop-up blocker.\n' +
-      'Please allow pop-ups from this Web site.');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
   };
   this.setMimeType = function(mimeType) {

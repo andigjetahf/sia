@@ -758,11 +758,7 @@ if (isset($_REQUEST['modfunc']) && $_REQUEST['modfunc'] == 'member_insert') {
         echo "<script>load_link_group('Modules.php?modname=messaging/Group.php','1')</script>";
     } else {
         PopTable('header', _alertMessage);
-<<<<<<< HEAD
         echo "<CENTER><h4>"._pleaseSelectAtleastOneMemberToAdd."</h4><br><FORM action=$PHP_tmp_SELF METHOD=POST><INPUT type=button class='btn btn-primary' name=delete_cancel value="._ok." onclick='window.location=\"Modules.php?modname=messaging/Group.php\"'></FORM></CENTER>";
-=======
-        echo "<CENTER><h4>"._pleaseSelectAtleastOneMemberToAdd."</h4><br><FORM action=$PHP_tmp_SELF METHOD=POST><INPUT type=button class='btn btn-primary' name=delete_cancel value=".ok." onclick='window.location=\"Modules.php?modname=messaging/Group.php\"'></FORM></CENTER>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         PopTable('footer');
         return false;
     }
@@ -777,11 +773,7 @@ if (isset($_REQUEST['modfunc']) && $_REQUEST['modfunc'] == 'group_insert') {
     foreach ($exist_group as $id => $value) {
         if (strtolower($exist_group[$id]['GROUP_NAME']) == strtolower($_REQUEST['txtGrpName'])) {
             PopTable('header', _alertMessage);
-<<<<<<< HEAD
             echo "<CENTER><h4>"._groupnameAlreadyExistFor." $userName</h4><br><FORM action=$PHP_tmp_SELF METHOD=POST><INPUT type=button class='btn btn-primary' name=delete_cancel value="._ok." onclick='window.location=\"Modules.php?modname=messaging/Group.php\"'></FORM></CENTER>";
-=======
-            echo "<CENTER><h4>"._groupnameAlreadyExistFor." $userName</h4><br><FORM action=$PHP_tmp_SELF METHOD=POST><INPUT type=button class='btn btn-primary' name=delete_cancel value=".ok." onclick='window.location=\"Modules.php?modname=messaging/Group.php\"'></FORM></CENTER>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             PopTable('footer');
             return false;
         }
@@ -830,11 +822,7 @@ if (isset($_REQUEST['modfunc']) && $_REQUEST['modfunc'] == 'members' && $_REQUES
         foreach ($exist_group as $id => $value) {
             if ($exist_group[$id]['GROUP_NAME'] == $_REQUEST['groupname']) {
                 PopTable('header', _alertMessage);
-<<<<<<< HEAD
                 echo "<CENTER><h4>"._groupnameAlreadyExistFor." $userName</h4><br><FORM action=$PHP_tmp_SELF METHOD=POST><INPUT type=button class='btn btn-primary' name=delete_cancel value="._ok." onclick='window.location=\"Modules.php?modname=messaging/Group.php\"'></FORM></CENTER>";
-=======
-                echo "<CENTER><h4>"._groupnameAlreadyExistFor." $userName</h4><br><FORM action=$PHP_tmp_SELF METHOD=POST><INPUT type=button class='btn btn-primary' name=delete_cancel value=".ok." onclick='window.location=\"Modules.php?modname=messaging/Group.php\"'></FORM></CENTER>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 PopTable('footer');
                 exit;
             }

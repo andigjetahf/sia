@@ -58,7 +58,6 @@ if ($url === FALSE) {
 }
 
 if (!defined("_eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked")) {
-<<<<<<< HEAD
     define("_eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked", _yourOpenSISAccountIsInactive);
 }
 
@@ -72,21 +71,6 @@ if (optional_param('dis', '', PARAM_ALPHAEXT) == 'fl_count') {
 
 if (optional_param('dis', '', PARAM_ALPHAEXT) == 'assoc_mis') {
     $error[] = _noStudentAssociatedWithParent;
-=======
-    define("_eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked", "Either your account is inactive or your access permission has been revoked");
-}
-
-if (!defined("_pleaseContactTheSchoolAdministration")) {
-    define("_pleaseContactTheSchoolAdministration", "Please contact the school administration");
-}
-
-if (optional_param('dis', '', PARAM_ALPHAEXT) == 'fl_count') {
-    $error[] = _eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked . "." . _pleaseContactTheSchoolAdministration . ".";
-}
-
-if (optional_param('dis', '', PARAM_ALPHAEXT) == 'assoc_mis') {
-    $error[] = "No student is associated with the parent for the current date. Either the student is no longer active or starting school in a future date. Please contact the school administration for more information.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 
 if (isset($_GET['ins']))
@@ -215,11 +199,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 }
             } else {
                 if ($get_ac_st == $get_tot_st && $get_tot_st != 0)
-<<<<<<< HEAD
                     $error_dis = _yourOpenSISAccountIsInactive;
-=======
-                    $error_dis = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your opensis account is inactive.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 else
                     $error[] = " " . _incorrectUsernameOrPassword . ". " . _pleaseTryAgain . ".";
             }
@@ -245,11 +225,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 $max_syear = DBGet(DBQuery('SELECT MAX(SYEAR) as SYEAR FROM student_enrollment se,students_join_people sjp WHERE se.STUDENT_ID=sjp.STUDENT_ID AND sjp.PERSON_ID=' . $login_uniform['USER_ID']));
                 $max_syear = $max_syear[1]['SYEAR'];
                 if ($max_syear == '') {
-<<<<<<< HEAD
                     $error[] = _noStudentAssociatedWithParent;
-=======
-                    $error[] = "No student is associated with the parent for the current date. Either the student is no longer active or starting school in a future date. Please contact the school administration for more information.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     session_destroy();
                     header("location:index.php?modfunc=logout&dis=assoc_mis");
                 }
@@ -263,11 +239,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 }
             } else {
                 if ($get_ac_st == $get_tot_st && $get_tot_st != 0)
-<<<<<<< HEAD
                     $error_dis = _yourOpenSISAccountIsInactive;
-=======
-                    $error_dis = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your opensis account is inactive.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 else
                     $error[] = " " . _incorrectUsernameOrPassword . ". " . _pleaseTryAgain . ".";
             }
@@ -350,11 +322,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                             $parent_max_syear = $parent_max_syear[1]['SYEAR'];
 
                             if ($parent_max_syear == '') {
-<<<<<<< HEAD
                                 $error[] = _noStudentAssociatedWithParent;
-=======
-                                $error[] = "No student is associated with the parent for the current date. Either the student is no longer active or starting school in a future date. Please contact the school administration for more information.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 session_destroy();
                                 header("location:index.php?modfunc=logout&dis=assoc_mis");
                             }
@@ -564,26 +532,16 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
             else {
                 $check_acess = DBGet(DBQuery('SELECT OPENSIS_ACCESS FROM staff_school_info WHERE STAFF_ID=' . $login_RET[1]['STAFF_ID']));
                 if ($check_acess[1]['OPENSIS_ACCESS'] == 'N')
-<<<<<<< HEAD
                     $error[] = _youDoNotHavePortalAccess;
                 else
                     $error[] = _yourAccountHasBeenDisabledContactAdmin;
-=======
-                    $error[] = "You do not have portal access. Contact the school administration to enable it.";
-                else
-                    $error[] = "Your account has been disabled. Contact the school administration to enable your account.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
         }
         if (isset($student_RET) && count($student_RET) > 0) {
             if ($ad_f_cnt && $ad_f_cnt != 0 && $student_RET[1]['FAILED_LOGIN'] < $ad_f_cnt)
                 $error[] = "" . _eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked . "." . _pleaseContactTheSchoolAdministration . ".";
             else
-<<<<<<< HEAD
                 $error[] = _yourAccountHasBeenDisabledContactAdmin;
-=======
-                $error[] = "Your account has been disabled. Contact the school administration to enable your account.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
     } elseif ($student_RET) {
 
@@ -682,11 +640,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
             $get_rec = DBGet(DBQuery("SELECT COUNT(1) as RECORD FROM students s,student_enrollment se WHERE s.STUDENT_ID='" . $res[1]['USER_ID'] . "' AND s.STUDENT_ID=se.STUDENT_ID AND (se.DROP_CODE='4' OR (se.DROP_CODE IS NULL AND se.END_DATE<='" . date('Y-m-d') . "')) AND (se.END_DATE<='" . date('Y-m-d') . "' OR se.END_DATE IS NULL) AND se.SYEAR=(SELECT MAX(SYEAR) FROM student_enrollment WHERE STUDENT_ID=s.STUDENT_ID ) "));
             if ($get_rec[1]['RECORD'] != 0) {
                 unset($error);
-<<<<<<< HEAD
                 $error[] = _yourAccountHasBeenDisabledContactAdmin;
-=======
-                $error[] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your opensis account is disabled.";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
         }
         if ($failed_login_staff != '' && $res[1]['PROFILE'] == 'teacher') {
@@ -706,11 +660,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
     }
 
     if ($_REQUEST['staff'] == 'na') {
-<<<<<<< HEAD
         $error[] = _youAreNotAssignedToAnySchool;
-=======
-        $error[] = "You are not asigned to any school";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     }
     if (UserSyear() != '') {
         $last_update = DBGet(DBQuery('SELECT value FROM program_config WHERE title=\'LAST_UPDATE\' AND program=\'SeatFill\'  AND SYEAR=' . UserSyear()));

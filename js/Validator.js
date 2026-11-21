@@ -185,11 +185,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       objValue.value = objValue.value.trim();
       if (eval(objValue.value.length) == 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : Fushë e detyrueshme";
-=======
-          strError = objValue.name + " : Required Field";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -205,11 +201,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       objValue.value = objValue.value.trim();
       if (eval(objValue.value.length) == 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : Fushë e detyrueshme";
-=======
-          strError = objValue.name + " : Required Field";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -229,11 +221,7 @@ function V2validateData(strValidateStr, objValue, strError) {
         }
         if (flag == 1) {
           if (!strError || strError.length == 0) {
-<<<<<<< HEAD
             strError = objValue.name + " : Fushë e detyrueshme";
-=======
-            strError = objValue.name + " : Required Field";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           }
           $("#" + alertDiv).html(
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -250,11 +238,7 @@ function V2validateData(strValidateStr, objValue, strError) {
 
       if (eval(objValue.value) == 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : Fushë e detyrueshme";
-=======
-          strError = objValue.name + " : Required Field";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -270,11 +254,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       objValue.value = objValue.value.trim();
       if (eval(objValue.value.length) == 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : Fushë e detyrueshme";
-=======
-          strError = objValue.name + " : Required Field";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -290,20 +270,12 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "maxlen": {
       if (eval(objValue.value.length) > eval(cmdvalue)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : maksimumi " + cmdvalue + " karaktere";
-=======
-          strError = objValue.name + " : " + cmdvalue + " characters maximum ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n[Gjatësia aktuale = " +
-=======
-            "\n[Current length = " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             objValue.value.length +
             " ]" +
             "</div>"
@@ -316,20 +288,12 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "minlen": {
       if (eval(objValue.value.length) < eval(cmdvalue)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : minimumi " + cmdvalue + " karaktere";
-=======
-          strError = objValue.name + " : " + cmdvalue + " characters minimum  ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n[Gjatësia aktuale = " +
-=======
-            "\n[Current length = " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             objValue.value.length +
             " ]" +
             "</div>"
@@ -343,20 +307,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^A-Za-z0-9. ]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohen vetëm karaktere alfanumerike";
-=======
-          strError = objValue.name + ": Only alpha-numeric characters allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -369,20 +325,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^A-Za-z0-9.+- ]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohen vetëm karaktere alfanumerike";
-=======
-          strError = objValue.name + ": Only alpha-numeric characters allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -396,11 +344,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^0-9]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohen vetëm shifra";
-=======
-          strError = objValue.name + ": Only digits allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -414,11 +358,7 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "ma": {
       if (objValue.value < 3) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Duhet të jetë më e madhe se 2";
-=======
-          strError = objValue.name + ": Only greater than 2 ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -432,11 +372,7 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "ma1": {
       if (objValue.value < 5) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Duhet të jetë më e madhe se 5";
-=======
-          strError = objValue.name + ": Only greater than 5 ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -450,11 +386,7 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "maxsort": {
       if (objValue.value <= 6) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Duhet të jetë më e madhe se 6";
-=======
-          strError = objValue.name + ": Only greater than 6 ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -470,20 +402,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^0-9.]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohen vetëm vlera dhjetore";
-=======
-          strError = objValue.name + ": Only digits allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -497,20 +421,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^0-9-(), ]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohet vetëm një numër telefoni i vlefshëm";
-=======
-          strError = objValue.name + ": Only valid phone number allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -523,21 +439,13 @@ function V2validateData(strValidateStr, objValue, strError) {
       if (objValue.value.length > 0) {
         if (isNaN(objValue.value)) {
           $("#" + alertDiv).html(
-<<<<<<< HEAD
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni një numër telefoni të vlefshëm.</div>'
-=======
-            '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter a valid phone number.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           );
           return false;
         }
         if (!isNaN(objValue.value) && objValue.value.length < 5) {
           $("#" + alertDiv).html(
-<<<<<<< HEAD
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ju lutemi vendosni një numër telefoni të vlefshëm.</div>'
-=======
-            '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Please enter a valid phone number.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           );
           return false;
         }
@@ -549,20 +457,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^A-Za-z ]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohen vetëm shkronja";
-=======
-          strError = objValue.name + ": Only alphabetic characters allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -575,20 +475,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       var charpos = objValue.value.search("[^A-Za-z-' ]");
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Lejohen vetëm shkronja dhe simbole të lejuara";
-=======
-          strError = objValue.name + ": Only alphabetic characters allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -602,20 +494,12 @@ function V2validateData(strValidateStr, objValue, strError) {
       if (objValue.value.length > 0 && charpos >= 0) {
         if (!strError || strError.length == 0) {
           strError =
-<<<<<<< HEAD
             objValue.name + ": karakteret e lejuara janë A-Z, a-z, 0-9, - dhe _";
-=======
-            objValue.name + ": characters allowed are A-Z,a-z,0-9,- and _";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(strError) +
-<<<<<<< HEAD
             "\n [Pozicioni i karakterit me gabim: " +
-=======
-            "\n [Error character position " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             eval(charpos + 1) +
             "]" +
             "</div>"
@@ -627,11 +511,7 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "email": {
       if (!validateEmailv2(objValue.value)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = "Vendosni një adresë të vlefshme emaili";
-=======
-          strError = "Enter a valid Email address ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -646,11 +526,7 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "url": {
       if (!validateurl(objValue.value)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = "Vendosni një adresë URL të vlefshme";
-=======
-          strError = "Enter a valid URL ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -668,22 +544,14 @@ function V2validateData(strValidateStr, objValue, strError) {
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(objValue.name) +
-<<<<<<< HEAD
             ": Duhet të jetë numër " +
-=======
-            ": Should be a number " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             "</div>"
         );
         return false;
       }
       if (eval(objValue.value) >= eval(cmdvalue)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : vlera duhet të jetë më e vogël se " + cmdvalue;
-=======
-          strError = objValue.name + " : value should be less than " + cmdvalue;
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -700,11 +568,7 @@ function V2validateData(strValidateStr, objValue, strError) {
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
             escapeHtml(objValue.name) +
-<<<<<<< HEAD
             ": Duhet të jetë numër " +
-=======
-            ": Should be a number " +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             "</div>"
         );
         return false;
@@ -712,11 +576,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       if (eval(objValue.value) <= eval(cmdvalue)) {
         if (!strError || strError.length == 0) {
           strError =
-<<<<<<< HEAD
             objValue.name + " : vlera duhet të jetë më e madhe se " + cmdvalue;
-=======
-            objValue.name + " : value should be greater than " + cmdvalue;
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -731,11 +591,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       if (objValue.value.length > 0) {
         if (!objValue.value.match(cmdvalue)) {
           if (!strError || strError.length == 0) {
-<<<<<<< HEAD
             strError = objValue.name + ": U gjetën karaktere të pavlefshme";
-=======
-            strError = objValue.name + ": Invalid characters found ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           }
           $("#" + alertDiv).html(
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -758,11 +614,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       }
       if (objValue.selectedIndex == eval(cmdvalue)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + ": Ju lutemi zgjidhni një opsion";
-=======
-          strError = objValue.name + ": Please Select one option ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -776,11 +628,7 @@ function V2validateData(strValidateStr, objValue, strError) {
     case "attendance": {
       if (eval(objValue.value.length) > eval(cmdvalue)) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : " + cmdvalue + " karaktere maksimumi";
-=======
-          strError = objValue.name + " : " + cmdvalue + " characters maximum ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -802,11 +650,7 @@ function V2validateData(strValidateStr, objValue, strError) {
         ) {
           if (!strError || strError.length == 0) {
             strError =
-<<<<<<< HEAD
               objValue.name + ": Lejohen vetëm numra dhe karaktere speciale";
-=======
-              objValue.name + ":  Number and speacial char is allowed ";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           }
           $("#" + alertDiv).html(
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -823,11 +667,7 @@ function V2validateData(strValidateStr, objValue, strError) {
       objValue.value = objValue.value.trim();
       if (eval(objValue.value.length) == 0) {
         if (!strError || strError.length == 0) {
-<<<<<<< HEAD
           strError = objValue.name + " : Fushë e detyrueshme";
-=======
-          strError = objValue.name + " : Required Field";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         }
         $("#" + alertDiv).html(
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
@@ -855,11 +695,7 @@ function doDateCheck(from, to) {
   if (Date.parse(from + " 00:00:00") > Date.parse(to + " 00:00:00")) {
     $("#" + alertDiv).html(
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> ' +
-<<<<<<< HEAD
         "Data e mbarimit duhet të jetë pas datës së fillimit." +
-=======
-        "End date must be after the Start date." +
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         "</div>"
     );
     return false;
@@ -930,11 +766,7 @@ function CheckTime(fd, fh, fm, fp, td, th, tm, tp) {
   if (parseFloat(fd.value) == parseFloat(td.value)) {
     if (p1 > p2) {
       $("#" + alertDiv).html(
-<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ora e fillimit duhet të jetë para orës së mbarimit.</div>'
-=======
-        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Starting time must occur after the ending date.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       return false;
     }
@@ -942,11 +774,7 @@ function CheckTime(fd, fh, fm, fp, td, th, tm, tp) {
     if (p1 == p2) {
       if (parseFloat(fh.value) > parseFloat(th.value)) {
         $("#" + alertDiv).html(
-<<<<<<< HEAD
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ora e fillimit duhet të jetë para orës së mbarimit.</div>'
-=======
-          '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Starting time must occur after the ending date.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         return false;
       }
@@ -954,11 +782,7 @@ function CheckTime(fd, fh, fm, fp, td, th, tm, tp) {
       if (parseFloat(fh.value) == parseFloat(th.value)) {
         if (parseFloat(fm.value) > parseFloat(tm.value)) {
           $("#" + alertDiv).html(
-<<<<<<< HEAD
             '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Ora e fillimit duhet të jetë para orës së mbarimit.</div>'
-=======
-            '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Starting time must occur after the ending date.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
           );
           return false;
         }
@@ -982,11 +806,7 @@ function doDateCheckMar(from, to) {
 
   if (Date.parse(from) > Date.parse(to)) {
     $("#" + alertDiv).html(
-<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Data e fillimit të hedhjes së notave nuk mund të jetë para datës së fillimit të periudhës së vlerësimit.</div>'
-=======
-      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Grade Posting Begins date can not occur before the Marking Period Begins date.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     return false;
   } else {
@@ -1015,11 +835,7 @@ function doDateCheckMarEnd(from, to) {
 
   if (Date.parse(from) > Date.parse(to)) {
     $("#" + alertDiv).html(
-<<<<<<< HEAD
       '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Data e mbarimit të hedhjes së notave nuk mund të jetë pas datës së mbarimit të periudhës.</div>'
-=======
-      '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Grade Posting End date can not be occur after the End date.</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     );
     return false;
   } else {
@@ -1065,21 +881,13 @@ function CheckBirthDate(fm, fd, fy) {
 
     if (isNaN(strdate)) {
       $("#" + alertDiv).html(
-<<<<<<< HEAD
         '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Vendosni një datë të vlefshme lindjeje</div>'
-=======
-        '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Enter a valid Date of Birth</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
       );
       return false;
     } else {
       if (strdate > Date.parse(today)) {
         $("#" + alertDiv).html(
-<<<<<<< HEAD
           '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Datë lindjeje e pavlefshme</div>'
-=======
-          '<div class="alert alert-danger no-border"><i class="fa fa-info-circle"></i> Invalid Birth Date</div>'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         );
         return false;
       } else return true;

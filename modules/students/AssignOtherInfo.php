@@ -332,11 +332,7 @@ if (!$_REQUEST['modfunc']) {
                     }
                     array_push($fields, '<div class=form-group><label class="control-label col-lg-4 text-right">' . $v_g . '</label><div class="col-lg-8">' . _makeDateInput($nm, $cn) . '</div></div>');
                 } else if ($v_g == '' . _gender . '') {
-<<<<<<< HEAD
                     array_push($fields, '<div class="form-group"><label class="control-label text-right col-lg-4">' . _gender . '</label><div class="col-lg-8">' . _makeSelectInput($v_g, array('Male' => (defined('_male') ? _male : 'Mashkull'), 'Female' => (defined('_female') ? _female : 'Femër'))) . '</div></div>');
-=======
-                    array_push($fields, '<div class="form-group"><label class="control-label text-right col-lg-4">' . _gender . '</label><div class="col-lg-8">' . _makeSelectInput($v_g, array('Male' => 'Male', 'Female' => 'Female')) . '</div></div>');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 } else if ($v_g == '' . _ethnicity . '') {
                     $ethnicity = DBGet(DBQuery('SELECT * FROM ethnicity'));
                     foreach ($ethnicity as $key => $value) {

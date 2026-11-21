@@ -69,11 +69,7 @@ if (UserStudentID()) {
             echo '
 	' . $msg . '
 	<form enctype="multipart/form-data" action="Modules.php?modname=students/Upload.php&action=upload" method="POST">';
-<<<<<<< HEAD
             echo '<div align=center>'._selectImageFile.': <input name="file" type="file" /><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
-=======
-            echo '<div align=center>'._selectImageFile.': <input name="file" type="file" /><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 <input type="submit" value="'._upload.'" class="btn btn-primary" />&nbsp;<input type=button class="btn btn-primary" value="'._cancel.'" onclick=\'load_link("Modules.php?modname=students/Student.php");\'></div>
 </form>';
             PopTable('footer');
@@ -82,11 +78,7 @@ if (UserStudentID()) {
             echo '
 	' . $msg . '
 	<form enctype="multipart/form-data" action="Modules.php?modname=students/Upload.php&action=upload" method="POST">';
-<<<<<<< HEAD
             echo '<div align=center>'._selectImageFile.': <input name="file" type="file" /><b><span >(' . (defined('_maximumUploadFileSize_10Mb') ? _maximumUploadFileSize_10Mb : 'Madhësia maksimale e skedarit 10 MB') . ')</span></b><br /><br>
-=======
-            echo '<div align=center>'._selectImageFile.': <input name="file" type="file" /><b><span >(Maximum upload file size 10 MB)</span></b><br /><br>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 <input type="submit" value="'._upload.'" class="btn btn-primary" />&nbsp;<input type=button class="btn btn-primary" value="'._cancel.'" onclick=\'load_link("Modules.php?modname=students/Student.php");\'></div>
 </form>';
             PopTable('footer');

@@ -49,12 +49,8 @@ INSERT INTO `program_config` (`syear`, `school_id`, `program`, `title`, `value`,
 ('2024', NULL, 'Currency', 'Swiss Franc  (CHF)', '23', '2019-07-28 15:26:33', NULL),
 ('2024', NULL, 'Currency', 'Thai Bhat  (THB)', '24', '2019-07-28 15:26:33', NULL),
 ('2024', NULL, 'Currency', 'Turkish Lira  (TRY)', '25', '2019-07-28 15:26:33', NULL),
-<<<<<<< HEAD
 ('2024', NULL, 'Currency', 'United Arab Emirates Dirham (AED)', '26', '2019-07-28 15:26:33', NULL),
 ('2024', NULL, 'Currency', 'Leku Shqiptar (ALL)', '27', '2019-07-28 15:26:33', NULL);
-=======
-('2024', NULL, 'Currency', 'United Arab Emirates Dirham (AED)', '26', '2019-07-28 15:26:33', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 INSERT INTO `program_config` (`syear`, `school_id`, `program`, `title`, `value`) VALUES
 ('2024',1, 'MissingAttendance', 'LAST_UPDATE','2024-09-01'),
@@ -74,11 +70,7 @@ INSERT INTO `program_config` (`syear`, `school_id`, `program`, `title`, `value`)
 -- Dumping data for table `program_user_config`
 --
 
-<<<<<<< HEAD
 INSERT INTO `program_user_config` (`user_id`, `school_id`, `program`, `title`, `value`, `last_updated`, `updated_by`) VALUES (1, NULL, 'Preferences', 'THEME', 'blue', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'MONTH', 'M', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'DAY', 'j', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'YEAR', 'Y', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'HIDDEN', 'Y', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'CURRENCY', '27', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'HIDE_ALERTS', 'N', '2019-07-28 20:56:33', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_1', '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_1', '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_1', '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-14', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-15', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-16', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-17', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-14', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-15', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-16', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-17', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-14', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-15', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-16', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-17', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-14', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-15', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-E12', '20_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-16', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-17', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-E13', '20_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-14', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-15', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-16', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-17', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-14', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-15', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-E12', '20_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-16', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-17', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-E13', '20_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2021-08-08 04:16:52', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2021-08-08 04:16:52', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2021-08-08 04:17:17', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2021-08-08 04:17:17', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'DEFAULT_ASSIGNED', 'Y_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-21', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-22', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-23', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-24', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-21', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-22', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-E19', '20_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-23', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-24', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-E20', '20_28', '2021-08-08 04:17:31', NULL);
-=======
-INSERT INTO `program_user_config` (`user_id`, `school_id`, `program`, `title`, `value`, `last_updated`, `updated_by`) VALUES (1, NULL, 'Preferences', 'THEME', 'blue', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'MONTH', 'M', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'DAY', 'j', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'YEAR', 'Y', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'HIDDEN', 'Y', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'CURRENCY', '1', '2019-07-28 20:56:33', NULL), (1, NULL, 'Preferences', 'HIDE_ALERTS', 'N', '2019-07-28 20:56:33', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 00:58:51', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 01:27:03', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_1', '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_1', '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_1', '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-14', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-15', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-16', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'Q-17', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 01:27:21', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-14', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-15', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-16', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'Q-17', '100_2', '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'SEM-16', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'SEM-17', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'SEM-E13', NULL, '2020-08-12 01:28:25', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-14', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-15', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-16', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'Q-17', '100_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-14', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-15', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-E12', '20_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-16', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-17', '40_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'SEM-E13', '20_18', '2020-08-12 04:51:28', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-14', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-15', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-16', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'Q-17', '100_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-14', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-15', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-E12', '20_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-16', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-17', '40_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'SEM-E13', '20_19', '2020-08-12 19:08:43', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2021-08-08 04:16:52', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2021-08-08 04:16:52', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2021-08-08 04:17:17', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2021-08-08 04:17:17', NULL), (2, 1, 'Gradebook', 'ROUNDING', NULL, '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'ASSIGNMENT_SORTING', 'ASSIGNMENT_ID_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'WEIGHT', 'Y_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'DEFAULT_ASSIGNED', 'Y_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'ANOMALOUS_MAX', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'LATENCY', '0_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'COMMENT_A', NULL, '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-21', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-22', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-23', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'Q-24', '100_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-21', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-22', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-E19', '20_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-23', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-24', '40_28', '2021-08-08 04:17:31', NULL), (2, 1, 'Gradebook', 'SEM-E20', '20_28', '2021-08-08 04:17:31', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `schools`
@@ -99,11 +91,7 @@ INSERT INTO `system_preference` (`id`, `school_id`, `full_day_minute`, `half_day
 -- Dumping data for table `login_message`
 --
 
-<<<<<<< HEAD
 INSERT INTO `login_message` (`id`, `message`, `display`) VALUES (1,'Ky është një rrjet i kufizuar. Përdorimi i këtij rrjeti, pajisjeve dhe burimeve të tij monitorohet gjatë gjithë kohës dhe kërkon leje të shprehur nga administratori i rrjetit. Nëse nuk e keni këtë leje me shkrim, jeni duke shkelur rregulloret e këtij rrjeti dhe do t\'i nënshtroheni masave ligjore në shkallën maksimale. Duke vazhduar hyrjen në këtë sistem, ju pranoni dhe jeni dakord me këto kushte.','Y');
-=======
-INSERT INTO `login_message` (`id`, `message`, `display`) VALUES (1,'This is a restricted network. Use of this network, its equipment, and resources is monitored at all times and requires explicit permission from the network administrator. If you do not have this permission in writing, you are violating the regulations of this network and can and will be prosecuted to the fullest extent of law. By continuing into this system, you are acknowledging that you are aware of and agree to these terms.','Y');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
 
@@ -111,11 +99,7 @@ INSERT INTO `login_message` (`id`, `message`, `display`) VALUES (1,'This is a re
 -- Dumping data for table `school_years`
 --
 INSERT INTO `school_years` (`marking_period_id`, `syear`, `school_id`, `title`, `short_name`, `sort_order`, `start_date`, `end_date`, `does_exam`, `rollover_id`, `updated_by`) VALUES
-<<<<<<< HEAD
 (1, '2024', 1, 'Viti i Plotë', 'VP', 1, '2024-09-01', '2025-06-30', NULL, NULL, NULL);
-=======
-(1, '2024', 1, 'Full Year', 'FY', 1, '2024-09-01', '2025-06-30', NULL, NULL, NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 --
 -- Dumping data for table `marking_period_id_generator`
 --
@@ -150,70 +134,42 @@ INSERT INTO `staff_school_info` (`staff_school_info_id`, `staff_id`, `category`,
 -- Dumping data for table `people_field_categories`
 --
 
-<<<<<<< HEAD
 INSERT INTO `people_field_categories` (`id`, `title`, `sort_order`, `include`, `admin`, `teacher`, `parent`, `none`, `last_updated`, `updated_by`) VALUES (1,'Të Dhëna të Përgjithshme',1,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(2,'Të Dhëna të Adresës',2,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL);
-=======
-INSERT INTO `people_field_categories` (`id`, `title`, `sort_order`, `include`, `admin`, `teacher`, `parent`, `none`, `last_updated`, `updated_by`) VALUES (1,'General Info',1,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(2,'Address Info',2,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `staff_field_categories`
 --
 
-<<<<<<< HEAD
 INSERT INTO `staff_field_categories` (`id`, `title`, `sort_order`, `include`, `admin`, `teacher`, `parent`, `none`, `last_updated`, `updated_by`) VALUES (1,'Të Dhëna Demografike',1,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(2,'Adresat dhe Kontaktet',2,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(3,'Të Dhëna të Shkollës',3,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(4,'Të Dhëna të Certifikimit',4,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(5,'Orari',5,NULL,'Y','Y',NULL,NULL,'2019-07-28 19:26:33',NULL),(6,'Dokumentet',6,NULL,'Y','Y',NULL,NULL,'2019-07-28 23:26:33',NULL);
-=======
-INSERT INTO `staff_field_categories` (`id`, `title`, `sort_order`, `include`, `admin`, `teacher`, `parent`, `none`, `last_updated`, `updated_by`) VALUES (1,'Demographic Info',1,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(2,'Addresses & Contacts',2,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(3,'School Information',3,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(4,'Certification Information',4,NULL,'Y','Y','Y','Y','2019-07-28 19:26:33',NULL),(5,'Schedule',5,NULL,'Y','Y',NULL,NULL,'2019-07-28 19:26:33',NULL),(6,'Files',6,NULL,'Y','Y',NULL,NULL,'2019-07-28 23:26:33',NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `ethnicity`
 --
 
-<<<<<<< HEAD
 INSERT INTO `ethnicity` (`ethnicity_id`, `ethnicity_name`, `sort_order`, `last_updated`, `updated_by`) VALUES (1,'I bardhë (jo-hispanik)',1,'0000-00-00 00:00:00',NULL),(2,'Afrikano-amerikan / Me ngjyrë',2,'0000-00-00 00:00:00',NULL),(3,'Hispanik / Latino',3,'0000-00-00 00:00:00',NULL),(4,'Indigjen amerikan / Alaskian',4,'0000-00-00 00:00:00',NULL),(5,'Ishujt e Paqësorit',5,'0000-00-00 00:00:00',NULL),(6,'Aziatik',6,'0000-00-00 00:00:00',NULL),(7,'Indian',7,'0000-00-00 00:00:00',NULL),(8,'Lindja e Mesme',8,'0000-00-00 00:00:00',NULL),(9,'Afrikan',9,'0000-00-00 00:00:00',NULL),(10,'Racë e përzier',10,'0000-00-00 00:00:00',NULL),(11,'Tjetër',11,'0000-00-00 00:00:00',NULL);
-=======
-INSERT INTO `ethnicity` (`ethnicity_id`, `ethnicity_name`, `sort_order`, `last_updated`, `updated_by`) VALUES (1,'White, Non-Hispanic',1,'0000-00-00 00:00:00',NULL),(2,'Black, Non-Hispanic',2,'0000-00-00 00:00:00',NULL),(3,'Hispanic',3,'0000-00-00 00:00:00',NULL),(4,'American Indian or Native Alaskan',4,'0000-00-00 00:00:00',NULL),(5,'Pacific Islander',5,'0000-00-00 00:00:00',NULL),(6,'Asian',6,'0000-00-00 00:00:00',NULL),(7,'Indian',7,'0000-00-00 00:00:00',NULL),(8,'Middle Eastern',8,'0000-00-00 00:00:00',NULL),(9,'African',9,'0000-00-00 00:00:00',NULL),(10,'Mixed Race',10,'0000-00-00 00:00:00',NULL),(11,'Other',11,'0000-00-00 00:00:00',NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `language`
 --
 
-<<<<<<< HEAD
 INSERT INTO `language` (`language_id`, `language_name`, `sort_order`, `last_updated`, `updated_by`) VALUES (1,'Shqip',1,'2019-07-28 19:26:33',NULL),(2,'Anglisht',2,'2019-07-28 19:26:33',NULL),(3,'Arabisht',3,'2019-07-28 19:26:33',NULL),(4,'Gjermanisht',4,'2019-07-28 19:26:33',NULL),(5,'Frëngjisht',5,'2019-07-28 19:26:33',NULL),(6,'Italisht',6,'2019-07-28 19:26:33',NULL),(7,'Spanjisht',7,'2019-07-28 19:26:33',NULL),(8,'Turqisht',8,'2019-07-28 19:26:33',NULL),(9,'Rusisht',9,'2019-07-28 19:26:33',NULL),(10,'Kinezisht',10,'2019-07-28 19:26:33',NULL),(11,'Japonisht',11,'2019-07-28 19:26:33',NULL),(12,'Koreisht',12,'2019-07-28 19:26:33',NULL),(13,'Polonisht',13,'2019-07-28 19:26:33',NULL),(14,'Portugalisht',14,'2019-07-28 19:26:33',NULL),(15,'Hindisht',15,'2019-07-28 19:26:33',NULL),(16,'Bengalisht',16,'2019-07-28 19:26:33',NULL),(17,'Vietnamisht',17,'2019-07-28 19:26:33',NULL),(18,'Tajlandisht',18,'2019-07-28 19:26:33',NULL),(19,'Urdu',19,'2019-07-28 19:26:33',NULL),(20,'Malajisht',20,'2019-07-28 19:26:33',NULL);
-=======
-INSERT INTO `language` (`language_id`, `language_name`, `sort_order`, `last_updated`, `updated_by`) VALUES (1,'English',1,'2019-07-28 19:26:33',NULL),(2,'Arabic',2,'2019-07-28 19:26:33',NULL),(3,'Bengali',3,'2019-07-28 19:26:33',NULL),(4,'Chinese',4,'2019-07-28 19:26:33',NULL),(5,'French',5,'2019-07-28 19:26:33',NULL),(6,'German',6,'2019-07-28 19:26:33',NULL),(7,'Haitian Creole',7,'2019-07-28 19:26:33',NULL),(8,'Hindi',8,'2019-07-28 19:26:33',NULL),(9,'Italian',9,'2019-07-28 19:26:33',NULL),(10,'Japanese',10,'2019-07-28 19:26:33',NULL),(11,'Korean',11,'2019-07-28 19:26:33',NULL),(12,'Malay',12,'2019-07-28 19:26:33',NULL),(13,'Polish',13,'2019-07-28 19:26:33',NULL),(14,'Portuguese',14,'2019-07-28 19:26:33',NULL),(15,'Russian',15,'2019-07-28 19:26:33',NULL),(16,'Spanish',16,'2019-07-28 19:26:33',NULL),(17,'Thai',17,'2019-07-28 19:26:33',NULL),(18,'Turkish',18,'2019-07-28 19:26:33',NULL),(19,'Urdu',19,'2019-07-28 19:26:33',NULL),(20,'Vietnamese',20,'2019-07-28 19:26:33',NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `student_enrollment_codes`
 --
 
 INSERT INTO `student_enrollment_codes` (`syear`, `title`, `short_name`, `type`, `last_updated`, `updated_by`) VALUES
-<<<<<<< HEAD
 (2024,  'Transferuar Jashtë', 'TRAN', 'TrnD', '2019-07-28 05:56:33', NULL),
 (2024,  'Transferuar Brenda', 'TRAN', 'TrnE', '2019-07-28 05:56:33', NULL),
 (2024,  'Bartur në Vitin e Ri', 'ROLL', 'Roll', '2019-07-28 05:56:33', NULL),
 (2024,  'Çregjistruar', 'DROP', 'Drop', '2019-07-28 05:56:33', NULL),
 (2024,  'Regjistrim i Ri', 'NEW', 'Add', '2019-07-28 05:56:33', NULL);
-=======
-(2024,  'Transferred Out', 'TRAN', 'TrnD', '2019-07-28 05:56:33', NULL),
-(2024,  'Transferred In', 'TRAN', 'TrnE', '2019-07-28 05:56:33', NULL),
-(2024,  'Rolled Over', 'ROLL', 'Roll', '2019-07-28 05:56:33', NULL),
-(2024,  'Dropped Out', 'DROP', 'Drop', '2019-07-28 05:56:33', NULL),
-(2024,  'New', 'NEW', 'Add', '2019-07-28 05:56:33', NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Dumping data for table `student_field_categories`
 --
 
-<<<<<<< HEAD
 INSERT INTO `student_field_categories` (`id`, `title`, `sort_order`, `include`, `last_updated`, `updated_by`) VALUES (1,'Të Dhëna të Përgjithshme',1,NULL,'2019-07-28 19:26:33',NULL),(2,'Mjekësore',3,NULL,'2019-07-28 19:26:33',NULL),(3,'Adresat dhe Kontaktet',2,NULL,'2019-07-28 19:26:33',NULL),(4,'Komente',4,NULL,'2019-07-28 19:26:33',NULL),(5,'Synime',5,NULL,'2019-07-28 19:26:33',NULL),(6,'Të Dhëna Regjistrimi',6,NULL,'2019-07-28 19:26:33',NULL),(7,'Dokumentet',7,NULL,'2019-07-28 19:26:33',NULL);
-=======
-INSERT INTO `student_field_categories` (`id`, `title`, `sort_order`, `include`, `last_updated`, `updated_by`) VALUES (1,'General Info',1,NULL,'2019-07-28 19:26:33',NULL),(2,'Medical',3,NULL,'2019-07-28 19:26:33',NULL),(3,'Addresses & Contacts',2,NULL,'2019-07-28 19:26:33',NULL),(4,'Comments',4,NULL,'2019-07-28 19:26:33',NULL),(5,'Goals',5,NULL,'2019-07-28 19:26:33',NULL),(6,'Enrollment Info',6,NULL,'2019-07-28 19:26:33',NULL),(7,'Files',7,NULL,'2019-07-28 19:26:33',NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 --
 -- Adding Schoolwide Schedule Report to `profile_exceptions`
@@ -232,11 +188,7 @@ INSERT INTO `user_profiles` (`profile`, `title`, `last_updated`, `updated_by`) V
 UPDATE  `user_profiles` SET  `id` =  '0' ;
 ALTER TABLE  `user_profiles` AUTO_INCREMENT=1;
 
-<<<<<<< HEAD
 INSERT INTO `user_profiles` (`id`, `profile`, `title`, `last_updated`, `updated_by`) VALUES (1,'admin','Administrator','2019-07-28 08:26:33',NULL),(2,'teacher','Mësues','2019-07-28 08:26:33',NULL),(3,'student','Nxënës','2019-07-28 08:26:33',NULL),(4,'parent','Prind','2019-07-28 08:26:33',NULL),(5,'admin','Asistent Admin','2019-07-28 08:26:33',NULL);
-=======
-INSERT INTO `user_profiles` (`id`, `profile`, `title`, `last_updated`, `updated_by`) VALUES (1,'admin','Administrator','2019-07-28 08:26:33',NULL),(2,'teacher','Teacher','2019-07-28 08:26:33',NULL),(3,'student','Student','2019-07-28 08:26:33',NULL),(4,'parent','Parent','2019-07-28 08:26:33',NULL),(5,'admin','Admin Asst','2019-07-28 08:26:33',NULL);
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 INSERT INTO `login_authentication` (`id`, `user_id`, `profile_id`, `username`, `password`, `last_login`, `failed_login`, `last_updated`, `updated_by`) VALUES (1, 1, 0, 'os4ed', '$2y$10$yR8cf7lao0ed9HAyzsD1wuxerYtxXAuhPGrp5nHXI8lFoWh.ZaxJC', NOW(), 0, NOW(), NULL);
 INSERT IGNORE INTO `system_preference_misc` (`fail_count`, `activity_days`, `system_maintenance_switch`, `last_updated`, `updated_by`) VALUES (3, 30, 'N', NOW(), NULL);
 INSERT INTO `app` (`name`, `value`) VALUES ('title', 'SIA'), ('syear', '2024') ON DUPLICATE KEY UPDATE `value`=VALUES(`value`);

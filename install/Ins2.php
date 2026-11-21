@@ -53,19 +53,11 @@ function createConnection($server, $username, $password, $database = '', $port =
 
 // Check session variables - show error if still not set
 if (empty($_SESSION['server']) || empty($_SESSION['username'])) {
-<<<<<<< HEAD
     die("<h2>Gabim: Variablat e sesionit nuk janë vendosur siç duhet.</h2><pre>Serveri: " . ($_SESSION['server'] ?? 'I PAVENDOSUR') . "\nPërdoruesi: " . ($_SESSION['username'] ?? 'I PAVENDOSUR') . "\nPorta: " . ($_SESSION['port'] ?? 'I PAVENDOSUR') . "</pre><p>Ju lutemi <a href='Step1.php'>kthehuni te Hapi 1</a> dhe vendosni përsëri kredencialet e MySQL.</p>");
 }
 
 if (clean_param($_REQUEST["db"], PARAM_DATA) == '') {
     header('Location: Step2.php?err=Emri i bazës së të dhënave nuk mund të jetë bosh');
-=======
-    die("<h2>Error: Session variables not set properly.</h2><pre>Server: " . ($_SESSION['server'] ?? 'NOT SET') . "\nUsername: " . ($_SESSION['username'] ?? 'NOT SET') . "\nPort: " . ($_SESSION['port'] ?? 'NOT SET') . "</pre><p>Please <a href='Step1.php'>go back to Step 1</a> and re-enter your MySQL credentials.</p>");
-}
-
-if (clean_param($_REQUEST["db"], PARAM_DATA) == '') {
-    header('Location: Step2.php?err=Database name cannot be blank');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     exit;
 } else {
     $_SESSION['db'] = clean_param($_REQUEST["db"], PARAM_DATA);
@@ -92,11 +84,7 @@ if (clean_param($_REQUEST["db"], PARAM_DATA) == '') {
     // if ($dbconn->connect_errno == 0) {
     if ($stmt->fetch()) {
         if (!empty($newdb)) {
-<<<<<<< HEAD
             header('Location: Step2.php?err=Baza e të dhënave ekziston. Vendosni një emër tjetër për të krijuar një bazë të re ose zgjidhni opsionin për fshirjen e të dhënave ekzistuese.');
-=======
-            header('Location: Step2.php?err=Database Exists. Enter a different name to create a new database or use the remove data from existing database checkbox.');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             exit;
         }
 
@@ -107,11 +95,7 @@ if (clean_param($_REQUEST["db"], PARAM_DATA) == '') {
             $num_tables = $dbconn->query($sql);
             $rows = $num_tables->num_rows;
             if ($rows > 0) {
-<<<<<<< HEAD
                 header('Location: Step2.php?err=Baza e të dhënave e përzgjedhur nuk është bosh. Ju lutemi zgjidhni një bazë bosh ose zgjidhni opsionin për fshirjen e të dhënave ekzistuese.');
-=======
-                header('Location: Step2.php?err=Selected database is not empty. Please select an empty database or use the remove data from existing database checkbox.');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 exit;
             } else {
                 $myFile = "OpensisSchemaMysqlInc.sql";
@@ -165,11 +149,7 @@ if (clean_param($_REQUEST["db"], PARAM_DATA) == '') {
         }
     } else {
         if (empty($newdb)) {
-<<<<<<< HEAD
             header('Location: Step2.php?err=Baza e të dhënave nuk ekziston. Vendosni një bazë tjetër ose zgjidhni opsionin për të krijuar një bazë të re.');
-=======
-            header('Location: Step2.php?err=Database does not exist. Enter a different database or use the create a new database checkbox.');
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             exit;
         } else {
             $dbconn = createConnection($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], '', $_SESSION['port']);

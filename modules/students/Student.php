@@ -721,11 +721,7 @@ if ($_REQUEST['action'] != 'delete' && $_REQUEST['action'] != 'delete_goal') {
                                         } else
                                             $log_sql .= "$column_name='" . str_replace("'", "''", str_replace("`", "''", trim($value))) . "',";
                                     } else {
-<<<<<<< HEAD
                                         echo "<div class='alert alert-danger'>Emri i perdoruesit ekziston tashme!</div>";
-=======
-                                        echo "<div class='alert alert-danger'>Username already exists!</div>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                         $error = true;
                                     }
                                 }
@@ -1215,11 +1211,7 @@ if ($_REQUEST['action'] != 'delete' && $_REQUEST['action'] != 'delete_goal') {
                         } elseif ($error == true) {
                             $error_new_student = true;
 
-<<<<<<< HEAD
                             echo '<p style=color:red>Emer studenti i pavlefshem</p>';
-=======
-                            echo '<p style=color:red>Invalid student Name</p>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
                         // $id = DBGet(DBQuery("SHOW TABLE STATUS LIKE 'student_enrollment'"));
                         // $studentemrollment_id[1]['STUDENTENROLL_ID'] = $id[1]['AUTO_INCREMENT'];
@@ -1765,7 +1757,6 @@ if ($_REQUEST['action'] != 'delete' && $_REQUEST['action'] != 'delete_goal') {
 
                             switch ($category['TITLE']) {
                                 case 'General Info':
-<<<<<<< HEAD
                                 case 'Të Dhëna të Përgjithshme':
                                     $categoryTitle = _generalInfo;
                                     break;
@@ -1791,26 +1782,6 @@ if ($_REQUEST['action'] != 'delete' && $_REQUEST['action'] != 'delete_goal') {
                                     break;
                                 case 'Files':
                                 case 'Dokumentet':
-=======
-                                    $categoryTitle = _generalInfo;
-                                    break;
-                                case 'Addresses & Contacts':
-                                    $categoryTitle = _addressesContacts;
-                                    break;
-                                case 'Medical':
-                                    $categoryTitle = _medical;
-                                    break;
-                                case 'Comments':
-                                    $categoryTitle = _comments;
-                                    break;
-                                case 'Goals':
-                                    $categoryTitle = _goals;
-                                    break;
-                                case 'Enrollment Info':
-                                    $categoryTitle = _enrollmentInfo;
-                                    break;
-                                case 'Files':
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     $categoryTitle = _files;
                                     break;
                                 default:

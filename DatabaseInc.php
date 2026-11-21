@@ -145,41 +145,18 @@ function DBQuery($sql)
 
                 foreach ($array as $value) {
                     if ($value != "") {
-<<<<<<< HEAD
                         $result = $connection->query($value);
                         if (!$result) {
                             $connection->query("ROLLBACK");
                             die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-=======
-                        $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                        if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                            $result = $connection->query($value);
-                        }
-                        if (!$result) {
-                            $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                            if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                                $connection->query("ROLLBACK");
-                                die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-                            }
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
                     }
                 }
             } else {
-<<<<<<< HEAD
                 try {
                     $result = $connection->query($sql);
                 } catch (Exception $e) {
                     die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-=======
-                $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                    try {
-                        $result = $connection->query($sql);
-                    } catch (Exception $e) {
-                        die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-                    }
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
             }
             break;
@@ -213,35 +190,15 @@ function DBQuery_assignment($sql)
                 $array = explode(";", $sql);
                 foreach ($array as $value) {
                     if ($value != "") {
-<<<<<<< HEAD
                         $result = $connection->query($value);
                         if (!$result) {
                             $connection->query("ROLLBACK");
                             die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-=======
-                        $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                        if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                            $result = $connection->query($value);
-                        }
-                        if (!$result) {
-                            $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                            if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                                $connection->query("ROLLBACK");
-                                die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-                            }
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
                     }
                 }
             } else {
-<<<<<<< HEAD
                 $result = $connection->query($sql) or die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-=======
-                $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                    $result = $connection->query($sql) or die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-                }
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
             break;
     }
@@ -271,37 +228,16 @@ function DBQueryMod($sql)
                 $array = explode(";", $sql);
                 foreach ($array as $value) {
                     if ($value != "") {
-<<<<<<< HEAD
                         $result = $connection->query($value);
 
                         if (!$result) {
                             $connection->query("ROLLBACK");
                             die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-=======
-                        $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                        if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                            $result = $connection->query($value);
-                        }
-
-                        if (!$result) {
-                            $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                            if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                                $connection->query("ROLLBACK");
-                                die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-                            }
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
                     }
                 }
             } else {
-<<<<<<< HEAD
                 $result = $connection->query($sql) or die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-=======
-                $user_agent = explode('/', $_SERVER['HTTP_USER_AGENT'] ?? '');
-                if (isset($user_agent[0]) && $user_agent[0] === 'Mozilla') {
-                    $result = $connection->query($sql) or die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
-                }
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
             break;
     }

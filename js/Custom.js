@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-<<<<<<< HEAD
 // ─── DataTables Global Albanian Localization ───────────────────────────────
 if (typeof $.fn.dataTable !== 'undefined') {
     $.extend(true, $.fn.dataTable.defaults, {
@@ -34,8 +33,6 @@ $(function () {
     }
 });
 
-=======
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 var toggleNewProfile = function () {
     $('#new_profile_div').toggle();
 }

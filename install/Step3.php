@@ -29,20 +29,12 @@
 session_start();
 ?>
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="sq">
-=======
-<html lang="en">
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
         <title>Instaluesi SIA</title>
-=======
-        <title>SIA Installer</title>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/bootstrap-datepicker/css/bootstrap-datepicker3.css">
@@ -75,21 +67,14 @@ session_start();
                 <div class="panel">
                     <div class="panel-heading">
                         <div class="logo">
-<<<<<<< HEAD
                             <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)">
                         </div>
                         <h3>Instalimi i SIA - Të Dhënat e Shkollës</h3>
-=======
-                            <img src="assets/images/opensis_logo.png" alt="SIA">
-                        </div>
-                        <h3>SIA Installation - School Information</h3>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     </div>
                     <div class="panel-body">
                         <div class="installation-steps-wrapper">
                             <div class="installation-instructions">
                                 <ul class="installation-steps-label">
-<<<<<<< HEAD
                                     <li>Zgjidhni Paketën</li>
                                     <li>Kërkesat e Sistemit</li>
                                     <li>Lidhja me Bazën e të Dhënave</li>
@@ -107,44 +92,17 @@ session_start();
                                 <div id="calculating" class="loading clearfix"><div><i class="fa fa-cog fa-spin fa-lg fa-fw"></i> Po konfigurohet baza e të dhënave. Ju lutemi prisni...</div></div>
                                 <div id="step_container">
                                     <h4 class="m-t-0 m-b-5">Vendosni Emrin e Shkollës, Datën e Fillimit dhe të Mbarimit të vitit shkollor</h4>
-=======
-                                    <li>Choose Package</li>
-                                    <li>System Requirements</li>
-                                    <li>Database Connection</li>
-                                    <li>Database Selection</li>
-                                    <li class="active">School Information</li>
-                                    <li>Site Admin Account Setup</li>
-                                    <li>Ready to Go!</li>
-                                </ul>
-                                <!--<h4 class="no-margin">Installation Instructions</h4>
-                                <p>Installer has successfully created the database for openSIS application.</p>
-                                <p>Once you enter the school name, begin and end dates, it will create a default school in the system.</p>
-                                <p>If you install it with sample data, then a sample school will be installed with data. You can learn from the setup and operation of the sample school to configure your own school.</p>-->
-                            </div>
-                            <div class="installation-steps">
-                                <div id="calculating" class="loading clearfix"><div><i class="fa fa-cog fa-spin fa-lg fa-fw"></i> Configuring database. Please wait...</div></div>
-                                <div id="step_container">
-                                    <h4 class="m-t-0 m-b-5">Enter your School Name, Beginning and Ending Dates of the school year</h4>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     <form name='step3' id='step3' method="post" action="Ins3.php">
                                         <div id="error" class="text-center">&nbsp;</div>
 
                                         <div class="form-group">
-<<<<<<< HEAD
                                             <label class="control-label">Emri i Shkollës</label>
-=======
-                                            <label class="control-label">School Name</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                             <input type="text" name="sname" id="sname" size="30" value="" class="form-control" />
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <div class="form-group">
-<<<<<<< HEAD
                                                     <label class="control-label">Data e Fillimit (mm/dd/yyyy)</label>
-=======
-                                                    <label class="control-label">Beginning Date (mm/dd/yyyy)</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                     <div class="input-group date">
                                                         <input name="beg_date" id="beg_date" type="text" class="form-control">
                                                         <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
@@ -153,11 +111,7 @@ session_start();
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-<<<<<<< HEAD
                                                     <label class="control-label">Data e Mbarimit (mm/dd/yyyy)</label>
-=======
-                                                    <label class="control-label">Ending Date (mm/dd/yyyy)</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                     <div class="input-group date">
                                                         <input name="end_date" id="end_date" type="text" class="form-control">
                                                         <span class="input-group-addon"><i class="fa fa-calendar-o"></i></span>
@@ -166,17 +120,10 @@ session_start();
                                             </div>
                                         </div>
                                         <div class="form-group">
-<<<<<<< HEAD
                                             <label class="checkbox-inline"><input type="checkbox" name="sample_data" id="sample_data" value="insert" id="sample_data"/> Instalo me të dhëna provë shkollore</label>
                                         </div>
                                         <hr/>
                                         <div class="text-right"><input type="submit" value="Ruaj & Vazhdo" class="btn btn-success" name="btnsyear" onclick="return check();" /></div>
-=======
-                                            <label class="checkbox-inline"><input type="checkbox" name="sample_data" id="sample_data" value="insert" id="sample_data"/> Install with sample school data</label>
-                                        </div>
-                                        <hr/>
-                                        <div class="text-right"><input type="submit" value="Save & Next" class="btn btn-success" name="btnsyear" onclick="return check();" /></div>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 
                                         <script language="JavaScript" type="text/javascript">
@@ -251,11 +198,7 @@ session_start();
 
                                                     if (sname.value == '')
                                                     {
-<<<<<<< HEAD
                                                         document.getElementById("error").innerHTML = '<font style="color:red"><b>Emri i shkollës nuk mund të jetë bosh.</b></font>';
-=======
-                                                        document.getElementById("error").innerHTML = '<font style="color:red"><b>School name cannot be blank.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                         sname.focus();
                                                         return false;
@@ -264,11 +207,7 @@ session_start();
                                                     {
                                                         if (sname.value.length > 50)
                                                         {
-<<<<<<< HEAD
                                                             document.getElementById("error").innerHTML = '<font style="color:red"><b>Gjatësia maksimale e emrit të shkollës është 50 karaktere.</b></font>';
-=======
-                                                            document.getElementById("error").innerHTML = '<font style="color:red"><b>Maximum length of School name is 50</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                             sname.focus();
                                                             return false;
@@ -276,11 +215,7 @@ session_start();
                                                     }
                                                     if (beg_date.value == '')
                                                     {
-<<<<<<< HEAD
                                                         document.getElementById("error").innerHTML = '<font style="color:red"><b>Data e fillimit nuk mund të jetë bosh.</b></font>';
-=======
-                                                        document.getElementById("error").innerHTML = '<font style="color:red"><b>Begining date cannot be blank.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                         beg_date.focus();
                                                         return false;
@@ -289,11 +224,7 @@ session_start();
                                                     {
                                                         if (false == validatedate(beg_date.value))
                                                         {
-<<<<<<< HEAD
                                                             document.getElementById("error").innerHTML = '<font style="color:red"><b>Formati i datës së fillimit është i pasaktë.</b></font>';
-=======
-                                                            document.getElementById("error").innerHTML = '<font style="color:red"><b>Begining date format is wrong.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                             beg_date.focus();
                                                             return false;
@@ -301,11 +232,7 @@ session_start();
                                                     }
                                                     if (end_date.value == '')
                                                     {
-<<<<<<< HEAD
                                                         document.getElementById("error").innerHTML = '<font style="color:red"><b>Data e mbarimit nuk mund të jetë bosh.</b></font>';
-=======
-                                                        document.getElementById("error").innerHTML = '<font style="color:red"><b>Ending date cannot be blank.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                         end_date.focus();
                                                         return false;
@@ -314,11 +241,7 @@ session_start();
                                                     {
                                                         if (false == validatedate(end_date.value))
                                                         {
-<<<<<<< HEAD
                                                             document.getElementById("error").innerHTML = '<font style="color:red"><b>Formati i datës së mbarimit është i pasaktë.</b></font>';
-=======
-                                                            document.getElementById("error").innerHTML = '<font style="color:red"><b>Ending date format is wrong.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                             beg_date.focus();
                                                             return false;
@@ -328,11 +251,7 @@ session_start();
                                                     { 
                                                         if((Date.parse(beg_date.value) >= Date.parse(end_date.value)))
                                                         {
-<<<<<<< HEAD
                                                             document.getElementById("error").innerHTML = '<font style="color:red"><b>Data e mbarimit duhet të jetë më e madhe se data e fillimit.</b></font>';
-=======
-                                                            document.getElementById("error").innerHTML = '<font style="color:red"><b>End date should be greater than Start date. </b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                             end_date.focus();
                                                             return false;
                                                         }
@@ -340,11 +259,7 @@ session_start();
                                                 }
                                                 if (sample_data.checked == false && sname.value == '')
                                                 {
-<<<<<<< HEAD
                                                     document.getElementById("error").innerHTML = '<font style="color:red"><b>Ju lutemi vendosni Emrin e Shkollës bashkë me Datën e Fillimit dhe të Mbarimit ose zgjidhni të dhënat provë.</b></font>';
-=======
-                                                    document.getElementById("error").innerHTML = '<font style="color:red"><b>Please Enter School name with Begining and Ending date or check sample data. </b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                     sname.focus();
                                                     return false;
                                                 }
@@ -371,11 +286,7 @@ session_start();
                                                 if ((school_name.value != '' && beg_date.value != '' && end_date.value != '') || sample_data.checked == true) {
                                                     if (school_name.value != '' || beg_date.value != '' || end_date.value != '') {
                                                         if (!(school_name.value != '' && beg_date.value != '' && end_date.value != '')) {
-<<<<<<< HEAD
                                                             document.getElementById("error").innerHTML = '<font style="color:red"><b>Ju lutemi plotësoni të dhënat e kërkuara.</b></font>';
-=======
-                                                            document.getElementById("error").innerHTML = '<font style="color:red"><b>Please provide required info.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                             return false;
                                                         }
@@ -389,11 +300,7 @@ session_start();
                                                     ed[2] = parseInt(ed[2]);
 
                                                     if (bd[2] > ed[2]) {
-<<<<<<< HEAD
                                                         document.getElementById("error").innerHTML = '<font style="color:red"><b>Data e mbarimit duhet të jetë pas datës së fillimit.</b></font>';
-=======
-                                                        document.getElementById("error").innerHTML = '<font style="color:red"><b>End date must be greater than begin date.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                         return false;
                                                     } else if (bd[2] < ed[2]) {
@@ -401,11 +308,7 @@ session_start();
 
                                                     }
                                                     else if (bd[2] == ed[2] && bd[0] > ed[0]) {
-<<<<<<< HEAD
                                                         document.getElementById("error").innerHTML = '<font style="color:red"><b>Data e mbarimit duhet të jetë pas datës së fillimit.</b></font>';
-=======
-                                                        document.getElementById("error").innerHTML = '<font style="color:red"><b>End date must be greater than begin date.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                         return false;
 
@@ -414,11 +317,7 @@ session_start();
                                                         return true;
                                                     }
                                                     else if (bd[0] == ed[0] && bd[1] > ed[1]) {
-<<<<<<< HEAD
                                                         document.getElementById("error").innerHTML = '<font style="color:red"><b>Data e mbarimit duhet të jetë pas datës së fillimit.</b></font>';
-=======
-                                                        document.getElementById("error").innerHTML = '<font style="color:red"><b>End date must be greater than begin date.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                         return false;
 
@@ -431,11 +330,7 @@ session_start();
                                                 }
                                                 else
                                                 {
-<<<<<<< HEAD
                                                     document.getElementById("error").innerHTML = '<font style="color:red"><b>Ju lutemi plotësoni të dhënat e kërkuara.</b></font>';
-=======
-                                                    document.getElementById("error").innerHTML = '<font style="color:red"><b>Please provide required info.</b></font>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                                                     return false;
                                                 }

@@ -86,11 +86,7 @@ if (clean_param($_REQUEST['values'], PARAM_NOTAGS) && ($_POST['values'] || $_REQ
             $error = ''._yourNewPasswordsDidNotMatch.'.';
 
         elseif ($number > 0) {
-<<<<<<< HEAD
                 $error = defined('_thisPasswordIsAlreadyTaken') ? _thisPasswordIsAlreadyTaken : _thisPasswordIsAlredyTake;
-=======
-                $error = ''._thisPasswordIsAlredyTake.'n';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         } else {
             if (User('PROFILE') == 'parent') {
                 $password_RET = DBGet(DBQuery('SELECT l.PASSWORD FROM people p,login_authentication l WHERE l.USER_ID=\'' . User('STAFF_ID') . '\' AND l.USER_ID=p.STAFF_ID AND l.PROFILE_ID=p.PROFILE_ID'));

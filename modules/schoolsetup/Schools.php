@@ -247,11 +247,7 @@ if (clean_param($_REQUEST['copy'], PARAM_ALPHAMOD) == 'done') {
             $school_name = GetSchool(UserSchool());
         } 
         else
-<<<<<<< HEAD
             $school_name = _addASchool;
-=======
-            $school_name = 'Add a School';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         if (!$_REQUEST['new_school'])
             $_REQUEST['new_school'] = false;
         //echo "<FORM name=school  id=school class=\"form-horizontal\"  enctype='multipart/form-data'  METHOD='POST' ACTION='Modules.php?modname=" . strip_tags(trim($_REQUEST['modname'])) . "&modfunc=update&btn=" . $_REQUEST['button'] . "&new_school=$_REQUEST[new_school]'>";
@@ -264,11 +260,7 @@ if (clean_param($_REQUEST['copy'], PARAM_ALPHAMOD) == 'done') {
         echo "<div class=\"form-group\"><label class=\"col-md-4 control-label text-right\">"._schoolName."<span class=\"text-danger\">*</span></label><div class=\"col-md-8\">" . TextInput($schooldata['TITLE'], 'values[TITLE]', '', ' size=24 onKeyUp=checkDuplicateName(1,this,' . $schooldata['ID'] . '); onBlur=checkDuplicateName(1,this,' . $schooldata['ID'] . ');') . "</div></div>";
         echo "<input type=hidden id=checkDuplicateNameTable1 value='schools'/>";
         echo "<input type=hidden id=checkDuplicateNameField1 value='title'/>";
-<<<<<<< HEAD
         echo "<input type=hidden id=checkDuplicateNameMsg1 value='emër shkolle'/>";
-=======
-        echo "<input type=hidden id=checkDuplicateNameMsg1 value='school name'/>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo '</div>'; //.col-lg-6
 
         echo '<div class="col-lg-6">';
@@ -349,15 +341,9 @@ if (clean_param($_REQUEST['copy'], PARAM_ALPHAMOD) == 'done') {
     
         
         if(!$_REQUEST['new_school'] && count($sch_img_info)>0)
-<<<<<<< HEAD
             echo "<div class=\"form-group\"><label class=\"col-md-4 control-label text-right\">" . (defined('_schoolLogo') ? _schoolLogo : 'Logoja e Shkollës') . "</label><div class=\"col-md-8\">" . (AllowEdit() != false ? "<a href ='Modules.php?modname=schoolsetup/UploadLogo.php&modfunc=edit'>" : '') . "<div class=\"image-holder\"><img src='data:image/jpeg;base64,".base64_encode($sch_img_info[1]['CONTENT'])."' class=img-responsive /></div>" . (AllowEdit() != false ? "</a>" : '') . (AllowEdit() != false ? "<a href='Modules.php?modname=schoolsetup/UploadLogo.php&modfunc=edit' class=\"show text-center m-t-10 text-primary\"><i class=\"icon-upload position-left\"></i> " . (defined('_clickHereToChangeLogo') ? _clickHereToChangeLogo : 'Kliko këtu për të ndryshuar logon') . "</a>" : '') . "</div></div>";
         else if (!$_REQUEST['new_school'])
             echo "<div class=\"form-group\"><label class=\"col-md-4 control-label text-right\">" . (defined('_schoolLogo') ? _schoolLogo : 'Logoja e Shkollës') . "</label><div class=\"col-md-8\">" . (AllowEdit() != false ? "<a href ='Modules.php?modname=schoolsetup/UploadLogo.php' class=\"form-control text-primary\" readonly=\"readonly\"><i class=\"icon-upload position-left\"></i> " . (defined('_clickHereToUploadLogo') ? _clickHereToUploadLogo : 'Kliko këtu për të ngarkuar logon') . "</a>" : '-') . "</div></div>";
-=======
-            echo "<div class=\"form-group\"><label class=\"col-md-4 control-label text-right\">School Logo</label><div class=\"col-md-8\">" . (AllowEdit() != false ? "<a href ='Modules.php?modname=schoolsetup/UploadLogo.php&modfunc=edit'>" : '') . "<div class=\"image-holder\"><img src='data:image/jpeg;base64,".base64_encode($sch_img_info[1]['CONTENT'])."' class=img-responsive /></div>" . (AllowEdit() != false ? "</a>" : '') . (AllowEdit() != false ? "<a href='Modules.php?modname=schoolsetup/UploadLogo.php&modfunc=edit' class=\"show text-center m-t-10 text-primary\"><i class=\"icon-upload position-left\"></i> Click here to change logo</a>" : '') . "</div></div>";
-        else if (!$_REQUEST['new_school'])
-            echo "<div class=\"form-group\"><label class=\"col-md-4 control-label text-right\">School Logo</label><div class=\"col-md-8\">" . (AllowEdit() != false ? "<a href ='Modules.php?modname=schoolsetup/UploadLogo.php' class=\"form-control text-primary\" readonly=\"readonly\"><i class=\"icon-upload position-left\"></i> Click here to upload logo</a>" : '-') . "</div></div>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
         echo '</div>'; //.col-md-4
         echo '</div>'; //.row  

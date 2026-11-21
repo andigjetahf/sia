@@ -129,10 +129,7 @@ if (!isset($_REQUEST['_openSIS_PDF'])) {
     echo '<script type="text/javascript" src="assets/js/plugins/forms/styling/switchery.min.js"></script>';
     echo '<script type="text/javascript" src="assets/js/plugins/ui/moment/moment.min.js"></script>';
     echo '<script type="text/javascript" src="assets/js/plugins/pickers/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>';
-<<<<<<< HEAD
     echo '<script type="text/javascript" src="assets/js/plugins/pickers/bootstrap-datepicker/locales/bootstrap-datepicker.sq.min.js"></script>';
-=======
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     echo '<script type="text/javascript" src="assets/js/plugins/pickers/clockpicker/bootstrap-clockpicker.js"></script>';
     echo '<script type="text/javascript" src="assets/js/plugins/extensions/cookie.js"></script>';
     echo '<script type="text/javascript" src="assets/js/plugins/notifications/jgrowl.min.js"></script>';
@@ -157,7 +154,6 @@ if (!isset($_REQUEST['_openSIS_PDF'])) {
             $("body").on("click", "div.sidebar-overlay", function () {
                 $("body").toggleClass("sidebar-mobile-main");
             });
-<<<<<<< HEAD
 
             if ($.fn.datepicker) {
                 $.fn.datepicker.defaults.language = 'sq';
@@ -167,13 +163,6 @@ if (!isset($_REQUEST['_openSIS_PDF'])) {
                 $(".clockpicker").clockpicker({ 
                     twelvehour: false,
                     donetext: \'U krye\'
-=======
-            
-            if($(".clockpicker").length>0){
-                $(".clockpicker").clockpicker({ 
-                    twelvehour: true,
-                    donetext: \'Done\'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }).find("input").change(function () {
                    //alert(this.value);
                 });
@@ -194,13 +183,8 @@ echo '<div id="loading-image"><i class="fa fa-cog fa-spin fa-lg fa-fw"></i> ' . 
 
 echo '<div class="navbar navbar-inverse bg-white">
             <div class="navbar-header">
-<<<<<<< HEAD
                 <a class="sidebar-control sidebar-main-toggle hidden-xs" data-popup="tooltip" data-placement="bottom" data-container="body" data-original-title="' . (defined('_collapseMenu') ? _collapseMenu : 'Palos / Zgjero Menynë') . '"><i class="icon-paragraph-justify3"></i></a>
                 <a class="navbar-brand" href="javascript:void(0)" onclick="check_content(\'Ajax.php?modname=miscellaneous/Portal.php\');" onmousedown="document.getElementById(\'header\').innerHTML = \'' . addslashes(_home) . '\'; document.getElementById(\'cframe\').src = \'Bottom.php?modcat=home\'"><img src="assets/opensis_logo.png" alt=""></a>
-=======
-                <a class="sidebar-control sidebar-main-toggle hidden-xs" data-popup="tooltip" data-placement="bottom" data-container="body" data-original-title="Collapse Menu"><i class="icon-paragraph-justify3"></i></a>
-                <a class="navbar-brand" href="javascript:void(0)" onclick="check_content(\'Ajax.php?modname=miscellaneous/Portal.php\');" onmousedown="document.getElementById(\'header\').innerHTML = \'Home\'; document.getElementById(\'cframe\').src = \'Bottom.php?modcat=home\'"><img src="assets/opensis_logo.png" alt=""></a>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
                 <ul class="nav navbar-nav visible-xs-block">
                     <li><a data-toggle="collapse" data-target="#navbar-mobile" data-container="body"><i class="icon-grid2"></i></a></li>
@@ -444,7 +428,6 @@ echo '</ul>
 
 
 echo '<div class="navbar-text pull-right">';
-<<<<<<< HEAD
 $support_title = defined('_support') ? _support : 'Mbështetje';
 if (User('PROFILE') == 'teacher') {
     echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="' . $support_title . '"><i class="fa fa-life-ring fa-lg"></i></a>';
@@ -454,16 +437,6 @@ if (User('PROFILE') == 'teacher') {
     echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="' . $support_title . '"><i class="fa fa-life-ring fa-lg"></i></a>';
 } else {
     echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="' . $support_title . '"><i class="fa fa-life-ring fa-lg"></i></a>';
-=======
-if (User('PROFILE') == 'teacher') {
-    echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="Support"><i class="fa fa-life-ring fa-lg"></i></a>';
-} elseif (User('PROFILE') == 'student') {
-    echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="Support"><i class="fa fa-life-ring fa-lg"></i></a>';
-} elseif (User('PROFILE') == 'parent') {
-    echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="Support"><i class="fa fa-life-ring fa-lg"></i></a>';
-} else {
-    echo '<a href="https://support.os4ed.com/hc/en-us" class="text-white" target="_blank" data-popup="tooltip" data-placement="left" data-container="body" data-original-title="Support"><i class="fa fa-life-ring fa-lg"></i></a>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 echo '</div>';
 if (User('PROFILE') == 'teacher') {
@@ -603,7 +576,6 @@ echo '</div>
                                     <div class="category-content">
                                         <div class="sidebar-user-material-content">
                                             ' . $user_picture . '
-<<<<<<< HEAD
                                             <h6>' . User('NAME') . '</h6>';
 $user_prof_key = strtolower(User('PROFILE'));
 $translated_prof_names = array(
@@ -614,10 +586,6 @@ $translated_prof_names = array(
 );
 $display_user_role = isset($translated_prof_names[$user_prof_key]) ? $translated_prof_names[$user_prof_key] : ucwords(User('PROFILE'));
 echo '                                      <span class="text-size-small">' . $display_user_role . '</span>
-=======
-                                            <h6>' . User('NAME') . '</h6>
-                                            <span class="text-size-small">' . ucwords(User('PROFILE')) . '</span>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                         </div>
 
                                         <div class="sidebar-user-material-menu">
@@ -665,11 +633,7 @@ $menu_icons = array(
 );
 
 //echo "<li><a href='javascript:void(0)' onmouseup='check_content(\"Ajax.php?modname=miscellaneous/Portal.php\");' onmousedown='document.getElementById(\"header\").innerHTML = \"Home\";document.getElementById(\"cframe\").src = \"Bottom.php?modcat=home\"'><i class=\"icon-home4\"></i><span>" . "Home" . "</span></a></li>";
-<<<<<<< HEAD
 echo "<li><a href='#' onmouseup='check_content(\"Ajax.php?modname=miscellaneous/Portal.php\");' onmousedown='document.getElementById(\"header\").innerHTML = \"" . addslashes(_home) . "\";document.getElementById(\"cframe\").src = \"Bottom.php?modcat=home\"'><i class=\"icon-home4\"></i><span>" . _home . "</span></a></li>";
-=======
-echo "<li><a href='#' onmouseup='check_content(\"Ajax.php?modname=miscellaneous/Portal.php\");' onmousedown='document.getElementById(\"header\").innerHTML = \"Home\";document.getElementById(\"cframe\").src = \"Bottom.php?modcat=home\"'><i class=\"icon-home4\"></i><span>" . _home . "</span></a></li>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 foreach ($_openSIS['Menu'] as $modcat => $programs) {
     if (count($_openSIS['Menu'][$modcat])) {
         $keys = array_keys($_openSIS['Menu'][$modcat]);
@@ -726,7 +690,6 @@ foreach ($_openSIS['Menu'] as $modcat => $programs) {
                 elseif (substr($file, 0, 7) == 'HTTP://')
                     echo "<li><A HREF=$file target=_blank>$title</A>";
                 elseif (!is_numeric($file))
-<<<<<<< HEAD
                     if (User('PROFILE') == 'student' && ($title == "Student Info" || (defined('_studentInfo') && $title == _studentInfo))) {
                         echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . (defined('_' . $modcat) ? constant('_' . $modcat) : ucwords($modcat)) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">" . (defined('_myInfo') ? _myInfo : 'Të Dhënat e Mia') . "</A>";
                     } elseif (User('PROFILE') == 'student' && ($title == "Schedule" || (defined('_schedule') && $title == _schedule))) {
@@ -745,36 +708,12 @@ foreach ($_openSIS['Menu'] as $modcat => $programs) {
                                     echo "<li  " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ($modcat == 'schoolsetup' ? _schoolSetup : (defined('_' . $modcat) ? constant('_' . $modcat) : ucwords($modcat))) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . str_replace('&', '?', $file) . "';\">$title</A>";
                             } else
                                 echo "<li  " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='$(\"#header\").html(\"" . ($modcat == 'schoolsetup' ? _schoolSetup : (defined('_' . $modcat) ? constant('_' . $modcat) : ucwords(str_replace('_', ' ', $modcat)))) . " <i class=icon-arrow-right5></i> " . $title . "\");' onmouseup=\"$('#cframe').attr('src','Bottom.php?modname=" . str_replace('&', '?', $file) . "');\">$title</A>";
-=======
-                    if (User('PROFILE') == 'student' && $title == "Student Info") {
-                        echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ucwords(constant($modcat)) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">My Info</A>";
-                    } elseif (User('PROFILE') == 'student' && $title == "Schedule") {
-                        echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ucwords(constant($modcat)) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">My Schedule</A>";
-                    } elseif (User('PROFILE') == 'student' && $title == "Student Requests") {
-                        echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ucwords(constant($modcat)) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">My Requests</A>";
-                    } else {
-
-                        if ($modcat == 'eligibility')
-                            echo "<li  " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"Extracurricular <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . str_replace('&', '?', $file) . "';\">$title</A>";
-                        else {
-                            if (User('PROFILE_ID') != 0 && User('PROFILE') == 'admin') {
-                                if ($modcat == 'tools' && $title != 'Backup Database')
-                                    echo "<li  " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ucwords(constant($modcat)) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . str_replace('&', '?', $file) . "';\">$title</A>";
-                                if ($modcat != 'tools')
-                                    echo "<li  " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ($modcat == 'schoolsetup' ? _schoolSetup : ucwords(constant($modcat))) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . str_replace('&', '?', $file) . "';\">$title</A>";
-                            } else
-                                echo "<li  " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=hm HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='$(\"#header\").html(\"" . ($modcat == 'schoolsetup' ? _schoolSetup : ucwords(str_replace('_', ' ', constant("_" . $modcat)))) . " <i class=icon-arrow-right5></i> " . $title . "\");' onmouseup=\"$('#cframe').attr('src','Bottom.php?modname=" . str_replace('&', '?', $file) . "');\">$title</A>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         }
                     }
                 elseif ($keys[$key_index + 1] && !is_numeric($keys[$key_index + 1])) {
                     $mm = $mm + 1;
                     if (User('PROFILE_ID') != 0 && User('PROFILE') == 'admin') {
-<<<<<<< HEAD
                         if ($modcat == 'tools' && $title != 'Reports' && (!defined('_reports') || $title != _reports)) {
-=======
-                        if ($modcat == 'tools' && $title != 'Reports') {
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                             echo '<li><a href="">' . $title . '</a><ul>';
                             $child = 1;
                         }
@@ -795,7 +734,6 @@ foreach ($_openSIS['Menu'] as $modcat => $programs) {
                     echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=$file target=_blank>$title</A>";
                 elseif (!is_numeric($file)) {
                     if ($modcat == 'eligibility')
-<<<<<<< HEAD
                         echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . (defined('_extracurricular') ? _extracurricular : 'Jashtëshkollore') . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">$title</A>";
                     else {
 
@@ -809,21 +747,6 @@ foreach ($_openSIS['Menu'] as $modcat => $programs) {
                             }
                         } else
                             echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ($modcat == 'schoolsetup' ? _schoolSetup : (defined('_' . $modcat) ? constant('_' . $modcat) : ucwords($modcat))) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">$title</A>";
-=======
-                        echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"Extracurricular <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">$title</A>";
-                    else {
-
-                        if (User('PROFILE_ID') != 0 && User('PROFILE') == 'admin') {
-                            if ($modcat == 'tools' && $title != 'At a Glance' && $title != 'Institute Reports' && $title != 'Institute Custom Field Reports')
-                                echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ucwords(constant($modcat)) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">$title</A>";
-                            //                                            
-                            if ($modcat != 'tools') {
-
-                                echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ($modcat == 'schoolsetup' ? _schoolSetup : ucwords(constant($modcat))) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">$title</A>";
-                            }
-                        } else
-                            echo "<li " . (($current_menu == $title) ? 'class="current-submenu"' : '') . "><A id=dd HREF=javascript:void(0) onClick='check_content(\"Ajax.php?modname=" . $file . " \");'  onmousedown='document.getElementById(\"header\").innerHTML = \"" . ($modcat == 'schoolsetup' ? _schoolSetup : ucwords(constant($modcat))) . " <i class=\"icon-arrow-right5\"></i> " . "$title\"' onmouseup=\"document.getElementById('cframe').src='Bottom.php?modname=" . $file . "';\">$title</A>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     }
                 } elseif ($keys[$key_index + 1] && !is_numeric($keys[$key_index + 1])) {
                     $mm = $mm + 1;
@@ -1175,11 +1098,7 @@ echo '</div>
                     </div>
                     <div class="col-md-3">
                         <div class="version-info">
-<<<<<<< HEAD
                             ' . (defined('_version') ? _version : 'Versioni') . ' <b>' . $get_app_details[1]['VALUE'] . '</b>
-=======
-                            Version <b>' . $get_app_details[1]['VALUE'] . '</b>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                         </div>
                     </div>
                 </div>

@@ -56,11 +56,7 @@ function db_start()
 $connection = mysqli_connect($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName);
 
 if (!$connection) {
-<<<<<<< HEAD
 	die('Nuk mund te lidhemi me bazen e te dhenave: ' . mysqli_error($connection) . mysqli_errno($connection));
-=======
-	die('Could Not Connect: ' . mysqli_error($connection) . mysqli_errno($connection));
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 
 

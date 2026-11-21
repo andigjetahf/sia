@@ -82,11 +82,7 @@ echo "<FORM class=\"form-horizontal\" action=Modules.php?modname=$_REQUEST[modna
 echo "<div class=\"panel panel-default\">";
 if ($_REQUEST['search_modfunc'] || $_REQUEST['student_id'] || UserStudentID() || User('PROFILE') == 'parent' || User('PROFILE') == 'student') {
     $extraM .= "";
-<<<<<<< HEAD
     $period_select = "<SELECT name=period_id onchange='this.form.submit();' class='form-control'><OPTION value=\"\">" . (defined('_daily') ? _daily : 'Ditore') . "</OPTION>";
-=======
-    $period_select = "<SELECT name=period_id onchange='this.form.submit();' class='form-control'><OPTION value=\"\">Daily</OPTION>";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     if (!UserStudentID() && !$_REQUEST['student_id']) {
         $periods_RET = DBGet(DBQuery('SELECT PERIOD_ID,TITLE FROM school_periods WHERE SYEAR=\'' . UserSyear() . '\' AND SCHOOL_ID=\'' . UserSchool() . '\' ORDER BY SORT_ORDER'));
         if (count($periods_RET) > 1) {

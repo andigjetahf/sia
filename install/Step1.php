@@ -28,20 +28,12 @@
 error_reporting(0);
 ?>
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="sq">
-=======
-<html lang="en">
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
         <title>Instaluesi SIA</title>
-=======
-        <title>SIA Installer</title>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/installer.css?v=<?php echo rand(000, 999); ?>" type="text/css" />
@@ -80,21 +72,12 @@ if(page && page!="index.php" ){
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="logo">
-<<<<<<< HEAD
                                     <img src="assets/images/opensis_logo.png" alt="SIA (Sistemi Inteligjences Arsimore)">
                                 </div>
                                 <?php if (isset($_REQUEST['mod']) && $_REQUEST['mod']!='upgrade') { ?>
                                     <h3>Instalimi i SIA - Lidhja me Bazën e të Dhënave</h3>
                                 <?php } else { ?>
                                     <h3>Instalimi i SIA - Lidhja me Bazën e të Dhënave</h3>
-=======
-                                    <img src="assets/images/opensis_logo.png" alt="SIA">
-                                </div>
-                                <?php if (isset($_REQUEST['mod']) && $_REQUEST['mod']!='upgrade') { ?>
-                                    <h3>SIA Installation - Database Connection</h3>
-                                <?php } else { ?>
-                                    <h3>SIA Installation - Database Connection</h3>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 <?php } ?>
                             </div>
                             <!--                            <div class="col-xs-4 text-center" style="padding: 30px 20px 0;">
@@ -122,7 +105,6 @@ if(page && page!="index.php" ){
 
                                 <?php if (isset($_REQUEST['mod']) && $_REQUEST['mod']!='upgrade') { ?>
                                     <ul class="installation-steps-label">
-<<<<<<< HEAD
                                         <li>Zgjidhni Paketën</li>
                                         <li>Kërkesat e Sistemit</li>
                                         <li class="active">Lidhja me Bazën e të Dhënave</li>
@@ -139,50 +121,20 @@ if(page && page!="index.php" ){
                                         <li>Të Dhënat e Shkollës</li>
                                         <li>Konfigurimi i Administratorit</li>
                                         <li>Gati për Përdorim!</li>
-=======
-                                        <li>Choose Package</li>
-                                        <li>System Requirements</li>
-                                        <li class="active">Database Connection</li>
-                                        <li>Database Selection</li>
-                                        <li>School Information</li>
-                                        <li>Site Admin Account Setup</li>
-                                        <li>Ready to Go!</li>
-                                    </ul>
-                                <?php } else { ?>
-                                    <ul class="installation-steps-label">
-                                        <li>Choose Package</li>
-                                        <li class="active">Database Connection</li>
-                                        <li>Database Selection</li>
-                                        <li>School Information</li>
-                                        <li>Site Admin Account Setup</li>
-                                        <li>Ready to Go!</li>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </ul>
                                     <?php
                                 }
 //                                if ($_REQUEST['mod'] == 'upgrade') {
-<<<<<<< HEAD
 //                                    echo '<h4 class = "no-margin">Keni zgjedhur përditësimin</h4>';
 //                                    $_SESSION['mod'] = 'upgrade';
 //                                } else {
 //                                    echo '<h4 class = "no-margin">Duke filluar instalimin e ri të SIA (Sistemi Inteligjences Arsimore)</h4>';
-=======
-//                                    echo '<h4 class = "no-margin">You have chosen upgrade</h4>';
-//                                    $_SESSION['mod'] = 'upgrade';
-//                                } else {
-//                                    echo '<h4 class = "no-margin">Beginning new SIA Installation</h4>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //                                }
 //
 //                                if ($ver_comp == 'true') {
 //                                    echo '<p class="text-success"><i class="fa fa-check-circle"></i> Your php version is ' . $version . '. You can install this system</p>';
-<<<<<<< HEAD
 //                                    echo '<p>Vendosni informacionin e lidhjes me serverin MySQL. </p>';
 //                                    echo '<p>Gjithashtu duhet të keni emrin e përdoruesit dhe fjalëkalimin administrativ të MySQL për të vazhduar.</p>';
-=======
-//                                    echo '<p>Provide MySQL server connection information. </p>';
-//                                    echo '<p>You must also have the MySQL administrative username and password to continue.</p>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 //                                } else {
 //                                    echo '<p class="text-danger"><i class="fa fa-exclamation-circle"></i> Your php version is ' . $version . '. But your system must have php version ' . $version_allow . ' to install this system</p>';
 //                                }
@@ -209,13 +161,8 @@ if(page && page!="index.php" ){
                                 $fh1 = fopen($myFile, 'w');
 
                                 if ($fh1 == FALSE) {
-<<<<<<< HEAD
                                     echo '<h4 class="m-t-0 m-b-15 text-danger"><i class="fa fa-exclamation-circle text-danger"></i> Ky instalim nuk ka të drejta për të krijuar ose përditësuar skedarin <b>Data.php</b>.</h4>';
                                     echo '<p class="m-b-15">Ju mund të vazhdoni me këtë instalim, por të dhënat e hyrjes në bazën e të dhënave nuk do të ruhen dhe procesi i instalimit do të rinisë sa herë që provoni ta përdorni sistemin përsëri.</p>';
-=======
-                                    echo '<h4 class="m-t-0 m-b-15 text-danger"><i class="fa fa-exclamation-circle text-danger"></i> This install has no rights to create or update file <b>Data.php</b>.</h4>';
-                                    echo '<p class="m-b-15">You may proceed with this installation, but database access information will not be saved and the install process will restart when trying to use this system again.</p>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 }
                                 fclose($fh1);
 
@@ -245,19 +192,11 @@ if(page && page!="index.php" ){
 //                                }
 //                                fclose($fh3);
 
-<<<<<<< HEAD
                                 echo '<p class="m-b-25">Rekomandohet të zgjidhni të gjitha çështjet e lejeve përpara se të kryeni instalimin.</p>';
                                 echo '<hr/>';
                                 echo '<div class="text-right">';
                                 echo '<a href="Step0.php" class="btn btn-default">Anulo</a> &nbsp; ';
                                 echo '<input type="button" value="Vazhdo" class="btn btn-success" onclick="hideAlert()" />';
-=======
-                                echo '<p class="m-b-25">It is recommended to solve all permission issue before performing the installation.</p>';
-                                echo '<hr/>';
-                                echo '<div class="text-right">';
-                                echo '<a href="Step0.php" class="btn btn-default">Cancel</a> &nbsp; ';
-                                echo '<input type="button" value="Continue" class="btn btn-success" onclick="hideAlert()" />';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 echo '</div>';
                                 echo '</div>';
 
@@ -286,29 +225,17 @@ if(page && page!="index.php" ){
                                 }
                                 ?> 
 
-<<<<<<< HEAD
                                     <h4 class="m-t-0 m-b-25">Vendosni të Dhënat e Lidhjes me MySQL</h4>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label class="control-label">Serveri</label>
-=======
-                                    <h4 class="m-t-0 m-b-25">Please Enter MySQL Connection Information</h4>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label class="control-label">Server</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="server" size="20" value="localhost" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-<<<<<<< HEAD
                                                 <label class="control-label">Porta</label>
-=======
-                                                <label class="control-label">Port</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="port" size="20" value="3306" class="form-control" />
                                             </div>
                                         </div>
@@ -316,21 +243,13 @@ if(page && page!="index.php" ){
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-<<<<<<< HEAD
                                                 <label class="control-label">Përdoruesi i MySQL</label>
-=======
-                                                <label class="control-label">MySQL Username</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="text" name="addusername" size="20" value="root" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-<<<<<<< HEAD
                                                 <label class="control-label">Fjalëkalimi i MySQL</label>
-=======
-                                                <label class="control-label">MySQL Password</label>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                                 <input type="password" name="addpassword" size="20" class="form-control" />
                                             </div>
                                         </div>
@@ -338,11 +257,7 @@ if(page && page!="index.php" ){
 
                                     <hr/>
                                     <div class="text-right">
-<<<<<<< HEAD
                                         <input type="submit" value="Ruaj & Vazhdo" class="btn btn-success" name="DB_Conn" />
-=======
-                                        <input type="submit" value="Save & Next" class="btn btn-success" name="DB_Conn" />
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </div>
 
                                     <script
@@ -354,15 +269,9 @@ if(page && page!="index.php" ){
                                                 echo 'showAlert();';
                                             ?>
                                             var frmvalidator = new Validator("step1");
-<<<<<<< HEAD
                                             frmvalidator.addValidation("server", "req", "Ju lutemi vendosni Emrin e Serverit");
                                             frmvalidator.addValidation("port", "req", "Ju lutemi vendosni Portën");
                                             frmvalidator.addValidation("addusername", "req", "Ju lutemi vendosni Emrin e Përdoruesit Admin të MySQL");
-=======
-                                            frmvalidator.addValidation("server", "req", "Please enter the Server Name");
-                                            frmvalidator.addValidation("port", "req", "Please enter the Port");
-                                            frmvalidator.addValidation("addusername", "req", "Please enter the MySQL Admin Username");
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                     </script>
                                 </form>
                                 <?php echo ($fh1) ? '</div>' : '</div>'; ?>

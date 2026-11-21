@@ -56,11 +56,7 @@ if (!defined('CONFIG_INC')) {
     $htmldocAssetsPath = '';        // way htmldoc accesses the assets/ directory, possibly different than user - empty string means no translation
     //    $StudentPicturesPath = 'assets/studentphotos/';
     //    $UserPicturesPath = 'assets/userphotos/';
-<<<<<<< HEAD
     $openSISTitle = "SIA - Sistemi i Informacionit të Nxënësve";
-=======
-    $openSISTitle = "SIA Student Information System";
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $openSISAdmins = '1';            // can be list such as '1,23,50' - note, these should be id's in the DefaultSyear, otherwise they can't login anyway
     $openSISNotifyAddress = '';
     $msgFlag = '';
@@ -73,17 +69,10 @@ if (!defined('CONFIG_INC')) {
         'grades' => true,
         'attendance' => true,
         'eligibility' => true,
-<<<<<<< HEAD
         'Discipline' => false,
         'Billing' => false,
         'EasyCom' => false,
         'Library' => false,
-=======
-        'Discipline' => true,
-        'Billing' => true,
-        'EasyCom' => true,
-        'Library' => true,
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         'messaging' => true,
         'tools' => true,
     );

@@ -28,12 +28,7 @@
 #***************************************************************************************
 
 session_start();
-<<<<<<< HEAD
 include 'Warehouse.php';
-=======
-//!empty($_SESSION['PROFILE_ID']) or die('Access denied!');
-
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 include "functions/ParamLibFnc.php";
 echo '<script type="text/javascript" src="assets/js/pages/components_popups.js"></script>';
 echo '<script type="text/javascript" src="assets/js/pages/picker_date.js"></script>';
@@ -47,11 +42,7 @@ echo '$(document).ready(function() {
         if($(".clockpicker").length>0){
             $(".clockpicker").clockpicker({ 
                 twelvehour: true,
-<<<<<<< HEAD
                 donetext: \'' . (defined('_done') ? addslashes(_done) : 'U krye') . '\'
-=======
-                donetext: \'Done\'
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }).find("input").change(function () {
                //alert(this.value);
             });
@@ -61,15 +52,9 @@ echo '$(document).ready(function() {
             $(".switch-fake-title").each(function(){
                 var check = $(this).closest("label").children("input[type=checkbox]");
                 if(check.is(":checked")){
-<<<<<<< HEAD
                     $(this).text("' . (defined('_yes') ? addslashes(_yes) : 'Po') . '");
                 }else{
                     $(this).text("' . (defined('_no') ? addslashes(_no) : 'Jo') . '");
-=======
-                    $(this).text("Yes");
-                }else{
-                    $(this).text("No");
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                 }
             });
         }
@@ -83,15 +68,9 @@ echo '$(document).ready(function() {
 
         $(".switch-fake-title").closest("label").children("input[type=checkbox]").change(function(){
             if($(this).is(":checked")){
-<<<<<<< HEAD
                 $(this).closest("label").children(".switch-fake-title").text("' . (defined('_yes') ? addslashes(_yes) : 'Po') . '");
             }else{
                 $(this).closest("label").children(".switch-fake-title").text("' . (defined('_no') ? addslashes(_no) : 'Jo') . '");
-=======
-                $(this).closest("label").children(".switch-fake-title").text("Yes");
-            }else{
-                $(this).closest("label").children(".switch-fake-title").text("No");
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
             }
         });
         
@@ -119,10 +98,6 @@ if ($url === FALSE) {
 }
 $isajax = "ajax";
 $start_time = time();
-<<<<<<< HEAD
-=======
-include 'Warehouse.php';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 array_rwalk($_REQUEST, 'strip_tags');
 $title_set = '';
 

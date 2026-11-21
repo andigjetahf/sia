@@ -232,11 +232,7 @@ if (UserStudentID() && !$_REQUEST['modfunc']) {
     $link['remove']['link'] = "Modules.php?modname=$_REQUEST[modname]&modfunc=remove&start_date=$_REQUEST[start_date]";
 
     $link['remove']['variables'] = array('activity_id' => 'ACTIVITY_ID');
-<<<<<<< HEAD
     $link['add']['html']['TITLE'] = '<TABLE border=0 cellpadding=0 cellspacing=0><TR><TD>' . SelectInput('', 'new_activity', '', $activities) . ' </TD><TD>&nbsp;<INPUT type=submit value="' . (defined('_add') ? _add : 'Shto') . '" class="btn btn-primary" onclick=\'formload_ajax("elig_stud");self_disable(this);\'></TD></TR></TABLE>';
-=======
-    $link['add']['html']['TITLE'] = '<TABLE border=0 cellpadding=0 cellspacing=0><TR><TD>' . SelectInput('', 'new_activity', '', $activities) . ' </TD><TD>&nbsp;<INPUT type=submit value=Add class="btn btn-primary" onclick=\'formload_ajax("elig_stud");self_disable(this);\'></TD></TR></TABLE>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     $link['add']['html']['remove'] = button('add');
 
     echo "<FORM action=Modules.php?modname=" . strip_tags(trim($_REQUEST[modname])) . "&modfunc=add&start_date=" . strip_tags(trim($_REQUEST['start_date'])) . " method=POST>";

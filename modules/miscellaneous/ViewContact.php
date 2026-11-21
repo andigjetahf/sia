@@ -36,10 +36,6 @@ if(count($contacts_RET))
 		echo '<B>'.$info['TITLE'].'</B>: '.$info['VALUE'].'<BR>';
 }
 else
-<<<<<<< HEAD
 	echo _thisPersonHasNoInformationInSystem;
-=======
-	echo 'This person has no information in the system.';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 PopTable('footer');
 ?>

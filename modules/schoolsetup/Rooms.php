@@ -70,11 +70,7 @@ if (clean_param($_REQUEST['values'], PARAM_NOTAGS) && ($_POST['values'] || $_REQ
                             } else {
                                 echo '<div class="alert bg-danger alert-styled-left">';
                                 echo '<button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">' . _close . '</span></button>';
-<<<<<<< HEAD
                                 echo _cannotChangeRoomCapacityDueToAssociation;
-=======
-                                echo 'cannot Change Room Capacity As It HasAssociation';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                                 echo '</div>';
                             }
                         }
@@ -102,11 +98,7 @@ if (clean_param($_REQUEST['values'], PARAM_NOTAGS) && ($_POST['values'] || $_REQ
                     $mflag = 1;
                     /*echo '<div class="alert alert-info">';
                     echo '<button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">Close</span></button>';
-<<<<<<< HEAD
                     echo _roomWithSimilarTitleAlreadyExists;
-=======
-                    echo 'Room with similar title already exists.';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
                     echo '</div>';*/
                     //                } else if (isset($validate_srt_odr) && count($validate_srt_odr) != 0) {
                     //                    $samedata = DBGet(DBQuery("select SORT_ORDER from rooms  WHERE room_id='$id'"));
@@ -165,11 +157,7 @@ if (clean_param($_REQUEST['values'], PARAM_NOTAGS) && ($_POST['values'] || $_REQ
     if ($mflag == 1) {
         echo '<div class="alert alert-warning">';
         echo '<button type="button" class="close" data-dismiss="alert"><span>×</span><span class="sr-only">' . _close . '</span></button>';
-<<<<<<< HEAD
         echo _roomWithSimilarTitleAlreadyExists;
-=======
-        echo 'Rooms found with similar title.';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         echo '</div>';
     }
 }

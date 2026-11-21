@@ -26,7 +26,6 @@
 #
 #***************************************************************************************
 
-<<<<<<< HEAD
 function TranslateMonthSq($formatted)
 {
 	if (!isset($_SESSION['language']) || $_SESSION['language'] == 'sq') {
@@ -47,8 +46,6 @@ function TranslateMonthSq($formatted)
 	return $formatted;
 }
 
-=======
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 /*
 Outputs a pretty date when sent an oracle or postgres date.
 */
@@ -86,11 +83,7 @@ function ProperDate($date='',$length='long')
 
 	
 	if($date)
-<<<<<<< HEAD
 		return TranslateMonthSq(date((($length=='long' || Preferences('MONTH')!='F')?Preferences('MONTH'):'M').$sep.Preferences('DAY').$sep.Preferences('YEAR'),mktime(0,0,0,$month,$day,$year)));
-=======
-		return date((($length=='long' || Preferences('MONTH')!='F')?Preferences('MONTH'):'M').$sep.Preferences('DAY').$sep.Preferences('YEAR'),mktime(0,0,0,$month,$day,$year));
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 
 }
 
@@ -148,11 +141,7 @@ function ProperDateMAvr($date='')
 function mkSisDate($year,$month,$date)
 {
     
-<<<<<<< HEAD
         $monthFormat=TranslateMonthSq(date(Preferences('MONTH'),strtotime($year.'-'.$month.'-'.$date)));
-=======
-        $monthFormat=date(Preferences('MONTH'),strtotime($year.'-'.$month.'-'.$date));
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         $dayFormat=date(Preferences('DAY'),strtotime($year.'-'.$month.'-'.$date));
         $yearFormat=date(Preferences('YEAR'),strtotime($year.'-'.$month.'-'.$date));
         return $monthFormat.'/'.$dayFormat.'/'.$yearFormat;

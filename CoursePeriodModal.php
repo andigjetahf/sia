@@ -46,7 +46,6 @@ $course_id   = (int)($_REQUEST['course_id'] ?? 0);
 $id          = (int)($_REQUEST['id'] ?? 0);
 $calendar_id = (int)($_REQUEST['calendar_id'] ?? 0);
 
-<<<<<<< HEAD
 if(!isset($_SESSION['language']) || $_SESSION['language']=='sq'){
     define("_classRoom","Klasa");
     define("_period","Ora mësimore");
@@ -56,9 +55,6 @@ if(!isset($_SESSION['language']) || $_SESSION['language']=='sq'){
     define("_time","Koha");
 }
 elseif($_SESSION['language']=='fr'){
-=======
-if(isset($_SESSION['language']) && $_SESSION['language']=='fr'){
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     define("_classRoom","Salle de cours");
     define("_period","Période");
     define("_days","Journées");
@@ -66,11 +62,7 @@ if(isset($_SESSION['language']) && $_SESSION['language']=='fr'){
     define("_room","Chambre");
     define("_time","Temps");
 }
-<<<<<<< HEAD
 elseif($_SESSION['language']=='es'){
-=======
-elseif(isset($_SESSION['language']) && $_SESSION['language']=='es'){
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     define("_classRoom","Salón de clases");
     define("_period","Período");
     define("_days","Dias");
@@ -152,11 +144,7 @@ elseif(isset($_SESSION['language']) && $_SESSION['language']=='es'){
         echo '<div class="form-group"><label class="control-label text-right col-lg-4">'._period.'</label><div class="col-lg-8">' . SelectInputModal($cpblocked_RET['PERIOD_ID'], 'values[PERIOD_ID]', '', $periods, 'N/A', 'id=' . $date . '_period class=form-control onchange="formcheck_periods_F2(' . $date . ');"') . '</div></div>';
         echo '<input type="hidden" id="hidden_period_block" value="' . $cpblocked_RET['PERIOD_ID'] . '" />';
         echo '<div class="form-group"><label class="control-label text-right col-lg-4">'._room.'</label><div class="col-lg-8">' . SelectInputModal($cpblocked_RET['ROOM_ID'], 'values[ROOM_ID]', '', $rooms, 'N/A', 'id=' . $date . '_room ') . '</div></div>';
-<<<<<<< HEAD
         echo '<div class="form-group"><label class="control-label text-right col-lg-4">'._takesAttendance.'</label><div class="col-lg-8">' . CheckboxInputSwitchModal($cpblocked_RET['DOES_ATTENDANCE'], 'values[DOES_ATTENDANCE]', '', '', false, _yes, _no, ' id=' . $date . '_does_attendance onclick="formcheck_periods_attendance_F2(' . (($date != '') ? $date : 1) . ',this);"','switch-success') . '<br><div id="ajax_output"></div></div></div>';
-=======
-        echo '<div class="form-group"><label class="control-label text-right col-lg-4">'._takesAttendance.'</label><div class="col-lg-8">' . CheckboxInputSwitchModal($cpblocked_RET['DOES_ATTENDANCE'], 'values[DOES_ATTENDANCE]', '', '', false, 'Yes', 'No', ' id=' . $date . '_does_attendance onclick="formcheck_periods_attendance_F2(' . (($date != '') ? $date : 1) . ',this);"','switch-success') . '<br><div id="ajax_output"></div></div></div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         
         echo '</div>'; //.panel-body
         echo '<div class="panel-footer p-l-10 p-r-10 text-right"><INPUT type=submit class="btn btn-primary" name=button value='._save.' onClick="return validate_block_schedule(' . $date . ');">';

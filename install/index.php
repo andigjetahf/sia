@@ -31,20 +31,12 @@ error_reporting(0);
 $page_name = basename($_SERVER['PHP_SELF']);
 ?>
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="sq">
-=======
-<html lang="en">
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
         <title>Instaluesi SIA</title>
-=======
-        <title>SIA Installer</title>
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
         <link href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/installer.css" type="text/css" />

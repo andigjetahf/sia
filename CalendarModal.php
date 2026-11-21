@@ -67,11 +67,7 @@ echo '<div class="modal-body">';
 echo '<div id=err_message ></div>';
 
 echo '<div class="form-group">';
-<<<<<<< HEAD
 echo '<label class="control-label">' . _date . ': ' . ProperDate($REQUEST_school_date) . '</label>';
-=======
-echo '<label class="control-label">Date: ' . ProperDate($REQUEST_school_date) . '</label>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 echo '</div>';
 
 if ($RET[1]['TITLE'] == '') {
@@ -118,11 +114,7 @@ if (User('PROFILE') == 'admin')
     else
     $RET[1]['CALENDAR_ID']=0;
     }
-<<<<<<< HEAD
     echo '<div class="form-group">' . CheckboxInputSwitchModal($RET[1]['CALENDAR_ID'], 'new', _showEventsSystemWide, '', false, _yes, _no, '', 'switch-success') . '</div>';
-=======
-    echo '<div class="form-group">' . CheckboxInputSwitchModal($RET[1]['CALENDAR_ID'], 'new', _showEventsSystemWide, '', false, 'Yes', 'No', '', 'switch-success') . '</div>';
->>>>>>> 7d82827ce8f3d03dcab85220d62fcd9522e24f6f
 }
 //else
 //echo '<div class="form-group">' . ($RET[1]['CALENDAR_ID'] == '' ? '<i class="icon-checkbox-checked"></i>' : '<i class="icon-checkbox-unchecked"></i>') . '</div>';
