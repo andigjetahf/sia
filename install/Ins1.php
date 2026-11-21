@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-i?php
-=======
 <?php
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 
 #**************************************************************************
 #  openSIS is a free student information system for public and non-public 
@@ -27,11 +23,7 @@ i?php
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
-#  along with this program.  If not, see ihttp://www.gnu.org/licenses/>.
-=======
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 #
 #***************************************************************************************
 include '../functions/ParamLibFnc.php';
@@ -44,67 +36,6 @@ $_SESSION['server'] = $_POST["server"];
 $_SESSION['port'] = $_POST["port"];
 $_SESSION['host'] = $_POST['server'] . ($_POST['port'] != '3306' ? ':' . $_POST['port'] : '');
 $_SESSION['host_mod'] = $_POST['server']; // Used by Selectdb.php for upgrade flow
-<<<<<<< HEAD
-$err .= 'i!DOCTYPE html>
-ihtml lang="sq">
-    ihead>
-        imeta charset="utf-8">
-        imeta http-equiv="X-UA-Compatible" content="IE=edge">
-        imeta name="viewport" content="width=device-width, initial-scale=1">
-        ititle>Instaluesi SIAi/title>
-        ilink href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
-        ilink rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-        ilink rel="stylesheet" href="assets/css/installer.css?v='.rand(000, 999).'" type="text/css" />
-        inoscript>iMETA http-equiv=REFRESH content="0;url=../EnableJavascript.php" />i/noscript>
-    i/head>
-    ibody class="outer-body">
-        isection class="login">
-            idiv class="login-wrapper">
-                idiv class="panel">
-                    idiv class="panel-heading">
-                        idiv class="logo">
-                            iimg src="assets/images/opensis_logo.png" alt="SIA">
-                        i/div>  
-                        ih3>Instalimi i SIAi/h3>                      
-                    i/div>
-                    idiv class="panel-body">
-                        idiv class="installation-steps-wrapper">
-                            idiv class="installation-instructions">
-                                i!--ih4 class="no-margin">Possible causes are:i/h4>
-                                iol>
-                                    ili>MySQL is not installed. Try downloading from ia href="http://dev.mysql.com/downloads/" target=_blank>MySQL Websitei/a>i/li>
-                                    ili>Username or Password or MySQL Configuration is incorrecti/li>
-                                    ili>Php.ini is not properly configured. Search for MySQL in php.inii/li>
-                                i/ol>-->
-                                iul class="installation-steps-label">
-                                    ili>Zgjidhni Paketëni/li>
-                                    ili>Kërkesat e Sistemiti/li>
-                                    ili class="active">Lidhja me Bazën e të Dhënavei/li>
-                                    ili>Përzgjedhja e Bazës së të Dhënavei/li>
-                                    ili>Konfigurimi i Administratoriti/li>
-                                    ili>Gati për Përdorim!i/li>
-                                i/ul>
-                            i/div>i!-- /.installation-instructions -->
-                            idiv class="installation-steps">
-
-                                ih2 class="text-center">Nuk mund të lidhej me serverin e bazës së të dhënave: ' . $_SESSION['host'].'i/h2>ibr/>';
-                                if (clean_param($_REQUEST['mod'], PARAM_ALPHAMOD) == 'upgrade') {
-                                    $err .= 'ip class="text-center">ia href="Step1.php?mod=upgrade" class="btn btn-primary">ii class="fa fa-refresh">i/i> Provo Përsërii/a>i/p>';
-                                } else {
-                                    $err .= 'ip class="text-center">ia href="Step1.php" class="btn btn-primary">ii class="fa fa-refresh">i/i> Provo Përsërii/a>i/p>';
-                                }
-                            $err .= 'i/div>
-                        i/div>i!-- /.installation-steps-wrapper -->
-                    i/div>i!-- /.panel-body -->
-                i/div>i!-- /.panel -->                
-                ifooter>
-                    Copyright &copy; Open Solutions for Education, Inc. (ia href="http://www.os4ed.com">OS4EDi/a>).
-                i/footer>
-            i/div>i!-- /.login-wrapper -->
-        i/section>i!-- /.login -->
-    i/body>
-i/html>';
-=======
 $err .= '<!DOCTYPE html>
 <html lang="sq">
     <head>
@@ -164,7 +95,6 @@ $err .= '<!DOCTYPE html>
         </section><!-- /.login -->
     </body>
 </html>';
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 //$dbconn = mysqli_connect($_SESSION['host'],$_SESSION['username'],$_SESSION['password'])
 $db_error_detail = '';
 try {
@@ -183,11 +113,7 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
     }
     $err_with_msg = str_replace(
         "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'],
-<<<<<<< HEAD
-        "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'] . "ibr>ismall style='color:red; font-size:14px;'>(" . htmlspecialchars($db_error_detail) . ")i/small>",
-=======
         "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'] . "<br>ismall style='color:red; font-size:14px;'>(" . htmlspecialchars($db_error_detail) . ")</small>",
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
         $err
     );
     exit($err_with_msg);
@@ -199,46 +125,6 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
     $res = $qr->fetch_assoc();
     $res_arr = explode(',', $res['Value']);
     if (false && in_array('STRICT_TRANS_TABLES', $res_arr)) { // Bypassed - strict mode handled per session
-<<<<<<< HEAD
-        $err = 'i!DOCTYPE html>
-        ihtml lang="sq">
-            ihead>
-                imeta charset="utf-8">
-                imeta http-equiv="X-UA-Compatible" content="IE=edge">
-                imeta name="viewport" content="width=device-width, initial-scale=1">
-                ititle>Instaluesi SIAi/title>
-                ilink href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
-                ilink rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-                ilink rel="stylesheet" href="assets/css/installer.css?v='.rand(000, 999).'" type="text/css" />
-                inoscript>iMETA http-equiv=REFRESH content="0;url=../EnableJavascript.php" />i/noscript>
-            i/head>
-            ibody class="outer-body">
-                isection class="login">
-                    idiv class="login-wrapper">
-                        idiv class="panel" style="width: 50%;">
-                            idiv class="panel-heading">
-                                idiv class="logo">
-                                    iimg src="assets/images/opensis_logo.png" alt="SIA">
-                                i/div>
-                                ih3>Instalimi i SIAi/h3>
-                            i/div>
-                            idiv class="panel-body">
-                                idiv class="padding-20 class="text-center"">
-                                    ih2 class="text-center">Nuk mund të lidhej me serverin e bazës së të dhënave: ' . $_SESSION['host'].'i/h2>ibr/>
-                                    ih5 class="text-center">Shkaqet e mundshme janë:i/h5>
-                                    ip class="text-center">Modaliteti Strict është i aktivizuar. Ju lutemi çaktivizoni modalitetin Strict dhe rinisni shërbimet MySQL dhe Apache.
-                                    i/p>
-                                i/div>
-                            i/div>i!-- /.panel-body -->
-                        i/div>i!-- /.panel -->
-                        ifooter>
-                            Copyright &copy; Open Solutions for Education, Inc. (ia href="http://www.os4ed.com">OS4EDi/a>).
-                        i/footer>
-                    i/div>i!-- /.login-wrapper -->
-                i/section>i!-- /.login -->
-            i/body>
-        i/html>';
-=======
         $err = '<!DOCTYPE html>
         <html lang="sq">
             <head>
@@ -277,7 +163,6 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
                 </section><!-- /.login -->
             </body>
         </html>';
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
         
 
         exit($err);

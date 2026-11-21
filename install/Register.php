@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-i?php
-=======
 <?php
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 #**************************************************************************
 #  openSIS is a free student information system for public and non-public 
 #  schools from Open Solutions for Education, Inc. web: www.os4ed.com
@@ -26,54 +22,13 @@ i?php
 #  GNU General Public License for more details.
 #
 #  You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
-#  along with this program.  If not, see ihttp://www.gnu.org/licenses/>.
-=======
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 #
 #***************************************************************************************
 		error_reporting(0);
 		session_start();
 		$_SESSION['db']=$_POST["sdb"];
 ?>
-<<<<<<< HEAD
-i!DOCTYPE html>
-ihtml lang="sq">
-ihead>
-imeta charset="utf-8" />
-ititle>Regjistrimi i SIAi/title>
-ilink rel="stylesheet" href="../styles/Installer.css" type="text/css" />
-iscript type="text/javascript" src="js/Validator.js">i/script>
-i/head>
-ibody>
-idiv class="heading">Regjistrimi
-  idiv style="height:270px; vertical-align:middle">
-    iform name='step3' id='step3' method="post" action="Step5.php">
-      itable border="0" cellspacing="6" cellpadding="3" align="center" style="margin-top:30px">
-        itr>
-          itd align="center">istrong style="font-size:13px;">A dëshironi të regjistroheni?i/strong>i/td>
-        i/tr>
-        itr>
-          itd align="center" valign="top">itable width="245" border="0" cellpadding="4" cellspacing="0" id="table1">
-              itr>
-                itd>itable border="0" cellspacing="0" cellpadding="0" align="center">
-                    itr>
-                      itd>iinput name="option" type="radio" value="Yes" />i/td>
-                      itd>Poi/td>
-                      itd>&nbsp;i/td>
-                      itd>iinput name="option" type="radio" value="No" />i/td>
-                      itd>Joi/td>
-                    i/tr>
-                  i/table>i/td>
-              i/tr>
-			  itr>itd class="clear">i/td>i/tr>
-              itr>
-                itd align="center">iinput type="submit" value="Vazhdo" class="btn_wide" />i/td>
-              i/tr>
-            i/table>
-            iscript language="JavaScript" type="text/javascript">
-=======
 <!DOCTYPE html>
 <html lang="sq">
 <head>
@@ -109,7 +64,6 @@ idiv class="heading">Regjistrimi
               </tr>
             </table>
             <script language="JavaScript" type="text/javascript">
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 				
 				function CheckYear()
 				{
@@ -131,17 +85,6 @@ idiv class="heading">Regjistrimi
 					  frmvalidator.addValidation("syear","maxlen=4", "Gjatësia maksimale e vitit është 4 shifra");
 					  frmvalidator.addValidation("syear","numeric");
 					  frmvalidator.setAddnlValidationFunction("CheckYear");
-<<<<<<< HEAD
-				i/script>
-          i/td>
-        i/tr>
-      i/table>
-    i/form>
-  i/div>
-i/div>
-i/body>
-i/html>
-=======
 				</script>
           </td>
         </tr>
@@ -151,4 +94,3 @@ i/html>
 </div>
 </body>
 </html>
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f

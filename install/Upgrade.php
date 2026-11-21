@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-i!DOCTYPE html>
-ihtml lang="sq">
-
-ihead>
-    imeta charset="utf-8">
-    imeta http-equiv="X-UA-Compatible" content="IE=edge">
-    imeta name="viewport" content="width=device-width, initial-scale=1">
-    ititle>Instaluesi SIAi/title>
-    ilink href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
-    ilink rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-    ilink rel="stylesheet" href="assets/css/installer.css?v=i?php echo rand(000, 999); ?>" type="text/css" />
-i/head>
-
-ibody class="outer-body">
-    isection class="login">
-        idiv class="login-wrapper">
-            idiv class="panel">
-                idiv class="panel-heading clearfix">
-                    idiv class="logo">
-                        iimg src="assets/images/opensis_logo.png" alt="SIA">
-                    i/div>
-                    ih3>Instaluesi SIAi/h3>
-                i/div>
-                idiv class="panel-body">
-                    idiv class="installation-steps-wrapper">
-                        idiv class="installation-steps text-center">
-                            i?php
-=======
 <!DOCTYPE html>
 <html lang="sq">
 
@@ -54,7 +25,6 @@ ibody class="outer-body">
                     <div class="installation-steps-wrapper">
                         <div class="installation-steps text-center">
                             <?php
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                             #**************************************************************************
                             #  openSIS is a free student information system for public and non-public 
                             #  schools from Open Solutions for Education, Inc. web: www.os4ed.com
@@ -78,11 +48,7 @@ ibody class="outer-body">
                             #  GNU General Public License for more details.
                             #
                             #  You should have received a copy of the GNU General Public License
-<<<<<<< HEAD
-                            #  along with this program.  If not, see ihttp://www.gnu.org/licenses/>.
-=======
                             #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                             #
                             #***************************************************************************************
                             error_reporting(0);
@@ -108,11 +74,7 @@ ibody class="outer-body">
                                 $mysql_dir = str_replace('\\', '\\\\', $mysql_dir1 . $_SERVER['MYSQL_HOME']);
                             }
 
-<<<<<<< HEAD
-                            $q2r = $dbconn->query("SELECT name,value FROM app where name='version'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' error at 2i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                             $q2r = $dbconn->query("SELECT name,value FROM app where name='version'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' error at 2</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                             $q2 = $q2r->fetch_assoc();
                             $v = $q2['value'];
                             $opensis_tab = array();
@@ -168,24 +130,15 @@ ibody class="outer-body">
                                     'student_medical_notes', 'student_medical_visits', 'student_mp_comments', 'student_mp_stats', 'student_report_card_comments', 'student_report_card_grades', 'system_preference', 'system_preference_misc', 'teacher_reassignment', 'user_profiles'
                                 );
                             } else if ($v == '6.0') {
-<<<<<<< HEAD
-                                $dbconn->query('DELETE FROM custom_fields WHERE system_field=\'Y\' ') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' error at 3i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                $dbconn->query('TRUNCATE app') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' error at 4i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                 $dbconn->query('DELETE FROM custom_fields WHERE system_field=\'Y\' ') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' error at 3</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                 $dbconn->query('TRUNCATE app') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' error at 4</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 $app_insert = "INSERT INTO `app` (`name`, `value`) VALUES
                                         ('version', '6.4'),
                                         ('date', 'July 26, 2017'),
                                         ('build', '20170726001'),
                                         ('update', '0'),
                                         ('last_updated', 'July 26, 2017');";
-<<<<<<< HEAD
-                                $dbconn->query($app_insert) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . 'error at 96i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                 $dbconn->query($app_insert) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . 'error at 96</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 
                                 $get_schools = $dbconn->query('SELECT DISTINCT id FROM schools');
                                 while ($get_schools_a = $get_schools->fetch_assoc()) {
@@ -957,13 +910,8 @@ ibody class="outer-body">
 
                             while ($fetch = $qr_tab->fetch_row()) {
 
-<<<<<<< HEAD
-                                //print_r($fetch);echo 'ibr>ibr>';
-                                //echo "if (!in_array($fetch[0],";print_r($opensis_tab).")ibr>ibr>";
-=======
                                 //print_r($fetch);echo '<br><br>';
                                 //echo "if (!in_array($fetch[0],";print_r($opensis_tab).")<br><br>";
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 if (!in_array($fetch[0], $opensis_tab)) {
 
                                     $tab_name = $fetch[0];
@@ -990,11 +938,7 @@ ibody class="outer-body">
 
                                 foreach ($extra_tab as $vk => $vv) {
 
-<<<<<<< HEAD
-                                    $dbconn->query("drop table " . $vv) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 209i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                     $dbconn->query("drop table " . $vv) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 209</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 }
                             }
 
@@ -1004,11 +948,7 @@ ibody class="outer-body">
 
                                 $proceed = $dbconn->query("SELECT name,value
 FROM app
-<<<<<<< HEAD
-WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5.0' OR value='5.1' OR value='5.2' OR value='5.3'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 220i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
 WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5.0' OR value='5.1' OR value='5.2' OR value='5.3'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 220</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 $proceed = $proceed->fetch_assoc();
                                 if (!$proceed) {
                                     $proceed = $dbconn->query("SELECT name,value
@@ -1017,27 +957,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     $proceed = $proceed->fetch_assoc();
                                 }
                                 $version = $proceed['value'];
-<<<<<<< HEAD
-                                $get_routines = $dbconn->query('SELECT routine_name,routine_type FROM information_schema.routines WHERE routine_schema=\'' . $mysql_database . '\' ') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 229i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                while ($get_routines_arr = $get_routines->fetch_assoc()) {
-
-                                    $dbconn->query('DROP ' . $get_routines_arr['routine_type'] . ' IF EXISTS ' . $get_routines_arr['routine_name']) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 232i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                }
-
-                                $get_trigger = $dbconn->query('SELECT trigger_name FROM information_schema.triggers WHERE trigger_schema=\'' . $mysql_database . '\' ') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 235i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                while ($get_trigger_arr = $get_trigger->fetch_assoc()) {
-
-                                    $dbconn->query('DROP TRIGGER IF EXISTS ' . $get_trigger_arr['trigger_name']) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 238i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                }
-
-                                $dbconn->query('UPDATE ' . table_to_upper('students', $version) . ' SET failed_login=0 WHERE failed_login is null') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 241i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                if ($version != '5.2' && $version != '5.3') {
-                                    $dbconn->query('Create table staff_new as SELECT * FROM ' . table_to_upper('staff', $version) . '') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 243i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                    $dbconn->query('TRUNCATE TABLE staff_new') or die($dbconn->error . ' at line 244');
-                                    $dbconn->query('ALTER TABLE `staff_new` DROP `syear`, DROP `schools`, DROP `rollover_id`') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 245i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-
-                                    $dbconn->query('DROP TABLE ' . table_to_upper('staff_school_relationship', $version) . '') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 247i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                 $get_routines = $dbconn->query('SELECT routine_name,routine_type FROM information_schema.routines WHERE routine_schema=\'' . $mysql_database . '\' ') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 229</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                 while ($get_routines_arr = $get_routines->fetch_assoc()) {
 
@@ -1057,7 +976,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     $dbconn->query('ALTER TABLE `staff_new` DROP `syear`, DROP `schools`, DROP `rollover_id`') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 245</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
                                     $dbconn->query('DROP TABLE ' . table_to_upper('staff_school_relationship', $version) . '') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 247</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     $dbconn->query('CREATE TABLE ' . table_to_upper('staff_school_relationship', $version) . ' (
  `staff_id` int(11) NOT NULL,
  `school_id` int(11) NOT NULL,
@@ -1065,16 +983,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
  `start_date` date NOT NULL,
  `end_date` date NOT NULL,
  PRIMARY KEY (`staff_id`,`school_id`,`syear`)
-<<<<<<< HEAD
-) ENGINE=InnoDB DEFAULT CHARSET=utf8') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 255i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-
-                                    $sql = $dbconn->query('SELECT * FROM ' . table_to_upper('staff', $version) . ' order by staff_id asc') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 257i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                    while ($row = $sql->fetch_assoc()) {
-                                        if ($row['username'] != '')
-                                            $staff_sql = $dbconn->query("SELECT staff_id FROM staff_new WHERE username='" . $row['username'] . "' AND username IS NOT NULL") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 260i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                        else
-                                            $staff_sql = $dbconn->query("SELECT staff_id FROM staff_new WHERE first_name='" . $row['first_name'] . "' AND last_name='" . $row['last_name'] . "' AND profile='" . $row['profile'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 262i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 255</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
                                     $sql = $dbconn->query('SELECT * FROM ' . table_to_upper('staff', $version) . ' order by staff_id asc') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 257</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
@@ -1083,24 +991,15 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                             $staff_sql = $dbconn->query("SELECT staff_id FROM staff_new WHERE username='" . $row['username'] . "' AND username IS NOT NULL") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 260</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                         else
                                             $staff_sql = $dbconn->query("SELECT staff_id FROM staff_new WHERE first_name='" . $row['first_name'] . "' AND last_name='" . $row['last_name'] . "' AND profile='" . $row['profile'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 262</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                         if ($staff_sql->num_rows == 0) {
                                             $staff_id = $row['staff_id'];
                                             $dbconn->query("insert into staff_new (staff_id,current_school_id,title,first_name,last_name,middle_name,username,password,phone,email,profile,homeroom,last_login,failed_login,profile_id,is_disable) values('" . $row['staff_id'] . "','" . $row['current_school_id'] . "'
             ,'" . $row['title'] . "','" . $row['first_name'] . "','" . $row['last_name'] . "','" . $row['middle_name'] . "','" . $row['username'] . "','" . $row['password'] . "'
-<<<<<<< HEAD
-                ,'" . $row['phone'] . "','" . $row['email'] . "','" . $row['profile'] . "','" . $row['homeroom'] . "','" . $row['last_login'] . "','" . $row['failed_login'] . "','" . $row['profile_id'] . "','" . $row['is_disable'] . "')") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 267i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                            if ($row['username'] != '')
-                                                $st_info_sql = $dbconn->query("SELECT syear,staff_id,schools FROM " . table_to_upper('staff', $version) . " WHERE username='" . $row['username'] . "' AND username IS NOT NULL") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 269i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                            else
-                                                $st_info_sql = $dbconn->query("SELECT syear,staff_id,schools FROM " . table_to_upper('staff', $version) . " WHERE first_name='" . $row['first_name'] . "' AND last_name='" . $row['last_name'] . "' AND profile='" . $row['profile'] . "' AND username IS NULL") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 271i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                 ,'" . $row['phone'] . "','" . $row['email'] . "','" . $row['profile'] . "','" . $row['homeroom'] . "','" . $row['last_login'] . "','" . $row['failed_login'] . "','" . $row['profile_id'] . "','" . $row['is_disable'] . "')") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 267</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                             if ($row['username'] != '')
                                                 $st_info_sql = $dbconn->query("SELECT syear,staff_id,schools FROM " . table_to_upper('staff', $version) . " WHERE username='" . $row['username'] . "' AND username IS NOT NULL") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 269</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                             else
                                                 $st_info_sql = $dbconn->query("SELECT syear,staff_id,schools FROM " . table_to_upper('staff', $version) . " WHERE first_name='" . $row['first_name'] . "' AND last_name='" . $row['last_name'] . "' AND profile='" . $row['profile'] . "' AND username IS NULL") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 271</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 
                                             while ($row1 = $st_info_sql->fetch_assoc()) {
 
@@ -1108,34 +1007,11 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                                 $all_school = explode(',', $school);
                                                 foreach ($all_school as $key => $value) {
 
-<<<<<<< HEAD
-                                                    $dbconn->query('insert into ' . table_to_upper('staff_school_relationship', $version) . ' values(\'' . $staff_id . '\',\'' . $value . '\',\'' . $row1['syear'] . '\',\'0000-00-00\',\'0000-00-00\')') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 279i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                                     $dbconn->query('insert into ' . table_to_upper('staff_school_relationship', $version) . ' values(\'' . $staff_id . '\',\'' . $value . '\',\'' . $row1['syear'] . '\',\'0000-00-00\',\'0000-00-00\')') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 279</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                                 }
 
 
 
-<<<<<<< HEAD
-                                                $dbconn->query("update attendance_completed set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 284i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update  course_periods set teacher_id='" . $row['staff_id'] . "' WHERE teacher_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 285i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update  course_periods set secondary_teacher_id='" . $row['staff_id'] . "' WHERE secondary_teacher_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 286i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update  login_records set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 287i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update missing_attendance set teacher_id='" . $row['staff_id'] . "' WHERE teacher_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 288i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update portal_notes set published_user='" . $row['staff_id'] . "'WHERE published_user='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 289i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update program_user_config set user_id='" . $row['staff_id'] . "'WHERE user_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 290i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update schedule_requests set with_teacher_id='" . $row['staff_id'] . "'WHERE with_teacher_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 291i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-
-                                                $dbconn->query("update teacher_reassignment set teacher_id='" . $row['staff_id'] . "'WHERE teacher_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 293i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update teacher_reassignment set pre_teacher_id='" . $row['staff_id'] . "'WHERE pre_teacher_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 294i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update teacher_reassignment set modified_by='" . $row['staff_id'] . "'WHERE modified_by='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 295i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update gradebook_assignments set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 296i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update gradebook_assignment_types set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 297i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update grades_completed set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 298i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update student_mp_comments set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 299i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                                $dbconn->query("update schedule set modified_by='" . $row['staff_id'] . "' WHERE modified_by='" . $row1['staff_id'] . "'") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 300i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                                 $dbconn->query("update attendance_completed set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 284</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                                 $dbconn->query("update  course_periods set teacher_id='" . $row['staff_id'] . "' WHERE teacher_id='" . $row1['staff_id'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 285</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                                 $dbconn->query("update  course_periods set secondary_teacher_id='" . $row['staff_id'] . "' WHERE secondary_teacher_id='" . $row1['staff_id'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 286</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
@@ -1153,18 +1029,12 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                                 $dbconn->query("update grades_completed set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 298</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                                 $dbconn->query("update student_mp_comments set staff_id='" . $row['staff_id'] . "' WHERE staff_id='" . $row1['staff_id'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 299</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                                 $dbconn->query("update schedule set modified_by='" . $row['staff_id'] . "' WHERE modified_by='" . $row1['staff_id'] . "'") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 300</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                             }
                                         }
                                     }
 
-<<<<<<< HEAD
-                                    $dbconn->query('DROP TABLE ' . table_to_upper('staff', $version) . '') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 305i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                    $dbconn->query('RENAME TABLE `staff_new` TO ' . table_to_upper('staff', $version) . '') or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 306i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                     $dbconn->query('DROP TABLE ' . table_to_upper('staff', $version) . '') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 305</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     $dbconn->query('RENAME TABLE `staff_new` TO ' . table_to_upper('staff', $version) . '') or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 306</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 }
 
                                 if ($proceed['name']) {
@@ -1206,15 +1076,9 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     $objCustomStaff = new custom($mysql_database);
                                     $objCustomStaff->set($res_staff_field, 'staff');
 
-<<<<<<< HEAD
-                                    $dbconn->query("drop database $mysql_database") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 346i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-
-                                    $dbconn->query("CREATE DATABASE $mysql_database CHARACTER SET utf8 COLLATE utf8_general_ci") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 348i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                     $dbconn->query("drop database $mysql_database") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 346</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
                                     $dbconn->query("CREATE DATABASE $mysql_database CHARACTER SET utf8 COLLATE utf8_general_ci") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 348</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     mysqli_close($dbconn);
                                     //        mysql_select_db($mysql_database);
                                     $dbconn = new mysqli($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], $_SESSION['db'], $_SESSION['port']);
@@ -1267,24 +1131,15 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     if ($dbconn && !$dbconn->connect_errno) {
                                         $dbconn->query("SET SESSION sql_mode = ''");
                                     }
-<<<<<<< HEAD
-                                    $dbconn->query("delete from app") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 395i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                     $dbconn->query("delete from app") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 395</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     $appTable = "INSERT INTO `app` (`name`, `value`) VALUES
 ('version', '5.3'),
 ('date', 'December 01, 2013'),
 ('build', '01122013001'),
 ('update', '0'),
 ('last_updated', 'December 01, 2013')";
-<<<<<<< HEAD
-                                    $dbconn->query($appTable) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 402i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                    $custom_insert = $dbconn->query("select count(*) from custom_fields where title in('Ethnicity','Common Name','Physician','Physician Phone','Preferred Hospital','Gender','Email','Phone','Language')") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 403i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                     $dbconn->query($appTable) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 402</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     $custom_insert = $dbconn->query("select count(*) from custom_fields where title in('Ethnicity','Common Name','Physician','Physician Phone','Preferred Hospital','Gender','Email','Phone','Language')") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 403</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     $custom_insert = $custom_insert->fetch_assoc();
                                     $custom_insert = $custom_insert[0];
                                     if ($custom_insert i 9) {
@@ -1298,31 +1153,18 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
 ('text', NULL, 'Email', 6, NULL, 1, 'Y', NULL, NULL, NULL),
 ('text', NULL, 'Phone', 9, NULL, 1, 'Y', NULL, NULL, NULL),
 ('text', NULL, 'Language', 8, NULL, 1, 'Y', NULL, NULL, NULL);";
-<<<<<<< HEAD
-                                        $dbconn->query($custom_insert) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 417i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                    }
-                                    $login_msg = $dbconn->query("SELECT COUNT(*) as tot FROM login_message WHERE 1") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 419i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                         $dbconn->query($custom_insert) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 417</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     }
                                     $login_msg = $dbconn->query("SELECT COUNT(*) as tot FROM login_message WHERE 1") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 419</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     $login_msg = $login_msg->fetch_assoc();
                                     $login_msg = $login_msg['tot'];
                                     if ($login_msg i 1) {
                                         $login_msg = "INSERT INTO `login_message` (`id`, `message`, `display`) VALUES
 (1, 'This is a restricted network. Use of this network, its equipment, and resources is monitored at all times and requires explicit permission from the network administrator. If you do not have this permission in writing, you are violating the regulations of this network and can and will be prosecuted to the fullest extent of law. By continuing into this system, you are acknowledging that you are aware of and agree to these terms.', 'Y')";
-<<<<<<< HEAD
-                                        $dbconn->query($login_msg) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 425i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-                                    }
-
-                                    $syearqr = $dbconn->query("select MAX(syear) as year, MIN(start_date) as start from school_years") or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . $dbconn->error . ' at line 428i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                         $dbconn->query($login_msg) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 425</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     }
 
                                     $syearqr = $dbconn->query("select MAX(syear) as year, MIN(start_date) as start from school_years") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 428</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     $syear = $syearqr->fetch_assoc();
                                     $_SESSION['syear'] = $syear['year'];
                                     $max_syear = $syear['year'];
@@ -1333,27 +1175,13 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
         (" . $max_syear . ",'Transferred out','TRAN','TrnD'),
         (" . $max_syear . ",'Transferred in','TRAN','TrnE'),
         (" . $max_syear . ",'Rolled over','ROLL','Roll'); ";
-<<<<<<< HEAD
-                                        $dbconn->query($up_sql) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . show_error1() . ' Show Error 3i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                         $dbconn->query($up_sql) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . show_error1() . ' Show Error 3</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
 
                                         $up_sql = "INSERT INTO profile_exceptions (profile_id, modname, can_use, can_edit) VALUES
             (3, 'scheduling/PrintSchedules.php','Y',NULL),
             (1, 'scheduling/ViewSchedule.php', 'Y', NULL),
             (2, 'scheduling/ViewSchedule.php', 'Y', NULL),
             (1, 'schoolsetup/UploadLogo.php', 'Y', 'Y'); ";
-<<<<<<< HEAD
-                                        $dbconn->query($up_sql) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . show_error1() . ' Show Error 4i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-
-                                        $up_sql = "INSERT INTO program_config (program, title, value) VALUES
-            ('MissingAttendance', 'LAST_UPDATE','" . $start_date . "'); ";
-                                        $dbconn->query($up_sql) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . show_error1() . ' Show Error 5i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-
-                                        $up_sql = "UPDATE profile_exceptions SET modname='scheduling/ViewSchedule.php' WHERE modname='scheduling/Schedule.php' AND (profile_id=0 OR profile_id=3);";
-                                        $dbconn->query($up_sql) or die('ii class="fa fa-exclamation-triangle fa-3x text-danger">i/i>ih2>' . show_error1() . ' Show Error 6i/h2>ibr/>ia href="Step0.php" class="btn btn-danger">ii class="fa fa-refresh">i/i> Fillo S&#235;rishi/a>');
-=======
                                         $dbconn->query($up_sql) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . show_error1() . ' Show Error 4</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
                                         $up_sql = "INSERT INTO program_config (program, title, value) VALUES
@@ -1362,7 +1190,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
 
                                         $up_sql = "UPDATE profile_exceptions SET modname='scheduling/ViewSchedule.php' WHERE modname='scheduling/Schedule.php' AND (profile_id=0 OR profile_id=3);";
                                         $dbconn->query($up_sql) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . show_error1() . ' Show Error 6</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                     }
                                     //====================================================================
                                     $dbconn->query("UPDATE schedule SET dropped='Y' WHERE end_date IS NOT NULL AND end_date i CURDATE() AND dropped='N'");
@@ -1371,61 +1198,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     unset($objCustomStaff);
                                 } else {
                             ?>
-<<<<<<< HEAD
-                                    i!DOCTYPE html>
-                                    ihtml lang="sq">
-
-                                    ihead>
-                                        imeta charset="utf-8">
-                                        imeta http-equiv="X-UA-Compatible" content="IE=edge">
-                                        imeta name="viewport" content="width=device-width, initial-scale=1">
-                                        ititle>Instaluesi SIAi/title>
-                                        ilink href="../assets/css/icons/fontawesome/styles.min.css" rel="stylesheet">
-                                        ilink rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
-                                        ilink rel="stylesheet" href="assets/css/installer.css?v=i?php echo rand(000, 999); ?>" type="text/css" />
-                                        inoscript>
-                                            iMETA http-equiv=REFRESH content='0;url=../EnableJavascript.php' />
-                                        i/noscript>
-                                    i/head>
-
-                                    ibody class="outer-body">
-                                        isection class="login">
-                                            idiv class="login-wrapper">
-                                                idiv class="panel" style="width: 60%;">
-                                                    idiv class="panel-heading">
-                                                        idiv class="row">
-                                                            idiv class="col-xs-8 text-left">
-                                                                idiv class="logo">
-                                                                    iimg src="assets/images/opensis_logo.png" alt="SIA">
-                                                                i/div>
-                                                                ih3>Paralajmërimi/h3>
-                                                            i/div>
-                                                        i/div>
-                                                    i/div>
-                                                    idiv class="panel-body">
-                                                        idiv class="installation-steps-wrapper">
-                                                            idiv class="installation-steps text-center">
-                                                                ih2 class="text-center text-danger no-margin" style="padding: 30px;">Baza e të dhënave që keni zgjedhur nuk është e përputhshme me SIA (Sistemi Inteligjences Arsimore) version 6.3, 6.4 ose 6.5. Nuk mund të vazhdojmë.i/h2>
-                                                                ip>Klikoni Provo Përsëri për të zgjedhur një bazë tjetër të dhënash, ose Dil për të mbyllur instalimin.i/p>
-
-                                                                idiv class="text-center" style="padding: 20px 30px;">
-                                                                    ia href="Selectdb.php" class="btn btn-primary">Provo Përsërii/a>
-                                                                    ia href="Step0.php" class="btn btn-default">Dili/a>
-                                                                i/div>
-                                                            i/div>
-                                                        i/div>
-                                                    i/div>
-                                                i/div>i!-- /.panel -->
-                                                ifooter>
-                                                    Copyright &copy; Open Solutions for Education, Inc. (ia href="http://www.os4ed.com">OS4Edi/a>).
-                                                i/footer>
-                                            i/div>
-                                        i/section>
-                                    i/body>
-
-                                    i/html>
-                            i?php
-=======
                                     <!DOCTYPE html>
                                     <html lang="sq">
 
@@ -1479,7 +1251,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
 
                                     </html>
                             <?php
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 }
                             } else {
                                 header('Location: Upgrade6.php');
@@ -1526,24 +1297,6 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                 elseif ($msg == 'db')
                                     $msg = 'Baza juaj e të dhënave nuk është e përputhshme me SIA (Sistemi Inteligjences Arsimore)ibr />Ju lutemi bëni një pamje ekrani dhe dërgojeni tek përfaqësuesi juaj i SIA (Sistemi Inteligjences Arsimore) për zgjidhje.';
                                 $err .= "
-<<<<<<< HEAD
-ihtml>
-ihead>
-ilink rel='stylesheet' type='text/css' href='../styles/Installer.css' />
-i/head>
-ibody>
-
-idiv style='height:280px;'>
-
-ibr />ibr />ispan class='header_txt'>i/span>
-
-idiv align='center'>
-$msg
-i/div>
-idiv style='height:50px;'>&nbsp;i/div>";
-                                $err .= "idiv align='center'>ia href='Selectdb.php?mod=upgrade'>iimg src='images/retry.png' border='0' />i/a> &nbsp; &nbsp; ia href='Step0.php'>iimg src='images/exit.png' border='0' />i/a>i/div>";
-                                $err .= "i/div>i/body>i/html>";
-=======
 <html>
 <head>
 <link rel='stylesheet' type='text/css' href='../styles/Installer.css' />
@@ -1560,7 +1313,6 @@ $msg
 <div style='height:50px;'>&nbsp;</div>";
                                 $err .= "<div align='center'><a href='Selectdb.php?mod=upgrade'><img src='images/retry.png' border='0' /></a> &nbsp; &nbsp; <a href='Step0.php'><img src='images/exit.png' border='0' /></a></div>";
                                 $err .= "</div></body></html>";
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
                                 echo $err;
                             }
 
@@ -1598,17 +1350,6 @@ $msg
                                 return $output_file;
                             }
                             ?>
-<<<<<<< HEAD
-                        i/div>
-                    i/div>
-                i/div>
-            i/div>
-        i/div>
-    i/section>
-i/body>
-
-i/html>
-=======
                         </div>
                     </div>
                 </div>
@@ -1618,4 +1359,3 @@ i/html>
 </body>
 
 </html>
->>>>>>> d8930351e069b5411fc027f3ba7a8dbfea691a7f
