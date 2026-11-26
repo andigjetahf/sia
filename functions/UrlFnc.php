@@ -66,16 +66,18 @@ function encode_url($url)
     }
     //echo $encoded_parameter;
    /**/ 
-    /*second encoding*/
+    /*second encoding - OpenSSL (PHP 8 compatible)*/
         if($encoded_parameter!='')
         {
-            $key = pack('H*', "b0a04b7e103a0cd8b54763151cef08bc55abec29fdebae5e1d417e2feb2a06a3");
-            $key_size =  strlen($key);
-            $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
-            $iv = mcrypt_create_iv($iv_size, MCRYPT_RAND);
-            
-            $ciphertext = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $key,
-                                 $encoded_parameter, MCRYPT_MODE_CBC, $iv);
+            $enc_key = substr(pack('H*', "b0a04b7e103a0cd8b54763151cef08bc55abec29fdebae5e1d417e2feb2a06a3"), 0, 16);
+            $iv = openssl_random_pseudo_bytes(16);
+            $ciphertext = openssl_encrypt(
+                $encoded_parameter,
+                'AES-128-CBC',
+                $enc_key,
+                OPENSSL_RAW_DATA,
+                $iv
+            );
             $ciphertext = $iv . $ciphertext;
             $encoded_parameter = base64_encode($ciphertext);
              $encoded_url .= $encoded_parameter;
@@ -102,20 +104,23 @@ function decode_url()
    
    if(isset($_SERVER['QUERY_STRING']))
    {
-       /*first decription*/
-       $key = pack('H*', "b0a04b7e103a0cd8b54763151cef08bc55abec29fdebae5e1d417e2feb2a06a3");
-       $key_size =  strlen($key);
-       $iv_size = mcrypt_get_iv_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
-       
-       
-       
-        $ciphertext_dec = base64_decode($_SERVER['QUERY_STRING']);      
-        $iv_dec = substr($ciphertext_dec, 0, $iv_size);  
+       /*first decription - OpenSSL (PHP 8 compatible)*/
+       $enc_key = substr(pack('H*', "b0a04b7e103a0cd8b54763151cef08bc55abec29fdebae5e1d417e2feb2a06a3"), 0, 16);
+       $iv_size = 16; // AES-128-CBC uses 16-byte IV
+
+        $ciphertext_dec = base64_decode($_SERVER['QUERY_STRING']);
+        $iv_dec = substr($ciphertext_dec, 0, $iv_size);
         $ciphertext_dec = substr($ciphertext_dec, $iv_size);
-  
-        $plaintext_dec = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $key,
-                                    $ciphertext_dec, MCRYPT_MODE_CBC, $iv_dec);
-      
+
+        $plaintext_dec = openssl_decrypt(
+            $ciphertext_dec,
+            'AES-128-CBC',
+            $enc_key,
+            OPENSSL_RAW_DATA,
+            $iv_dec
+        );
+        if ($plaintext_dec === false) $plaintext_dec = '';
+
        //
        
        /*second decription*/

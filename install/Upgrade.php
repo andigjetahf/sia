@@ -280,13 +280,13 @@
                                 while ($fetch = $stu_info->fetch_assoc()) {
                                     $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                     $fetchlang = $stu_lang->fetch_assoc();
-                                    if (count($fetchlang) > 0)
+                                    if (!empty($fetchlang))
                                         $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                     else {
                                         $dbconn->query('INSERT INTO language (language_name) VALUES (\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $fetchlang = $stu_lang->fetch_assoc();
-                                        if (count($fetchlang) > 0)
+                                        if (!empty($fetchlang))
                                             $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                     }
                                 }
@@ -299,7 +299,7 @@
 
                                     $fetchethn = $stu_ethn->fetch_assoc();
 
-                                    if (count($fetchethn) > 0) {
+                                    if (!empty($fetchethn)) {
                                         $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                     } else {
                                         $dbconn->query('INSERT INTO ethnicity (ethnicity_name) VALUES (\'' . $ethn_fetch['ethnicity'] . '\')') or die($dbconn->error);
@@ -308,7 +308,7 @@
 
                                         $fetchethn = $stu_ethn->fetch_assoc();
 
-                                        if (count($fetchethn) > 0) {
+                                        if (!empty($fetchethn)) {
                                             $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                         }
                                     }
@@ -415,13 +415,13 @@
                                 while ($fetch = $stu_info->fetch_assoc()) {
                                     $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                     $fetchlang = $stu_lang->fetch_assoc();
-                                    if (count($fetchlang) > 0)
+                                    if (!empty($fetchlang))
                                         $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                     else {
                                         $dbconn->query('INSERT INTO language (language_name) VALUES (\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $fetchlang = $stu_lang->fetch_assoc();
-                                        if (count($fetchlang) > 0)
+                                        if (!empty($fetchlang))
                                             $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                     }
                                 }
@@ -434,7 +434,7 @@
 
                                     $fetchethn = $stu_ethn->fetch_assoc();
 
-                                    if (count($fetchethn) > 0) {
+                                    if (!empty($fetchethn)) {
                                         $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                     } else {
                                         $dbconn->query('INSERT INTO ethnicity (ethnicity_name) VALUES (\'' . $ethn_fetch['ethnicity'] . '\')') or die($dbconn->error);
@@ -443,7 +443,7 @@
 
                                         $fetchethn = $stu_ethn->fetch_assoc();
 
-                                        if (count($fetchethn) > 0) {
+                                        if (!empty($fetchethn)) {
                                             $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                         }
                                     }
@@ -536,13 +536,13 @@
                                 while ($fetch = $stu_info->fetch_assoc()) {
                                     $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                     $fetchlang = $stu_lang->fetch_assoc();
-                                    if (count($fetchlang) > 0)
+                                    if (!empty($fetchlang))
                                         $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                     else {
                                         $dbconn->query('INSERT INTO language (language_name) VALUES (\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $fetchlang = $stu_lang->fetch_assoc();
-                                        if (count($fetchlang) > 0)
+                                        if (!empty($fetchlang))
                                             $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                     }
                                 }
@@ -555,7 +555,7 @@
 
                                     $fetchethn = $stu_ethn->fetch_assoc();
 
-                                    if (count($fetchethn) > 0) {
+                                    if (!empty($fetchethn)) {
                                         $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                     } else {
                                         $dbconn->query('INSERT INTO ethnicity (ethnicity_name) VALUES (\'' . $ethn_fetch['ethnicity'] . '\')') or die($dbconn->error);
@@ -564,7 +564,7 @@
 
                                         $fetchethn = $stu_ethn->fetch_assoc();
 
-                                        if (count($fetchethn) > 0) {
+                                        if (!empty($fetchethn)) {
                                             $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                         }
                                     }
@@ -662,13 +662,13 @@
                                     while ($fetch = $stu_info->fetch_assoc()) {
                                         $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $fetchlang = $stu_lang->fetch_assoc();
-                                        if (count($fetchlang) > 0)
+                                        if (!empty($fetchlang))
                                             $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                         else {
                                             $dbconn->query('INSERT INTO language (language_name) VALUES (\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                             $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                             $fetchlang = $stu_lang->fetch_assoc();
-                                            if (count($fetchlang) > 0)
+                                            if (!empty($fetchlang))
                                                 $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                         }
                                     }
@@ -690,7 +690,7 @@
 
                                         $fetchethn = $stu_ethn->fetch_assoc();
 
-                                        if (count($fetchethn) > 0) {
+                                        if (!empty($fetchethn)) {
                                             $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                         } else {
                                             $dbconn->query('INSERT INTO ethnicity (ethnicity_name) VALUES (\'' . $ethn_fetch['ethnicity'] . '\')') or die($dbconn->error);
@@ -699,7 +699,7 @@
 
                                             $fetchethn = $stu_ethn->fetch_assoc();
 
-                                            if (count($fetchethn) > 0) {
+                                            if (!empty($fetchethn)) {
                                                 $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                             }
                                         }
@@ -798,13 +798,13 @@
                                     while ($fetch = $stu_info->fetch_assoc()) {
                                         $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                         $fetchlang = $stu_lang->fetch_assoc();
-                                        if (count($fetchlang) > 0)
+                                        if (!empty($fetchlang))
                                             $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                         else {
                                             $dbconn->query('INSERT INTO language (language_name) VALUES (\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                             $stu_lang = $dbconn->query('SELECT * FROM language WHERE UPPER(language_name)=UPPER(\'' . $fetch['language'] . '\')') or die($dbconn->error);
                                             $fetchlang = $stu_lang->fetch_assoc();
-                                            if (count($fetchlang) > 0)
+                                            if (!empty($fetchlang))
                                                 $dbconn->query('UPDATE students SET language=\'' . $fetchlang['language_id'] . '\' WHERE student_id=' . $fetch['student_id']) or die($dbconn->error);
                                         }
                                     }
@@ -828,7 +828,7 @@
 
                                         $fetchethn = $stu_ethn->fetch_assoc();
 
-                                        if (count($fetchethn) > 0) {
+                                        if (!empty($fetchethn)) {
                                             $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                         } else {
                                             $dbconn->query('INSERT INTO ethnicity (ethnicity_name) VALUES (\'' . $ethn_fetch['ethnicity'] . '\')') or die($dbconn->error);
@@ -837,7 +837,7 @@
 
                                             $fetchethn = $stu_ethn->fetch_assoc();
 
-                                            if (count($fetchethn) > 0) {
+                                            if (!empty($fetchethn)) {
                                                 $dbconn->query('UPDATE students SET ethnicity=\'' . $fetchethn['ethnicity_id'] . '\' WHERE student_id=' . $ethn_fetch['student_id']) or die($dbconn->error);
                                             }
                                         }
@@ -1112,11 +1112,11 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 
                                         if ($dbPass == '')
-                                            exec("$mysql_dir\\mysql --user $dbUser $mysql_database i $Export_FileName", $result, $status);
+                                            exec("$mysql_dir\\mysql --user $dbUser $mysql_database < $Export_FileName", $result, $status);
                                         else
-                                            exec("$mysql_dir\\mysql --user $dbUser --password='$dbPass' $mysql_database i $Export_FileName", $result, $status);
+                                            exec("$mysql_dir\\mysql --user $dbUser --password='$dbPass' $mysql_database < $Export_FileName", $result, $status);
                                     } else
-                                        exec("mysql --user $dbUser --password='$dbPass' $mysql_database i $Export_FileName", $result, $status);
+                                        exec("mysql --user $dbUser --password='$dbPass' $mysql_database < $Export_FileName", $result, $status);
 
 
                                     if ($status != 0) {
@@ -1142,7 +1142,7 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     $custom_insert = $dbconn->query("select count(*) from custom_fields where title in('Ethnicity','Common Name','Physician','Physician Phone','Preferred Hospital','Gender','Email','Phone','Language')") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 403</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     $custom_insert = $custom_insert->fetch_assoc();
                                     $custom_insert = $custom_insert[0];
-                                    if ($custom_insert i 9) {
+                                    if ($custom_insert < 9) {
                                         $custom_insert = "INSERT INTO `custom_fields` (`type`, `search`, `title`, `sort_order`, `select_options`, `category_id`, `system_field`, `required`, `default_selection`, `hide`) VALUES
 ('text', NULL, 'Ethnicity', 3, NULL, 1, 'Y', NULL, NULL, NULL),
 ('text', NULL, 'Common Name', 2, NULL, 1, 'Y', NULL, NULL, NULL),
@@ -1158,7 +1158,7 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                     $login_msg = $dbconn->query("SELECT COUNT(*) as tot FROM login_message WHERE 1") or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 419</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     $login_msg = $login_msg->fetch_assoc();
                                     $login_msg = $login_msg['tot'];
-                                    if ($login_msg i 1) {
+                                    if ($login_msg < 1) {
                                         $login_msg = "INSERT INTO `login_message` (`id`, `message`, `display`) VALUES
 (1, 'This is a restricted network. Use of this network, its equipment, and resources is monitored at all times and requires explicit permission from the network administrator. If you do not have this permission in writing, you are violating the regulations of this network and can and will be prosecuted to the fullest extent of law. By continuing into this system, you are acknowledging that you are aware of and agree to these terms.', 'Y')";
                                         $dbconn->query($login_msg) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . $dbconn->error . ' at line 425</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
@@ -1192,7 +1192,7 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                         $dbconn->query($up_sql) or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>' . show_error1() . ' Show Error 6</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
                                     }
                                     //====================================================================
-                                    $dbconn->query("UPDATE schedule SET dropped='Y' WHERE end_date IS NOT NULL AND end_date i CURDATE() AND dropped='N'");
+                                    $dbconn->query("UPDATE schedule SET dropped='Y' WHERE end_date IS NOT NULL AND end_date < CURDATE() AND dropped='N'");
                                     header('Location: Upgrade6.php');
                                     unset($objCustomStudents);
                                     unset($objCustomStaff);
@@ -1243,7 +1243,7 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                                     </div>
                                                 </div><!-- /.panel -->
                                                 <footer>
-                                                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4Ed</a>).
+                                                    Të gjitha të drejtat të rezervuara &copy; <?php echo date('Y'); ?> SIA - Sistemi i Inteligjencës Arsimore.
                                                 </footer>
                                             </div>
                                         </section>
@@ -1258,14 +1258,20 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
 
                             function executeSQL($myFile, $mysql_database)
                             {
+                                mysqli_report(MYSQLI_REPORT_OFF);
                                 $sql = file_get_contents($myFile);
                                 $sqllines = par_spt("/[\n]/", $sql);
                                 $cmd = '';
                                 $delim = false;
-                                $dbconncus = new mysqli($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], $mysql_database, $_SESSION['port']);
-                                if ($dbconncus && !$dbconncus->connect_errno) {
-                                    $dbconncus->query("SET SESSION sql_mode = ''");
+                                try {
+                                    $dbconncus = @new mysqli($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], $mysql_database, $_SESSION['port']);
+                                } catch (Throwable $e) {
+                                    die('Nuk mund të lidhet me bazën e të dhënave: ' . $e->getMessage());
                                 }
+                                if (!$dbconncus || $dbconncus->connect_errno) {
+                                    die('Nuk mund të lidhet me bazën e të dhënave: ' . ($dbconncus ? $dbconncus->connect_error : ''));
+                                }
+                                $dbconncus->query("SET SESSION sql_mode = ''");
                                 foreach ($sqllines as $l) {
                                     if (par_rep_mt('/^\s*--/', $l) == 0) {
                                         if (par_rep_mt('/DELIMITER \$\$/', $l) != 0) {
@@ -1295,7 +1301,7 @@ WHERE value='4.6' OR value='4.7' OR value LIKE '4.8%' OR value='4.9' OR value='5
                                 if ($msg == '')
                                     $msg = 'Aplikacioni nuk ka leje për të shkruar në direktorinë e instalimit.';
                                 elseif ($msg == 'db')
-                                    $msg = 'Baza juaj e të dhënave nuk është e përputhshme me SIA (Sistemi Inteligjences Arsimore)ibr />Ju lutemi bëni një pamje ekrani dhe dërgojeni tek përfaqësuesi juaj i SIA (Sistemi Inteligjences Arsimore) për zgjidhje.';
+                                    $msg = 'Baza juaj e të dhënave nuk është e përputhshme me SIA (Sistemi Inteligjences Arsimore)<br />Ju lutemi bëni një pamje ekrani dhe dërgojeni tek përfaqësuesi juaj i SIA (Sistemi Inteligjences Arsimore) për zgjidhje.';
                                 $err .= "
 <html>
 <head>

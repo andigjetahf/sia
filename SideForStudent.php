@@ -25,7 +25,7 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #***************************************************************************************
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 unset($_SESSION['student_id']);
 unset($_SESSION['students_order']);
 unset($_SESSION['_REQUEST_vars']);

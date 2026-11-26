@@ -26,7 +26,7 @@
 #
 #***************************************************************************************
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 //!empty($_SESSION['USERNAME']) or die('Access denied!');
 include "functions/ParamLibFnc.php";
 //include("functions/UrlFnc.php");

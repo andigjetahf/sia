@@ -47,16 +47,15 @@ function ListFiles($dir) {
     }
 }
 
-foreach (ListFiles('.') as $key=>$file)
-{
-	$list=explode('/',$file);
-	$count=count($list);
-	$target=$list[$count-1];
-	if(strpos($target,'.bak')==true)
-	 {
-	 	unlink($file);
-	 }
-    
-	
-}  
+$files = ListFiles('.');
+if (is_array($files)) {
+    foreach ($files as $key => $file) {
+        $list = explode('/', $file);
+        $count = count($list);
+        $target = $list[$count - 1];
+        if (strpos($target, '.bak') !== false) {
+            @unlink($file);
+        }
+    }
+}
 ?>

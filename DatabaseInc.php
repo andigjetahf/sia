@@ -26,19 +26,23 @@
 #
 #***************************************************************************************
 // Establish MySQL DB connection.
+if (function_exists('mysqli_report')) {
+    mysqli_report(MYSQLI_REPORT_OFF);
+}
 include 'RedirectRootInc.php';
 include 'ConnectionClass.php';
 require_once "functions/PragRepFnc.php";
 function db_start()
 {
     global $DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $DatabasePort, $DatabaseType, $connection;
-    $connection = new ConnectDBOpensis();
+    $db_helper = new ConnectDBOpensis();
+    $connection = null;
     switch ($DatabaseType) {
         case 'mysqli':
 
-            if ($connection->auto_init == true) {
-                $connection = $connection->init($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $DatabasePort ?? 3306);
-                if ($connection && !$connection->connect_errno) {
+            if ($db_helper->auto_init == true) {
+                $connection = $db_helper->init($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $DatabasePort ?? 3306);
+                if ($connection instanceof mysqli && !$connection->connect_errno) {
                     mysqli_set_charset($connection, "utf8");
                 }
             }
@@ -46,13 +50,12 @@ function db_start()
     }
 
     // Error code for both.
-    if ($connection === false) {
-        switch ($DatabaseType) {
-            case 'mysqli':
-                $errormessage = $connection->error;
-                break;
-        }
-        db_show_error("", "" . _couldNotConnectToDatabase . ": $DatabaseServer", $errormessage);
+    if (!$connection || !($connection instanceof mysqli) || $connection->connect_errno) {
+        $errormessage = ($connection instanceof mysqli && $connection->connect_errno)
+            ? $connection->connect_error
+            : ($db_helper->last_error ?: (mysqli_connect_error() ?: 'Lidhja dështoi'));
+        $couldNotConnect = defined('_couldNotConnectToDatabase') ? _couldNotConnectToDatabase : 'Nuk mund të lidhet me bazën e të dhënave';
+        db_show_error("", "" . $couldNotConnect . ": $DatabaseServer", $errormessage);
     }
     return $connection;
 }
@@ -60,30 +63,35 @@ function db_start()
 
 ##### Connection help #####
 if (!empty($DatabaseServer) && !empty($DatabaseUsername) && !empty($DatabaseName)) {
-    $connection = mysqli_connect($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName);
+    try {
+        $port = !empty($DatabasePort) ? (int)$DatabasePort : 3306;
+        $connection = @mysqli_connect($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $port);
 
-    if ($connection) {
-        $result = $connection->query("SHOW VARIABLES WHERE VARIABLE_NAME = 'event_scheduler'");
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            if (strtolower($row['Value']) !== 'on') {
-                @$connection->query("SET GLOBAL event_scheduler = ON");
+        if ($connection) {
+            $result = @$connection->query("SHOW VARIABLES WHERE VARIABLE_NAME = 'event_scheduler'");
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                if (strtolower($row['Value'] ?? '') !== 'on') {
+                    @$connection->query("SET GLOBAL event_scheduler = ON");
+                }
+            }
+            $result = @mysqli_query($connection, "SELECT @@GLOBAL.sql_mode AS sql_mode");
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                if (strtoupper($row['sql_mode'] ?? '') !== 'NO_ENGINE_SUBSTITUTION') {
+                    @$connection->query("SET @@GLOBAL.sql_mode = 'NO_ENGINE_SUBSTITUTION'");
+                }
+            }
+            $result = @mysqli_query($connection, "SELECT @@GLOBAL.log_bin_trust_function_creators AS lbtfc");
+            if ($result && mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                if ((int)($row['lbtfc'] ?? 0) !== 1) {
+                    @$connection->query("SET @@GLOBAL.log_bin_trust_function_creators = 1");
+                }
             }
         }
-        $result = @mysqli_query($connection, "SELECT @@GLOBAL.sql_mode AS sql_mode");
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            if (strtoupper($row['sql_mode']) !== 'NO_ENGINE_SUBSTITUTION') {
-                @$connection->query("SET @@GLOBAL.sql_mode = 'NO_ENGINE_SUBSTITUTION'");
-            }
-        }
-        $result = @mysqli_query($connection, "SELECT @@GLOBAL.log_bin_trust_function_creators AS lbtfc");
-        if ($result && mysqli_num_rows($result) > 0) {
-            $row = mysqli_fetch_assoc($result);
-            if ((int)$row['lbtfc'] !== 1) {
-                @$connection->query("SET @@GLOBAL.log_bin_trust_function_creators = 1");
-            }
-        }
+    } catch (Throwable $e) {
+        // Silently catch permission or connection errors
     }
 }
 
@@ -106,7 +114,12 @@ function DBQuery($sql)
 {
     global $DatabaseType, $_openSIS, $connection;
 
-    // $connection = db_start();
+    if (!$connection || !($connection instanceof mysqli)) {
+        $connection = db_start();
+    }
+    if (!$connection || !($connection instanceof mysqli)) {
+        return false;
+    }
 
     if (!empty($_SESSION['STAFF_ID'])) {
         $userId = $_SESSION['STAFF_ID'];
@@ -115,8 +128,9 @@ function DBQuery($sql)
     } else {
         $userId = '';
     }
-    if (!empty($userId))
-        $connection->query("set @userId= $userId;");
+    if (!empty($userId)) {
+        @$connection->query("set @userId= $userId;");
+    }
     switch ($DatabaseType) {
         case 'mysqli':
 
@@ -148,15 +162,18 @@ function DBQuery($sql)
                         $result = $connection->query($value);
                         if (!$result) {
                             $connection->query("ROLLBACK");
-                            die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
+                            $fail_lbl = defined('_dbExecuteFailed') ? _dbExecuteFailed : 'Ekzekutimi i pyetjes në DB dështoi';
+                            die(db_show_error($sql, $fail_lbl, mysqli_error($connection)));
                         }
                     }
                 }
             } else {
                 try {
                     $result = $connection->query($sql);
-                } catch (Exception $e) {
-                    die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
+                } catch (Throwable $e) {
+                    $err_msg = ($connection instanceof mysqli) ? mysqli_error($connection) : $e->getMessage();
+                    $fail_lbl = defined('_dbExecuteFailed') ? _dbExecuteFailed : 'Ekzekutimi i pyetjes në DB dështoi';
+                    die(db_show_error($sql, $fail_lbl, $err_msg));
                 }
             }
             break;
@@ -190,15 +207,29 @@ function DBQuery_assignment($sql)
                 $array = explode(";", $sql);
                 foreach ($array as $value) {
                     if ($value != "") {
-                        $result = $connection->query($value);
+                        try {
+                            $result = $connection->query($value);
+                        } catch (Throwable $e) {
+                            $result = false;
+                        }
                         if (!$result) {
-                            $connection->query("ROLLBACK");
+                            try {
+                                $connection->query("ROLLBACK");
+                            } catch (Throwable $re) {
+                            }
                             die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
                         }
                     }
                 }
             } else {
-                $result = $connection->query($sql) or die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
+                try {
+                    $result = $connection->query($sql);
+                } catch (Throwable $e) {
+                    $result = false;
+                }
+                if (!$result) {
+                    die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
+                }
             }
             break;
     }
@@ -228,16 +259,29 @@ function DBQueryMod($sql)
                 $array = explode(";", $sql);
                 foreach ($array as $value) {
                     if ($value != "") {
-                        $result = $connection->query($value);
-
+                        try {
+                            $result = $connection->query($value);
+                        } catch (Throwable $e) {
+                            $result = false;
+                        }
                         if (!$result) {
-                            $connection->query("ROLLBACK");
+                            try {
+                                $connection->query("ROLLBACK");
+                            } catch (Throwable $re) {
+                            }
                             die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
                         }
                     }
                 }
             } else {
-                $result = $connection->query($sql) or die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
+                try {
+                    $result = $connection->query($sql);
+                } catch (Throwable $e) {
+                    $result = false;
+                }
+                if (!$result) {
+                    die(db_show_error($sql, _dbExecuteFailed, mysqli_error($connection)));
+                }
             }
             break;
     }
@@ -350,62 +394,77 @@ function db_show_error($sql, $failnote, $additional = '')
 {
     global $openSISTitle, $openSISVersion, $openSISNotifyAddress;
 
-    PopTable('header', _error);
+    $err_lbl = defined('_error') ? _error : 'Gabim';
+    $hasPopTable = function_exists('PopTable');
+    if ($hasPopTable) {
+        PopTable('header', $err_lbl);
+    }
     $tb = debug_backtrace();
-    $error = $tb[1]['file'] . " at " . $tb[1]['line'];
+    $error = (isset($tb[1]['file']) ? $tb[1]['file'] : '') . " at " . (isset($tb[1]['line']) ? $tb[1]['line'] : '');
+    $date_lbl = defined('_date') ? _date : 'Data';
+    $fail_lbl = defined('_failureNotice') ? _failureNotice : 'Njoftim dështimi';
+    $sql_lbl = defined('_sql') ? _sql : 'SQL';
+    $trace_lbl = defined('_traceback') ? _traceback : 'Gjurmimi';
+    $add_lbl = defined('_additionalInformation') ? _additionalInformation : 'Informacion shtesë';
+    $err_msg1 = defined('_openSisHasEncounteredAnErrorThatCouldHaveResultedFromAnyOfTheFollowing') ? _openSisHasEncounteredAnErrorThatCouldHaveResultedFromAnyOfTheFollowing : 'SIA hashi në një problem';
+    $inv_input = defined('_invalidDataInput') ? _invalidDataInput : 'Të dhëna të pavlefshme';
+    $db_err = defined('_databaseSqlError') ? _databaseSqlError : 'Gabim SQL në bazën e të dhënave';
+    $prog_err = defined('_programError') ? _programError : 'Gabim programi';
+    $contact_msg = defined('_pleaseTakeThisScreenShotAndSendItToYourOpenSisRepresentativeForDebuggingAndResolution') ? _pleaseTakeThisScreenShotAndSendItToYourOpenSisRepresentativeForDebuggingAndResolution : 'Ju lutemi kontaktoni administratorin e sistemit me këtë pamje ekrani';
     echo "
 		<TABLE CELLSPACING=10 BORDER=0>
-			<TD align=right><b>" . _date . ":</b></TD>
+			<TD align=right><b>" . $date_lbl . ":</b></TD>
 			<TD><pre>" . date("m/d/Y h:i:s") . "</pre></TD>
 		</TR><TR>
-			<TD align=right><b>" . _failureNotice . ":</b></TD>
+			<TD align=right><b>" . $fail_lbl . ":</b></TD>
 			<TD><pre> $failnote </pre></TD>
 		</TR><TR>
-			<TD align=right><b>" . _sql . ":</b></TD>
+			<TD align=right><b>" . $sql_lbl . ":</b></TD>
 			<TD>$sql</TD>
 		</TR>
 		</TR><TR>
-			<TD align=right><b>" . _traceback . ":</b></TD>
+			<TD align=right><b>" . $trace_lbl . ":</b></TD>
 			<TD>$error</TD>
 		</TR>
 		</TR><TR>
-			<TD align=right><b>" . _additionalInformation . ":</b></TD>
+			<TD align=right><b>" . $add_lbl . ":</b></TD>
 			<TD>$additional</TD>
 		</TR>
 		</TABLE>";
     echo "
 		<TABLE CELLSPACING=10 BORDER=0>
-			<TR><TD align=right><b>" . _date . ":</TD>
+			<TR><TD align=right><b>" . $date_lbl . ":</TD>
 			<TD><pre>" . date("m/d/Y h:i:s") . "</pre></TD>
 		</TR><TR>
 			<TD align=right></TD>
-			<TD>" . _openSisHasEncounteredAnErrorThatCouldHaveResultedFromAnyOfTheFollowing . ":
+			<TD>" . $err_msg1 . ":
 			<br/>
 			<ul>
-			<li>" . _invalidDataInput . "</li>
-			<li>" . _databaseSqlError . "</li>
-			<li>" . _programError . "</li>
+			<li>" . $inv_input . "</li>
+			<li>" . $db_err . "</li>
+			<li>" . $prog_err . "</li>
 			</ul>
 
-			" . _pleaseTakeThisScreenShotAndSendItToYourOpenSisRepresentativeForDebuggingAndResolution . ".
+			" . $contact_msg . ".
 			</TD>
 		</TR>
 
 		</TABLE>";
-    //Something you have asked the system to do has thrown a database error.  A system administrator has been notified, and the problem will be fixed as soon as possible.  It might be that changing the input parameters sent to this program will cause it to run properly.  Thanks for your patience.
-    PopTable('footer');
-    echo "<!-- " . _sqlStatement . ": \n\n $sql \n\n -->";
+    if ($hasPopTable) {
+        PopTable('footer');
+    }
+    echo "<!-- " . (defined('_sqlStatement') ? _sqlStatement : 'SQL') . ": \n\n $sql \n\n -->";
 
     if ($openSISNotifyAddress) {
         $message = "System : " . $openSISTitle . " \n";
-        $message .= "" . _date . ": " . date("m/d/Y h:i:s") . "\n";
-        $message .= " Page : " . $_SERVER['PHP_SELF'] . ' ' . ProgramTitle() . " \n\n";
-        $message .= "" . _failureNotice . ":  $failnote \n";
-        $message .= "" . _additionalInfo . ": $additional \n";
+        $message .= "" . (defined('_date') ? _date : 'Data') . ": " . date("m/d/Y h:i:s") . "\n";
+        $message .= " Page : " . $_SERVER['PHP_SELF'] . ' ' . (function_exists('ProgramTitle') ? ProgramTitle() : '') . " \n\n";
+        $message .= "" . (defined('_failureNotice') ? _failureNotice : 'Njoftim dështimi') . ":  $failnote \n";
+        $message .= "" . (defined('_additionalInfo') ? _additionalInfo : 'Informacion shtesë') . ": $additional \n";
         $message .= "\n $sql \n";
-        $message .= "" . _requestArray . ": \n" . ShowVar($_REQUEST, 'Y', 'N');
-        $message .= "\n\n" . _sessionArray . ": \n" . ShowVar($_SESSION, 'Y', 'N');
-        mail($openSISNotifyAddress, _openSisDatabaseError, $message);
+        $message .= "" . (defined('_requestArray') ? _requestArray : 'Kërkesa') . ": \n" . (function_exists('ShowVar') ? ShowVar($_REQUEST, 'Y', 'N') : print_r($_REQUEST, true));
+        $message .= "\n\n" . (defined('_sessionArray') ? _sessionArray : 'Sesioni') . ": \n" . (function_exists('ShowVar') ? ShowVar($_SESSION, 'Y', 'N') : print_r($_SESSION, true));
+        @mail($openSISNotifyAddress, defined('_openSisDatabaseError') ? _openSisDatabaseError : 'Gabim i bazës së të dhënave SIA', $message);
     }
 
     die();

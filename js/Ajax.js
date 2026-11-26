@@ -1,4 +1,4 @@
-﻿var loadingImage = new Image();
+var loadingImage = new Image();
 loadingImage.src = "assets/ajax-loader.gif";
 
 function showLoading()

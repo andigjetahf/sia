@@ -857,7 +857,7 @@ if ($_REQUEST['modfunc'] == 'save') {
 
                         $separator = '';
                         if (!$category[1]['INCLUDE'])
-                            include('modules/students/includes/OtherInfoInc.inc.php');
+                            include('modules/students/includes/OtherInfoInc.php');
                         elseif (!strpos($category[1]['INCLUDE'], '/'))
                             include('modules/students/includes/' . $category[1]['INCLUDE'] . '.inc.php');
                         else {

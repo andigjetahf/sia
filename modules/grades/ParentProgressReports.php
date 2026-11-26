@@ -26,7 +26,7 @@
 #
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
-include '_makeLetterGrade.fnc.php';
+include '../../functions/MakeLetterGradeFnc.php';
 if ($_REQUEST['modfunc'] == 'save') {
     $st_id = UserStudentID();
     $extra['SELECT'] = ',ssm.START_DATE';

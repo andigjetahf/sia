@@ -27,11 +27,6 @@
 #***************************************************************************************
 include("Data.php");
 include("Warehouse.php");
-// PHP 8.x compatible - using mysqli
-$con = new mysqli($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName);
-if ($con->connect_error) {
-    die("Connection failed: " . $con->connect_error);
-}
 $keyword = $_REQUEST['str'] ?? '';
 if($keyword=="")
     echo "";

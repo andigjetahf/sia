@@ -256,7 +256,7 @@ if((!$_REQUEST['modfunc'] || $_REQUEST['modfunc']=='choose_course') && !$_REQUES
                 ListOutput($periods_RET,$columns,_period,_periods,$link,array(),$LO_options,'ForWindow');
                 if(count($periods_RET))
                 {
-                        echo '<BR>'.SubmitButton(done,'done','class="btn btn-primary" ').'&nbsp;&nbsp;'.SubmitButton(clearExit,'exit','class="btn btn-primary" ');
+                        echo '<BR>'.SubmitButton(_done,'done','class="btn btn-primary" ').'&nbsp;&nbsp;'.SubmitButton(_clearExit,'exit','class="btn btn-primary" ');
                 }
                 echo '</TD>';
             echo '</FORM>';

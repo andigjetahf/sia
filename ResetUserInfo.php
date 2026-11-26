@@ -27,7 +27,7 @@
 #***************************************************************************************
 error_reporting(0);
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 include "functions/ParamLibFnc.php";
 include "Data.php";
 include "functions/DbGetFnc.php";

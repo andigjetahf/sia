@@ -42,19 +42,23 @@ if (isset($_SESSION['mod']) && $_SESSION['mod']== 'upgrade') {
     $fh = fopen($myFile, 'w');
 
     if ($fh == TRUE) {
-        $string .= "<" . "?php \n";
-        $string .= "$" . "DatabaseType = 'mysqli'; \n";
-        $string .= "$" . "DatabaseServer = '" . $_SESSION['server'] . "'; \n";
-        $string .= "$" . "DatabaseUsername = '" . $_SESSION['username'] . "'; \n";
-        $string .= "$" . "DatabasePassword = '" . $_SESSION['password'] . "'; \n";
-        $string .= "$" . "DatabaseName = '" . $_SESSION['db'] . "'; \n";
-        $string .= "$" . "DatabasePort = '" . $_SESSION['port'] . "'; \n";
-        $string .="?" . ">";
+        $string = "<?php\n";
+        $string .= "\$DatabaseType = 'mysqli';\n";
+        $string .= "\$DatabaseServer = " . var_export((string)($_SESSION['server'] ?? 'db'), true) . ";\n";
+        $string .= "\$DatabaseUsername = " . var_export((string)($_SESSION['username'] ?? 'root'), true) . ";\n";
+        $string .= "\$DatabasePassword = " . var_export((string)($_SESSION['password'] ?? ''), true) . ";\n";
+        $string .= "\$DatabaseName = " . var_export((string)($_SESSION['db'] ?? 'sia'), true) . ";\n";
+        $string .= "\$DatabasePort = " . var_export((string)($_SESSION['port'] ?? '3306'), true) . ";\n";
+        $string .= "?>";
 
-        fwrite($fh, $string);
+        $written = fwrite($fh, $string);
+        fclose($fh);
+    } else {
+        $written = false;
     }
-
-    fclose($fh);
+    if (!$written || !file_exists($myFile) || filesize($myFile) < 20) {
+        die('<!DOCTYPE html><html lang="sq"><head><meta charset="utf-8"><title>Gabim në Instalim</title></head><body style="font-family:sans-serif;padding:40px;text-align:center;"><h2>Nuk u arrit të shkruhej skedari Data.php</h2><p>Ju lutemi kontrolloni lejet e shkrimit (permissions) në dosjen rrënjësore të SIA dhe provoni përsëri.</p></body></html>');
+    }
     $display_text = 'Sistemi juaj u përditësua me sukses. Ju lutemi klikoni butonin më poshtë<br/> për të vazhduar te hyrja me kredencialet tuaja ekzistuese.
 ';
     echo '<!DOCTYPE html>
@@ -104,7 +108,7 @@ if (isset($_SESSION['mod']) && $_SESSION['mod']== 'upgrade') {
                         </div><!-- /.panel-body -->
                         </div><!-- /.panel -->
                         <footer>
-                            Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4Ed</a>).
+                            Të gjitha të drejtat të rezervuara &copy; ' . date('Y') . ' SIA - Sistemi i Inteligjencës Arsimore.
                         </footer>
                     </div><!-- /.login-wrapper -->
                 </section><!-- /.login -->
@@ -115,28 +119,29 @@ if (isset($_SESSION['mod']) && $_SESSION['mod']== 'upgrade') {
     $fh = fopen($myFile, 'w');
 
     if ($fh == TRUE) {
+        $THIS_server = (string)($_SESSION['server'] ?? 'db');
+        $THIS_username = (string)($_SESSION['username'] ?? 'root');
+        $THIS_password = (string)($_SESSION['password'] ?? '');
+        $THIS_db = (string)($_SESSION['db'] ?? 'sia');
+        $THIS_port = (string)($_SESSION['port'] ?? '3306');
 
-        include '../functions/SqlSecurityFnc.php';
+        $string = "<?php\n";
+        $string .= "\$DatabaseType = 'mysqli';\n";
+        $string .= "\$DatabaseServer = " . var_export($THIS_server, true) . ";\n";
+        $string .= "\$DatabaseUsername = " . var_export($THIS_username, true) . ";\n";
+        $string .= "\$DatabasePassword = " . var_export($THIS_password, true) . ";\n";
+        $string .= "\$DatabaseName = " . var_export($THIS_db, true) . ";\n";
+        $string .= "\$DatabasePort = " . var_export($THIS_port, true) . ";\n";
+        $string .= "?>";
 
-        $THIS_server = sqlSecurityFilter($_SESSION['server'] ?? 'db', 'no');
-        $THIS_username = sqlSecurityFilter($_SESSION['username'] ?? 'root', 'no');
-        $THIS_password = sqlSecurityFilter($_SESSION['password'] ?? '', 'no');
-        $THIS_db = sqlSecurityFilter($_SESSION['db'] ?? 'sia', 'no');
-        $THIS_port = sqlSecurityFilter($_SESSION['port'] ?? '3306', 'no');
-
-        $string .= "<" . "?php \n";
-        $string .= "$" . "DatabaseType = 'mysqli'; \n";
-        $string .= "$" . "DatabaseServer = '" . $THIS_server . "'; \n";
-        $string .= "$" . "DatabaseUsername = '" . $THIS_username . "'; \n";
-        $string .= "$" . "DatabasePassword = '" . $THIS_password . "'; \n";
-        $string .= "$" . "DatabaseName = '" . $THIS_db . "'; \n";
-        $string .= "$" . "DatabasePort = '" . $THIS_port . "'; \n";
-        $string .="?" . ">";
-
-        fwrite($fh, $string);
+        $written = fwrite($fh, $string);
+        fclose($fh);
+    } else {
+        $written = false;
     }
-
-    fclose($fh);
+    if (!$written || !file_exists($myFile) || filesize($myFile) < 20) {
+        die('<!DOCTYPE html><html lang="sq"><head><meta charset="utf-8"><title>Gabim në Instalim</title></head><body style="font-family:sans-serif;padding:40px;text-align:center;"><h2>Nuk u arrit të shkruhej skedari Data.php</h2><p>Ju lutemi kontrolloni lejet e shkrimit (permissions) në dosjen rrënjësore të SIA dhe provoni përsëri.</p></body></html>');
+    }
     $display_text = '';
     $school_name = isset($_SESSION['sname']) ? $_SESSION['sname'] : 'Shkolla';
     $school_installed = isset($_SESSION['school_installed']) ? $_SESSION['school_installed'] : 'user';
@@ -187,8 +192,7 @@ if (isset($_SESSION['mod']) && $_SESSION['mod']== 'upgrade') {
                                         <div class="text-center"><img src="assets/images/check-clipart-animated.gif" width="80" /><h3 class="text-success">Urime! Ju keni instaluar me sukses sistemin SIA</h3></div>
                                         <div class="row" style="padding: 10px 0 0;">
                                             <div class="col-md-12 text-center">
-                                                i!--ip style="padding: 0 30px 10px;">' . $display_text . '</p>
-                                                <p style="padding: 0 30px;"><b>You can also visit the support portal and read the quick setup: <br/><a href="https://support.os4ed.com/hc/en-us/articles/200976357-Quick-Set-Up" target="_blank">https://support.os4ed.com/hc/en-us/articles/200976357-Quick-Set-Up</a></b></p>-->
+                                                <p style="padding: 0 30px 10px; font-size: 15px; line-height: 1.6;">' . $display_text . '</p>
                                             </div>
                                         </div>
 
@@ -199,7 +203,7 @@ if (isset($_SESSION['mod']) && $_SESSION['mod']== 'upgrade') {
                         </div><!-- /.panel-body -->
                         </div><!-- /.panel -->
                         <footer>
-                            Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4ED</a>).
+                            Të gjitha të drejtat të rezervuara &copy; ' . date('Y') . ' SIA - Sistemi i Inteligjencës Arsimore.
                         </footer>
                     </div><!-- /.login-wrapper -->
                 </section><!-- /.login -->
@@ -208,11 +212,11 @@ if (isset($_SESSION['mod']) && $_SESSION['mod']== 'upgrade') {
     
 } else {
     echo "<html><head><link rel='stylesheet' type='text/css' href='../styles/Installer.css'></head><body>
-<div class=\"heading\">System Successfully Upgraded
+<div class=\"heading\">Sistemi u përditësua me sukses
 <div style=\"background-image:url(images/step4.gif); background-repeat:no-repeat; background-position:50% 20px; height:270px;\">
 <table border=\"0\" cellspacing=\"6\" cellpadding=\"3\" align=\"center\">
       <tr>
-        <td  align=\"center\" style=\"padding-top:36px; padding-bottom:16px\">Step 3 of 3</td>
+        <td  align=\"center\" style=\"padding-top:36px; padding-bottom:16px\">Hapi 3 nga 3</td>
       </tr>
 	  
       <tr>

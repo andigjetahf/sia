@@ -30,20 +30,20 @@ include '../../RedirectModulesInc.php';
 include 'lang/language.php';
 unset($_SESSION['student_id']);
 
-$extra['search'] .= '<div class=.row.>';
-$extra['search'] .= '<div class=.col-lg-6.>';
+$extra['search'] .= '<div class="row">';
+$extra['search'] .= '<div class="col-lg-6">';
 Widgets('request');
 $extra['search'] .= '</div>'; //.col-lg-6
-$extra['search'] .= '<div class=.col-lg-6.>';
+$extra['search'] .= '<div class="col-lg-6">';
 Widgets('mailing_labels');
 $extra['search'] .= '</div>'; //.col-lg-6
 $extra['search'] .= '</div>'; //.row
 
 $extra['force_search'] = true;
 if (!$_REQUEST['search_modfunc'] || $_openSIS['modules_search']) {
-    DrawBC(.. . _scheduling . . > . . ProgramTitle());
+    DrawBC("" . _scheduling . " > " . ProgramTitle());
     $extra['new'] = true;
-    $extra['action'] .= .&_openSIS_PDF=true&head_html=Student+Print+Request.;
+    $extra['action'] .= "&_openSIS_PDF=true&head_html=Student+Print+Request";
     $extra['pdf'] = true;
     Search('student_id', $extra);
 } else {
@@ -62,26 +62,26 @@ if (!$_REQUEST['search_modfunc'] || $_openSIS['modules_search']) {
     if (count($RET)) {
         $__DBINC_NO_SQLSHOW = true;
         $handle = PDFStart();
-        echo .<table width=100%  style=\. font-family:Arial; font-size:12px;\. >.;
-        echo .<tr><td width=105>. . DrawLogo() . .</td><td  style=\.font-size:15px; font-weight:bold; padding-top:20px;\.>. . GetSchool(UserSchool()) . .<div style=\.font-size:12px;\.>. . _studentPrintRequest . .</div></td><td align=right style=\.padding-top:20px;\.>. . ProperDate(DBDate()) . .<br \>. . _poweredByOpenSis . . openSIS</td></tr><tr><td colspan=3 style=\.border-top:1px solid #333;\.>&nbsp;</td></tr></table>.;
+        echo "<table width=100%  style=\" font-family:Arial; font-size:12px;\" >";
+        echo "<tr><td width=105>" . DrawLogo() . "</td><td  style=\"font-size:15px; font-weight:bold; padding-top:20px;\">" . GetSchool(UserSchool()) . "<div style=\"font-size:12px;\">" . _studentPrintRequest . "</div></td><td align=right style=\"padding-top:20px;\">" . ProperDate(DBDate()) . "<br \>" . _poweredByOpenSis . " openSIS</td></tr><tr><td colspan=3 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
         foreach ($RET as $student_id => $courses) {
             if ($_REQUEST['mailing_labels'] == 'Y') {
                 foreach ($courses as $address) {
 
                     unset($_openSIS['DrawHeader']);
 
-                    echo .</table >.;
+                    echo "</table >";
                     echo '<BR><BR>';
                     echo '<table border=0>';
-                    echo .<tr><td>. . _studentID . .:</td>.;
-                    echo .<td>. . $address[1]['STUDENT_ID'] . .</td></tr>.;
-                    echo .<tr><td>. . _studentName . .:</td>.;
-                    echo .<td>. . $address[1]['FULL_NAME'] . .</td></tr>.;
-                    echo .<tr><td>. . _studentGrade . .:</td>.;
-                    echo .<td>. . $address[1]['GRADE_ID'] . .</td></tr>.;
+                    echo "<tr><td>" . _studentID . ":</td>";
+                    echo "<td>" . $address[1]['STUDENT_ID'] . "</td></tr>";
+                    echo "<tr><td>" . _studentName . ":</td>";
+                    echo "<td>" . $address[1]['FULL_NAME'] . "</td></tr>";
+                    echo "<tr><td>" . _studentGrade . ":</td>";
+                    echo "<td>" . $address[1]['GRADE_ID'] . "</td></tr>";
                     if ($address[1]['MAILING_LABEL'] != '') {
-                        echo .<tr><td>. . _studentMaillingLabel . . :</td>.;
-                        echo .<td> . . $address[1]['MAILING_LABEL'] . .</td></tr>.;
+                        echo "<tr><td>" . _studentMaillingLabel . " :</td>";
+                        echo "<td> " . $address[1]['MAILING_LABEL'] . "</td></tr>";
                     }
                     echo '</table>';
 
@@ -91,18 +91,18 @@ if (!$_REQUEST['search_modfunc'] || $_openSIS['modules_search']) {
             } else {
                 unset($_openSIS['DrawHeader']);
 
-                echo .</table >.;
+                echo "</table >";
                 echo '<BR><BR>';
                 echo '<table border=0>';
-                echo .<tr><td>. . _studentId . .:</td>.;
-                echo .<td>. . $courses[1]['STUDENT_ID'] . .</td></tr>.;
-                echo .<tr><td>. . _studentName . .:</td>.;
-                echo .<td>. . $courses[1]['FULL_NAME'] . .</td></tr>.;
-                echo .<tr><td>. . _studentGrade . .:</td>.;
-                echo .<td>. . $courses[1]['GRADE_ID'] . .</td></tr>.;
+                echo "<tr><td>" . _studentId . ":</td>";
+                echo "<td>" . $courses[1]['STUDENT_ID'] . "</td></tr>";
+                echo "<tr><td>" . _studentName . ":</td>";
+                echo "<td>" . $courses[1]['FULL_NAME'] . "</td></tr>";
+                echo "<tr><td>" . _studentGrade . ":</td>";
+                echo "<td>" . $courses[1]['GRADE_ID'] . "</td></tr>";
                 if ($address[1]['MAILING_LABEL'] != '') {
-                    echo .<tr><td>. . _studentMaillingLabel . . :</td>.;
-                    echo .<td> . . $courses[1]['MAILING_LABEL'] . .</td></tr>.;
+                    echo "<tr><td>" . _studentMaillingLabel . " :</td>";
+                    echo "<td> " . $courses[1]['MAILING_LABEL'] . "</td></tr>";
                 }
                 echo '</table>';
 
@@ -167,35 +167,35 @@ if (!$_REQUEST['search_modfunc'] || $_openSIS['modules_search']) {
 
 }
 if (!$_REQUEST['search_modfunc'] || $_openSIS['modules_search']) {
-    echo '<div id=.modal_default_request. class=.modal fade.>';
-    echo '<div class=.modal-dialog.>';
-    echo '<div class=.modal-content.>';
+    echo '<div id="modal_default_request" class="modal fade">';
+    echo '<div class="modal-dialog">';
+    echo '<div class="modal-content">';
 
-    echo '<div class=.modal-header.>';
-    echo '<button type=.button. class=.close. data-dismiss=.modal.>×</button>';
-    echo '<h5 class=.modal-title.>' . _chooseCourse . '</h5>';
+    echo '<div class="modal-header">';
+    echo '<button type="button" class="close" data-dismiss="modal">×</button>';
+    echo '<h5 class="modal-title">' . _chooseCourse . '</h5>';
     echo '</div>'; //.modal-header
 
-    echo '<div class=.modal-body.>';
-    echo '<div id=.conf_div. class=.text-center.></div>';
-    echo '<div class=.row. id=.resp_table.>';
-    echo '<div class=.col-md-6.>';
-    $sql = .SELECT SUBJECT_ID,TITLE FROM course_subjects WHERE SCHOOL_ID='. . UserSchool() . .' AND SYEAR='. . UserSyear() . .' ORDER BY TITLE.;
+    echo '<div class="modal-body">';
+    echo '<div id="conf_div" class="text-center"></div>';
+    echo '<div class="row" id="resp_table">';
+    echo '<div class="col-md-6">';
+    $sql = "SELECT SUBJECT_ID,TITLE FROM course_subjects WHERE SCHOOL_ID=" . UserSchool() . " AND SYEAR=" . UserSyear() . " ORDER BY TITLE";
     $QI = DBQuery($sql);
     $subjects_RET = DBGet($QI);
 
     echo '<h6>' . count($subjects_RET) . ((count($subjects_RET) == 1) ? ' ' . _subjectWas . '' : ' ' . _subjectsWere . '') . ' ' . _found . '.</h6>';
     if (count($subjects_RET) > 0) {
-        echo '<table class=.table table-bordered.><thead><tr class=.alpha-grey.><th>' . _subject . '</th></tr></thead>';
+        echo '<table class="table table-bordered"><thead><tr class="alpha-grey"><th>' . _subject . '</th></tr></thead>';
         echo '<tbody>';
         foreach ($subjects_RET as $val) {
-            echo '<tr><td><a href=javascript:void(0); onclick=.chooseCpModalSearchRequest(' . $val['SUBJECT_ID'] . ',\'courses\').>' . $val['TITLE'] . '</a></td></tr>';
+            echo '<tr><td><a href=javascript:void(0); onclick="chooseCpModalSearchRequest(' . $val['SUBJECT_ID'] . ',\'courses\')">' . $val['TITLE'] . '</a></td></tr>';
         }
         echo '</tbody>';
         echo '</table>';
     }
     echo '</div>';
-    echo '<div class=.col-md-6.><div id=.course_modal_request.></div></div>';
+    echo '<div class="col-md-6"><div id="course_modal_request"></div></div>';
     echo '</div>'; //.row
     echo '</div>'; //.modal-body
 
@@ -204,14 +204,14 @@ if (!$_REQUEST['search_modfunc'] || $_openSIS['modules_search']) {
     echo '</div>'; //.modal
 }
 
-echo .<script>$(document).mousemove(function() {
+echo "<script>$(document).mousemove(function() {
     $('#searchStuBtn').prop('disabled', false);
-  });</script>.;
+  });</script>";
 
 function _makeExtra($value, $title = '')
 {
     global $THIS_RET;
-    $return = ..;
+    $return = "";
     if ($THIS_RET['WITH_TEACHER_ID']) {
         $return .= '' . _with . ':&nbsp;' . GetTeacher($THIS_RET['WITH_TEACHER_ID']) . '<BR>';
     }

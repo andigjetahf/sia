@@ -82,7 +82,7 @@ course_periods cp , courses c,course_period_var cpv,school_periods sp,rooms r WH
     echo '<div class="alert alert-danger no-border"><i class="icon-alert"></i> ' . _thisStaffIsNotScheduledToAnyCoursePeriodAndThereforeNoScheduleDataIsAvailable . '.</div>';
 }
 $_REQUEST['category_id'] = 2;
-include('modules/users/includes/OtherInfoInc.inc.php');
+include('modules/users/includes/OtherInfoInc.php');
 
 function CreateSelect($val, $name, $opt, $link = '')
 {

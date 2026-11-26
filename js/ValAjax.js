@@ -1,4 +1,4 @@
-﻿
+
 function ValAjax() {
   this.req = null;
   this.url = null;

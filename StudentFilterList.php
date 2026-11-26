@@ -31,7 +31,7 @@ include('RedirectRootInc.php');
 include 'Warehouse.php';
 include 'Data.php';
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
 if ($_REQUEST['modfunc'] != 'remove') {
         

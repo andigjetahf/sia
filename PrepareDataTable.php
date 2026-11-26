@@ -31,7 +31,7 @@ error_reporting(0);
 
 include 'Warehouse.php';
 include('lang/language.php');
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
 if($_REQUEST['loadpage'])
 {

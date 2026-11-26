@@ -39,14 +39,17 @@ if (empty($_SESSION['server']) && !empty($_POST['sess_server'])) {
 }
 
 // Helper function to create mysqli connection with strict mode disabled
+mysqli_report(MYSQLI_REPORT_OFF);
 function createConnection($server, $username, $password, $database = '', $port = 3306) {
+    $port = !empty($port) ? (int)$port : 3306;
     if ($database != '') {
-        $conn = new mysqli($server, $username, $password, $database, $port);
+        $conn = @new mysqli($server, $username, $password, $database, $port);
     } else {
-        $conn = new mysqli($server, $username, $password, '', $port);
+        $conn = @new mysqli($server, $username, $password, '', $port);
     }
     if ($conn && !$conn->connect_errno) {
-        $conn->query("SET SESSION sql_mode = ''");
+        $conn->set_charset('utf8mb4');
+        @$conn->query("SET SESSION sql_mode = ''");
     }
     return $conn;
 }
@@ -187,8 +190,11 @@ function executeSQL($myFile)
 {
     $dbconn = createConnection($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], $_SESSION['db'], $_SESSION['port']);
     
-    // Enable function creation with binary logging
-    $dbconn->query("SET GLOBAL log_bin_trust_function_creators = 1");
+    // Enable function creation with binary logging if user has SUPER/SYSTEM_VARIABLES_ADMIN
+    try {
+        @$dbconn->query("SET GLOBAL log_bin_trust_function_creators = 1");
+    } catch (Throwable $e) {
+    }
     
     $sql = file_get_contents($myFile);
     $sqllines = par_spt("/[\n]/", $sql);
@@ -222,8 +228,11 @@ function createUpdatedByTriggers()
 {
     $dbconn = createConnection($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], $_SESSION['db'], $_SESSION['port']);
     
-    // Enable trigger/function creation with binary logging
-    $dbconn->query("SET GLOBAL log_bin_trust_function_creators = 1");
+    // Enable trigger/function creation with binary logging if user has privilege
+    try {
+        @$dbconn->query("SET GLOBAL log_bin_trust_function_creators = 1");
+    } catch (Throwable $e) {
+    }
 
     if ($result = $dbconn->query("SELECT DISTINCT TABLE_NAME
                 FROM INFORMATION_SCHEMA.COLUMNS

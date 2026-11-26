@@ -31,10 +31,13 @@ require_once("../functions/PragRepFnc.php");
 session_start();
 
 // Helper function to create mysqli connection with strict mode disabled
+mysqli_report(MYSQLI_REPORT_OFF);
 function createConnectionIns3($server, $username, $password, $database = '', $port = 3306) {
-    $conn = new mysqli($server, $username, $password, $database, $port);
+    $port = !empty($port) ? (int)$port : 3306;
+    $conn = @new mysqli($server, $username, $password, $database, $port);
     if ($conn && !$conn->connect_errno) {
-        $conn->query("SET SESSION sql_mode = ''");
+        $conn->set_charset('utf8mb4');
+        @$conn->query("SET SESSION sql_mode = ''");
     }
     return $conn;
 }
@@ -105,8 +108,11 @@ function executeSQL($myFile)
 {
     $dbconn = createConnectionIns3($_SESSION['server'],$_SESSION['username'],$_SESSION['password'],$_SESSION['db'],$_SESSION['port']);
     
-    // Enable trigger/function creation with binary logging
-    $dbconn->query("SET GLOBAL log_bin_trust_function_creators = 1");
+    // Enable trigger/function creation with binary logging if permitted
+    try {
+        @$dbconn->query("SET GLOBAL log_bin_trust_function_creators = 1");
+    } catch (Throwable $e) {
+    }
     
     $sql = file_get_contents($myFile);
     $sqllines = par_spt("/[\n]/",$sql);

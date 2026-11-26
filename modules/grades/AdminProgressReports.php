@@ -26,7 +26,7 @@
 #
 #***************************************************************************************
 include('../../RedirectModulesInc.php');
-include '_makeLetterGrade.fnc.php';
+include '../../functions/MakeLetterGradeFnc.php';
 
 if(isset($_SESSION['student_id']) && $_SESSION['student_id'] != '')
 {

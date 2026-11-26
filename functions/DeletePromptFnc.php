@@ -71,7 +71,7 @@ function DeletePromptStaffCert($title, $certificate_id, $action = 'delete') {
     }
 }
 
-function DeletePrompt($title, $action = _delete, $close = 'n') {
+function DeletePrompt($title, $action = 'delete', $close = 'n') {
     _normalize_delete_action($action);
     $tmp_REQUEST = $_REQUEST;
     unset($tmp_REQUEST['delete_ok']);

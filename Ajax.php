@@ -27,7 +27,7 @@
 #
 #***************************************************************************************
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 include 'Warehouse.php';
 include "functions/ParamLibFnc.php";
 echo '<script type="text/javascript" src="assets/js/pages/components_popups.js"></script>';

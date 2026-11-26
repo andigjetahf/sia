@@ -1,4 +1,4 @@
-﻿function drawmapping(selected_value, val_id, div_id)
+function drawmapping(selected_value, val_id, div_id)
 {
     if (selected_value != '')
     {

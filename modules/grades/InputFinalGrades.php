@@ -149,7 +149,7 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'gradebook') {
 
         $_openSIS['_makeLetterGrade']['courses'][$course_period_id] = DBGet(DBQuery('SELECT DOES_BREAKOFF,GRADE_SCALE_ID FROM course_periods WHERE COURSE_PERIOD_ID=\'' . $course_period_id . '\''));
         $_SESSION['ROUNDING'] = $programconfig[User('STAFF_ID')]['ROUNDING'];
-        include '_MakeLetterGradeFnc.php';
+        include '../../functions/MakeLetterGradeFnc.php';
         if (false && GetMP($_REQUEST['mp'], 'TABLE') == 'school_semesters')
             $points_RET = DBGet(DBQuery('SELECT STUDENT_ID,MARKING_PERIOD_ID FROM student_report_card_grades WHERE COURSE_PERIOD_ID=\'' . $course_period_id . '\' AND MARKING_PERIOD_ID IN (' . GetAllMP('SEM', $_REQUEST['mp']) . ",'E" . GetParentMP('SEM', UserMP()) . '\')'), array(), array('STUDENT_ID'));
 
@@ -734,7 +734,7 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'gradebook') {
 
 if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'grades') {
     if ($_REQUEST['prev_mp']) {
-        include 'MakePercentGradeFnc.php';
+        include '../../functions/MakePercentGradeFnc.php';
 
         $import_RET = DBGet(DBQuery('SELECT g.STUDENT_ID,g.REPORT_CARD_GRADE_ID,g.GRADE_PERCENT FROM student_report_card_grades g,course_periods cp WHERE cp.COURSE_PERIOD_ID=g.COURSE_PERIOD_ID AND cp.COURSE_PERIOD_ID=\'' . $course_period_id . '\' AND g.MARKING_PERIOD_ID=\'' . $_REQUEST['prev_mp'] . '\''), array(), array('STUDENT_ID'));
 
@@ -777,8 +777,8 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'clearall') {
 }
 
 if (clean_param($_REQUEST['values'], PARAM_NOTAGS) && ($_POST['values'] || $_REQUEST['ajax']) && $_REQUEST['submit']['save']) {
-    include 'MakeLetterGradeFnc.php';
-    include 'MakePercentGradeFnc';
+    include '../../functions/MakeLetterGradeFnc.php';
+    include '../../functions/MakePercentGradeFnc.php';
     $completed = true;
 
     foreach ($_REQUEST['values'] as $student_id => $columns) {
@@ -887,7 +887,7 @@ if (clean_param($_REQUEST['values'], PARAM_NOTAGS) && ($_POST['values'] || $_REQ
             // $ngrade_id = $grade_id[1]['ID'];
 
             if (stripos($_SERVER['SERVER_SOFTWARE'], 'linux')) {
-                $columns['comment'] = mysqli_real_escape_string($columns['comment']);
+                $columns['comment'] = mysqli_real_escape_string($connection, $columns['comment']);
             }
             if ($course_RET[1]['GRADE_SCALE_ID'] != '') {
                 if ($course_RET[1]['COURSE_WEIGHT']) {

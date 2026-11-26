@@ -30,26 +30,26 @@ include('../../RedirectModulesInc.php');
 include('lang/language.php');
 
 if (isset($_SESSION['language']) && $_SESSION['language'] == 'fr'){
-    define(._classRoom., .Salle de cours.);
-    define(._period., .Période.);
-    define(._days., .Journées.);
-    define(._takesAttendance., .La participation prend.);
-    define(._room., .Chambre.);
-    define(._time., .Temps.);
+    define("_classRoom", "Salle de cours");
+    define("_period", "Période");
+    define("_days", "Journées");
+    define("_takesAttendance", "La participation prend");
+    define("_room", "Chambre");
+    define("_time", "Temps");
 } elseif (isset($_SESSION['language']) && $_SESSION['language'] == 'es') {
-    define(._classRoom., .Salón de clases.);
-    define(._period., .Período.);
-    define(._days., .Dias.);
-    define(._takesAttendance., .toma de Asistencia.);
-    define(._room., .Habitación.);
-    define(._time., .Hora.);
+    define("_classRoom", "Salón de clases");
+    define("_period", "Período");
+    define("_days", "Dias");
+    define("_takesAttendance", "toma de Asistencia");
+    define("_room", "Habitación");
+    define("_time", "Hora");
 } else {
-    define(._classRoom., .Class Room.);
-    define(._period., .Period.);
-    define(._days., .Days.);
-    define(._takesAttendance., .Takes Attendance.);
-    define(._room., .Room.);
-    define(._time., .Time.);
+    define("_classRoom", "Class Room");
+    define("_period", "Period");
+    define("_days", "Days");
+    define("_takesAttendance", "Takes Attendance");
+    define("_room", "Room");
+    define("_time", "Time");
 }
 
 if ($_REQUEST['create_pdf'] == 'true') {
@@ -73,7 +73,7 @@ if (clean_param($_REQUEST['create_excel'], PARAM_ALPHAMOD) == 'true') {
     echo CreateExcel($_REQUEST['degree_level_id'], $_REQUEST['prog_level_id'], $_REQUEST['subject_id'], $_REQUEST['course_id'], $_REQUEST['marking_period_id'], $_REQUEST['mp_name']);
 }
 if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
-    DrawBC(.Courses -> . . $_REQUEST['draw_header']);
+    DrawBC("Courses -> " . $_REQUEST['draw_header']);
 
     $sql = 'SELECT cp.PARENT_ID,cp.TITLE,cp.SHORT_NAME,cpv.PERIOD_ID,cpv.DAYS,
                                 cp.MP,cp.MARKING_PERIOD_ID,cp.TEACHER_ID,cp.CALENDAR_ID,
@@ -88,26 +88,26 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
     $QI = DBQuery($sql);
     $RET = DBGet($QI);
     $RET = $RET[1];
-    $title = $RET['TITLE'] . . , <b>. . _course . .:</b> . . $C_RET[1]['TITLE'] . ., <b>. . _numberOfCredits . .</b> . . $C_RET[1]['NUMBER_OF_CREDITS'];
+    $title = $RET['TITLE'] . ", <b>" . _course . ":</b> " . $C_RET[1]['TITLE'] . ", <b>" . _numberOfCredits . "</b> " . $C_RET[1]['NUMBER_OF_CREDITS'];
     $new = false;
 
     if (count($RET)) {
-        $header .= '<TABLE class=.table table-bordered table-striped.>';
+        $header .= '<TABLE class="table table-bordered table-striped">';
         $header .= '<TR>';
 
         $header .= '<TD><b>' . $RET['SHORT_NAME'] . '</b><br>' . _shortName . '</TD>';
 
-        $teachers_RET = DBGet(DBQuery(.SELECT concat((COALESCE(LAST_NAME,' '), ', ', COALESCE(FIRST_NAME,' '), ' ', COALESCE(MIDDLE_NAME,' '))) as Teacher FROM staff WHERE (SCHOOLS IS NULL OR strpos(SCHOOLS,',. . UserSchool() . .,')>0) AND SYEAR='. . UserSyear() . .' AND PROFILE='teacher' and STAFF_ID='. . $RET['TEACHER_ID'] . .' ORDER BY LAST_NAME,FIRST_NAME.));
+        $teachers_RET = DBGet(DBQuery("SELECT concat((COALESCE(LAST_NAME,' '), ', ', COALESCE(FIRST_NAME,' '), ' ', COALESCE(MIDDLE_NAME,' '))) as Teacher FROM staff WHERE (SCHOOLS IS NULL OR strpos(SCHOOLS,'," . UserSchool() . ",')>0) AND SYEAR=" . UserSyear() . " AND PROFILE='teacher' and STAFF_ID=" . $RET['TEACHER_ID'] . " ORDER BY LAST_NAME,FIRST_NAME"));
 
         $header .= '<TD><b>' . $teachers_RET[1]['TEACHER'] . '</b><br>Teacher</TD>';
         $header .= '<TD><b>' . $RET['ROOM'] . '</b><br>' . _location . '</TD>';
-        $sql = .SELECT TITLE,START_TIME,END_TIME FROM school_periods WHERE PERIOD_ID='. . $RET['PERIOD_ID'] . .'.;
+        $sql = "SELECT TITLE,START_TIME,END_TIME FROM school_periods WHERE PERIOD_ID=" . $RET['PERIOD_ID'] . "";
         $periods_RET = DBGet(DBQuery($sql));
         $header .= '<TD><b>' . $periods_RET[1]['TITLE'] . '</b><br>' . _period . '</TD>';
         $header .= '<TD><b>' . $RET['DAYS'] . '</b><br>' . _days . '</td>';
         $header .= '</TR><TR>';
         $mp = $RET['MARKING_PERIOD_ID'];
-        $mp_RET = DBGet(DBQuery(.SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,'2' AS TABLE,SORT_ORDER FROM school_quarters WHERE SCHOOL_ID='. . UserSchool() . .' AND SYEAR='. . UserSyear() . .' and marking_period_id='. . $mp . .' UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,'1' AS TABLE,SORT_ORDER FROM school_semesters WHERE SCHOOL_ID='. . UserSchool() . .' AND SYEAR='. . UserSyear() . .' and marking_period_id='. . $mp . .' UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,'0' AS TABLE,SORT_ORDER FROM school_years WHERE SCHOOL_ID='. . UserSchool() . .' AND SYEAR='. . UserSyear() . .' and marking_period_id='. . $mp . .' ORDER BY 3,4.));
+        $mp_RET = DBGet(DBQuery("SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,'2' AS TABLE,SORT_ORDER FROM school_quarters WHERE SCHOOL_ID=" . UserSchool() . " AND SYEAR=" . UserSyear() . " and marking_period_id=" . $mp . " UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,'1' AS TABLE,SORT_ORDER FROM school_semesters WHERE SCHOOL_ID=" . UserSchool() . " AND SYEAR=" . UserSyear() . " and marking_period_id=" . $mp . " UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,'0' AS TABLE,SORT_ORDER FROM school_years WHERE SCHOOL_ID=" . UserSchool() . " AND SYEAR=" . UserSyear() . " and marking_period_id=" . $mp . " ORDER BY 3,4"));
 
 
         $header .= '<TD><b>' . $mp_RET[1]['TITLE'] . '</b><br>' . _markingPeriod . '</TD>';
@@ -116,26 +116,26 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
         $header .= '<TD><b>' . gr($RET['GENDER_RESTRICTION']) . '</b><br>' . _genderRestriction . '' . '</TD>';
 
         if ($RET['GRADE_SCALE_ID'] != '') {
-            $sql = .SELECT TITLE,ID FROM report_card_grade_scales WHERE SYEAR='. . UserSyear() . .' AND SCHOOL_ID='. . UserSchool() . .' and ID='. . $RET['GRADE_SCALE_ID'] . .'.;
+            $sql = "SELECT TITLE,ID FROM report_card_grade_scales WHERE SYEAR=" . UserSyear() . " AND SCHOOL_ID=" . UserSchool() . " and ID=" . $RET['GRADE_SCALE_ID'] . "";
             $options_RET = DBGet(DBQuery($sql));
             $header .= '<TD><b>' . $options_RET[1]['TITLE'] . '</b><br>' . _gradingScale . '</TD>';
         } else
             $header .= '<TD><b>' . '' . _notGraded . '' . '</b><br>' . _gradingScale . '</TD>';
 
         if ($RET['CALENDAR_ID'] != '') {
-            $sql = .SELECT TITLE,CALENDAR_ID FROM school_calendars WHERE CALENDAR_ID='. . $RET['CALENDAR_ID'] . .'.;
+            $sql = "SELECT TITLE,CALENDAR_ID FROM school_calendars WHERE CALENDAR_ID=" . $RET['CALENDAR_ID'] . "";
 
             $options_RET = DBGet(DBQuery($sql));
             $header .= '<TD><b>' . $options_RET[1]['TITLE'] . '</b><br>' . _calendar . '' . '</TD>';
         } else
             $header .= '<TD><b>' . '' . _noCalendarSelected . '' . '</b><br>' . _noCalendarSelected . '' . '</TD>';
-        $header .= .</TR><TR>.;
+        $header .= "</TR><TR>";
         $header .= '<TD><b>' . cbr($RET['DOES_ATTENDANCE']) . '</b><br>' . _takesAttendance . '' . '</TD>';
         $header .= '<TD><b>' . cbr($RET['DOES_HONOR_ROLL']) . '</b><br>' . _affectsHonorRoll . '' . '</TD>';
         $header .= '<TD><b>' . cbr($RET['DOES_CLASS_RANK']) . '</b><br>' . _affectsClassRank . '' . '</TD>';
         $header .= '<TD><b>' . cbr($RET['HALF_DAY']) . '</b><br>' . _halfDay . '' . '</TD>';
         $header .= '<TD><b>' . cbr($RET['DOES_BREAKOFF']) . '</b><br>' . _allowTeacherGradescale . '' . '</TD>';
-        $header .= .</TR><TR>.;
+        $header .= "</TR><TR>";
 
         if ($RET['PARENT_ID'] != '') {
             $sql = 'SELECT TITLE,COURSE_PERIOD_ID FROM course_periods WHERE COURSE_PERIOD_ID=\'' . $RET['PARENT_ID'] . '\'';
@@ -153,30 +153,30 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
         $header .= '</TABLE>';
         DrawHeaderHome($header);
     }
-    echo .</div></div></div><div class='tab_footer'>.;
+    echo "</div></div></div><div class='tab_footer'>";
 } else {
     unset($_SESSION['_REQUEST_vars']['subject_id']);
     unset($_SESSION['_REQUEST_vars']['course_id']);
     unset($_SESSION['_REQUEST_vars']['course_weight']);
     unset($_SESSION['_REQUEST_vars']['course_period_id']);
 
-    DrawBC(.Courses > . . ProgramTitle());
+    DrawBC("Courses > " . ProgramTitle());
     if ($_REQUEST['print'] != 'list') {
         //echo PopTable('header', 'Quick Search');
     }
 
     if ($_REQUEST['print'] != 'list') {
-        echo .<FORM name=search  class=form-horizontal id=search action=ForExport.php?modname=$_REQUEST[modname]&modfunc=print&marking_period_id=. . $_REQUEST['marking_period_id'] . .&_openSIS_PDF=true&report=true&print=list method=POST target=_blank>.;
-        echo '<div class=.panel panel-default.>';
-        echo '<div class=.panel-heading.>
-                <h6 class=.panel-title.>' . _courseCatalog . '</h6>
-                <div class=.heading-elements.>
-                    <INPUT type=submit class=.btn btn-primary. value=\'' . _print . '\'>
+        echo "<FORM name=search  class=form-horizontal id=search action=ForExport.php?modname=$_REQUEST[modname]&modfunc=print&marking_period_id=" . $_REQUEST['marking_period_id'] . "&_openSIS_PDF=true&report=true&print=list method=POST target=_blank>";
+        echo '<div class="panel panel-default">';
+        echo '<div class="panel-heading">
+                <h6 class="panel-title">' . _courseCatalog . '</h6>
+                <div class="heading-elements">
+                    <INPUT type=submit class="btn btn-primary" value=\'' . _print . '\'>
                 </div>
             </div>';
-        echo '<div class=.panel-body.>';
-        echo '<div class=.row.>';
-        echo '<div class=.col-md-4.>';
+        echo '<div class="panel-body">';
+        echo '<div class="row">';
+        echo '<div class="col-md-4">';
     }
     $mp_RET = DBGet(DBQuery('SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,\'2\'  FROM school_quarters WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,\'1\' FROM school_semesters WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,\'0\' FROM school_years WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' ORDER BY 3,4'));
     unset($options);
@@ -197,11 +197,11 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
 
         $columns = array('TITLE' => _markingPeriods);
         $link = array();
-        $link['TITLE']['link'] = .Modules.php?modname=$_REQUEST[modname].;
+        $link['TITLE']['link'] = "Modules.php?modname=$_REQUEST[modname]";
         $link['TITLE']['variables'] = array('marking_period_id' => 'MARKING_PERIOD_ID', 'mp_name' => 'SHORT_NAME');
-        $link['TITLE']['link'] .= .&modfunc=$_REQUEST[modfunc].;
+        $link['TITLE']['link'] .= "&modfunc=$_REQUEST[modfunc]";
         //        if ($_REQUEST['print'] != 'list')
-        //            echo '<div class=.col-md-4.>'.CreateSelect($mp_RET, 'marking_period_id', 'All', 'Select Marking Period: ', 'Modules.php?modname=' . $_REQUEST['modname'] . '&marking_period_id=').'</div>';
+        //            echo '<div class="col-md-4">'.CreateSelect($mp_RET, 'marking_period_id', 'All', 'Select Marking Period: ', 'Modules.php?modname=' . $_REQUEST['modname'] . '&marking_period_id=').'</div>';
         //echo '</TD>';
 
         if ($_REQUEST['marking_period_id'] && $_REQUEST['marking_period_id'] != '') {
@@ -218,12 +218,12 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
                 }
 
 
-                echo '<div class=.col-md-4 text-left.>';
+                echo '<div class="col-md-4 text-left">';
                 $columns = array('TITLE' => _subject);
                 $link = array();
-                $link['TITLE']['link'] = .Modules.php?modname=$_REQUEST[modname]&marking_period_id=$_REQUEST[marking_period_id]&mp_name=$_REQUEST[mp_name].;
+                $link['TITLE']['link'] = "Modules.php?modname=$_REQUEST[modname]&marking_period_id=$_REQUEST[marking_period_id]&mp_name=$_REQUEST[mp_name]";
                 $link['TITLE']['variables'] = array('subject_id' => 'SUBJECT_ID');
-                $link['TITLE']['link'] .= .&modfunc=$_REQUEST[modfunc].;
+                $link['TITLE']['link'] .= "&modfunc=$_REQUEST[modfunc]";
                 if ($_REQUEST['print'] != 'list')
                     echo CreateSelect($subjects_RET, 'subject_id', '' . _all . '', '' . strtoupper(_selectSubject) . '', 'Modules.php?modname=' . $_REQUEST['modname'] . '&marking_period_id=' . $_REQUEST['marking_period_id'] . '&subject_id=');
                 echo '</div>';
@@ -242,12 +242,12 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
                                     $courses_RET[$key]['row_color'] = Preferences('HIGHLIGHT');
                             }
                         }
-                        echo '<div class=.col-md-4 text-left.>';
+                        echo '<div class="col-md-4 text-left">';
                         $columns = array('TITLE' => _course);
                         $link = array();
-                        $link['TITLE']['link'] = .Modules.php?modname=$_REQUEST[modname]&marking_period_id=$_REQUEST[marking_period_id]&mp_name=$_REQUEST[mp_name]&subject_id=$_REQUEST[subject_id].;
+                        $link['TITLE']['link'] = "Modules.php?modname=$_REQUEST[modname]&marking_period_id=$_REQUEST[marking_period_id]&mp_name=$_REQUEST[mp_name]&subject_id=$_REQUEST[subject_id]";
                         $link['TITLE']['variables'] = array('course_id' => 'COURSE_ID');
-                        $link['TITLE']['link'] .= .&modfunc=$_REQUEST[modfunc].;
+                        $link['TITLE']['link'] .= "&modfunc=$_REQUEST[modfunc]";
 
 
                         if ($_REQUEST['print'] != 'list')
@@ -258,15 +258,15 @@ if (clean_param($_REQUEST['modfunc'], PARAM_ALPHAMOD) == 'choose_course') {
             }
         }
     } else
-        echo '<div class=.alert bg-danger alert-styled-left.>' . _noClassListFound . '</div>';
+        echo '<div class="alert bg-danger alert-styled-left">' . _noClassListFound . '</div>';
     echo '</div>'; //.row
     echo '</div>'; //.panel-body
     //    if ($_REQUEST['print'] != 'list')
-    //        echo '<div class=.table-responsive.>';
+    //        echo '<div class="table-responsive">';
     echo CreateList($_REQUEST['degree_level_id'], $_REQUEST['program_level_id'], $_REQUEST['subject_id'], $_REQUEST['course_id'], $_REQUEST['marking_period_id'], $_REQUEST['mp_name']);
-    //echo .<div style=\.page-break-before: always;\.></div>.;
+    //echo "<div style=\"page-break-before: always;\"></div>";
     //    if ($_REQUEST['print'] != 'list')
-    //        echo .</div>.;
+    //        echo "</div>";
 
     if ($_REQUEST['print'] != 'list') {
         echo '</div>'; //.panel
@@ -280,10 +280,10 @@ function CreateList($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_na
     $PHP_tmp_SELF = PreparePHP_SELF($tmp_REQUEST);
 
     if ($sli != '')
-        $s_ret = DBGet(DBQuery(.select title from course_subjects where subject_id='. . $sli . .'.));
+        $s_ret = DBGet(DBQuery("select title from course_subjects where subject_id=" . $sli . ""));
 
     if ($cli != '')
-        $c_ret = DBGet(DBQuery(.select title from courses where course_id='. . $cli . .'.));
+        $c_ret = DBGet(DBQuery("select title from courses where course_id=" . $cli . ""));
 
     if ($mp != '') {
         $sql = 'SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,\'2\'  FROM school_quarters WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' and marking_period_id=\'' . $mp . '\' UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,\'1\' FROM school_semesters WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' and marking_period_id=\'' . $mp . '\' UNION SELECT MARKING_PERIOD_ID,TITLE,SHORT_NAME,\'0\'  FROM school_years WHERE SCHOOL_ID=\'' . UserSchool() . '\' AND SYEAR=\'' . UserSyear() . '\' and marking_period_id=\'' . $mp . '\' ORDER BY 3,4';
@@ -293,19 +293,19 @@ function CreateList($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_na
 
     if ($mp == '') {
         $where = '';
-        $heading = .. . _allAvailableClasses . ..;
+        $heading = "" . _allAvailableClasses . "";
     } else {
         if ($sli == '') {
             $where = 'and marking_period_id=\'' . $mp . '\' and course_id in (select course_id from  courses where subject_id in (select subject_id from course_subjects))';
-            $heading = .. . _allAvailableClassesFor . . <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . . -> . . $p_ret[1]['TITLE'] . .</font>.;
+            $heading = "" . _allAvailableClassesFor . " <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . " -> " . $p_ret[1]['TITLE'] . "</font>";
         } else {
             if ($cli == '') {
                 $where = 'and marking_period_id=\'' . $mp . '\' and course_id in (select Course_Id from courses where subject_id = \'' . $_REQUEST['subject_id'] . '\' and School_Id=\'' . UserSchool() . '\')';
 
-                $heading = .. . _allAvailableClassesFor . . <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . . -> . . $p_ret[1]['TITLE'] . . -> . . $s_ret[1]['TITLE'] . .</font>.;
+                $heading = "" . _allAvailableClassesFor . " <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . " -> " . $p_ret[1]['TITLE'] . " -> " . $s_ret[1]['TITLE'] . "</font>";
             } else {
                 $where = 'and marking_period_id=\'' . $mp . '\' and course_id=\'' . $cli . '\'';
-                $heading = .. . _allAvailableClassesFor . . <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . . -> . . $p_ret[1]['TITLE'] . . -> . . $s_ret[1]['TITLE'] . . -> . . $c_ret[1]['TITLE'] . .</font>.;
+                $heading = "" . _allAvailableClassesFor . " <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . " -> " . $p_ret[1]['TITLE'] . " -> " . $s_ret[1]['TITLE'] . " -> " . $c_ret[1]['TITLE'] . "</font>";
             }
         }
     }
@@ -322,11 +322,11 @@ function CreateList($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_na
     $ret_temp = DBGet(DBQuery($sql), array('MP' => '_makeMarkingPeriod'));
     $ret = array();
     $i = 1;
-    $days_arr = array(.Monday. => 'M', .Tuesday. => 'T', .Wednesday. => 'W', .Thursday. => 'H', .Friday. => 'F', .Saturday. => 'S', .Sunday. => 'U');
+    $days_arr = array("Monday" => 'M', "Tuesday" => 'T', "Wednesday" => 'W', "Thursday" => 'H', "Friday" => 'F', "Saturday" => 'S', "Sunday" => 'U');
 
     foreach ($ret_temp as $ri => $rd) {
         $time = explode(' - ', $rd['PERIOD_TIME']);
-        $rd['PERIOD_TIME'] = date(.g:i A., strtotime($time[0])) . ' - ' . date(.g:i A., strtotime($time[1]));
+        $rd['PERIOD_TIME'] = date("g:i A", strtotime($time[0])) . ' - ' . date("g:i A", strtotime($time[1]));
         unset($time);
         if ($rd['SCHEDULE_TYPE'] == 'FIXED') {
             $ret[$i] = $rd;
@@ -339,7 +339,7 @@ function CreateList($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_na
                 foreach ($get_det as $gi => $gd) {
                     if ($rd['CPV_ID'] != $gd['ID']) {
                         $time = explode(' - ', $gd['PERIOD_TIME']);
-                        $gd['PERIOD_TIME'] = date(.g:i A., strtotime($time[0])) . ' - ' . date(.g:i A., strtotime($time[1]));
+                        $gd['PERIOD_TIME'] = date("g:i A", strtotime($time[0])) . ' - ' . date("g:i A", strtotime($time[1]));
                         unset($time);
                         $ret[$i]['PERIOD_TIME'] = $ret[$i]['PERIOD_TIME'] . ' , ' . $gd['PERIOD_TIME'];
                         $ret[$i]['PERIOD'] = $ret[$i]['PERIOD'] . ' , ' . $gd['PERIOD'];
@@ -354,48 +354,48 @@ function CreateList($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_na
                 $final_days = array_unique($final_days);
                 $final_days = implode(' , ', $final_days);
                 $ret[$i]['DAYS'] = _makeDayNames($final_days);
-                $ret[$i]['PERIOD_TIME'] = '<div style=.white-space:nowrap;.>' . str_replace(', ', '<br/>', $ret[$i]['PERIOD_TIME']) . '</div>';
-                $ret[$i]['PERIOD'] = '<div style=.white-space:nowrap;.>' . str_replace(', ', '<br/>', $ret[$i]['PERIOD']) . '</div>';
-                $ret[$i]['LOCATION'] = '<div style=.white-space:nowrap;.>' . str_replace(', ', '<br/>', $ret[$i]['LOCATION']) . '</div>';
+                $ret[$i]['PERIOD_TIME'] = '<div style="white-space:nowrap;">' . str_replace(', ', '<br/>', $ret[$i]['PERIOD_TIME']) . '</div>';
+                $ret[$i]['PERIOD'] = '<div style="white-space:nowrap;">' . str_replace(', ', '<br/>', $ret[$i]['PERIOD']) . '</div>';
+                $ret[$i]['LOCATION'] = '<div style="white-space:nowrap;">' . str_replace(', ', '<br/>', $ret[$i]['LOCATION']) . '</div>';
                 $ret[$i]['DAYS'] = str_replace(' , ', '', $ret[$i]['DAYS']);
             }
         }
 
         $i++;
     }
-    $html = .<b>. . $heading . .</b><br>
-        <A HREF=. . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . .&create_excel=true&LO_save=1&_openSIS_PDF=true > <IMG SRC=assets/download.png border=0 vspace=0 hspace=0></A>
-        <br>.;
-    $html .= .<table width=100%  style=\. font-size:12px;\. >.;
-    $html .= .<tr><td  style=\.font-size:15px; font-weight:bold;\.>. . GetSchool(UserSchool()) . .<div style=\.font-size:12px;\.>. . _studentSchedulesReport . .</div></td><td align=right style=\.padding-top:10px;\.>. . ProperDate(DBDate()) . .<br />. . _poweredBy . . openSIS</td></tr><tr><td colspan=2 style=\.border-top:1px solid #333;\.>&nbsp;</td></tr></table>.;
+    $html = "<b>" . $heading . "</b><br>
+        <A HREF=" . str_replace('Modules.php', 'ForExport.php', $PHP_tmp_SELF) . "&create_excel=true&LO_save=1&_openSIS_PDF=true > <IMG SRC=assets/download.png border=0 vspace=0 hspace=0></A>
+        <br>";
+    $html .= "<table width=100%  style=\" font-size:12px;\" >";
+    $html .= "<tr><td  style=\"font-size:15px; font-weight:bold;\">" . GetSchool(UserSchool()) . "<div style=\"font-size:12px;\">" . _studentSchedulesReport . "</div></td><td align=right style=\"padding-top:10px;\">" . ProperDate(DBDate()) . "<br />" . _poweredBy . " openSIS</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
 
     ########################################List Output Generation ####################################################
 
     $columns = array('SUBJECT' => '' . _subject . '', 'COURSE' => '' . _course . '', 'MP' => '' . _markingPeriod . '', 'PERIOD_TIME' => '' . _time . '', 'PERIOD' => '' . _period . '', 'DAYS' => '' . _days . '', 'LOCATION' => '' . _location . '', 'TEACHER' => '' . _teacher . '');
 
     if ($_REQUEST['print'] == 'list') {
-        echo '<link rel=.stylesheet. type=.text/css. href=.assets/css/export_print.css. />';
-        echo .<table width=100%  style=\. font-size:12px;\. >.;
-        echo .<tr><td  style=\.font-size:15px; font-weight:bold;\.>. . GetSchool(UserSchool()) . .<div style=\.font-size:12px;\.>. . _courseCatalog . .</div></td><td align=right style=\.padding-top:5px;\.>. . ProperDate(DBDate()) . .<br />. . _poweredBy . . openSIS</td></tr><tr><td colspan=2 style=\.border-top:1px solid #333;\.>&nbsp;</td></tr></table>.;
+        echo '<link rel="stylesheet" type="text/css" href="assets/css/export_print.css" />';
+        echo "<table width=100%  style=\" font-size:12px;\" >";
+        echo "<tr><td  style=\"font-size:15px; font-weight:bold;\">" . GetSchool(UserSchool()) . "<div style=\"font-size:12px;\">" . _courseCatalog . "</div></td><td align=right style=\"padding-top:5px;\">" . ProperDate(DBDate()) . "<br />" . _poweredBy . " openSIS</td></tr><tr><td colspan=2 style=\"border-top:1px solid #333;\">&nbsp;</td></tr></table>";
     }
-    echo '<div class=.print-div.>';
+    echo '<div class="print-div">';
     ListOutputFloat($ret, $columns, '' . _course . '', '' . _courses . '', '', '', array('search' => false, 'count' => false), false);
     echo '</div>';
-    //echo .<div style=\.page-break-before: always;\.></div>.;
+    //echo "<div style=\"page-break-before: always;\"></div>";
     ##########################################################################################################
 }
 
 function CreateSelect($val, $name, $opt, $cap, $link)
 {
-    $html .= '<label class=.control-label text-uppercase.><b>' . $cap . '</b></label>';
-    $html .= .<select class=form-control name=. . $name . . id=. . $name . . onChange=\.window.location='. . $link . .' + this.options[this.selectedIndex].value;\.>.;
-    $html .= .<option value=''>. . $opt . .</option>.;
+    $html .= '<label class="control-label text-uppercase"><b>' . $cap . '</b></label>';
+    $html .= "<select class=form-control name=" . $name . " id=" . $name . " onChange=\"window.location='" . $link . "' + this.options[this.selectedIndex].value;\">";
+    $html .= "<option value=''>" . $opt . "</option>";
 
     foreach ($val as $key => $value) {
         if ($value[strtoupper($name)] == $_REQUEST[$name])
-            $html .= .<option selected value=. . $value[strtoupper($name)] . .>. . $value['TITLE'] . .</option>.;
+            $html .= "<option selected value=" . $value[strtoupper($name)] . ">" . $value['TITLE'] . "</option>";
         else
-            $html .= .<option value=. . $value[strtoupper($name)] . .>. . $value['TITLE'] . .</option>.;
+            $html .= "<option value=" . $value[strtoupper($name)] . ">" . $value['TITLE'] . "</option>";
     }
     $html .= '</select>';
     return $html;
@@ -428,22 +428,22 @@ function CreateExcel($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_n
     } else {
         if ($dli == '') {
             $where = ' and marking_period_id=\'' . $mp . '\'';
-            $heading = .All available classes for <font color='black'>. . $mp_name . .</font>.;
+            $heading = "All available classes for <font color='black'>" . $mp_name . "</font>";
         } else {
             if ($pli == '') {
                 $where = 'and marking_period_id=\'' . $mp . '\' and course_id in (select course_id from  courses where subject_id in (select subject_id from course_subjects where degree_level_id=\'' . $dli . '\'))';
-                $heading = .. . _allAvailableClassesFor . . <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . .</font>.;
+                $heading = "" . _allAvailableClassesFor . " <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . "</font>";
             } else {
                 if ($sli == '') {
                     $where = 'and marking_period_id=\'' . $mp . '\' and course_id in (select course_id from  courses where subject_id in (select subject_id from course_subjects where prog_level_id=\'' . $pli . '\'))';
-                    $heading = .. . _allAvailableClassesFor . .  <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . . -> . . $p_ret[1]['TITLE'] . .</font>.;
+                    $heading = "" . _allAvailableClassesFor . "  <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . " -> " . $p_ret[1]['TITLE'] . "</font>";
                 } else {
                     if ($cli == '') {
                         $where = 'and marking_period_id=\'' . $mp . '\' and course_id in (select Course_Id from courses where subject_id = \'' . $_REQUEST['subject_id'] . '\' and School_Id=\'' . UserSchool() . '\')';
-                        $heading = .. . _allAvailableClassesFor . .  <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . . -> . . $p_ret[1]['TITLE'] . . -> . . $s_ret[1]['TITLE'] . .</font>.;
+                        $heading = "" . _allAvailableClassesFor . "  <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . " -> " . $p_ret[1]['TITLE'] . " -> " . $s_ret[1]['TITLE'] . "</font>";
                     } else {
                         $where = 'and marking_period_id=\'' . $mp . '\' and course_id=\'' . $cli . '\'';
-                        $heading = .. . _allAvailableClassesFor . .  <font color='black'>. . $mp_name . . -> . . $d_ret[1]['TITLE'] . . -> . . $p_ret[1]['TITLE'] . . -> . . $s_ret[1]['TITLE'] . . -> . . $c_ret[1]['TITLE'] . .</font>.;
+                        $heading = "" . _allAvailableClassesFor . "  <font color='black'>" . $mp_name . " -> " . $d_ret[1]['TITLE'] . " -> " . $p_ret[1]['TITLE'] . " -> " . $s_ret[1]['TITLE'] . " -> " . $c_ret[1]['TITLE'] . "</font>";
                     }
                 }
             }
@@ -472,25 +472,25 @@ function CreateExcel($dli = '', $pli = '', $sli = '', $cli = '', $mp = '', $mp_n
     ob_end_clean();
     if ($options['save_delimiter'] != 'xml') {
         foreach ($column_names as $key => $value)
-            $output .= str_replace('&nbsp;', ' ', eregi_replace('<BR>', ' ', ereg_replace('<!--.*-->', '', $value))) . ($options['save_delimiter'] == 'comma' ? ',' : .\t.);
-        $output .= .\n.;
+            $output .= str_replace('&nbsp;', ' ', par_rep_cb('/<BR>/', ' ', par_rep_cb('/<!--.*-->/', '', $value))) . ($options['save_delimiter'] == 'comma' ? ',' : "\t");
+        $output .= "\n";
     }
 
     foreach ($result as $item) {
         foreach ($column_names as $key => $value) {
             if ($options['save_delimiter'] == 'comma' && !$options['save_quotes'])
                 $item[$key] = str_replace(',', ';', $item[$key]);
-            $item[$key] = eregi_replace('<SELECT.*SELECTED\>([^<]+)<.*</SELECT\>', '\\1', $item[$key]);
-            $item[$key] = eregi_replace('<SELECT.*</SELECT\>', '', $item[$key]);
-            $output .= ($options['save_quotes'] ? '.' : '') . ($options['save_delimiter'] == 'xml' ? '<' . str_replace(' ', '', $value) . '>' : '') . ereg_replace('<[^>]+>', '', ereg_replace(.<div onclick='[^']+'>., '', ereg_replace(' +', ' ', ereg_replace('&[^;]+;', '', str_replace('<BR>&middot;', ' : ', str_replace('&nbsp;', ' ', $item[$key])))))) . ($options['save_delimiter'] == 'xml' ? '</' . str_replace(' ', '', $value) . '>' . .\n. : '') . ($options['save_quotes'] ? '.' : '') . ($options['save_delimiter'] == 'comma' ? ',' : .\t.);
+            $item[$key] = par_rep_cb('/<SELECT.*SELECTED\>([^<]+)<.*<\/SELECT\>/', '\\1', $item[$key]);
+            $item[$key] = par_rep_cb('/<SELECT.*<\/SELECT\>/', '', $item[$key]);
+            $output .= ($options['save_quotes'] ? '"' : '') . ($options['save_delimiter'] == 'xml' ? '<' . str_replace(' ', '', $value) . '>' : '') . par_rep_cb('/<[^>]+>/', '', par_rep_cb("/<div onclick='[^']+'>/", '', par_rep_cb('/ +/', ' ', par_rep_cb('/&[^;]+;/', '', str_replace('<BR>&middot;', ' : ', str_replace('&nbsp;', ' ', $item[$key])))))) . ($options['save_delimiter'] == 'xml' ? '</' . str_replace(' ', '', $value) . '>' . "\n" : '') . ($options['save_quotes'] ? '"' : '') . ($options['save_delimiter'] == 'comma' ? ',' : "\t");
         }
-        $output .= .\n.;
+        $output .= "\n";
     }
 
-    header(.Cache-Control: public.);
-    header(.Pragma: .);
-    header(.Content-Type: application/$extension.);
-    header(.Content-Disposition: inline; filename=\.. . ProgramTitle() . ..xls\.\n.);
+    header("Cache-Control: public");
+    header("Pragma: ");
+    header("Content-Type: application/$extension");
+    header("Content-Disposition: inline; filename=\"" . ProgramTitle() . ".xls\"\n");
     if ($options['save_eval'])
         eval($options['save_eval']);
     echo $output;
@@ -517,23 +517,23 @@ function gr($val)
 
 function _makeMarkingPeriod($val)
 {
-    $sql = .SELECT marking_period_id from course_periods where course_period_id=$val.;
+    $sql = "SELECT marking_period_id from course_periods where course_period_id=$val";
     $result = DBGet(DBQuery($sql));
     if ($result[1]['MARKING_PERIOD_ID'] != '') {
         $id = $result[1]['MARKING_PERIOD_ID'];
-        $sql1 = .SELECT title from marking_periods where marking_period_id=$id.;
+        $sql1 = "SELECT title from marking_periods where marking_period_id=$id";
         $result2 = DBGet(DBQuery($sql1));
-        return $result2[1][.TITLE.];
+        return $result2[1]["TITLE"];
     } else {
-        $sql2 = .SELECT begin_date ,end_date from course_periods where course_period_id=$val.;
+        $sql2 = "SELECT begin_date ,end_date from course_periods where course_period_id=$val";
         $result3 = DBGet(DBQuery($sql2));
-        return _custom . ' ' . '(' . ProperDate($result3[1][.BEGIN_DATE.]) . ' ' . '-' . ' ' . ProperDate($result3[1][.END_DATE.]) . ')';
+        return _custom . ' ' . '(' . ProperDate($result3[1]["BEGIN_DATE"]) . ' ' . '-' . ' ' . ProperDate($result3[1]["END_DATE"]) . ')';
     }
 }
 
 function _makeDayNames($daynames)
 {
-    $days_arrr = array(.Monday. => 'M', .Tuesday. => 'T', .Wednesday. => 'W', .Thursday. => 'H', .Friday. => 'F', .Saturday. => 'S', .Sunday. => 'U');
+    $days_arrr = array("Monday" => 'M', "Tuesday" => 'T', "Wednesday" => 'W', "Thursday" => 'H', "Friday" => 'F', "Saturday" => 'S', "Sunday" => 'U');
 
     $daystitle = str_split($daynames);
     $daynamearr =[];

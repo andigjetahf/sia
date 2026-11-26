@@ -27,29 +27,47 @@
 #***************************************************************************************
 error_reporting(0);
 
-include 'lang/supportedLanguages.php';
+if (session_status() === PHP_SESSION_NONE && !headers_sent()) {
+    session_start();
+}
 
-if(isset($_REQUEST['language'])){
-    if(in_array($_REQUEST['language'], array_keys($supportedLanguages))){
+$supportedLanguages = array(
+    'sq' => array('name' => 'Shqip', 'direction' => 'ltr'),
+    'en' => array('name' => 'English', 'direction' => 'ltr'),
+    'fr' => array('name' => 'French', 'direction' => 'ltr'),
+    'es' => array('name' => 'Spanish', 'direction' => 'ltr'),
+    'ar' => array('name' => 'Arabic', 'direction' => 'rtl')
+);
+
+if (file_exists('lang/supportedLanguages.php')) {
+    include_once 'lang/supportedLanguages.php';
+}
+
+$langCode2 = 'sq';
+if (isset($_REQUEST['language']) && isset($supportedLanguages[$_REQUEST['language']])) {
     $langCode2 = $_REQUEST['language'];
-    }
-} else if (isset($_COOKIE['remember_me_lang'])){
-    if(in_array($_COOKIE['remember_me_lang'], array_keys($supportedLanguages))){
-        $langCode2 = $_COOKIE['remember_me_lang'];
-}
-}
-
-if(!isset($langCode2)){
-    $langCode2 = 'sq';
+} elseif (isset($_COOKIE['remember_me_lang']) && isset($supportedLanguages[$_COOKIE['remember_me_lang']])) {
+    $langCode2 = $_COOKIE['remember_me_lang'];
+} elseif (isset($_SESSION['language']) && isset($supportedLanguages[$_SESSION['language']])) {
+    $langCode2 = $_SESSION['language'];
 }
 
-$_SESSION['language'] = $langCode2;
+if (session_status() === PHP_SESSION_ACTIVE) {
+    $_SESSION['language'] = $langCode2;
+}
 
-include "lang/lang_" . $_SESSION['language'] . ".php";
+$lang_target = "lang/lang_" . $langCode2 . ".php";
+if (file_exists($lang_target)) {
+    include_once $lang_target;
+} elseif (file_exists("lang/lang_sq.php")) {
+    include_once "lang/lang_sq.php";
+}
 
-include 'RedirectRootInc.php';
-include "Data.php";
-include "Warehouse.php";
+include_once 'RedirectRootInc.php';
+if (file_exists("Data.php")) {
+    include_once "Data.php";
+}
+include_once "Warehouse.php";
 
 $cont = db_start();
 $log_msg = DBGet(DBQuery("SELECT MESSAGE FROM login_message WHERE DISPLAY='Y'"));
@@ -109,7 +127,7 @@ require_once('functions/langFnc.php');
                             if ($_REQUEST['reason'])
                                 $note[] = _youMustHaveJavascriptEnabled;
 
-                            if ($error[0] != '') {
+                            if (!empty($error[0])) {
                                 ?>
                                 <div class="alert alert-danger" role="alert">   
                                     <i aria-hidden="true" class="fa fa-exclamation-triangle"></i>
@@ -143,7 +161,8 @@ require_once('functions/langFnc.php');
                                 <div class="form-group">
                                     <?php
                                     include_once './AuthCryp.php';
-                                    if (isset($_COOKIE['remember_me_name']))
+                                    $name = '';
+                                    if (isset($_COOKIE['remember_me_name']) && ($cont instanceof mysqli))
                                         $name = mysqli_real_escape_string($cont, strip_tags(trim(cryptor($_COOKIE['remember_me_name'], 'DEC'))));
                                     if (isset($_SESSION['fill_username'])) {
                                         $name = $_SESSION['fill_username'];
@@ -154,7 +173,8 @@ require_once('functions/langFnc.php');
                                 </div>
                                 <div class="form-group">
                                     <?php
-                                    if (isset($_COOKIE['remember_me_pwd']))
+                                    $pwd = '';
+                                    if (isset($_COOKIE['remember_me_pwd']) && ($cont instanceof mysqli))
                                         $pwd = mysqli_real_escape_string($cont, strip_tags(trim(cryptor($_COOKIE['remember_me_pwd'], 'DEC'))));
                                     ?>
                                     <input type="password" class="form-control password" placeholder="<?=_enterPassword?>" id="password" name='PASSWORD' AUTOCOMPLETE='off' value="<?php echo $pwd; ?>">

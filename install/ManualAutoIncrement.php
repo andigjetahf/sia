@@ -29,9 +29,11 @@ error_reporting(0);
 include('../Data.php');
 
 // PHP 8.x compatible - using mysqli
-$dbconn = new mysqli($DatabaseServer, $DatabaseUsername, $DatabasePassword, 'information_schema');
-if ($dbconn->connect_error) {
-    die("Connection failed: " . $dbconn->connect_error);
+mysqli_report(MYSQLI_REPORT_OFF);
+$port = !empty($DatabasePort) ? (int)$DatabasePort : 3306;
+$dbconn = @new mysqli($DatabaseServer, $DatabaseUsername, $DatabasePassword, 'information_schema', $port);
+if (!$dbconn || $dbconn->connect_error) {
+    die("Lidhja me bazën e të dhënave dështoi: " . ($dbconn ? $dbconn->connect_error : mysqli_connect_error()));
 }
 
 $r = $dbconn->query(

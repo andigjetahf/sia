@@ -61,7 +61,7 @@ $err .= '<!DOCTYPE html>
                     <div class="panel-body">
                         <div class="installation-steps-wrapper">
                             <div class="installation-instructions">
-                                i!--ih4 class="no-margin">Possible causes are:</h4>
+                                <!-- <h4 class="no-margin">Possible causes are:</h4>
                                 <ol>
                                     <li>MySQL is not installed. Try downloading from <a href="http://dev.mysql.com/downloads/" target=_blank>MySQL Website</a></li>
                                     <li>Username or Password or MySQL Configuration is incorrect</li>
@@ -89,7 +89,7 @@ $err .= '<!DOCTYPE html>
                     </div><!-- /.panel-body -->
                 </div><!-- /.panel -->                
                 <footer>
-                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4ED</a>).
+                    Të gjitha të drejtat të rezervuara &copy; ' . date('Y') . ' SIA - Sistemi i Inteligjencës Arsimore.
                 </footer>
             </div><!-- /.login-wrapper -->
         </section><!-- /.login -->
@@ -113,7 +113,7 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
     }
     $err_with_msg = str_replace(
         "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'],
-        "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'] . "<br>ismall style='color:red; font-size:14px;'>(" . htmlspecialchars($db_error_detail) . ")</small>",
+        "Nuk mund të lidhej me serverin e bazës së të dhënave: " . $_SESSION['host'] . "<br><small style='color:red; font-size:14px;'>(" . htmlspecialchars($db_error_detail) . ")</small>",
         $err
     );
     exit($err_with_msg);
@@ -157,7 +157,7 @@ if (!empty($db_error_detail) || !isset($dbconn) || $dbconn->connect_errno != 0) 
                             </div><!-- /.panel-body -->
                         </div><!-- /.panel -->
                         <footer>
-                            Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4ED</a>).
+                            Të gjitha të drejtat të rezervuara &copy; ' . date('Y') . ' SIA - Sistemi i Inteligjencës Arsimore.
                         </footer>
                     </div><!-- /.login-wrapper -->
                 </section><!-- /.login -->

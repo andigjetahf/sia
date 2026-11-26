@@ -1,4 +1,4 @@
-﻿function tab_select(t)
+function tab_select(t)
 {
     if(t=='password_retrieval')
     {

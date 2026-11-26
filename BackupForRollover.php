@@ -27,7 +27,9 @@
 #***************************************************************************************
 include('RedirectRootInc.php');
 include('Warehouse.php');
-require_once("Data.php");
+if (file_exists("Data.php")) {
+    require_once("Data.php");
+}
 sleep(5);
 $print_form=1;
 $output_messages=array();
@@ -835,7 +837,7 @@ function _mysqldump_table_data($table)
 							case 'string':
 							case 'blob' :
 							default:
-								$f_content_nd.= "'".mysqli_real_escape_string($row[$i])."'";
+								$f_content_nd.= "'".mysqli_real_escape_string($dbconn, $row[$i])."'";
 						}
 					}
 					if( $i <$num_fields-1)
@@ -858,22 +860,31 @@ function _mysqldump_table_data($table)
 function _mysql_test($mysql_host,$mysql_database, $mysql_username, $mysql_password)
 {
 	global $output_messages, $DatabasePort;
+	mysqli_report(MYSQLI_REPORT_OFF);
 	$mysql_port = $DatabasePort;
-	$link = new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
-	if ($link->connect_error)
+	try {
+		$link = @new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
+	} catch (Throwable $e) {
+		$link = null;
+	}
+	if (!$link || $link->connect_error)
 	{
-	   array_push($output_messages, ''._couldNotConnect.': ' . $link->connect_error);
+	   array_push($output_messages, ''._couldNotConnect.': ' . ($link ? $link->connect_error : 'Gabim lidhjeje'));
 	}
 	else
 	{
-		array_push ($output_messages,""._connectedWithMySqlServer.":$mysql_username@$mysql_host successfully");
-		$db_selected = new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
-		if ($db_selected->connect_error)
+		array_push ($output_messages,""._connectedWithMySqlServer.": $mysql_username@$mysql_host me sukses");
+		try {
+			$db_selected = @new mysqli($mysql_host, $mysql_username, $mysql_password, $mysql_database, $mysql_port);
+		} catch (Throwable $e) {
+			$db_selected = null;
+		}
+		if (!$db_selected || $db_selected->connect_error)
 		{
-			array_push ($output_messages,''._canTUse.' $mysql_database : ' . $db_selected->connect_error);
+			array_push ($output_messages,""._canTUse." $mysql_database : " . ($db_selected ? $db_selected->connect_error : 'Gabim lidhjeje'));
 		}
 		else
-			array_push ($output_messages,""._connectedWithMySqlDatabase.":$mysql_database successfully");
+			array_push ($output_messages,""._connectedWithMySqlDatabase.": $mysql_database me sukses");
 	}
 }
 ?>

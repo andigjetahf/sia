@@ -29,7 +29,7 @@ error_reporting(0);
 
 
 include('../../../RedirectIncludes.php');
-include_once("../../functions/PasswordHashFnc.php");
+include_once("../../../functions/PasswordHashFnc.php");
 include 'modules/students/ConfigInc.php';
 
 // echo "<pre>";

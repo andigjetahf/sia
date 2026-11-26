@@ -90,7 +90,7 @@ if(page && page!="index.php"){
                     </div>
                 </div>
                 <footer>
-                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4Ed</a>). Të drejtat e autorit të rezervuara.
+                    Të gjitha të drejtat të rezervuara &copy; <?php echo date('Y'); ?> SIA - Sistemi i Inteligjencës Arsimore.
                 </footer>
             </div>
         </section>

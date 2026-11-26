@@ -27,7 +27,9 @@
 #***************************************************************************************
 error_reporting(0); 
 include("functions/ParamLibFnc.php");
-require_once("Data.php");
+if (file_exists("Data.php")) {
+    require_once("Data.php");
+}
 include "./Warehouse.php";
 // include('functions/SqlSecurityFnc.php');
 

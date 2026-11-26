@@ -27,18 +27,22 @@
 #***************************************************************************************
 error_reporting(0);
 session_start();
-$_SESSION['admin_name'] = $_POST['auname'];
-$_SESSION['admin_pwd'] = md5($_POST['apassword']);
-$dbconn = new mysqli($_SESSION['host_mod'],$_SESSION['username'],$_SESSION['password'],$_SESSION['db']) ;
-if(isset($_REQUEST['username']) && $_REQUEST['username']!='')
-        {
-           $result_username= $dbconn->fetch_assoc($dbconn->query('SELECT COUNT(1) as USERNAME_EX FROM login_authentication WHERE USERNAME=\''.$_REQUEST['username'].'\''));
-        }
-        if($result_username['USERNAME_EX']==0)
-        {
-            echo '0';
-        }
- else {
-     echo '1';
- }
-        ?>
+$_SESSION['admin_name'] = $_POST['auname'] ?? '';
+$_SESSION['admin_pwd'] = md5($_POST['apassword'] ?? '');
+mysqli_report(MYSQLI_REPORT_OFF);
+$port = !empty($_SESSION['port']) ? (int)$_SESSION['port'] : 3306;
+$dbconn = @new mysqli($_SESSION['host_mod'], $_SESSION['username'], $_SESSION['password'], $_SESSION['db'], $port);
+$result_username = array('USERNAME_EX' => 0);
+if ($dbconn && !$dbconn->connect_errno && isset($_REQUEST['username']) && $_REQUEST['username'] != '') {
+    $uname = $dbconn->real_escape_string($_REQUEST['username']);
+    $res = $dbconn->query("SELECT COUNT(1) as USERNAME_EX FROM login_authentication WHERE USERNAME='" . $uname . "'");
+    if ($res) {
+        $result_username = $res->fetch_assoc();
+    }
+}
+if (($result_username['USERNAME_EX'] ?? 0) == 0) {
+    echo '0';
+} else {
+    echo '1';
+}
+?>

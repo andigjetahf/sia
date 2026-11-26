@@ -719,7 +719,7 @@ if (!$_REQUEST['modfunc']) {
     }
     $_REQUEST['category_id'] = 3;
     $_REQUEST['custom'] = 'staff';
-    include('modules/users/includes/OtherInfoInc.inc.php');
+    include('modules/users/includes/OtherInfoInc.php');
 
 
     $style = '';

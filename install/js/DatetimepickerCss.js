@@ -1,4 +1,4 @@
-﻿//Javascript name: My Date Time Picker
+//Javascript name: My Date Time Picker
 //Date created: 16-Nov-2003 23:19
 //Creator: TengYong Ng
 //Website: http://www.rainforestnet.com

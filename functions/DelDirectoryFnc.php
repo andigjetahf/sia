@@ -27,7 +27,7 @@
 #***************************************************************************************
 function delete_directory($dir)
 {
-if ($handle = opendir($dir))
+if ($handle = @opendir($dir))
 {
 $array = array();
  

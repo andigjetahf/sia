@@ -27,7 +27,7 @@
 #
 #***************************************************************************************
 
-session_start();
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 
 include 'RedirectRootInc.php';
 include 'functions/ParamLibFnc.php';
@@ -47,6 +47,7 @@ if (isset($_REQUEST['year_id']))
 $url = validateQueryString(curPageURL());
 if ($url === FALSE) {
     header('Location: index.php');
+    exit;
 }
 if ($_REQUEST['modname'] == 'grades/Assignments.php' && $_REQUEST['assignment_id'] != '' && isset($_REQUEST['tables'][$_REQUEST['assignment_id']]['DESCRIPTION'])) {
     $_SESSION['ASSIGNMENT_DESCRIPTION'] = $_REQUEST['tables'][$_REQUEST['assignment_id']]['DESCRIPTION'];
@@ -156,7 +157,7 @@ if (!isset($_REQUEST['_openSIS_PDF'])) {
             });
 
             if ($.fn.datepicker) {
-                $.fn.datepicker.defaults.language = 'sq';
+                $.fn.datepicker.defaults.language = \'sq\';
             }
             
             if($(".clockpicker").length>0){

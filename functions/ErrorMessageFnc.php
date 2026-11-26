@@ -87,7 +87,7 @@ function ErrorMessage($errors, $code = 'error', $options = '') {
                 $return .= '</div>';
                 $return .= '<div class="col-md-3">';
                 $return .= '<div class="version-info">';
-                $return .= (defined('_version') ? _version : 'Versioni') . ' <b>' . $get_app_details[1][VALUE] . '</b>';
+                $return .= (defined('_version') ? _version : 'Versioni') . ' <b>' . $get_app_details[1]['VALUE'] . '</b>';
                 $return .= '</div>';
                 $return .= '</div>';
                 $return .= '</div>';

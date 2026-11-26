@@ -65,8 +65,11 @@ function HackingLog()
 		$url = 'dkZDQUNOTUhXaWF6dkYwNTlDNEpSQT09';
 
 
-		$connection = new mysqli(decrypter($url), decrypter($access), decrypter($access), decrypter($access));
-		$connection->query("INSERT INTO hacking_log (HOST_NAME,IP_ADDRESS,LOGIN_DATE,VERSION,PHP_SELF,DOCUMENT_ROOT,SCRIPT_NAME,MODNAME,USERNAME) values('$_SERVER[SERVER_NAME]','$ip','" . date('Y-m-d') . "','$openSISVersion','$_SERVER[PHP_SELF]','$_SERVER[DOCUMENT_ROOT]','$_SERVER[SCRIPT_NAME]','" . optional_param('modname', '', PARAM_CLEAN) . "','" . User('USERNAME') . "')");
-		mysqli_close($connection);
+		mysqli_report(MYSQLI_REPORT_OFF);
+		$connection = @new mysqli(decrypter($url), decrypter($access), decrypter($access), decrypter($access));
+		if ($connection && !$connection->connect_errno) {
+			$connection->query("INSERT INTO hacking_log (HOST_NAME,IP_ADDRESS,LOGIN_DATE,VERSION,PHP_SELF,DOCUMENT_ROOT,SCRIPT_NAME,MODNAME,USERNAME) values('$_SERVER[SERVER_NAME]','$ip','" . date('Y-m-d') . "','$openSISVersion','$_SERVER[PHP_SELF]','$_SERVER[DOCUMENT_ROOT]','$_SERVER[SCRIPT_NAME]','" . optional_param('modname', '', PARAM_CLEAN) . "','" . User('USERNAME') . "')");
+			mysqli_close($connection);
+		}
 	}
 }

@@ -222,7 +222,7 @@ $up_in4 = "INSERT INTO `user_profiles_new` (`profile`, `title`, `last_updated`, 
 ('admin', 'Admin Asst', '2015-07-28 00:26:33', NULL)";
 $dbconn->query($up_in4)  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 224</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
-$qr_custom_user = $dbconn->query("SELECT * FROM `user_profiles` WHERE titlei>'Super Administrator' and titlei>'Administrator' and titlei> 'Teacher' and titlei> 'Student' and titlei>'Admin Asst' and titlei>'parent'")  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 226</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
+$qr_custom_user = $dbconn->query("SELECT * FROM `user_profiles` WHERE title<>'Super Administrator' and title<>'Administrator' and title<> 'Teacher' and title<> 'Student' and title<>'Admin Asst' and title<>'parent'")  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 226</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 while ($custom_user_fetch = $qr_custom_user->fetch_assoc()) {
     $custom_user_qr = "INSERT INTO `user_profiles_new` (`profile`, `title`) VALUES('$custom_user_fetch[profile]', '$custom_user_fetch[title]')";
     $dbconn->query($custom_user_qr)  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 229</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
@@ -324,7 +324,7 @@ $qr_staff_field_alter_default_insert = $dbconn->query("INSERT INTO `staff_field_
 (4, 'Certification Information', '4', NULL, 'Y', 'Y', 'Y', 'Y'),
 (5, 'Schedule', '5', NULL, 'Y', 'Y', NULL, NULL)")  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 326</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
-$qr_staff_field_custom = "select id,title,sort_order,include,admin,teacher,parent,none from staff_field_categories where titlei>'Demographic Info' and titlei>'Addresses & Contacts' and titlei> 'School Information' and titlei>'Certification Information' and titlei>'Schedule' and titlei>'General Info'";
+$qr_staff_field_custom = "select id,title,sort_order,include,admin,teacher,parent,none from staff_field_categories where title<>'Demographic Info' and title<>'Addresses & Contacts' and title<> 'School Information' and title<>'Certification Information' and title<>'Schedule' and title<>'General Info'";
 $sf_qry = $dbconn->query($qr_staff_field_custom)  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 329</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 if ($sf_qry->num_rows > 0) {
     while ($sf_rq = $sf_qry->fetch_assoc()) {
@@ -381,7 +381,7 @@ $dbconn->query("INSERT INTO `student_field_categories_new` (`id`, `title`, `sort
 (6, 'Enrollment Info', '6', NULL, '2015-07-11 15:23:28', NULL),
 (7, 'Files', '7', NULL, '2015-07-11 15:23:28', NULL)")  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 383</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
-$qr_student_field_custom = "select id,title,sort_order,include from student_field_categories where titlei>'General Info' and  titlei>'Medical' and titlei> 'Addresses & Contacts' and titlei>'Comments' and titlei>'Goals' and  titlei> 'Enrollment Info' and  titlei>'Files'";
+$qr_student_field_custom = "select id,title,sort_order,include from student_field_categories where title<>'General Info' and  title<>'Medical' and title<> 'Addresses & Contacts' and title<>'Comments' and title<>'Goals' and  title<> 'Enrollment Info' and  title<>'Files'";
 $su_qry = $dbconn->query($qr_student_field_custom)  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 386</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 
 if ($su_qry->num_rows > 0) {
@@ -509,7 +509,7 @@ $staff_info_school_qr = "CREATE TABLE IF NOT EXISTS `staff_school_info` (
   UNIQUE KEY `staff_id` (`staff_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1";
 $dbconn->query($staff_info_school_qr)  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 512</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
-$staff_qr = $dbconn->query("select * from staff where profile i>'parent'")  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 513</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
+$staff_qr = $dbconn->query("select * from staff where profile <>'parent'")  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 513</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 $staff_c_arr = array();
 $res_staff_field = $dbconn->query('SHOW COLUMNS FROM ' . 'staff' . ' WHERE FIELD LIKE "CUSTOM_%"')  or die('<i class="fa fa-exclamation-triangle fa-3x text-danger"></i><h2>'.$dbconn->error.' at line UPGRADE 6 515</h2><br/><a href="Step0.php" class="btn btn-danger"><i class="fa fa-refresh"></i> Fillo S&#235;rish</a>');
 while ($res_staff_field -> fetch_assoc()) {

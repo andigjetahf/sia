@@ -25,21 +25,34 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #***************************************************************************************
-// Establish MySQL DB connection.  
+// Establish MySQL DB connection.
+if (function_exists('mysqli_report')) {
+    mysqli_report(MYSQLI_REPORT_OFF);
+}
+
 class ConnectDBOpensis
 {
     public $auto_init = true;
+    public $last_error = '';
     
     function init($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $DatabasePort = 3306)
     {
         $port = !empty($DatabasePort) ? (int)$DatabasePort : 3306;
-        $conn = @new mysqli($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $port);
-        // Disable strict mode to ensure compatibility
-        if ($conn && !$conn->connect_errno) {
-            $conn->query("SET SESSION sql_mode = ''");
-            return $conn;
-        } elseif ($conn) {
-            return $conn;
+        $this->last_error = '';
+        try {
+            $conn = @new mysqli($DatabaseServer, $DatabaseUsername, $DatabasePassword, $DatabaseName, $port);
+            if ($conn && !$conn->connect_errno) {
+                @$conn->query("SET SESSION sql_mode = ''");
+                return $conn;
+            }
+            if ($conn && $conn->connect_errno) {
+                $this->last_error = $conn->connect_error ?: mysqli_connect_error();
+                @$conn->close();
+                return null;
+            }
+        } catch (Throwable $e) {
+            $this->last_error = $e->getMessage();
+            return null;
         }
         return null;
     }

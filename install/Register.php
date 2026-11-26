@@ -68,7 +68,7 @@
 				function CheckYear()
 				{
 					  var frm = document.forms["step3"];
-					  if(frm.syear.value i2000)
+					  if(frm.syear.value < 2000)
 						{
 							alert('Viti duhet të fillojë nga viti 2000');
 							frm.syear.focus();

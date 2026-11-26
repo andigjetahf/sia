@@ -38,21 +38,23 @@ $_SESSION['admin_name'] = $_POST['auname'];
 $_SESSION['admin_pwd'] = GenerateNewHash($_POST['apassword']);
 
 require_once "../functions/PragRepFnc.php";
-//mysql_select_db($_SESSION['db']);
-$dbconn = new mysqli($_SESSION['server'],$_SESSION['username'],$_SESSION['password'],$_SESSION['db'],$_SESSION['port']);
+mysqli_report(MYSQLI_REPORT_OFF);
+$port = !empty($_SESSION['port']) ? (int)$_SESSION['port'] : 3306;
+$dbconn = @new mysqli($_SESSION['server'], $_SESSION['username'], $_SESSION['password'], $_SESSION['db'], $port);
 if ($dbconn && !$dbconn->connect_errno) {
-    $dbconn->query("SET SESSION sql_mode = ''");
+    $dbconn->set_charset('utf8mb4');
+    @$dbconn->query("SET SESSION sql_mode = ''");
 }
-if($dbconn->connect_errno!=0)
+if (!$dbconn || $dbconn->connect_errno != 0)
 {
-    echo "<h2>" . $dbconn->error . "</h2>\n";
+    echo "<h2>" . ($dbconn ? $dbconn->connect_error : mysqli_connect_error()) . "</h2>\n";
     exit;
 }
 
-$_POST['fname'] = strip_tags(urldecode($_POST['fname']));
-$_POST['lname'] = strip_tags(urldecode($_POST['lname']));
-$_POST['mname'] = strip_tags(urldecode($_POST['mname']));
-$_POST['emailid'] = strip_tags(urldecode($_POST['emailid']));
+$_POST['fname'] = $dbconn->real_escape_string(strip_tags(urldecode($_POST['fname'])));
+$_POST['lname'] = $dbconn->real_escape_string(strip_tags(urldecode($_POST['lname'])));
+$_POST['mname'] = $dbconn->real_escape_string(strip_tags(urldecode($_POST['mname'])));
+$_POST['emailid'] = $dbconn->real_escape_string(strip_tags(urldecode($_POST['emailid'])));
 
 $sql = "UPDATE staff SET first_name = '" . $_POST['fname'] . "', last_name = '" . $_POST['lname'] . "', middle_name = '" . $_POST['mname'] . "', email = '" . $_POST['emailid'] . "',  profile_id = 0 WHERE staff_id = 1";
 $result = $dbconn->query($sql);

@@ -66,7 +66,7 @@ function ShowErrPhp($msg) {
 
 function for_error() {
     $css = getCSS();
-    echo "<form action=Modules.php?modname=" . strip_tags(trim($_REQUEST[modname])) . " method=post>";
+    echo "<form action=Modules.php?modname=" . strip_tags(trim($_REQUEST['modname'])) . " method=post>";
     echo '<BR><CENTER>' . SubmitButton(_tryAgain, '', 'class="btn btn-primary"') . '</CENTER>';
     echo "</form>";
     echo '</div>';
@@ -89,7 +89,7 @@ function for_error() {
     echo '</div>';
     echo '<div class="col-md-3">';
     echo '<div class="version-info">';
-    echo 'Version <b>' . $get_app_details[1][VALUE] . '</b>';
+    echo (defined('_version') ? _version : 'Versioni') . ' <b>' . $get_app_details[1]['VALUE'] . '</b>';
     echo '</div>';
     echo '</div>';
     echo '</div>';
@@ -458,7 +458,7 @@ function PromptCourseWarning($title = 'Confirm', $question = '', $message = '', 
 
 function for_error_sch() {
     $css = getCSS();
-    echo "<br><br><form action=Modules.php?modname=" . strip_tags(trim($_REQUEST[modname])) . " method=post>";
+    echo "<br><br><form action=Modules.php?modname=" . strip_tags(trim($_REQUEST['modname'])) . " method=post>";
     echo '<BR><CENTER>' . SubmitButton(_tryAgain, '', 'class="btn btn-primary"') . '</CENTER>';
     echo "</form>";
     echo "</div>";

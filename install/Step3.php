@@ -349,7 +349,7 @@ session_start();
                     </div>
                 </div>
                 <footer>
-                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4ED</a>).
+                    Të gjitha të drejtat të rezervuara &copy; <?php echo date('Y'); ?> SIA - Sistemi i Inteligjencës Arsimore.
                 </footer>
             </div>
         </section>

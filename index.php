@@ -58,38 +58,56 @@ if ($url === FALSE) {
 }
 
 if (!defined("_eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked")) {
-    define("_eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked", _yourOpenSISAccountIsInactive);
+    define("_eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked", defined('_yourOpenSISAccountIsInactive') ? _yourOpenSISAccountIsInactive : 'Llogaria juaj në SIA është joaktive ose të drejtat tuaja të hyrjes janë revokuar.');
 }
 
 if (!defined("_pleaseContactTheSchoolAdministration")) {
     define("_pleaseContactTheSchoolAdministration", "Ju lutemi kontaktoni administratën e shkollës");
 }
 
+$error = array();
 if (optional_param('dis', '', PARAM_ALPHAEXT) == 'fl_count') {
     $error[] = _eitherYourAccountIsInactiveOrYourAccessPermissionHasBeenRevoked . ". " . _pleaseContactTheSchoolAdministration . ".";
 }
 
 if (optional_param('dis', '', PARAM_ALPHAEXT) == 'assoc_mis') {
-    $error[] = _noStudentAssociatedWithParent;
+    $error[] = defined('_noStudentAssociatedWithParent') ? _noStudentAssociatedWithParent : 'Nuk ka asnjë nxënës të lidhur me llogarinë prindërore.';
 }
 
-if (isset($_GET['ins']))
-    $install = optional_param('ins', '', PARAM_ALPHAEXT);
+$install = optional_param('ins', '', PARAM_ALPHAEXT);
 
 if ($install == 'comp') {
-    if (is_dir('install')) {
+    $data_valid = (file_exists('Data.php') && filesize('Data.php') > 20);
+    if ($data_valid) {
+        include('Data.php');
+        $data_valid = !empty($DatabaseServer);
+    }
+    if ($data_valid && is_dir('install')) {
         $dir = 'install/'; // IMPORTANT: with '/' at the end
         $remove_directory = delete_directory($dir);
     }
 }
 
 require_once('Warehouse.php');
-if (optional_param('modfunc', '', PARAM_ALPHAEXT) == 'logout') {
-    if ($_SESSION) {
+// Pranojmë si 'modfunc' ashtu edhe 'modFunc' (case-insensitive për backward compatibility)
+$_logout_param = strtolower(optional_param('modfunc', optional_param('modFunc', '', PARAM_ALPHAEXT), PARAM_ALPHAEXT));
+if ($_logout_param == 'logout') {
+    if (!empty($_SESSION['X']) && isset($connection) && ($connection instanceof mysqli)) {
         DBQuery("DELETE FROM log_maintain WHERE SESSION_ID = '" . $_SESSION['X'] . "'");
-        // header("Location: $_SERVER[PHP_SELF]?modfunc=logout" . (($_REQUEST['reason']) ? '&reason=' . $_REQUEST['reason'] : ''));
     }
-    session_destroy();
+    $_SESSION = array();
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000, $params["path"], $params["domain"], $params["secure"], $params["httponly"]);
+    }
+    if (session_status() === PHP_SESSION_ACTIVE) {
+        session_destroy();
+    }
+    // Ridrejtojmë te faqja kryesore (login) pas logout të suksesshëm
+    if (!headers_sent()) {
+        header('Location: index.php');
+        exit;
+    }
 }
 
 if (optional_param('register', '', PARAM_NOTAGS)) {
@@ -102,12 +120,13 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
 
     $username = mysqli_real_escape_string($connection, trim(optional_param('USERNAME', '', PARAM_RAW)));
 
+    $is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (($_SERVER['SERVER_PORT'] ?? '') == 443);
     $arr_cookie_options = array(
         'expires' => time() + 60 * 60 * 24 * 100,
         'path' => '/',
-        'secure' => true,       // or false
-        'httponly' => true,     // or false
-        'samesite' => 'Strict'  // None || Lax || Strict
+        'secure' => $is_https,
+        'httponly' => true,
+        'samesite' => 'Lax'
     );
 
     if ($_REQUEST['remember']) {
@@ -210,6 +229,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 if (empty($is_teacher_assoc)) {
 
                     header("location:index.php?modfunc=logout&staff=na");
+                    exit;
                 }
             }
         }
@@ -226,8 +246,10 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 $max_syear = $max_syear[1]['SYEAR'];
                 if ($max_syear == '') {
                     $error[] = _noStudentAssociatedWithParent;
+                    $_SESSION = array();
                     session_destroy();
                     header("location:index.php?modfunc=logout&dis=assoc_mis");
+                    exit;
                 }
                 $login_RET = DBGet(DBQuery("SELECT PROFILE,STAFF_ID,CURRENT_SCHOOL_ID,FIRST_NAME,LAST_NAME,PROFILE_ID,IS_DISABLE," . $max_syear . " AS SYEAR
                                     FROM people,school_years sy
@@ -246,8 +268,10 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
             $loged_staff_id = $login_RET[1]['STAFF_ID'];
             $is_inactive = DBGet(DBQuery("SELECT se.ID FROM student_enrollment se,students_join_people sju WHERE sju.STUDENT_ID= se.STUDENT_ID AND sju.PERSON_ID=$loged_staff_id AND se.SYEAR=(SELECT MAX(SYEAR) FROM student_enrollment WHERE STUDENT_ID=sju.STUDENT_ID) AND CURRENT_DATE>=se.START_DATE AND (CURRENT_DATE<=se.END_DATE OR se.END_DATE IS NULL)"));
             if (!$is_inactive) {
+                $_SESSION = array();
                 session_destroy();
                 header("location:index.php?modfunc=logout&dis=assoc_mis");
+                exit;
             }
         }
 
@@ -323,15 +347,19 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
 
                             if ($parent_max_syear == '') {
                                 $error[] = _noStudentAssociatedWithParent;
+                                $_SESSION = array();
                                 session_destroy();
                                 header("location:index.php?modfunc=logout&dis=assoc_mis");
+                                exit;
                             }
 
                             $parent_is_inactive = DBGet(DBQuery('SELECT se.ID FROM student_enrollment se,students_join_people sju WHERE sju.STUDENT_ID= se.STUDENT_ID AND sju.PERSON_ID=' . $login_unchk['USER_ID'] . ' AND se.SYEAR=(SELECT MAX(SYEAR) FROM student_enrollment WHERE STUDENT_ID=sju.STUDENT_ID) AND CURRENT_DATE>=se.START_DATE AND (CURRENT_DATE<=se.END_DATE OR se.END_DATE IS NULL)'));
 
                             if (!$parent_is_inactive) {
+                                $_SESSION = array();
                                 session_destroy();
                                 header("location:index.php?modfunc=logout&dis=assoc_mis");
+                                exit;
                             }
 
                             $login_RET = DBGet(DBQuery("SELECT PROFILE,STAFF_ID AS STAFF_ID,CURRENT_SCHOOL_ID AS CURRENT_SCHOOL_ID,FIRST_NAME,LAST_NAME,PROFILE_ID,IS_DISABLE FROM people WHERE STAFF_ID=" . $login_unchk['USER_ID'])); //pinki             
@@ -452,7 +480,8 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
             $fname_ins = singleQuoteReplace("'", "''", $_SESSION['FIRST_NAME']);
             $lname_ins = singleQuoteReplace("'", "''", $_SESSION['LAST_NAME']);
             $ip = sqlSecurityFilter($ip);
-            DBQuery("INSERT INTO login_records (SYEAR,STAFF_ID,FIRST_NAME,LAST_NAME,PROFILE,USER_NAME,LOGIN_TIME,FAILLOG_COUNT,IP_ADDRESS,STATUS,SCHOOL_ID) values('$_SESSION[UserSyear]','$_SESSION[STAFF_ID]','$fname_ins','$lname_ins','$_SESSION[PROFILE]','$_SESSION[USERNAME]','$date','$_SESSION[FAILED_LOGIN]','$ip','Success',$_SESSION[CURRENT_SCHOOL_ID])");
+            $login_school_id = (!empty($_SESSION['CURRENT_SCHOOL_ID']) ? (int)$_SESSION['CURRENT_SCHOOL_ID'] : 'NULL');
+            DBQuery("INSERT INTO login_records (SYEAR,STAFF_ID,FIRST_NAME,LAST_NAME,PROFILE,USER_NAME,LOGIN_TIME,FAILLOG_COUNT,IP_ADDRESS,STATUS,SCHOOL_ID) values('$_SESSION[UserSyear]','$_SESSION[STAFF_ID]','$fname_ins','$lname_ins','$_SESSION[PROFILE]','$_SESSION[USERNAME]','$date','$_SESSION[FAILED_LOGIN]','$ip','Success',$login_school_id)");
         }
 
         $disable = $_SESSION['IS_DISABLED'];
@@ -486,17 +515,21 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 DBQuery("UPDATE staff s,staff_school_relationship ssp SET s.IS_DISABLE='Y' WHERE s.STAFF_ID=ssp.STAFF_ID AND s.STAFF_ID='" . $staff_info[1]['USER_ID'] . "' AND s.PROFILE_ID='" . $staff_info[1]['PROFILE_ID'] . " ' AND ssp.SYEAR='$_SESSION[UserSyear]' AND s.PROFILE_ID NOT IN (0,1)"); //pinki
             if ($staff_info[1]['PROFILE_ID'] == 4)
                 DBQuery("UPDATE people SET IS_DISABLE='Y' WHERE STAFF_ID=" . $staff_info[1]['USER_ID']);
+            $_SESSION = array();
             session_destroy();
 
             header("location:index.php?modfunc=logout&dis=fl_count");
+            exit;
         }
 
 
 
         if ($disable == true) {
+            $_SESSION = array();
             session_destroy();
 
             header("location:index.php?modfunc=logout&dis=fl");
+            exit;
         }
         $activity = DBGet(DBQuery("SELECT ACTIVITY_DAYS FROM system_preference_misc"));
         $activity = $activity[1]['ACTIVITY_DAYS'];
@@ -511,9 +544,11 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
                 DBQuery("UPDATE staff s,staff_school_relationship ssp SET s.IS_DISABLE='Y' WHERE s.STAFF_ID=ssp.STAFF_ID AND s.STAFF_ID='" . $_SESSION['STAFF_ID'] . "' AND ssp.SYEAR='$_SESSION[UserSyear]' AND s.PROFILE_ID NOT IN (0,1)"); //pinki		    
             else
                 DBQuery("UPDATE people SET IS_DISABLE='Y' WHERE STAFF_ID=" . $_SESSION['STAFF_ID']);
+            $_SESSION = array();
             session_destroy();
 
             header("location:index.php?modfunc=logout&dis=fl_count");
+            exit;
         }
 
 
@@ -563,9 +598,11 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
             if ($check_enrollment[1]['REC_EX'] == 0)
                 DBQuery("UPDATE students SET IS_DISABLE='Y' WHERE STUDENT_ID='" . $student_RET[1]['STUDENT_ID'] . "' ");
 
+            $_SESSION = array();
             session_destroy();
 
             header("location:index.php?modfunc=logout&dis=fl_count");
+            exit;
         }
 
         $_SESSION['STUDENT_ID'] = $student_RET[1]['STUDENT_ID'];
@@ -586,9 +623,11 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
 
             DBQuery("UPDATE students SET IS_DISABLE='Y' WHERE STUDENT_ID='" . $student_RET[1]['STUDENT_ID'] . "' ");
 
+            $_SESSION = array();
             session_destroy();
 
             header("location:index.php?modfunc=logout&dis=fl_count");
+            exit;
         }
 
         $failed_login = $student_RET[1]['FAILED_LOGIN'];
@@ -698,7 +737,7 @@ if (optional_param('USERNAME', '', PARAM_RAW) && optional_param('PASSWORD', '', 
 
 
 
-if (optional_param('modfunc', '', PARAM_ALPHA) == 'create_account') {
+if (optional_param('modfunc', '', PARAM_ALPHA) == 'create_account' || strtolower(optional_param('modFunc', '', PARAM_ALPHA)) == 'create_account') {
     Warehouse('header');
     $_openSIS['allow_edit'] = true;
     if ($_REQUEST['staff']['USERNAME'])
@@ -715,10 +754,11 @@ if (optional_param('modfunc', '', PARAM_ALPHA) == 'create_account') {
     }
 }
 
-if (!$_SESSION['STAFF_ID'] && !$_SESSION['STUDENT_ID'] && $_REQUEST['modfunc'] != 'create_account') {
+$_modfunc_check = strtolower($_REQUEST['modfunc'] ?? $_REQUEST['modFunc'] ?? '');
+if (!$_SESSION['STAFF_ID'] && !$_SESSION['STUDENT_ID'] && $_modfunc_check != 'create_account') {
     //Login
     require "LoginInc.php";
-} elseif ($_REQUEST['modfunc'] != 'create_account') {
+} elseif ($_modfunc_check != 'create_account') {
     echo '<!DOCTYPE html>';
     echo '<html>';
     echo '<head>';

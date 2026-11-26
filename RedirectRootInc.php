@@ -27,9 +27,14 @@
 #***************************************************************************************
 
 error_reporting(0);
-session_start();
-      if(!$_SESSION['STAFF_ID'] && !$_SESSION['STUDENT_ID'] && (strpos($_SERVER['PHP_SELF'],'index.php'))===false)
-	{
-		header('Location: index.php');
-		exit;
-	}
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['STAFF_ID'])) $_SESSION['STAFF_ID'] = '';
+if (!isset($_SESSION['STUDENT_ID'])) $_SESSION['STUDENT_ID'] = '';
+if (!$_SESSION['STAFF_ID'] && !$_SESSION['STUDENT_ID'] && strpos($_SERVER['PHP_SELF'] ?? '', 'index.php') === false) {
+    if (!headers_sent()) {
+        header('Location: index.php');
+    }
+    exit;
+}

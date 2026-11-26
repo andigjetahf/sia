@@ -296,7 +296,7 @@ if (!$_SESSION['UserSchool']) {
             $mp = GetAllMP('FY', UserMP());
 
 
-        $QI = DBQuery("SELECT cp.SCHOOL_ID FROM course_periods cp, school_periods sp,courses c WHERE c.COURSE_ID=cp.COURSE_ID AND cp.PERIOD_ID=sp.PERIOD_ID AND cp.SYEAR='" . UserSyear() . "' AND cp.TEACHER_ID='" . User('STAFF_ID') . "''" . (UserMP() ? ' AND cp.MARKING_PERIOD_ID IN (' . $mp . ')' : '') . "' ORDER BY sp.SORT_ORDER LIMIT 1");
+        $QI = DBQuery("SELECT cp.SCHOOL_ID FROM course_periods cp, school_periods sp,courses c WHERE c.COURSE_ID=cp.COURSE_ID AND cp.PERIOD_ID=sp.PERIOD_ID AND cp.SYEAR='" . UserSyear() . "' AND cp.TEACHER_ID='" . User('STAFF_ID') . "'" . (UserMP() ? ' AND cp.MARKING_PERIOD_ID IN (' . $mp . ')' : '') . " ORDER BY sp.SORT_ORDER LIMIT 1");
         $RET = DBGet($QI);
         $_SESSION['UserSchool'] = $RET[1]['SCHOOL_ID'];
     }

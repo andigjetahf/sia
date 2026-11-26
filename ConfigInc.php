@@ -25,7 +25,7 @@
 #  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 #***************************************************************************************
-include('RedirectRootInc.php');
+include_once(dirname(__FILE__) . '/RedirectRootInc.php');
 
 if (!defined('CONFIG_INC')) {
     define('CONFIG_INC', 1);
@@ -36,9 +36,9 @@ if (!defined('CONFIG_INC')) {
     if (file_exists($openSISPath . "Data.php")) {
         include($openSISPath . "Data.php");
     }
-    include("DatabaseInc.php");
-    include("UpgradeInc.php");
-    include('functions/DbGetFnc.php');
+    include_once($openSISPath . "DatabaseInc.php");
+    include_once($openSISPath . "UpgradeInc.php");
+    include_once($openSISPath . "functions/DbGetFnc.php");
     #  Set Build Date and Version Number here.
 
     $b_date_sql = "select value from app where name='date'";
@@ -48,15 +48,15 @@ if (!defined('CONFIG_INC')) {
     $version_sql = "select value from app where name='version'";
     $version_res = DBQuery($version_sql);
     $version_row = DBGet($version_res);
-    $openSISVersion = $version_row[1]['VALUE'];
-    $builddate = $b_date_row[1]['VALUE'];
+    $openSISVersion = $version_row[1]['VALUE'] ?? '8.0';
+    $builddate = $b_date_row[1]['VALUE'] ?? date('Y-m-d');
     $htmldocPath = "";
     $OutputType = "HTML"; //options are HTML or PDF
     $htmldocPath = '';
     $htmldocAssetsPath = '';        // way htmldoc accesses the assets/ directory, possibly different than user - empty string means no translation
     //    $StudentPicturesPath = 'assets/studentphotos/';
     //    $UserPicturesPath = 'assets/userphotos/';
-    $openSISTitle = "SIA - Sistemi i Informacionit të Nxënësve";
+    $openSISTitle = "SIA - Sistemi i Inteligjencës Arsimore";
     $openSISAdmins = '1';            // can be list such as '1,23,50' - note, these should be id's in the DefaultSyear, otherwise they can't login anyway
     $openSISNotifyAddress = '';
     $msgFlag = '';

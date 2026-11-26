@@ -30,14 +30,17 @@ session_start();
 $conn_string = $_SESSION['conn'];
 
 // Helper function to create mysqli connection with strict mode disabled
+mysqli_report(MYSQLI_REPORT_OFF);
 function createConnectionSelectDb($server, $username, $password, $database = '', $port = 3306) {
+    $port = !empty($port) ? (int)$port : (!empty($_SESSION['port']) ? (int)$_SESSION['port'] : 3306);
     if ($database != '') {
-        $conn = new mysqli($server, $username, $password, $database, $port);
+        $conn = @new mysqli($server, $username, $password, $database, $port);
     } else {
-        $conn = new mysqli($server, $username, $password);
+        $conn = @new mysqli($server, $username, $password, '', $port);
     }
     if ($conn && !$conn->connect_errno) {
-        $conn->query("SET SESSION sql_mode = ''");
+        $conn->set_charset('utf8mb4');
+        @$conn->query("SET SESSION sql_mode = ''");
     }
     return $conn;
 }
@@ -110,7 +113,7 @@ function createConnectionSelectDb($server, $username, $password, $database = '',
                     </div>
                 </div>
                 <footer>
-                    Copyright &copy; Open Solutions for Education, Inc. (<a href="http://www.os4ed.com">OS4Ed</a>).
+                    Të gjitha të drejtat të rezervuara &copy; <?php echo date('Y'); ?> SIA - Sistemi i Inteligjencës Arsimore.
                 </footer>
             </div>
         </section>
